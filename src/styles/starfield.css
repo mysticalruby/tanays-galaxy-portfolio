@@ -1,0 +1,49 @@
+/* Parallax starfield — inspired by classic CSS star animations */
+
+.starfield-sky {
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #0f1419 45%, #090a0f 100%);
+}
+
+.starfield-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: var(--star-shadow);
+}
+
+.starfield-layer::after {
+  content: "";
+  position: absolute;
+  top: 2000px;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background: transparent;
+  border-radius: inherit;
+  box-shadow: var(--star-shadow);
+}
+
+@keyframes starfield-drift {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-2000px);
+  }
+}
+
+.starfield-drift {
+  animation: starfield-drift var(--star-duration, 50s) linear infinite;
+}
+
+.starfield-static {
+  opacity: 0.85;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .starfield-drift {
+    animation: none;
+  }
+}

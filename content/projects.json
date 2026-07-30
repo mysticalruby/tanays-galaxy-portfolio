@@ -1,0 +1,1332 @@
+{
+  "projects": [
+    {
+      "slug": "articulate",
+      "title": "ARTICULATE — AI-Powered Speech Accessibility Platform",
+      "summary": "Browser-based communication tool that transcribes atypical speech, repairs grammar while preserving meaning, and supports text-to-speech playback.",
+      "status": "completed",
+      "cluster": "Coding & Trading",
+      "clusterSlug": "coding-trading",
+      "tags": [
+        "AI",
+        "Accessibility",
+        "Whisper",
+        "Flan-T5",
+        "Web App"
+      ],
+      "opening": "ARTICULATE helps people with atypical or unclear speech express themselves more confidently in real time. The platform records speech, transcribes it with a fine-tuned Whisper-based model, applies a Flan-T5 language model to repair grammar while preserving intended meaning, and provides clear text plus optional text-to-speech playback.",
+      "problem": "How can speech technology support clearer communication for people with dysarthria, Down syndrome, and other speech-related disabilities—without changing what they mean to say?",
+      "role": "Developed the accessible browser application, integrated speech recognition and language-repair pipelines, and designed human-centered UX for users, caregivers, teachers, and speech-language pathologists.",
+      "methods": [
+        "Fine-tuned Whisper-based speech recognition",
+        "Flan-T5 grammar repair with meaning preservation",
+        "Text-to-speech playback pipeline",
+        "High-contrast mode, live waveform feedback, and simplified controls",
+        "Lazy model loading and fallback API handling"
+      ],
+      "results": "Delivered an end-to-end accessible communication workflow in the browser, designed for real-time use by people with speech disabilities and the professionals who support them.",
+      "learned": "Accessibility is not a feature layer—it shapes model choice, latency, feedback design, and failure handling from the start.",
+      "placeholders": [],
+      "images": [],
+      "papers": [
+        {
+          "src": "/articulate-cs-poster.pdf",
+          "title": "ARTICULATE — CS Poster",
+          "label": "Download CS poster"
+        }
+      ],
+      "websiteUrl": "https://github.com/TanayMangal/articulate2.0/commits/main/",
+      "websiteLabel": "View GitHub commits",
+      "links": [
+        {
+          "href": "https://articulate20.vercel.app/",
+          "label": "Try live demo",
+          "note": "The live demo may not load due to occasional server issues — send me a message and I can fix it."
+        }
+      ],
+      "skills": [
+        "Artificial Intelligence (AI)",
+        "API Development",
+        "Machine Learning",
+        "Teamwork",
+        "Assistive Technology",
+        "Python (Programming Language)",
+        "Documentation",
+        "Public Speaking",
+        "Natural Language Processing (NLP)",
+        "Hugging Face Products",
+        "Whisper",
+        "User-centered Design",
+        "Transformers"
+      ]
+    },
+    {
+      "slug": "gvs-balance-glasses",
+      "title": "STATERA: Adaptive Fall Prevention with Galvanic Vestibular Stimulation",
+      "summary": "Low-cost glasses-mounted wearable that detects balance instability and delivers noninvasive GVS before a fall—88% classification accuracy across 50 trials.",
+      "status": "completed",
+      "cluster": "Engineering",
+      "clusterSlug": "engineering",
+      "tags": [
+        "ESP32",
+        "IMU",
+        "GVS",
+        "Wearables",
+        "PCB",
+        "3D Printing"
+      ],
+      "opening": "STATERA is a glasses-mounted assistive wearable that detects early balance instability and delivers noninvasive galvanic vestibular stimulation (GVS) to support corrective balance responses before a fall. The system combines embedded sensing, custom circuitry, and human-centered product design in a low-cost closed-loop prototype.",
+      "problem": "Can a compact wearable detect balance events early enough to trigger vestibular stimulation that supports corrective responses—reliably, safely, and affordably?",
+      "role": "Led embedded systems, sensor-based motion classification, circuit design, prototyping, testing, and human-centered product design across the full device stack.",
+      "methods": [
+        "ESP32 with three MPU-6050 IMUs",
+        "Custom PCB, rechargeable Li-Po power, mastoid electrodes",
+        "3D-printed glasses housing",
+        "50 controlled trials with balance-event classification",
+        "Closed-loop detect-and-stimulate workflow"
+      ],
+      "results": "Achieved 88% balance-event classification accuracy across 50 controlled trials, delivered detectable stimulation in 100% of active trials, and remained under the project's low-cost target.",
+      "learned": "Assistive wearables succeed when sensing, stimulation, mechanical design, and experimental validation are engineered as one integrated system.",
+      "placeholders": [],
+      "papers": [
+        {
+          "src": "/anticx-logbook-final.pdf",
+          "title": "ANTICx Logbook — Final",
+          "label": "Download ANTICx logbook"
+        },
+        {
+          "src": "/anticx-adr-poster.pdf",
+          "title": "STEM2 ANTICx ADR Poster",
+          "label": "Download ADR poster PDF",
+          "aspectRatio": "3 / 2"
+        },
+        {
+          "src": "/anticx-final-design-study.pdf",
+          "title": "STEM2 ANTICx Final Design Study",
+          "label": "Download final design study"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/statera/IMG_2907.jpg",
+          "alt": "Wearing the glasses-mounted STATERA prototype with rear electronics pack",
+          "caption": "On-head demo — glasses sensors and rear stimulation pack"
+        },
+        {
+          "src": "/images/statera/IMG_2906.jpg",
+          "alt": "Close-up of taped wearable electronics pack during a fair presentation",
+          "caption": "Wearable electronics pack at presentation"
+        },
+        {
+          "src": "/images/statera/esp32-s3-wiring.jpg",
+          "alt": "Hands holding an ESP32-S3 board densely wired with jumper cables",
+          "caption": "ESP32-S3 hub — sensor and stimulation wiring"
+        },
+        {
+          "src": "/images/statera/IMG_2852.jpg",
+          "alt": "Hands assembling red PCB, IMU breakouts, and LiPo on the lab bench",
+          "caption": "Bench assembly — PCB, IMUs, and battery"
+        },
+        {
+          "src": "/images/statera/IMG_2859.jpg",
+          "alt": "Top-down view of STATERA electronics with LiPo, heat-shrink joints, and sensor boards",
+          "caption": "Integrated prototype wiring on the red bench"
+        },
+        {
+          "src": "/images/statera/arduino-mega-breadboard.jpg",
+          "alt": "Elegoo Mega 2560 breadboard circuit with labeled TX and GND wires",
+          "caption": "Early Mega 2560 breadboard prototyping"
+        },
+        {
+          "src": "/images/statera/IMG_2283.jpg",
+          "alt": "Two teammates building electronics at a lab table with multimeter and parts bins",
+          "caption": "Team build session — bench tools and components"
+        },
+        {
+          "src": "/images/IMG_2904.png",
+          "alt": "Wearing the GVS balance glasses prototype with electrode wiring",
+          "caption": "Prototype on-head — glasses-mounted sensing and stimulation"
+        },
+        {
+          "src": "/images/IMG_2857.png",
+          "alt": "Workbench with microcontroller, wiring, and LiPo battery for the GVS prototype",
+          "caption": "Electronics bench — ESP32 hub, sensors, and power"
+        },
+        {
+          "src": "/images/photo-77515662664.png",
+          "alt": "Soldering a small PCB module for the wearable",
+          "caption": "PCB work — soldering the control module"
+        }
+      ],
+      "safetyNote": "Research prototype only — not a medical device, treatment, or diagnosis tool.",
+      "skills": [
+        "Structural Analysis",
+        "Galvanic Vestibular Stimulation",
+        "Experimental Design",
+        "Poster Design",
+        "Ergonomics",
+        "Engineering Drawings",
+        "Teamwork",
+        "Data Collection",
+        "Printed Circuit Board (PCB) Design",
+        "Computer-Aided Design (CAD)",
+        "Documentation",
+        "Embedded Systems",
+        "Onshape",
+        "Public Speaking",
+        "User-centered Design",
+        "Prototyping",
+        "Wearable Technology"
+      ]
+    },
+    {
+      "slug": "flo-wrist",
+      "title": "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+      "subtitle": "Flo-Wrist — preventive wearable sensing for wrist health.",
+      "summary": "Affordable smart wrist brace that monitors 3D wrist orientation, warns against harmful postures, and prompts evidence-based exercises.",
+      "status": "completed",
+      "cluster": "Engineering",
+      "clusterSlug": "engineering",
+      "tags": [
+        "Wearables",
+        "IMU",
+        "Ergonomics",
+        "CTS Prevention",
+        "Sensor Fusion"
+      ],
+      "opening": "This wrist brace targets people at risk of carpal tunnel syndrome (CTS)—especially workers exposed to excessive wrist flexion, extension, or deviation. It combines IMUs, signal processing, and ergonomic design to measure wrist orientation, identify risky patterns, and deliver tactile and visual feedback plus therapeutic exercise prompts.",
+      "problem": "How can a low-cost wearable help users adopt healthier wrist posture during everyday tasks before cumulative strain becomes injury?",
+      "role": "Developed hardware prototyping, firmware, calibration, validation against physical measurements, and ergonomic evaluation of the feedback system.",
+      "methods": [
+        "Inertial measurement units with sensor fusion",
+        "Dangerous wrist orientation and repetition detection",
+        "Tactile and visual user alerts",
+        "Evidence-based wrist exercise prompts",
+        "Statistical accuracy and ergonomic validation studies"
+      ],
+      "results": "Built a preventive wearable that goes beyond passive splinting by combining continuous surveillance, user awareness, and practice—validated against physical test data and ergonomic criteria.",
+      "learned": "Preventive ergonomics requires translating biomechanical risk into feedback people can actually use during real work.",
+      "placeholders": [],
+      "papers": [
+        {
+          "src": "/flo-wrist-feb-fair-presentation.pdf",
+          "title": "February Fair Final Presentation — Flo-Wrist",
+          "label": "Download February Fair presentation"
+        },
+        {
+          "src": "/cts-grant.pdf",
+          "title": "CTS Grant Proposal — Smart Ergonomic Wrist Brace",
+          "label": "Download CTS grant PDF"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/flo-wrist/IMG_0838.jpg",
+          "alt": "Flo-Wrist research poster with jumper-wire sensor harness in the foreground",
+          "caption": "Flo-Wrist poster — materials, procedure, and sensor data"
+        },
+        {
+          "src": "/images/flo-wrist/IMG_0839.jpg",
+          "alt": "Wrist-strap prototype with red 3D-printed sensor mounts and jumper wiring",
+          "caption": "Early brace strap with 3D-printed sensor mounts"
+        },
+        {
+          "src": "/images/flo-wrist/IMG_0840.jpg",
+          "alt": "Helping-hands stand holding microcontroller and IMU breakout boards during wiring",
+          "caption": "IMU and microcontroller wiring on the bench"
+        },
+        {
+          "src": "/images/flo-wrist/IMG_0841.jpg",
+          "alt": "Fabric sleeve with red sensor housings connected to a laptop for testing",
+          "caption": "Wearable sleeve sensors under live laptop testing"
+        },
+        {
+          "src": "/images/flo-wrist/IMG_1324.png",
+          "alt": "Presenting the Ventrile-Wrist fair poster and hand prototype to a judge",
+          "caption": "Fair presentation — Ventrile-Wrist poster and prototype demo"
+        },
+        {
+          "src": "/images/IMG_3202.png",
+          "alt": "Tanay presenting Ventrilo-Wrist STEM fair poster with prototype on the table",
+          "caption": "STEM fair — Ventrilo-Wrist poster and wearable prototype"
+        },
+        {
+          "src": "/images/IMG_3207.png",
+          "alt": "Tanay with Flo-Wrist science fair board and Arduino wrist brace prototype",
+          "caption": "Earlier Flo-Wrist build — Arduino brace and data board"
+        }
+      ],
+      "skills": [
+        "Structural Analysis",
+        "Experimental Design",
+        "Engineering Design",
+        "Ergonomics",
+        "Engineering Drawings",
+        "Computer-Aided Design (CAD)",
+        "Documentation",
+        "Embedded Systems",
+        "Onshape",
+        "Data Analysis",
+        "Public Speaking",
+        "Electric Circuits",
+        "Wearable Technology"
+      ]
+    },
+    {
+      "slug": "fem-quantum-harmonic-oscillator",
+      "title": "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator",
+      "subtitle": "Turning a quantum equation into a computable model.",
+      "summary": "Numerical physics research comparing linear and Hermite finite elements for the quantum harmonic oscillator—part of the WPI Quantum research group internship.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "organization": "Worcester Polytechnic Institute · Quantum Research Group",
+      "tags": [
+        "FEM",
+        "Quantum Physics",
+        "Numerical Methods",
+        "Scientific Computing",
+        "WPI"
+      ],
+      "opening": "As part of the research group internship at WPI for Quantum, I used the finite element method to approximate the energy eigenvalues and wavefunctions of the one-dimensional quantum harmonic oscillator. The work compared lower-order linear elements with higher-order Hermite elements—including quintic Hermite bases—and evaluated how numerical choices affect accuracy.",
+      "problem": "How accurately can finite element methods reproduce a quantum system with known analytical energy levels?",
+      "role": "Research intern in the WPI Quantum group—developed and compared FEM implementations, validated results against analytical solutions, and documented numerical tradeoffs in a research paper.",
+      "methods": [
+        "Spatial discretization of the quantum harmonic oscillator domain",
+        "Generalized eigenvalue formulation",
+        "Linear finite elements (N = 300, L = 8)",
+        "Cubic Hermite finite elements (N = 60, L = 8)",
+        "Comparison with known energy eigenvalues and wavefunction behavior"
+      ],
+      "results": "Both approaches reproduced the expected energy spectrum; cubic Hermite elements achieved extremely high accuracy with far fewer degrees of freedom. Linear FEM first six energies: 0.500089, 1.500444, 2.501155, 3.502221, 4.503642, 5.505417. Cubic Hermite: 0.500000, 1.500000, 2.500001, 3.500004, 4.500010, 5.500021.",
+      "learned": "A physical equation becomes a numerical model through domain choice, basis construction, matrix assembly, eigenvalue solution, and rigorous validation against theory.",
+      "relatedProjects": ["wpi-computational-physics-intern"],
+      "papers": [
+        {
+          "src": "/quantum-harmonic-oscillator-quintic-hermite.pdf",
+          "title": "Quantum Harmonic Oscillator with Quintic Hermite Finite Elements",
+          "label": "Download QHO paper PDF"
+        }
+      ],
+      "images": [],
+      "placeholders": [],
+      "skills": [
+        "Mathematical Modeling",
+        "Numerical Simulation",
+        "Scientific Computing",
+        "Documentation",
+        "LaTeX",
+        "Data Visualization"
+      ]
+    },
+    {
+      "slug": "himcm-graph-diffusion",
+      "title": "Graph Diffusion Model for Environmental Justice Pollution Exposure",
+      "subtitle": "Network-based policy analysis in Chelsea and Everett, MA.",
+      "summary": "Graph diffusion model ranking transportation-related pollution interventions across 486 nodes and 20,303 weighted connections.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "tags": [
+        "Graph Theory",
+        "Environmental Justice",
+        "HiMCM",
+        "Policy Analysis"
+      ],
+      "opening": "This project built a graph-based decision-support model for transportation-related pollution exposure in Chelsea and Everett, Massachusetts, focusing on environmental justice communities and schools. A steady-state graph diffusion equation modeled relative exposure across roads, census block groups, schools, and industrial/freight facilities.",
+      "problem": "Which pollution interventions most effectively reduce exposure when effects propagate through a connected urban network?",
+      "role": "Constructed the spatial influence network, implemented diffusion analysis, simulated policy scenarios, and conducted sensitivity analysis across model parameters.",
+      "methods": [
+        "486 nodes and 20,303 distance-weighted edges",
+        "Steady-state graph diffusion exposure model",
+        "Four policy scenarios: anti-idling, electric freight, low-emission zones, industrial reduction",
+        "Sensitivity analysis across diffusion and distance parameters"
+      ],
+      "results": "Anti-idling near schools ranked as the strongest equity-focused intervention in the current scenario, closely followed by electric-freight policies. Meritorious recognition in HiMCM (top 13% internationally).",
+      "learned": "Policy models must account for network propagation—not only local emissions—when prioritizing interventions in vulnerable communities.",
+      "papers": [
+        {
+          "src": "/graph-diffusion-chelsea-everett-pollution.pdf",
+          "title": "Graph Diffusion Model for Environmental Justice Pollution Exposure — Chelsea & Everett, MA",
+          "label": "Download paper PDF"
+        }
+      ],
+      "images": [],
+      "placeholders": [],
+      "skills": [
+        "Research Writing",
+        "Optimization",
+        "Data Collection",
+        "Python (Programming Language)",
+        "Resource Allocation",
+        "Data Analysis",
+        "Mathematical Modeling",
+        "Graph Theory",
+        "Conservation Modeling",
+        "Network Theory",
+        "Data Visualization",
+        "LaTeX",
+        "Spatial Analysis",
+        "GIS-Style Mapping",
+        "Diffusion"
+      ]
+    },
+    {
+      "slug": "hiemcm-evacuation-sweep",
+      "title": "Hazard-Aware Emergency Evacuation Sweep Optimization",
+      "summary": "Dynamic model optimizing firefighter search-and-sweep operations in multi-floor buildings under fire, smoke, and fatigue constraints.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "tags": [
+        "HiMCM",
+        "Graph Routing",
+        "Optimization",
+        "Multi-Agent Systems"
+      ],
+      "opening": "Developed a dynamic mathematical model to optimize firefighter search-and-sweep operations in hazardous multi-floor buildings. Models incorporated fire and smoke growth, debris, visibility loss, responder fatigue, room triage, changing travel times, and real-time firefighter reassignment.",
+      "problem": "How should firefighters search multi-floor buildings when hazards evolve and team assignments must change in real time?",
+      "role": "Built progressively advanced models, implemented graph-based routing and team-size optimization, and tested across multiple building layouts.",
+      "methods": [
+        "Graph-based routing with Dijkstra-style path optimization",
+        "Connectivity-based entrance allocation",
+        "Diminishing-returns team-size optimization",
+        "A*-style fire-origin estimation from smoke patterns",
+        "Multi-layout verification redundancy for occupant safety"
+      ],
+      "results": "Identified efficient room-search orders, responder placements, and evacuation strategies across building scenarios. Earned HiMCM Meritorious (top 13% internationally), advancing to IM²C.",
+      "learned": "Emergency response models must balance speed, safety redundancy, and dynamic reassignment as conditions change.",
+      "placeholders": [],
+      "images": [
+        {
+          "src": "/images/himcm/IMG_0649.jpg",
+          "alt": "Large whiteboard covered in travel-time equations, room variables, triage functions, and building layout graphs, with a smaller board of f(t) and s(t) curves leaning against it",
+          "caption": "Modeling session — travel times, triage functions, and layout graphs"
+        },
+        {
+          "src": "/images/himcm/IMG_0644.jpg",
+          "alt": "Small whiteboard titled Ishaan's Design with room-weightage criteria and a hand-drawn node-link graph for emergency search",
+          "caption": "Early design — room weights, nodes, and search priorities"
+        },
+        {
+          "src": "/images/himcm/IMG_0652.jpg",
+          "alt": "Whiteboard outlining Phases 0–4 of the evacuation model with risk scores, sigmoid sketches, and a hand pointing at the board",
+          "caption": "Phased model plan — nodes, triage scores, and sigmoid risk"
+        },
+        {
+          "src": "/images/himcm/IMG_0653.jpg",
+          "alt": "Close view of the Phases 0–4 whiteboard with hazard-level variables, edge times for fire and smoke, and weighted importance formulas",
+          "caption": "Hazard, edge time, and importance weighting detail"
+        },
+        {
+          "src": "/images/himcm/IMG_0654.jpg",
+          "alt": "Full whiteboard of the five-phase firefighter sweep model with centrality notes, sigmoid curves, and final scalar importance output",
+          "caption": "Full board — centrality, combined sigmoids, and final ranking"
+        }
+      ],
+      "skills": [
+        "Multi-agent Systems",
+        "Research Writing",
+        "Optimization",
+        "Teamwork",
+        "Python (Programming Language)",
+        "Documentation",
+        "Mathematical Modeling",
+        "Graph Theory",
+        "Data Visualization",
+        "Algorithms",
+        "Dynamic Systems",
+        "LaTeX",
+        "Numerical Simulation"
+      ]
+    },
+    {
+      "slug": "penny-phase-out-model",
+      "title": "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+      "summary": "Diffusion model forecasting how businesses may stop accepting pennies after U.S. production ends, with cash-rounding economic analysis.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "tags": [
+        "Differential Equations",
+        "Diffusion",
+        "Economic Modeling"
+      ],
+      "opening": "Developed a mathematical model forecasting how businesses may stop accepting pennies after U.S. penny production ends. Penny acceptance was modeled as a density-dependent diffusion process, capturing how urban, suburban, and rural businesses transition at different rates.",
+      "problem": "How will penny acceptance diffuse across regions with different population densities—and what are the economic tradeoffs of cash-rounding strategies?",
+      "role": "Formulated nonlinear differential equations, integrated population-density distributions, and extended the model to evaluate rounding strategies.",
+      "methods": [
+        "Density-dependent diffusion process",
+        "Urban, suburban, and rural adoption rate modeling",
+        "Nonlinear differential equations with regional distributions",
+        "Cash-rounding profitability threshold analysis"
+      ],
+      "results": "Projected substantially faster penny phase-out in dense areas than rural communities. Cash-rounding analysis identified a price threshold where rounding up becomes more profitable than rounding down.",
+      "learned": "Seemingly simple policy transitions hide spatial heterogeneity that only diffusion-style models make visible.",
+      "papers": [
+        {
+          "src": "/penny-phase-out-paper.pdf",
+          "title": "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+          "label": "Download paper PDF"
+        }
+      ],
+      "images": [],
+      "placeholders": [],
+      "skills": [
+        "Research Writing",
+        "Teamwork",
+        "Data Collection",
+        "Python (Programming Language)",
+        "Probabilistic Models",
+        "Monte Carlo Simulation",
+        "Data Analysis",
+        "Mathematical Modeling",
+        "Financial Modeling",
+        "Dynamic Systems",
+        "LaTeX"
+      ]
+    },
+    {
+      "slug": "autonomous-vehicles-boston-emissions",
+      "title": "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+      "summary": "Three-model actuarial and environmental analysis of AV adoption policies on congestion, PM2.5 exposure, and public spending in Boston.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "tags": [
+        "MTFC",
+        "Policy Modeling",
+        "Air Quality",
+        "Simulation"
+      ],
+      "opening": "Developed a three-model actuarial and environmental analysis of how autonomous-vehicle adoption policies could affect traffic congestion, PM2.5 exposure, and public spending across Boston. Integrated fleet adoption dynamics, ZIP-code traffic flow, and ground-level pollution dispersion.",
+      "problem": "Which AV policy levers most cost-effectively reduce pollution and congestion without triggering rebound effects that erase gains?",
+      "role": "Built and coupled adoption, traffic, and dispersion models; evaluated 11 policy scenarios; developed equity-focused recommendations for high-exposure corridors.",
+      "methods": [
+        "Logistic state-transition model for fleet adoption",
+        "Cell transmission model for ZIP-code-level traffic flow",
+        "Convection–diffusion model for ground-level PM2.5 dispersion",
+        "11 scenarios: rebates, infrastructure, supply-side incentives, targeted deployment"
+      ],
+      "results": "Supply-side production incentives produced the strongest pollution reduction per dollar; large consumer-rebate programs risked VMT rebound effects. Recommended prioritizing infrastructure and incentives in Boston ZIP codes 02126, 02131, and 02127.",
+      "learned": "Climate policy models must weigh equity, rebound risk, and cost-effectiveness together—not optimize emissions alone.",
+      "papers": [
+        {
+          "src": "/mtfc-23914.pdf",
+          "title": "A Risk Analysis of the Effects of Coral Reef Degradation in Tropical Climates — MTFC Team #23914",
+          "label": "Download MTFC symposium paper"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/mtfc/IMG_1903.jpg",
+          "alt": "Five teammates holding blue Modeling the Future Challenge bags in front of a Massachusetts Academy of Math & Science banner",
+          "caption": "MTFC Team #23914 — Modeling the Future Challenge at Mass Academy"
+        },
+        {
+          "src": "/images/mtfc/policy-heatmaps.png",
+          "alt": "2×2 grid of spatial heatmaps comparing Aggressive, Front-Loaded, Moderate Rebate, and No Policy AV scenarios",
+          "caption": "Policy scenario heatmaps — Aggressive, Front-Loaded, Moderate Rebate, and No Policy"
+        }
+      ],
+      "placeholders": [],
+      "skills": [
+        "Research Writing",
+        "Teamwork",
+        "Data Collection",
+        "Python (Programming Language)",
+        "Documentation",
+        "Resource Allocation",
+        "Data Analysis",
+        "Mathematical Modeling",
+        "Graph Theory",
+        "Data Visualization",
+        "LaTeX",
+        "Diffusion"
+      ]
+    },
+    {
+      "slug": "etosha-wildlife-optimization",
+      "title": "Etosha Wildlife Protection Optimization Model",
+      "summary": "Conservation optimization across 940 grid cells in Etosha National Park—prioritizing patrols, drones, cameras, and acoustic sensors.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "tags": [
+        "IMMC",
+        "Optimization",
+        "Conservation",
+        "Spatial Modeling",
+        "Risk Assessment"
+      ],
+      "opening": "Developed a conservation-optimization framework for Etosha National Park, Namibia, to prioritize wildlife-protection resources under limited ranger capacity, funding, and technology. The spatial and temporal model spans 940 5×5 km grid cells, five ecological guilds, and wet/dry seasonal conditions.",
+      "problem": "Where should limited protection resources be placed to reduce poaching, wildfire, habitat pressure, and slow patrol response?",
+      "role": "Built risk assessment, protection-capacity mapping, and resource-allocation planning with reproducible maps and sensitivity analyses.",
+      "methods": [
+        "940-cell spatial grid with seasonal vulnerability modeling",
+        "Five ecological guilds",
+        "Ranger patrol, drone base, waterhole camera, and acoustic sensor placement optimization",
+        "Scenario-based forecasts and sensitivity analysis"
+      ],
+      "results": "Produced reproducible risk maps and data-informed recommendations for ranger patrols, drone bases, waterhole cameras, and acoustic sensors under capacity constraints. Submitted as IMMC 2026 Team #17289.",
+      "learned": "Conservation optimization must integrate ecology, seasonality, and operational limits—not treat protection as a uniform coverage problem.",
+      "relatedProjects": ["etosha-rhino-patrol-routing"],
+      "papers": [
+        {
+          "src": "/immc-final-paper.pdf",
+          "title": "IMMC 2026 — Wildlife Conservation in Etosha National Park (Team #17289)",
+          "label": "Download IMMC final paper"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/immc/IMG_1357.jpg",
+          "alt": "Four IMMC teammates smiling together in a close group photo on a projected display",
+          "caption": "IMMC Team #17289 — the modeling squad"
+        },
+        {
+          "src": "/images/immc/IMG_1354.jpg",
+          "alt": "Empty collaborative classroom with multiple projector screens showing the same team group photo",
+          "caption": "War-room setup — team photo looping across the projectors"
+        },
+        {
+          "src": "/images/immc/IMG_1769.jpg",
+          "alt": "Three teammates at a white table with laptops in a glass-walled workspace, one smiling in the foreground",
+          "caption": "Collaborative build session in the modeling workspace"
+        },
+        {
+          "src": "/images/immc/IMG_1766.jpg",
+          "alt": "Teammate focused at a laptop with stickers, phone screen showing an IMMC group chat in the foreground",
+          "caption": "Deep work block — models open, IMMC chat nearby"
+        },
+        {
+          "src": "/images/immc/IMG_1767.jpg",
+          "alt": "Teammate in a navy hoodie resting his chin on his hand beside open laptops in a partitioned workspace",
+          "caption": "Late-afternoon focus during the competition stretch"
+        },
+        {
+          "src": "/images/immc/IMG_1755.jpg",
+          "alt": "Two teammates at a whiteboard labeled Outputs, one drawing while the other smiles",
+          "caption": "Whiteboard break — sketching outputs between model runs"
+        },
+        {
+          "src": "/images/immc/IMG_1751.jpg",
+          "alt": "Three teammates at a dining-hall table with an open laptop showing Google Drive files beside plates of food",
+          "caption": "Working lunch — reviewing shared data folders between bites"
+        },
+        {
+          "src": "/images/immc/IMG_1753.jpg",
+          "alt": "Four-person team selfie at a cafeteria table with breakfast food and an open laptop",
+          "caption": "Team selfie mid-challenge breakfast break"
+        },
+        {
+          "src": "/images/immc/IMG_1764.jpg",
+          "alt": "Four teammates in a diner booth posing with tall stacks of pancakes and whipped cream",
+          "caption": "Pancake recharge after a long modeling block"
+        },
+        {
+          "src": "/images/immc/IMG_1777.jpg",
+          "alt": "Messy overnight room with teammates asleep among laptops, energy drinks, snacks, and an open suitcase",
+          "caption": "Overnight stretch — catching sleep between paper revisions"
+        }
+      ],
+      "placeholders": [],
+      "skills": [
+        "Research Writing",
+        "Optimization",
+        "Teamwork",
+        "Python (Programming Language)",
+        "Documentation",
+        "Resource Allocation",
+        "Data Analysis",
+        "Mathematical Modeling",
+        "Conservation Modeling",
+        "Data Visualization",
+        "LaTeX",
+        "Spatial Analysis",
+        "GIS-Style Mapping",
+        "Numerical Simulation"
+      ]
+    },
+    {
+      "slug": "etosha-rhino-patrol-routing",
+      "title": "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+      "subtitle": "Team-orienteering routes on Etosha’s real road network",
+      "summary": "Research paper on routing limited ranger patrols to cover rhino poaching risk in Etosha National Park—multi-depot team orienteering on OpenStreetMap roads.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "tags": [
+        "Anti-Poaching",
+        "OR-Tools",
+        "Team Orienteering",
+        "Conservation",
+        "Vehicle Routing"
+      ],
+      "opening": "Rhino poaching in Namibia intensified through the mid-2020s, and Etosha National Park absorbed a large share of the losses. Once deterrents such as dehorning and arrests are in place, the remaining operational lever is patrol efficiency: given limited vehicles, fuel, and ranger-hours, where should patrols drive? This paper builds a coverage-oriented routing model on Etosha’s real road network, using poaching-risk and habitat fields from an antecedent spatial model (Model-1).",
+      "problem": "How can a fixed set of time-budgeted ranger patrols be routed on Etosha’s actual roads to maximize coverage of cells where poaching risk and rhino habitat coincide?",
+      "role": "Corresponding author. Led formulation of the multi-depot team-orienteering model, integration with the Model-1 risk/habitat surfaces, OR-Tools routing experiments, baseline comparisons, and sensitivity analysis.",
+      "methods": [
+        "805-cell, 5 km grid with modelled poaching risk × habitat-integrity rewards from Model-1",
+        "Multi-depot team orienteering on 419 real OpenStreetMap road segments",
+        "Time-budgeted loops from five ranger camps (Okaukuejo, Halali, Namutoni, Dolomite, Onkoshi)",
+        "Google OR-Tools guided local search with greedy, risk-only, habitat-only, and random baselines",
+        "Sensitivity tests on candidate set, budget, and up to 15% risk-map noise"
+      ],
+      "results": "Five eight-hour patrols traversed cells covering about 26% of mapped risk-reward and 70–80% of the highest-priority cells, beating all four baselines and remaining essentially unchanged under 15% risk-map noise. A marginal-value test found a second patrol adds most at the western Okaukuejo and Dolomite stations. Framed as a modelling prototype that still needs validation against observed ranger movement before deployment.",
+      "learned": "Anti-poaching routing works best when the objective is inverted from ordinary navigation—maximize hazard covered, not minimize travel—and when risk surfaces are stress-tested for modest input error.",
+      "relatedProjects": ["etosha-wildlife-optimization"],
+      "papers": [
+        {
+          "src": "/etosha-rhino-patrol.pdf",
+          "title": "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha National Park",
+          "label": "Download paper PDF"
+        }
+      ],
+      "images": [],
+      "placeholders": [],
+      "skills": [
+        "Research Writing",
+        "Optimization",
+        "Teamwork",
+        "Python (Programming Language)",
+        "Documentation",
+        "Resource Allocation",
+        "Data Analysis",
+        "Mathematical Modeling",
+        "Conservation Modeling",
+        "Data Visualization",
+        "LaTeX",
+        "Spatial Analysis",
+        "GIS-Style Mapping",
+        "Graph Theory"
+      ]
+    },
+    {
+      "slug": "m3c-sports-gambling",
+      "title": "M3C: Economic and Behavioral Impacts of Sports Gambling",
+      "summary": "Multi-stage model of gambling's economic and social spread—top 20% internationally in MathWorks Math Modeling Challenge.",
+      "status": "completed",
+      "cluster": "Math Modeling",
+      "clusterSlug": "math-modeling",
+      "tags": [
+        "M3C",
+        "Machine Learning",
+        "Monte Carlo",
+        "Network Contagion"
+      ],
+      "opening": "Led a mathematical modeling project examining how sports gambling affects individuals and communities over time. The framework estimated disposable income from demographic data, simulated one-year outcomes with probabilistic wealth models, and projected long-term effects over 5-, 15-, and 30-year horizons. Paper will be out soon — cannot post at the moment due to competition rules.",
+      "problem": "How do structural expected losses, financial vulnerability, and social contagion interact to spread harmful gambling behavior over time?",
+      "role": "Led model design, implemented regression and ML pipelines on ~3M data points, and produced prevention-focused policy recommendations.",
+      "methods": [
+        "Regression and TabNet neural network on ~3M demographic data points",
+        "Logistic regression, Poisson processes, and Monte Carlo wealth simulation",
+        "Fractional Kelly betting analysis",
+        "Network-based contagion model for social spread of gambling behavior"
+      ],
+      "results": "Revealed structural losses from house edge and increasing vulnerability over time. Recognized in the top 20% internationally in the MathWorks Math Modeling Challenge (M3C).",
+      "learned": "Behavioral economic harm often emerges from compounding structural disadvantage—not isolated bad decisions.",
+      "placeholders": [],
+      "images": [
+        {
+          "src": "/images/m3c/IMG_1424.png",
+          "alt": "Three teammates huddled around a laptop with an M3C schedule projected behind them",
+          "caption": "Collaboration session — organizing the M3C timeline on the projector"
+        },
+        {
+          "src": "/images/m3c/IMG_1430.jpg",
+          "alt": "Two teammates laughing while working together on a ThinkPad laptop",
+          "caption": "Brainstorming and debugging during the competition weekend"
+        },
+        {
+          "src": "/images/m3c/IMG_1427.jpg",
+          "alt": "Teammate in an orange hoodie at a laptop in an open study commons",
+          "caption": "Working through models in the shared commons"
+        },
+        {
+          "src": "/images/m3c/IMG_1447.jpg",
+          "alt": "Team at library study desks with a whiteboard of equations nearby",
+          "caption": "Library work block — equations on the whiteboard, models on the desk"
+        },
+        {
+          "src": "/images/m3c/IMG_1450.jpg",
+          "alt": "Student in an orange hoodie working on a laptop from the floor of a lounge",
+          "caption": "Late-session coding stretch in the lounge"
+        },
+        {
+          "src": "/images/m3c/IMG_1451.jpg",
+          "alt": "Teammate in glasses focused on a MacBook at a round study table",
+          "caption": "Focused build time on the modeling pipeline"
+        },
+        {
+          "src": "/images/m3c/IMG_1439.jpg",
+          "alt": "Three teammates at Boomers Pizzeria with pizza, curly fries, and an open laptop",
+          "caption": "Fuel stop at Boomers — laptop still open between slices"
+        },
+        {
+          "src": "/images/m3c/IMG_1441.jpg",
+          "alt": "Four-person M3C team selfie over pizza and curly fries",
+          "caption": "Team selfie mid-challenge dinner break"
+        },
+        {
+          "src": "/images/m3c/IMG_1442.jpg",
+          "alt": "Two teammates in an elevator between work sessions, one making a peace sign",
+          "caption": "Between venues during the competition weekend"
+        },
+        {
+          "src": "/images/m3c/IMG_1457.jpg",
+          "alt": "Teammate in a maroon jacket taking a quick drink break in the study lounge",
+          "caption": "Quick recharge between modeling blocks"
+        }
+      ],
+      "skills": [
+        "Research Writing",
+        "Machine Learning",
+        "Teamwork",
+        "Stochastic Processes",
+        "Python (Programming Language)",
+        "Documentation",
+        "Monte Carlo Simulation",
+        "Data Analysis",
+        "Mathematical Modeling",
+        "Regression Analysis",
+        "Network Theory",
+        "Financial Modeling",
+        "Prototyping",
+        "LaTeX"
+      ]
+    },
+    {
+      "slug": "imc-prosperity-trading",
+      "title": "Algorithmic Trading System — IMC Prosperity Competition",
+      "summary": "Led a five-person team to top 25% worldwide with Python trading algorithms earning ~73,000 simulated tokens.",
+      "status": "completed",
+      "cluster": "Coding & Trading",
+      "clusterSlug": "coding-trading",
+      "tags": [
+        "Algorithmic Trading",
+        "Python",
+        "Optimization",
+        "Team Leadership"
+      ],
+      "opening": "Led a five-person team in IMC Prosperity, a global algorithmic-trading competition built around simulated financial markets. Developed and tested Python-based trading and data-analysis algorithms to identify market patterns, price inefficiencies, and profitable opportunities under changing conditions.",
+      "problem": "How can a team coordinate multiple trading strategies to manage risk and capture opportunity in dynamic simulated markets?",
+      "role": "Led strategy development, coordinated the team, evaluated performance through iterative backtesting, and refined decision rules.",
+      "methods": [
+        "Python trading and market-analysis algorithms",
+        "Pattern detection and price-inefficiency identification",
+        "Iterative backtesting and simulation",
+        "Risk-managed decision rules across team strategies"
+      ],
+      "results": "Finished in the top 25% worldwide with approximately 73,000 tokens in simulated profit.",
+      "learned": "Competitive trading rewards fast iteration, clear team communication, and disciplined risk management under uncertainty.",
+      "placeholders": [],
+      "images": [],
+      "skills": [
+        "Optimization",
+        "Teamwork",
+        "Python (Programming Language)",
+        "Data Analysis",
+        "Team Leadership",
+        "Numerical Simulation"
+      ]
+    },
+    {
+      "slug": "robotics-design-manufacturing",
+      "title": "FRC Team 467",
+      "summary": "Hands-on design and fabrication through FRC Team 467, CAD practice, and manufacturing experiences.",
+      "status": "collection",
+      "cluster": "Engineering",
+      "clusterSlug": "engineering",
+      "tags": [
+        "FRC",
+        "CAD",
+        "Onshape",
+        "Manufacturing",
+        "Mechanical Design"
+      ],
+      "opening": "Hands-on engineering through FRC Team 467 at Shrewsbury High School (Sep 2024 – Jun 2025) — CAD in Onshape, prototyping, and manufacturing with knee mill, CNC, and lathe. Recognized with the FIRST Leadership Award (1 of 2 from 54 students).",
+      "problem": "How do design constraints, fabrication methods, and team feedback shape reliable mechanical systems?",
+      "role": "Member of FRC Team 467: prototyping and CAD for subsystems, manufacturing and machining parts, and team collaboration across competition season.",
+      "methods": [
+        "Prototyping and CAD for subsystems in Onshape",
+        "Manufacturing parts using knee mill, CNC, and lathe",
+        "Iterative design based on testing and team feedback",
+        "FRC competition-season engineering workflow",
+        "Community outreach and team platform contributions"
+      ],
+      "results": "Demonstrates progression from concept to manufactured components with documented iteration. FIRST Leadership Award recipient (1 of 2 from 54 students).",
+      "learned": "Engineering in a team setting means balancing constraints, communicating design intent, and revising based on real fabrication and testing feedback.",
+      "placeholders": [],
+      "images": [],
+      "skills": [
+        "Prototyping",
+        "Engineering Drawings",
+        "Engineering Design",
+        "Knee Mill",
+        "Structural Analysis",
+        "Documentation",
+        "Computer-Aided Design (CAD)",
+        "Teamwork",
+        "Milling",
+        "Onshape",
+        "Experimental Design"
+      ],
+      "kind": "experience",
+      "organization": "FIRST Robotics Competition · Team 467",
+      "employmentType": "Team Member",
+      "dateRange": "Sep 2024 – Jun 2025",
+      "location": "Shrewsbury, Massachusetts"
+    },
+    {
+      "slug": "wpi-metal-am-research-intern",
+      "title": "Research Intern — Multiphysics Modeling for Metal Additive Manufacturing",
+      "subtitle": "Worcester Polytechnic Institute",
+      "summary": "Refining a multiphysics simulation framework for metal additive manufacturing under faculty mentorship.",
+      "status": "ongoing",
+      "kind": "experience",
+      "organization": "Worcester Polytechnic Institute",
+      "employmentType": "Internship",
+      "location": "Worcester, Massachusetts · Hybrid",
+      "dateRange": "Jun 2026 – Present",
+      "cluster": "Research & Internships",
+      "clusterSlug": "research-internships",
+      "tags": [
+        "COMSOL",
+        "Multiphysics",
+        "Additive Manufacturing",
+        "Simulation"
+      ],
+      "opening": "Conducting research in computational materials science and advanced manufacturing at WPI. The work centers on a multiphysics simulation framework for metal additive-manufacturing processes and how processing conditions influence material behavior and final-part quality.",
+      "problem": "How can simulation help predict melt-pool behavior, solidification, and defect risk across varying metal AM process parameters?",
+      "role": "Research intern under faculty mentorship, contributing to simulation development, parameter studies, and analysis of manufacturing-relevant outputs.",
+      "methods": [
+        "Refining multiphysics simulation models for metal additive manufacturing",
+        "Applying heat-transfer, fluid-flow, and numerical-modeling methods",
+        "Running parameter studies across processing conditions",
+        "Analyzing temperature fields, melt-pool behavior, and solidification trends",
+        "Visualizing simulation outputs to support manufacturing-reliability research"
+      ],
+      "results": "Contributing to research aimed at improving manufacturing reliability and reducing defect formation in metal parts.",
+      "learned": "Metal AM research requires tightly coupled physics models and careful interpretation of simulation trends—not just single-variable optimization.",
+      "placeholders": [
+        "Melt-pool simulation visualization",
+        "Temperature field plot",
+        "Parameter-study summary chart"
+      ],
+      "skills": [
+        "COMSOL",
+        "Numerical Simulation",
+        "Data Analysis",
+        "Research Writing"
+      ]
+    },
+    {
+      "slug": "wpi-computational-physics-intern",
+      "title": "Research Intern — Computational Physics & Advanced Modeling",
+      "subtitle": "Worcester Polytechnic Institute",
+      "summary": "Computational-physics research applying mathematical modeling and scientific computing to complex physical systems.",
+      "status": "ongoing",
+      "kind": "experience",
+      "organization": "Worcester Polytechnic Institute",
+      "employmentType": "Internship",
+      "location": "Worcester, Massachusetts · Hybrid",
+      "dateRange": "May 2026 – Present",
+      "cluster": "Research & Internships",
+      "clusterSlug": "research-internships",
+      "tags": [
+        "Computational Physics",
+        "Scientific Computing",
+        "WPI",
+        "Research"
+      ],
+      "opening": "Conducting computational-physics research under faculty mentorship at Worcester Polytechnic Institute—building foundations in quantum mechanics, advanced materials modeling, and numerical simulation.",
+      "problem": "How can computational tools and mathematical models advance understanding of complex physical systems in early-stage research?",
+      "role": "Research intern developing computational methods, reviewing literature, and contributing to theoretical and numerical analysis with faculty and lab collaborators.",
+      "methods": [
+        "Applying mathematical modeling and numerical methods to physical systems",
+        "Building computational tools for simulation and analysis",
+        "Reviewing research literature and refining methods iteratively",
+        "Collaborating on interpretation of results and next research steps",
+        "Preparing foundations for future research outputs"
+      ],
+      "results": "Advancing early-stage computational-physics work across modeling, simulation, and literature-informed method development.",
+      "learned": "Research progress depends as much on careful method refinement and literature grounding as on raw computation.",
+      "relatedProjects": ["fem-quantum-harmonic-oscillator"],
+      "placeholders": [],
+      "images": [
+        {
+          "src": "/images/quantum-research/research-poster-fem-qed-nanostructures.png",
+          "alt": "Research poster: Finite Element Approach to Quantum Field Theory and Feynman Loops in Nanostructures by Tanay Mangal and L. Ramdas Ram-Mohan at WPI",
+          "caption": "Research poster — FEM + QED loop corrections for electron g-factors in nanostructures (Ram-Mohan group, WPI)"
+        },
+        {
+          "src": "/images/quantum-research/g-factor-zeeman-splitting-slide.png",
+          "alt": "Diagram of Zeeman energy splitting into spin-up and spin-down levels as applied magnetic field increases, with ΔE = g μ_B B₀",
+          "caption": "g-factor / Zeeman splitting — degenerate level splits into m_s = ±1/2 under applied B"
+        },
+        {
+          "src": "/images/quantum-research/qho-energy-spectrum-fem-vs-exact.png",
+          "alt": "Bar chart comparing QHO dimensionless energy levels for exact, linear FEM (N=300), and Hermite FEM (N=60) across quantum numbers n=0 to 9",
+          "caption": "QHO energy spectrum — Exact vs Linear FEM vs Hermite FEM"
+        },
+        {
+          "src": "/images/quantum-research/cubic-hermite-wavefunction-n2.png",
+          "alt": "Wavefunction ψ_n(x) vs dimensionless position for n=2, with exact (solid) and Hermite FEM (dashed) curves overlapping",
+          "caption": "n=2 wavefunction — Cubic Hermite FEM matches exact solution (E=2.5)"
+        },
+        {
+          "src": "/images/quantum-research/eigenvalue-convergence-cubic-hermite.png",
+          "alt": "Log-log plot of relative energy error vs element size h for Cubic Hermite modes n=0–3, tracking O(h⁴) reference slope",
+          "caption": "Cubic Hermite convergence — relative energy error follows O(h⁴)"
+        },
+        {
+          "src": "/images/quantum-research/quintic-c2-hermite-basis-functions.png",
+          "alt": "Plot of Quintic C2 value basis functions Q1 (left value) and Q4 (right value) vs local coordinate t from 0 to 1",
+          "caption": "Quintic C² Hermite value basis functions (Q1 left, Q4 right)"
+        },
+        {
+          "src": "/images/quantum-research/relative-energy-error-vs-dof.png",
+          "alt": "Log-log energy convergence for n=4 comparing relative energy error vs free DOF for Linear P1, Cubic C1, and Quintic C2",
+          "caption": "Energy convergence (n=4) — higher-order Hermite bases need far fewer DOF"
+        },
+        {
+          "src": "/images/quantum-research/ordinary-ring-vs-mobius-ring.png",
+          "alt": "3D color-mapped Möbius-ring visualization of a standing-wave / eigenfunction pattern on a twisted ring topology",
+          "caption": "Ring topology visualization — wave pattern on a Möbius-type ring"
+        },
+        {
+          "src": "/images/computational-physics/comsol-temperature-vs-time.png",
+          "alt": "COMSOL point graph of Temperature (K) vs Time (ms) with multi-point heating curves peaking near 3 ms then cooling sharply",
+          "caption": "COMSOL temperature probes — heating to ~1400 K, then rapid cool after ~3 ms"
+        },
+        {
+          "src": "/images/computational-physics/comsol-probe-vs-time.png",
+          "alt": "COMSOL line plot vs Time (ms) rising to a peak near 3 ms then dropping to zero (×10⁻⁴ scale)",
+          "caption": "COMSOL time-history probe — rises through 3 ms, then drops to zero"
+        },
+        {
+          "src": "/images/computational-physics/comsol-heat-flux-vs-arc-length.png",
+          "alt": "COMSOL heat flux (W/m²) vs Arc length (mm) comparing convective and radiative cooling components",
+          "caption": "Heat flux vs arc length — convective and radiative surface cooling components"
+        }
+      ],
+      "skills": [
+        "Computational Physics",
+        "Mathematical Modeling",
+        "Numerical Simulation",
+        "Quantum Mechanics",
+        "Finite Element Analysis (FEA)",
+        "Python (Programming Language)",
+        "Data Analysis",
+        "Research Writing"
+      ]
+    },
+    {
+      "slug": "frc-team-190",
+      "title": "FIRST Robotics Competition — Team 190",
+      "subtitle": "Mass Academy / WPI · Team Member",
+      "summary": "FRC Team 190 member — CAD, prototyping, FLL volunteering, and Impact Award / social media team work.",
+      "status": "ongoing",
+      "kind": "experience",
+      "organization": "FIRST Robotics Competition · Team 190",
+      "employmentType": "Team Member",
+      "location": "Massachusetts",
+      "dateRange": "Aug 2025 – Present",
+      "cluster": "Engineering",
+      "clusterSlug": "engineering",
+      "tags": [
+        "FRC",
+        "CAD",
+        "Onshape",
+        "Prototyping",
+        "FIRST"
+      ],
+      "opening": "Member of FRC Team 190 at Mass Academy/WPI, contributing CAD and prototyping for robot subsystems—including climber planning for the 2026 game—while supporting outreach through FLL kit builds and competition-season team operations.",
+      "problem": "How can a competition team iterate quickly on subsystem designs while supporting broader FIRST community outreach?",
+      "role": "CAD and prototyping contributor; FLL volunteer; member of Impact Award and Social Media teams.",
+      "methods": [
+        "Prototyping and CAD for subsystems in Onshape",
+        "Whiteboard design reviews for the 2026 climber subsystem — claw, T-joint, and load requirements",
+        "Collaborative design iteration with teammates",
+        "Volunteering for FLL teams — building kits and practice mats",
+        "Brainstorming and content work on Impact Award and social media teams"
+      ],
+      "results": "Hands-on contribution to competition-season engineering and community-facing FIRST outreach.",
+      "learned": "Strong robotics teams combine fast mechanical iteration with clear communication and outreach ownership.",
+      "placeholders": [
+        "Onshape assembly screenshot",
+        "Prototype photo",
+        "Outreach event photo"
+      ],
+      "images": [
+        {
+          "src": "/images/frc-190/IMG_1123.jpg",
+          "alt": "Whiteboard sketches for FRC 2026 climber receiver, T-joint, and claw requirements",
+          "caption": "Climber planning — receiver, T-joint, and claw constraints for the 2026 game"
+        },
+        {
+          "src": "/images/frc-190/IMG_1127.jpg",
+          "alt": "Design review at the whiteboard covering climber claw loads and force diagrams",
+          "caption": "Climber design review — axial thrust, torsion, and free-body diagrams"
+        },
+        {
+          "src": "/images/frc-190/IMG_1141.jpg",
+          "alt": "Whiteboard with climber sprocket, claw, and gear-ratio calculations for Team 190",
+          "caption": "Climber analysis — sprocket layout, stress math, and gear/sprocket ratios"
+        },
+        {
+          "src": "/images/IMG_3199.png",
+          "alt": "FRC robot or Team 190 build photo",
+          "caption": "Competition-season build"
+        },
+        {
+          "src": "/images/IMG_1317.png",
+          "alt": "Robot chassis with wiring and electronics on the workbench",
+          "caption": "Chassis wiring and electronics"
+        },
+        {
+          "src": "/images/IMG_1316.png",
+          "alt": "Annotated FRC chassis CAD layout showing CAN loop wiring plan",
+          "caption": "CAN loop wiring plan on the chassis layout"
+        },
+        {
+          "src": "/images/IMG_3338.png",
+          "alt": "Whiteboard sketches for robot intake mechanism and rack stack-up",
+          "caption": "Intake design whiteboard — rack and plate stack-up"
+        },
+        {
+          "src": "/images/png-image-1.png",
+          "alt": "Screenshot of Drive.java robot code",
+          "caption": "Drive subsystem code"
+        },
+        {
+          "src": "/images/IMG_3200.png",
+          "alt": "FLL volunteering — building kits and practice mats",
+          "caption": "FLL outreach volunteering"
+        },
+        {
+          "src": "/images/1000009492.png",
+          "alt": "Team 190 robotics activity photo",
+          "caption": "Team 190 season moment"
+        }
+      ],
+      "skills": [
+        "Prototyping",
+        "Content Idea",
+        "Engineering Drawings",
+        "Engineering Design",
+        "Public Speaking",
+        "Structural Analysis",
+        "Documentation",
+        "Computer-Aided Design (CAD)",
+        "Teamwork",
+        "Milling",
+        "Onshape",
+        "Experimental Design"
+      ]
+    },
+    {
+      "slug": "tech-awareness-association",
+      "title": "Co-Founder & Programs and Education Lead",
+      "subtitle": "Tech Awareness Association",
+      "summary": "Student-led nonprofit teaching device repair, e-waste reduction, and digital literacy — 120+ devices repaired across five towns.",
+      "status": "ongoing",
+      "kind": "experience",
+      "organization": "Tech Awareness Association",
+      "employmentType": "Self-employed",
+      "location": "Shrewsbury, Massachusetts · Hybrid",
+      "dateRange": "Jan 2024 – Present",
+      "cluster": "Leadership & Community",
+      "clusterSlug": "leadership-community",
+      "tags": [
+        "Nonprofit",
+        "Repair",
+        "Education",
+        "Leadership"
+      ],
+      "opening": "Co-founded a student-led nonprofit teaching device repair, e-waste reduction, and digital literacy to community members and seniors. Lead a team of five running library and senior-center workshops with a recurring repair bench.",
+      "problem": "How can students build durable community programs that reduce e-waste and expand digital access?",
+      "role": "Co-founder and Programs & Education Lead — team leadership, workshop design, repair operations, and partnership development.",
+      "methods": [
+        "Leading a team of five across workshops and repair operations",
+        "Running library and senior-center repair and literacy programs",
+        "Repairing 120+ devices through a recurring community repair bench",
+        "Expanding programming to five towns and helping each launch local programs",
+        "Developing an organizational partnership with iFixit for supplies and programming"
+      ],
+      "results": "Scaled community impact across five towns and secured iFixit partnership support for repair programming worth over $4,000 in supplies.",
+      "learned": "Sustained community impact comes from repeatable workshops, strong partnerships, and training others to run local programs.",
+      "placeholders": [
+        "Repair bench photo",
+        "Workshop session photo",
+        "Community outreach graphic"
+      ],
+      "websiteUrl": "https://www.techawarenessma.com/",
+      "websiteLabel": "Visit techawarenessma.com",
+      "images": [
+        {
+          "src": "/images/tech-awareness/IMG_3276.jpg",
+          "alt": "Tech Awareness repair workshop with iFixit kits and disassembled phones on the table",
+          "caption": "Community repair workshop — phones open on anti-static mats with iFixit kits"
+        },
+        {
+          "src": "/images/tech-awareness/IMG_3283.jpg",
+          "alt": "Close-up of hands using a precision screwdriver kit during device repair",
+          "caption": "Hands-on repair — precision bits and pry tools at the bench"
+        },
+        {
+          "src": "/images/tech-awareness/IMG_3299.jpg",
+          "alt": "Two students collaborating on a device repair at a library table",
+          "caption": "Pair repair session at a library / community repair bench"
+        },
+        {
+          "src": "/images/tech-awareness/IMG_3372.jpg",
+          "alt": "Tech Awareness team with laptops, tablets, and a disassembled laptop on the worktable",
+          "caption": "Team night — devices, parts, and repair materials on the bench"
+        }
+      ],
+      "skills": [
+        "Public Speaking",
+        "Documentation",
+        "Teamwork",
+        "Teaching",
+        "Tech Repair",
+        "LaTeX"
+      ]
+    },
+    {
+      "slug": "us-taekwondo-instructor",
+      "title": "2nd Dan Black Belt / Instructor",
+      "subtitle": "US Taekwondo Center",
+      "summary": "Part-time instructor teaching Taekwondo to ages 5+ and competing on the demonstration team.",
+      "status": "completed",
+      "kind": "experience",
+      "organization": "US Taekwondo Center",
+      "employmentType": "Part-time",
+      "location": "Shrewsbury, Massachusetts",
+      "dateRange": "Mar 2017 – Oct 2025",
+      "cluster": "Leadership & Community",
+      "clusterSlug": "leadership-community",
+      "tags": [
+        "Taekwondo",
+        "Teaching",
+        "Martial Arts"
+      ],
+      "opening": "2nd Dan Black Belt instructor at US Taekwondo Center — assisting and leading classes for students ages 5 and older while competing on the demonstration team.",
+      "problem": "How do you teach physical discipline and confidence across a wide range of ages and skill levels?",
+      "role": "Instructor assisting 10–20 student classes and teaching the Taekwondo curriculum.",
+      "methods": [
+        "Assisted and led classes of 10–20 students",
+        "Taught curriculum to students ages 5 and older",
+        "Competed on the school demonstration team",
+        "Modeled discipline, form, and public performance under pressure"
+      ],
+      "results": "Eight years of teaching experience building communication, patience, and leadership in a physical instruction setting.",
+      "learned": "Teaching movement requires clear demonstration, patience, and adapting tone for different age groups.",
+      "placeholders": [
+        "Class instruction photo",
+        "Demonstration team photo"
+      ],
+      "images": [
+        {
+          "src": "/images/batch-32e69881.png",
+          "alt": "US Jae H. Jeong’s Taekwondo Center demonstration team group photo",
+          "caption": "Demonstration team"
+        },
+        {
+          "src": "/images/PHOTO-2025-02-01-23-48-04-.png",
+          "alt": "Taekwondo sparring and drills in the dojang",
+          "caption": "Sparring and drills"
+        },
+        {
+          "src": "/images/PHOTO-2025-02-01-23-47-40-.png",
+          "alt": "Forms practice at Taekwondo class",
+          "caption": "Forms practice"
+        },
+        {
+          "src": "/images/IMG_4030.png",
+          "alt": "Taekwondo competition arena demonstration parade",
+          "caption": "Competition arena"
+        },
+        {
+          "src": "/images/photo-77430970711.png",
+          "alt": "Red Taekwondo kicking target pads",
+          "caption": "Training pads"
+        }
+      ],
+      "skills": [
+        "Taekwondo",
+        "Public Speaking",
+        "Teamwork",
+        "Teaching"
+      ]
+    },
+    {
+      "slug": "mams-math-tournament",
+      "title": "Co-Founder — Mass Academy Math Tournament (MAMSMT)",
+      "subtitle": "Middle & high school invitational · corporate-sponsored",
+      "summary": "Co-founded and ran a competitive math tournament for middle and high school students, raising $1,000+ from AoPS, Jane Street, RSM, and The Actuarial Foundation.",
+      "status": "completed",
+      "kind": "experience",
+      "organization": "Massachusetts Academy of Math and Science / partner schools",
+      "employmentType": "Co-Founder & Organizer",
+      "location": "Massachusetts",
+      "dateRange": "2024 – 2025",
+      "cluster": "Leadership & Community",
+      "clusterSlug": "leadership-community",
+      "tags": [
+        "Event Planning",
+        "Fundraising",
+        "Math Competition",
+        "Project Management"
+      ],
+      "opening": "Co-founded and executed the Mass Academy Math Tournament (MAMSMT) for middle and high school students. Raised over $1,000 in corporate sponsorship from Art of Problem Solving (AoPS), Jane Street, the Russian School of Mathematics (RSM), and The Actuarial Foundation, then ran end-to-end logistics so the day ran smoothly for every team.",
+      "problem": "How do you design, fund, and operate a student math tournament that schools will approve and sponsors will trust?",
+      "role": "Co-founder and organizer — sponsorship, administrative approval, competition integrity, and full event operations.",
+      "methods": [
+        "Authored a comprehensive 20-page operational proposal and secured official administrative and principal approval",
+        "Raised corporate sponsorship from AoPS, Jane Street, RSM, and The Actuarial Foundation ($1,000+)",
+        "Coordinated with teachers, structured student teams, and wrote master hosting scripts",
+        "Verified competition question integrity before the event",
+        "Managed procurement, tracking, and budgeting for food, prizes, and supplies in Microsoft Excel"
+      ],
+      "results": "Delivered a fully sponsored competitive math tournament with school approval, structured teams, and a seamless participant experience from check-in through awards.",
+      "learned": "Large student events succeed when fundraising, written proposals, and day-of logistics are treated as one project—not separate afterthoughts.",
+      "placeholders": [
+        "Tournament day photo",
+        "Sponsorship / proposal snapshot",
+        "Budget tracking spreadsheet screenshot"
+      ],
+      "images": [
+        {
+          "src": "/images/math-tournament/trophy-1st.png",
+          "alt": "First-place trophy presentation at the Mass Academy Math Tournament",
+          "caption": "Awards — presenting a 1st-place trophy at MAMSMT"
+        },
+        {
+          "src": "/images/math-tournament/trophy-presentation.png",
+          "alt": "Organizer presenting a trophy to an Algonquin Math Team competitor",
+          "caption": "Trophy handoff with a competing math team"
+        },
+        {
+          "src": "/images/math-tournament/organizers-group.png",
+          "alt": "Organizing team group photo in front of the Mass Academy banner",
+          "caption": "Organizing crew — Mass Academy Math Tournament"
+        }
+      ],
+      "skills": [
+        "Project Management",
+        "Corporate Fundraising",
+        "Proposal Writing",
+        "Procurement Logistics",
+        "Event Planning",
+        "Microsoft Excel",
+        "Team Leadership",
+        "Teamwork",
+        "Documentation",
+        "Public Speaking"
+      ]
+    }
+  ]
+}

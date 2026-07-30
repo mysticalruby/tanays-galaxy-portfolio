@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Tanay's Galaxy — Portfolio Website
 
-## Getting Started
+Next.js portfolio site for [Tanay's Galaxy](../README.md). Deploy to **Vercel** from the `website` directory.
 
-First, run the development server:
+## Quick start
 
 ```bash
+cd website
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Deploy to Vercel
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Push this repo to GitHub (or connect the folder in Vercel).
+2. Set **Root Directory** to `website`.
+3. Framework preset: **Next.js** (auto-detected).
+4. Deploy.
 
-## Learn More
+Or use the Vercel CLI from this folder:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npx vercel
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Replace placeholders before public launch
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Asset | Path | Action |
+|-------|------|--------|
+| Rocket artwork | `public/rocket.png` | Add `Rocket-removebg-preview.png`, update `content/hotspots.json` `imageSrc` |
+| Résumé PDF | `public/resume-placeholder.pdf` | Replace with final PDF |
+| Email / LinkedIn / GitHub | `content/site.json` | Update `contact` fields |
+| Project images | Project pages | Replace `[PLACEHOLDER]` cards with real assets |
+| Unverified awards | `content/awards.json` | Confirm or remove `verified: false` entries |
 
-## Deploy on Vercel
+## Content updates
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Edit JSON files in `content/` — no code changes needed for copy, projects, skills, or awards.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- Tailwind CSS v4
+- Static generation (no animations per design spec)
+
+## Site map
+
+- `/` — Rocket navigation hub
+- `/about` — About Me
+- `/projects` — Solar system + project grid
+- `/projects/[slug]` — Case study pages (5 projects, 3 planets)
+- `/skills` — Skills cabinet + Assembly Bay
+- `/awards` — Constellation archive
+- `/resume` — Résumé + PDF download
+- `/contact` — Contact links
+
+**Note:** Model rocket content is intentionally excluded. Projects use **3 clusters** only.

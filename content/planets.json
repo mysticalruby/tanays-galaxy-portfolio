@@ -1,0 +1,80 @@
+{
+  "planets": [
+    {
+      "slug": "research-internships",
+      "name": "Research & Internships",
+      "description": "Faculty-led research at WPI",
+      "color": "#A78BFA",
+      "projectSlugs": [
+        "wpi-metal-am-research-intern",
+        "wpi-computational-physics-intern"
+      ],
+      "orbitRadius": 95,
+      "orbitDuration": 20,
+      "startAngle": 8,
+      "size": 48
+    },
+    {
+      "slug": "math-modeling",
+      "name": "Math Modeling",
+      "description": "Mathematical models, competitions, and simulation",
+      "color": "#C0C5CE",
+      "projectSlugs": [
+        "fem-quantum-harmonic-oscillator",
+        "himcm-graph-diffusion",
+        "hiemcm-evacuation-sweep",
+        "penny-phase-out-model",
+        "autonomous-vehicles-boston-emissions",
+        "etosha-wildlife-optimization",
+        "etosha-rhino-patrol-routing",
+        "m3c-sports-gambling"
+      ],
+      "orbitRadius": 145,
+      "orbitDuration": 23,
+      "startAngle": 52,
+      "size": 54
+    },
+    {
+      "slug": "coding-trading",
+      "name": "Coding & Trading",
+      "description": "Software, AI systems, and algorithmic markets",
+      "color": "#4A9FD4",
+      "projectSlugs": ["articulate", "imc-prosperity-trading"],
+      "orbitRadius": 195,
+      "orbitDuration": 29,
+      "startAngle": 128,
+      "size": 50
+    },
+    {
+      "slug": "engineering",
+      "name": "Engineering",
+      "description": "Robotics, wearables, and physical prototypes",
+      "color": "#D4AF37",
+      "projectSlugs": [
+        "gvs-balance-glasses",
+        "flo-wrist",
+        "frc-team-190",
+        "robotics-design-manufacturing"
+      ],
+      "orbitRadius": 245,
+      "orbitDuration": 34,
+      "startAngle": 204,
+      "size": 52
+    },
+    {
+      "slug": "leadership-community",
+      "name": "Leadership & Community",
+      "description": "Teams, nonprofits, teaching, and competition leadership",
+      "color": "#4ADE80",
+      "projectSlugs": [
+        "tech-awareness-association",
+        "mams-math-tournament",
+        "us-taekwondo-instructor"
+      ],
+      "orbitRadius": 295,
+      "orbitDuration": 41,
+      "startAngle": 280,
+      "size": 50
+    }
+  ]
+}

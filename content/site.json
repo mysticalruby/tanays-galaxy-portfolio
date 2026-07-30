@@ -1,0 +1,30 @@
+{
+  "name": "Tanay's Galaxy",
+  "tagline": "Exploring difficult problems through engineering, research, and creativity.",
+  "heroLine": "Student at the Massachusetts Academy of Math and Science at WPI, interested in mathematical modeling, engineering design, aerospace systems, and applied research.",
+  "contact": {
+    "email": "tmangal@wpi.edu",
+    "emailLabel": "tmangal@wpi.edu",
+    "linkedin": "https://www.linkedin.com/in/tmangal/",
+    "linkedinLabel": "LinkedIn"
+  },
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "About Me", "href": "/about" },
+    { "label": "Experience", "href": "/experience" },
+    { "label": "Skills", "href": "/skills" },
+    { "label": "Awards & Honors", "href": "/awards" },
+    { "label": "Build Process", "href": "/build-process" },
+    { "label": "Exploring", "href": "/exploring" },
+    { "label": "Contact Me", "href": "/contact" }
+  ],
+  "rocketModules": [
+    { "label": "About Me", "href": "/about" },
+    { "label": "Experience", "href": "/experience" },
+    { "label": "Skills", "href": "/skills" },
+    { "label": "Awards & Honors", "href": "/awards" },
+    { "label": "Build Process", "href": "/build-process" },
+    { "label": "Currently Exploring", "href": "/exploring" },
+    { "label": "Contact Me", "href": "/contact" }
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "title": "Résumé",
+  "intro": "A concise overview of my education, technical projects, leadership, and interests.",
+  "profile": {
+    "name": "Tanay Mangal",
+    "school": "Massachusetts Academy of Math and Science at WPI '27",
+    "focus": "Mathematical modeling, engineering design, scientific computing, aerospace systems, and applied research",
+    "summary": "Student researcher and builder with project experience in wearable sensing, numerical physics, mathematical modeling, and engineering design. Interested in using rigorous mathematics and technical systems to solve real-world problems."
+  },
+  "sections": {
+    "education": [
+      "Massachusetts Academy of Math and Science at Worcester Polytechnic Institute — Class of 2027"
+    ],
+    "technicalFocus": [
+      "Mathematical modeling and scientific computing",
+      "Engineering design and prototyping",
+      "Embedded sensing and data analysis",
+      "Research communication"
+    ],
+    "selectedProjects": [
+      "GVS Balance Glasses — wearable sensing research prototype",
+      "FEM Quantum Harmonic Oscillator — numerical physics",
+      "HiMCM Graph Diffusion Model — policy prioritization",
+      "Flo-Wrist — wrist-angle modeling and validation",
+      "FRC Team 467"
+    ],
+    "leadership": [
+      "Co-Founder, Tech Awareness Association (verify title and dates)",
+      "Student organizer, MAMS Math Tournament (verify)",
+      "FRC Team 467 participation (verify role)"
+    ],
+    "awards": [
+      "HiMCM Meritorious",
+      "IM²C Qualifier",
+      "MTFC Finalist",
+      "Hanmadang Silver and Bronze Medalist"
+    ]
+  },
+  "pdfPath": "/tanay-mangal-resume.pdf"
+}

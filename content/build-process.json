@@ -1,0 +1,225 @@
+{
+  "title": "Build Process",
+  "intro": "Every project follows the same working loop. The table below defines each step; the project rows show how that loop shows up across math modeling, coding & trading, and engineering work.",
+  "sequence": "Question → Research → Build → Test → Improve",
+  "steps": [
+    {
+      "title": "Question",
+      "description": "What problem is worth exploring, and what would a useful answer look like?"
+    },
+    {
+      "title": "Research",
+      "description": "Learn the theory, study existing work, identify assumptions, and decide what evidence is needed."
+    },
+    {
+      "title": "Build",
+      "description": "Create a model, prototype, algorithm, or design that can make the question testable."
+    },
+    {
+      "title": "Test",
+      "description": "Collect evidence, compare outputs, check assumptions, and look for failure modes."
+    },
+    {
+      "title": "Improve",
+      "description": "Use the results to revise the model, design, or experiment—and document what changed."
+    }
+  ],
+  "projectWalkthroughs": [
+    {
+      "slug": "fem-quantum-harmonic-oscillator",
+      "title": "FEM Quantum Harmonic Oscillator",
+      "href": "/experience/fem-quantum-harmonic-oscillator",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "How accurately can finite element methods reproduce a quantum system with known analytical energy levels?",
+        "Reviewed the quantum harmonic oscillator, FEM theory, and linear vs. Hermite element tradeoffs.",
+        "Implemented spatial discretization, generalized eigenvalue formulation, and both linear and cubic Hermite assemblies.",
+        "Compared computed eigenvalues and wavefunctions against known analytical results across mesh sizes.",
+        "Adopted higher-order Hermite elements where fewer DOFs achieved substantially better accuracy."
+      ]
+    },
+    {
+      "slug": "himcm-graph-diffusion",
+      "title": "HiMCM Graph Diffusion Model",
+      "href": "/experience/himcm-graph-diffusion",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "Which pollution interventions most effectively reduce exposure when effects propagate through a connected urban network?",
+        "Studied graph diffusion, environmental justice exposure, and network structure in Chelsea and Everett, MA.",
+        "Built a 486-node, 20,303-edge network with steady-state diffusion and four policy scenarios.",
+        "Ranked interventions (anti-idling near schools, electric freight, low-emission zones, industrial reduction) with sensitivity analysis.",
+        "Interpreted rankings with explicit assumptions about propagation, equity tradeoffs, and model limits."
+      ]
+    },
+    {
+      "slug": "hiemcm-evacuation-sweep",
+      "title": "HiMCM Evacuation Sweep Optimization",
+      "href": "/experience/hiemcm-evacuation-sweep",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "How should firefighters search multi-floor buildings when hazards evolve and team assignments must change in real time?",
+        "Studied fire and smoke growth, graph routing, responder fatigue, and emergency sweep protocols.",
+        "Built progressive models with Dijkstra-style routing, entrance allocation, team-size optimization, and fire-origin estimation.",
+        "Simulated efficient room-search orders and responder placements across multiple building layouts.",
+        "Added verification redundancy and dynamic reassignment rules as hazard conditions changed."
+      ]
+    },
+    {
+      "slug": "penny-phase-out-model",
+      "title": "Penny Phase-Out Diffusion Model",
+      "href": "/experience/penny-phase-out-model",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "How will penny acceptance diffuse across urban, suburban, and rural regions—and what are the economic tradeoffs of cash rounding?",
+        "Reviewed diffusion processes, regional population density, and business cash-handling behavior.",
+        "Formulated density-dependent nonlinear differential equations with regional adoption rates and rounding analysis.",
+        "Projected adoption curves by region and identified the price threshold where rounding up beats rounding down.",
+        "Documented how spatial heterogeneity changes the timeline of an apparently simple policy transition."
+      ]
+    },
+    {
+      "slug": "autonomous-vehicles-boston-emissions",
+      "title": "AV & Emissions Policy Model (Boston)",
+      "href": "/experience/autonomous-vehicles-boston-emissions",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "Which autonomous-vehicle policy levers most cost-effectively reduce pollution and congestion without triggering rebound effects?",
+        "Studied fleet adoption dynamics, ZIP-code traffic flow, PM2.5 dispersion, and Boston exposure corridors.",
+        "Coupled logistic adoption, cell transmission traffic, and convection–diffusion dispersion models across 11 scenarios.",
+        "Compared pollution reduction per dollar and VMT rebound risk across rebates, infrastructure, and supply-side incentives.",
+        "Prioritized equity-focused recommendations for high-exposure ZIP codes 02126, 02131, and 02127."
+      ]
+    },
+    {
+      "slug": "etosha-wildlife-optimization",
+      "title": "Etosha Wildlife Protection Model",
+      "href": "/experience/etosha-wildlife-optimization",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "Where should limited ranger, drone, camera, and sensor resources go to reduce poaching, wildfire, and habitat pressure?",
+        "Mapped Etosha ecology, five guilds, seasonal vulnerability, and operational capacity constraints.",
+        "Built a 940-cell spatial grid with wet/dry seasonality and optimization for patrols, drones, cameras, and acoustic sensors.",
+        "Ran scenario forecasts and sensitivity analyses on protection capacity and risk assumptions.",
+        "Produced reproducible risk maps and operational placement recommendations under funding limits."
+      ]
+    },
+    {
+      "slug": "etosha-rhino-patrol-routing",
+      "title": "Etosha Rhino Anti-Poaching Patrol Routing",
+      "href": "/experience/etosha-rhino-patrol-routing",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "Given limited vehicles and ranger-hours, where should Etosha patrols drive to cover rhino poaching risk?",
+        "Combined Model-1 risk and habitat surfaces with Etosha’s real OpenStreetMap road network and five ranger camps.",
+        "Formulated a multi-depot team orienteering problem and solved routes with Google OR-Tools guided local search.",
+        "Benchmarked against greedy, risk-only, habitat-only, and random baselines; stress-tested under risk-map noise.",
+        "Five eight-hour patrols covered ~26% of risk-reward and 70–80% of top-priority cells, with strongest marginal value in the west."
+      ]
+    },
+    {
+      "slug": "m3c-sports-gambling",
+      "title": "M3C Sports Gambling Model",
+      "href": "/experience/m3c-sports-gambling",
+      "category": "Math Modeling",
+      "categorySlug": "math-modeling",
+      "cells": [
+        "How do structural expected losses, financial vulnerability, and social contagion interact to spread harmful gambling over time?",
+        "Analyzed ~3M demographic records, betting theory, stochastic processes, and network contagion literature.",
+        "Built regression and TabNet income models, Monte Carlo wealth simulation, and a network contagion layer.",
+        "Projected 5-, 15-, and 30-year harm horizons and quantified structural losses from house edge.",
+        "Framed prevention-focused policy recommendations from compounding disadvantage—not isolated decisions."
+      ]
+    },
+    {
+      "slug": "articulate",
+      "title": "ARTICULATE",
+      "href": "/experience/articulate",
+      "category": "Coding & Trading",
+      "categorySlug": "coding-trading",
+      "cells": [
+        "How can speech technology support clearer communication for people with atypical speech—without changing what they mean to say?",
+        "Studied Whisper, Flan-T5, accessibility requirements, and UX needs for users, caregivers, and speech-language pathologists.",
+        "Built a browser app with speech recognition, grammar repair, TTS playback, waveform feedback, and API fallbacks.",
+        "Evaluated transcription quality, latency, and meaning preservation in real-time communication workflows.",
+        "Refined model loading, failure handling, and interface design with accessibility as a core constraint—not an add-on."
+      ]
+    },
+    {
+      "slug": "imc-prosperity-trading",
+      "title": "IMC Prosperity Trading",
+      "href": "/experience/imc-prosperity-trading",
+      "category": "Coding & Trading",
+      "categorySlug": "coding-trading",
+      "cells": [
+        "How can a five-person team coordinate trading strategies to manage risk and capture opportunity in dynamic simulated markets?",
+        "Studied market microstructure, backtesting methods, and team strategy coordination under competition constraints.",
+        "Developed Python algorithms for pattern detection, price-inefficiency identification, and risk-managed decision rules.",
+        "Iteratively backtested strategies in simulation and compared performance across changing market conditions.",
+        "Refined team communication and strategy rules from results—top 25% worldwide with ~73,000 simulated tokens."
+      ]
+    },
+    {
+      "slug": "gvs-balance-glasses",
+      "title": "STATERA (GVS Glasses)",
+      "href": "/experience/gvs-balance-glasses",
+      "category": "Engineering",
+      "categorySlug": "engineering",
+      "cells": [
+        "Can a wearable detect balance instability early enough to trigger vestibular stimulation—reliably, safely, and affordably?",
+        "Studied galvanic vestibular stimulation, IMU sensing, and experimental controls for active vs. sham trials.",
+        "Designed glasses-mounted prototype with ESP32, three MPU-6050 units, custom PCB, electrodes, and 3D-printed housing.",
+        "Ran 50 controlled trials; evaluated balance-event classification and stimulation delivery across conditions.",
+        "Refined packaging, trial workflow, and interpretation—88% classification accuracy, 100% detectable stimulation in active trials."
+      ]
+    },
+    {
+      "slug": "flo-wrist",
+      "title": "Flo-Wrist",
+      "href": "/experience/flo-wrist",
+      "category": "Engineering",
+      "categorySlug": "engineering",
+      "cells": [
+        "How can a low-cost wearable help users adopt healthier wrist posture before cumulative strain becomes injury?",
+        "Defined risky wrist orientations, ergonomic criteria, and validation positions (30°, 45°, 60°).",
+        "Built brace prototype with IMUs, sensor fusion, tactile/visual alerts, and exercise prompts.",
+        "Collected validation data against physical measurements and ergonomic test criteria.",
+        "Tightened calibration, feedback thresholds, and reporting from fit between model and measured wrist angles."
+      ]
+    },
+    {
+      "slug": "frc-team-190",
+      "title": "FRC Team 190",
+      "href": "/experience/frc-team-190",
+      "category": "Engineering",
+      "categorySlug": "engineering",
+      "cells": [
+        "How can a competition team iterate subsystem designs quickly while supporting broader FIRST community outreach?",
+        "Reviewed mechanism requirements, Onshape CAD workflows, and FLL mentorship needs.",
+        "Prototyped and CAD-designed robot subsystems; built FLL kits and practice mats; contributed to Impact and social media teams.",
+        "Gathered teammate feedback through fabrication cycles and competition-season testing.",
+        "Revised designs and outreach materials from real build feedback and community events."
+      ]
+    },
+    {
+      "slug": "robotics-design-manufacturing",
+      "title": "FRC Team 467",
+      "href": "/experience/robotics-design-manufacturing",
+      "category": "Engineering",
+      "categorySlug": "engineering",
+      "cells": [
+        "What mechanical designs fit the constraints of a team robotics environment and real fabrication limits?",
+        "Reviewed mechanism requirements, Onshape workflows, and knee mill, CNC, and lathe capabilities.",
+        "Designed and documented CAD assemblies; prototyped and machined competition components.",
+        "Assembled, tested mechanisms, and gathered feedback from iteration cycles.",
+        "Revised designs based on fabrication limits, testing results, and team input—FIRST Leadership Award recipient."
+      ]
+    }
+  ]
+}

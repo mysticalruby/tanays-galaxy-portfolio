@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 312" width="800" height="312" role="img" aria-label="Rocket cross-section placeholder">
+  <defs>
+    <linearGradient id="hull" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E8EAED"/>
+      <stop offset="100%" stop-color="#C0C5CE"/>
+    </linearGradient>
+    <linearGradient id="interior" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#F5F0E6"/>
+      <stop offset="100%" stop-color="#E8E0D0"/>
+    </linearGradient>
+  </defs>
+  <!-- Background transparent -->
+  <!-- Nose -->
+  <path d="M 20 156 L 90 100 L 90 212 Z" fill="#E85A4F" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Hull top -->
+  <path d="M 90 100 L 720 100 L 720 156 L 90 156 Z" fill="url(#hull)" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Hull bottom -->
+  <path d="M 90 156 L 720 156 L 720 212 L 90 212 Z" fill="url(#hull)" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Interior floor -->
+  <rect x="95" y="148" width="615" height="60" fill="url(#interior)" stroke="#2A2A2A" stroke-width="1"/>
+  <!-- Fins -->
+  <path d="M 720 156 L 780 180 L 720 212 Z" fill="#E85A4F" stroke="#2A2A2A" stroke-width="2"/>
+  <path d="M 720 100 L 780 130 L 720 156 Z" fill="#E85A4F" stroke="#2A2A2A" stroke-width="2"/>
+  <!-- Engine nozzles -->
+  <ellipse cx="755" cy="175" rx="18" ry="28" fill="#2A2A2A"/>
+  <ellipse cx="735" cy="175" rx="12" ry="22" fill="#1A1A1A"/>
+
+  <!-- ABOUT ME panel -->
+  <rect x="108" y="125" width="48" height="70" rx="4" fill="#4A9FD4" stroke="#2A2A2A" stroke-width="1.5"/>
+  <text x="132" y="155" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#0F1419">ABOUT</text>
+  <text x="132" y="165" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#0F1419">ME</text>
+
+  <!-- PROJECTS display -->
+  <rect x="108" y="95" width="70" height="35" rx="3" fill="#1A2332" stroke="#4A9FD4" stroke-width="1.5"/>
+  <text x="143" y="116" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#4A9FD4">PROJECTS</text>
+
+  <!-- SKILLS cabinet -->
+  <rect x="215" y="95" width="90" height="95" rx="3" fill="#8B6914" stroke="#2A2A2A" stroke-width="2"/>
+  <line x1="225" y1="115" x2="295" y2="115" stroke="#5C4A1A" stroke-width="1"/>
+  <line x1="225" y1="135" x2="295" y2="135" stroke="#5C4A1A" stroke-width="1"/>
+  <line x1="225" y1="155" x2="295" y2="155" stroke="#5C4A1A" stroke-width="1"/>
+  <text x="260" y="108" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#F4D03F">SKILLS</text>
+
+  <!-- AWARDS star map -->
+  <rect x="350" y="95" width="110" height="40" rx="3" fill="#0F1419" stroke="#D4AF37" stroke-width="1.5"/>
+  <circle cx="370" cy="110" r="2" fill="#F4D03F"/>
+  <circle cx="385" cy="105" r="1.5" fill="#F4D03F"/>
+  <circle cx="400" cy="118" r="2" fill="#D4AF37"/>
+  <circle cx="420" cy="108" r="1.5" fill="#F4D03F"/>
+  <circle cx="440" cy="115" r="2" fill="#D4AF37"/>
+  <text x="405" y="128" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="bold" fill="#D4AF37">AWARDS</text>
+
+  <!-- BUILD PROCESS conveyor -->
+  <rect x="360" y="160" width="150" height="45" rx="3" fill="#1A2332" stroke="#C0C5CE" stroke-width="1.5"/>
+  <rect x="370" y="175" width="20" height="15" rx="2" fill="#4A9FD4" opacity="0.7"/>
+  <rect x="395" y="175" width="20" height="15" rx="2" fill="#4A9FD4" opacity="0.7"/>
+  <rect x="420" y="175" width="20" height="15" rx="2" fill="#4A9FD4" opacity="0.7"/>
+  <rect x="445" y="175" width="20" height="15" rx="2" fill="#4A9FD4" opacity="0.7"/>
+  <rect x="470" y="175" width="20" height="15" rx="2" fill="#4A9FD4" opacity="0.7"/>
+  <text x="435" y="168" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#C0C5CE">BUILD PROCESS</text>
+
+  <!-- CURRENTLY EXPLORING scanner -->
+  <rect x="510" y="115" width="80" height="75" rx="4" fill="#0F1419" stroke="#4ADE80" stroke-width="2"/>
+  <circle cx="550" cy="152" r="25" fill="none" stroke="#4ADE80" stroke-width="1" opacity="0.5"/>
+  <line x1="550" y1="152" x2="570" y2="140" stroke="#4ADE80" stroke-width="1.5"/>
+  <circle cx="565" cy="138" r="3" fill="#4ADE80"/>
+  <text x="550" y="108" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#4ADE80">EXPLORING</text>
+
+  <!-- RESUME marker -->
+  <rect x="580" y="95" width="45" height="55" rx="2" fill="#F0F2F5" stroke="#2A2A2A" stroke-width="1.5"/>
+  <line x1="590" y1="108" x2="615" y2="108" stroke="#8B95A5" stroke-width="1"/>
+  <line x1="590" y1="118" x2="615" y2="118" stroke="#8B95A5" stroke-width="1"/>
+  <line x1="590" y1="128" x2="610" y2="128" stroke="#8B95A5" stroke-width="1"/>
+  <text x="602" y="100" text-anchor="middle" font-family="Arial,sans-serif" font-size="6" font-weight="bold" fill="#2A2A2A">RESUME</text>
+
+  <!-- CONTACT ME label -->
+  <rect x="645" y="100" width="35" height="100" rx="2" fill="#4A9FD4" stroke="#2A2A2A" stroke-width="1.5"/>
+  <text transform="rotate(-90 662 150)" x="662" y="150" text-anchor="middle" font-family="Arial,sans-serif" font-size="7" font-weight="bold" fill="#0F1419">CONTACT ME</text>
+</svg>

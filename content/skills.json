@@ -1,0 +1,1212 @@
+{
+  "intro": "Skills are organized into nine areas. Type skills, pick a category, then explore specific skills and linked projects.",
+  "categories": [
+    {
+      "id": "ai-machine-learning",
+      "name": "AI & Machine Learning",
+      "meaning": "Speech, language, and ML systems — from model integration to accessible AI products.",
+      "growing": "Deeper work on efficient inference, fine-tuning, and human-centered AI deployment.",
+      "skills": [
+        {
+          "id": "artificial-intelligence",
+          "name": "Artificial Intelligence (AI)",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "articulate"
+          ]
+        },
+        {
+          "id": "machine-learning",
+          "name": "Machine Learning",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE",
+            "M3C"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "articulate",
+            "m3c-sports-gambling"
+          ]
+        },
+        {
+          "id": "natural-language-processing",
+          "name": "Natural Language Processing (NLP)",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "articulate"
+          ]
+        },
+        {
+          "id": "transformers",
+          "name": "Transformers",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "articulate"
+          ]
+        },
+        {
+          "id": "whisper",
+          "name": "Whisper",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "articulate"
+          ]
+        },
+        {
+          "id": "hugging-face-products",
+          "name": "Hugging Face Products",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "articulate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "programming-software",
+      "name": "Programming & Software",
+      "meaning": "Building software pipelines, APIs, and computational tools that turn ideas into working systems.",
+      "growing": "More structured engineering practices and production-quality codebases.",
+      "skills": [
+        {
+          "id": "python",
+          "name": "Python (Programming Language)",
+          "meaning": "Demonstrated across 9 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE",
+            "Algorithmic Trading System",
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "M3C",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure",
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "articulate",
+            "imc-prosperity-trading",
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "m3c-sports-gambling",
+            "hiemcm-evacuation-sweep",
+            "penny-phase-out-model",
+            "himcm-graph-diffusion",
+            "wpi-computational-physics-intern"
+          ]
+        },
+        {
+          "id": "api-development",
+          "name": "API Development",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "articulate"
+          ]
+        },
+        {
+          "id": "algorithms",
+          "name": "Algorithms",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Hazard-Aware Emergency Evacuation Sweep Optimization"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "hiemcm-evacuation-sweep"
+          ]
+        },
+        {
+          "id": "scientific-computing",
+          "name": "Scientific Computing",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "fem-quantum-harmonic-oscillator"
+          ]
+        },
+        {
+          "id": "documentation",
+          "name": "Documentation",
+          "meaning": "Demonstrated across 11 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE",
+            "STATERA",
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "M3C",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator",
+            "FRC Team 467",
+            "FIRST Robotics Competition",
+            "Co-Founder & Programs and Education Lead"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "articulate",
+            "gvs-balance-glasses",
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "m3c-sports-gambling",
+            "flo-wrist",
+            "hiemcm-evacuation-sweep",
+            "fem-quantum-harmonic-oscillator",
+            "robotics-design-manufacturing",
+            "frc-team-190",
+            "tech-awareness-association"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mathematical-modeling",
+      "name": "Mathematical Modeling",
+      "meaning": "Formulating real problems as equations, stochastic processes, and dynamic systems.",
+      "growing": "Control theory, optimization under uncertainty, and larger-scale simulation.",
+      "skills": [
+        {
+          "id": "mathematical-modeling",
+          "name": "Mathematical Modeling",
+          "meaning": "Demonstrated across 8 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "M3C",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure",
+            "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator",
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "m3c-sports-gambling",
+            "hiemcm-evacuation-sweep",
+            "penny-phase-out-model",
+            "himcm-graph-diffusion",
+            "fem-quantum-harmonic-oscillator",
+            "wpi-computational-physics-intern"
+          ]
+        },
+        {
+          "id": "probabilistic-models",
+          "name": "Probabilistic Models",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "penny-phase-out-model"
+          ]
+        },
+        {
+          "id": "stochastic-processes",
+          "name": "Stochastic Processes",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "M3C"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "m3c-sports-gambling"
+          ]
+        },
+        {
+          "id": "dynamic-systems",
+          "name": "Dynamic Systems",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "hiemcm-evacuation-sweep",
+            "penny-phase-out-model"
+          ]
+        },
+        {
+          "id": "financial-modeling",
+          "name": "Financial Modeling",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "M3C",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "m3c-sports-gambling",
+            "penny-phase-out-model"
+          ]
+        },
+        {
+          "id": "regression-analysis",
+          "name": "Regression Analysis",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "M3C"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "m3c-sports-gambling"
+          ]
+        },
+        {
+          "id": "computational-physics",
+          "name": "Computational Physics",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "wpi-computational-physics-intern"
+          ]
+        },
+        {
+          "id": "quantum-mechanics",
+          "name": "Quantum Mechanics",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "wpi-computational-physics-intern"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "data-simulation",
+      "name": "Data & Simulation",
+      "meaning": "Collecting, analyzing, and simulating data to test hypotheses and forecast outcomes.",
+      "growing": "Reproducible simulation workflows and richer uncertainty quantification.",
+      "skills": [
+        {
+          "id": "data-analysis",
+          "name": "Data Analysis",
+          "meaning": "Demonstrated across 9 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Algorithmic Trading System",
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "M3C",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure",
+            "Research Intern",
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "imc-prosperity-trading",
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "m3c-sports-gambling",
+            "flo-wrist",
+            "penny-phase-out-model",
+            "himcm-graph-diffusion",
+            "wpi-metal-am-research-intern",
+            "wpi-computational-physics-intern"
+          ]
+        },
+        {
+          "id": "data-collection",
+          "name": "Data Collection",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "autonomous-vehicles-boston-emissions",
+            "penny-phase-out-model",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "monte-carlo-simulation",
+          "name": "Monte Carlo Simulation",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "M3C",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "m3c-sports-gambling",
+            "penny-phase-out-model"
+          ]
+        },
+        {
+          "id": "numerical-simulation",
+          "name": "Numerical Simulation",
+          "meaning": "Demonstrated across 6 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Algorithmic Trading System",
+            "Etosha Wildlife Protection Optimization Model",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator",
+            "Research Intern",
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "imc-prosperity-trading",
+            "etosha-wildlife-optimization",
+            "hiemcm-evacuation-sweep",
+            "fem-quantum-harmonic-oscillator",
+            "wpi-metal-am-research-intern",
+            "wpi-computational-physics-intern"
+          ]
+        },
+        {
+          "id": "data-visualization",
+          "name": "Data Visualization",
+          "meaning": "Demonstrated across 5 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure",
+            "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "hiemcm-evacuation-sweep",
+            "himcm-graph-diffusion",
+            "fem-quantum-harmonic-oscillator"
+          ]
+        },
+        {
+          "id": "comsol",
+          "name": "COMSOL",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "wpi-metal-am-research-intern"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "optimization-networks",
+      "name": "Optimization & Networks",
+      "meaning": "Graph-based routing, resource allocation, and multi-agent decision models.",
+      "growing": "Large-scale network models and real-time optimization.",
+      "skills": [
+        {
+          "id": "optimization",
+          "name": "Optimization",
+          "meaning": "Demonstrated across 5 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Algorithmic Trading System",
+            "Etosha Wildlife Protection Optimization Model",
+            "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "imc-prosperity-trading",
+            "etosha-wildlife-optimization",
+            "etosha-rhino-patrol-routing",
+            "hiemcm-evacuation-sweep",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "graph-theory",
+          "name": "Graph Theory",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "autonomous-vehicles-boston-emissions",
+            "etosha-rhino-patrol-routing",
+            "hiemcm-evacuation-sweep",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "network-theory",
+          "name": "Network Theory",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "M3C",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "m3c-sports-gambling",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "multi-agent-systems",
+          "name": "Multi-agent Systems",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Hazard-Aware Emergency Evacuation Sweep Optimization"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "hiemcm-evacuation-sweep"
+          ]
+        },
+        {
+          "id": "resource-allocation",
+          "name": "Resource Allocation",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "etosha-rhino-patrol-routing",
+            "himcm-graph-diffusion"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spatial-environmental",
+      "name": "Spatial & Environmental Modeling",
+      "meaning": "Mapping spatial risk, diffusion, and conservation dynamics across real geographies.",
+      "growing": "GIS-integrated policy models and climate-impact spatial analysis.",
+      "skills": [
+        {
+          "id": "conservation-modeling",
+          "name": "Conservation Modeling",
+          "meaning": "Demonstrated across 3 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Etosha Wildlife Protection Optimization Model",
+            "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "etosha-wildlife-optimization",
+            "etosha-rhino-patrol-routing",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "spatial-analysis",
+          "name": "Spatial Analysis",
+          "meaning": "Demonstrated across 3 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Etosha Wildlife Protection Optimization Model",
+            "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "etosha-wildlife-optimization",
+            "etosha-rhino-patrol-routing",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "gis-style-mapping",
+          "name": "GIS-Style Mapping",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Etosha Wildlife Protection Optimization Model",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "etosha-wildlife-optimization",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "diffusion",
+          "name": "Diffusion",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "autonomous-vehicles-boston-emissions",
+            "himcm-graph-diffusion"
+          ]
+        },
+        {
+          "id": "experimental-design",
+          "name": "Experimental Design",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist",
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "engineering-design",
+      "name": "Engineering & Design",
+      "meaning": "Mechanical design, CAD, ergonomics, and iterative prototyping of physical systems.",
+      "growing": "Design-for-manufacturing and tighter integration with embedded sensing.",
+      "skills": [
+        {
+          "id": "engineering-design",
+          "name": "Engineering Design",
+          "meaning": "Demonstrated across 3 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "flo-wrist",
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "computer-aided-design",
+          "name": "Computer-Aided Design (CAD)",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist",
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "onshape",
+          "name": "Onshape",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist",
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "structural-analysis",
+          "name": "Structural Analysis",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist",
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "prototyping",
+          "name": "Prototyping",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "M3C",
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "m3c-sports-gambling",
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "engineering-drawings",
+          "name": "Engineering Drawings",
+          "meaning": "Demonstrated across 4 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist",
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "ergonomics",
+          "name": "Ergonomics",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist"
+          ]
+        },
+        {
+          "id": "finite-element-analysis",
+          "name": "Finite Element Analysis (FEA)",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "wpi-computational-physics-intern"
+          ]
+        },
+        {
+          "id": "milling",
+          "name": "Milling",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "FRC Team 467",
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "robotics-design-manufacturing",
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "knee-mill",
+          "name": "Knee Mill",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "FRC Team 467"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "robotics-design-manufacturing"
+          ]
+        },
+        {
+          "id": "tech-repair",
+          "name": "Tech Repair",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder & Programs and Education Lead"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "tech-awareness-association"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "embedded-wearables",
+      "name": "Embedded & Wearables",
+      "meaning": "Sensors, circuits, PCBs, and wearable hardware for assistive and health applications.",
+      "growing": "Robust embedded test design and low-power closed-loop systems.",
+      "skills": [
+        {
+          "id": "embedded-systems",
+          "name": "Embedded Systems",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist"
+          ]
+        },
+        {
+          "id": "printed-circuit-board-design",
+          "name": "Printed Circuit Board (PCB) Design",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "gvs-balance-glasses"
+          ]
+        },
+        {
+          "id": "electric-circuits",
+          "name": "Electric Circuits",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "flo-wrist"
+          ]
+        },
+        {
+          "id": "wearable-technology",
+          "name": "Wearable Technology",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "gvs-balance-glasses",
+            "flo-wrist"
+          ]
+        },
+        {
+          "id": "galvanic-vestibular-stimulation",
+          "name": "Galvanic Vestibular Stimulation",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "gvs-balance-glasses"
+          ]
+        },
+        {
+          "id": "assistive-technology",
+          "name": "Assistive Technology",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "articulate"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "research-leadership",
+      "name": "Research & Leadership",
+      "meaning": "Technical writing, presentation, teamwork, and leading collaborative project work.",
+      "growing": "Research communication for interdisciplinary and industry audiences.",
+      "skills": [
+        {
+          "id": "research-writing",
+          "name": "Research Writing",
+          "meaning": "Demonstrated across 9 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+            "M3C",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure",
+            "Research Intern",
+            "Research Intern"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "etosha-rhino-patrol-routing",
+            "m3c-sports-gambling",
+            "hiemcm-evacuation-sweep",
+            "penny-phase-out-model",
+            "himcm-graph-diffusion",
+            "wpi-metal-am-research-intern",
+            "wpi-computational-physics-intern"
+          ]
+        },
+        {
+          "id": "latex",
+          "name": "LaTeX",
+          "meaning": "Demonstrated across 9 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
+            "M3C",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+            "Graph Diffusion Model for Environmental Justice Pollution Exposure",
+            "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator",
+            "Co-Founder & Programs and Education Lead"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "etosha-rhino-patrol-routing",
+            "m3c-sports-gambling",
+            "hiemcm-evacuation-sweep",
+            "penny-phase-out-model",
+            "himcm-graph-diffusion",
+            "fem-quantum-harmonic-oscillator",
+            "tech-awareness-association"
+          ]
+        },
+        {
+          "id": "teamwork",
+          "name": "Teamwork",
+          "meaning": "Demonstrated across 12 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE",
+            "STATERA",
+            "Algorithmic Trading System",
+            "Autonomous Vehicles & Urban Emissions Policy Model in Boston",
+            "Etosha Wildlife Protection Optimization Model",
+            "M3C",
+            "Hazard-Aware Emergency Evacuation Sweep Optimization",
+            "Density-Dependent Model for the Phase-Out of Penny Acceptance",
+            "FRC Team 467",
+            "FIRST Robotics Competition",
+            "Co-Founder & Programs and Education Lead",
+            "2nd Dan Black Belt / Instructor"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "articulate",
+            "gvs-balance-glasses",
+            "imc-prosperity-trading",
+            "autonomous-vehicles-boston-emissions",
+            "etosha-wildlife-optimization",
+            "m3c-sports-gambling",
+            "hiemcm-evacuation-sweep",
+            "penny-phase-out-model",
+            "robotics-design-manufacturing",
+            "frc-team-190",
+            "tech-awareness-association",
+            "mams-math-tournament",
+            "us-taekwondo-instructor"
+          ]
+        },
+        {
+          "id": "team-leadership",
+          "name": "Team Leadership",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Algorithmic Trading System",
+            "Co-Founder — Competitive Math Tournament"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "imc-prosperity-trading",
+            "mams-math-tournament"
+          ]
+        },
+        {
+          "id": "public-speaking",
+          "name": "Public Speaking",
+          "meaning": "Demonstrated across 6 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE",
+            "STATERA",
+            "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
+            "FIRST Robotics Competition",
+            "Co-Founder & Programs and Education Lead",
+            "2nd Dan Black Belt / Instructor"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "recurring",
+          "projectSlugs": [
+            "articulate",
+            "gvs-balance-glasses",
+            "flo-wrist",
+            "frc-team-190",
+            "tech-awareness-association",
+            "us-taekwondo-instructor"
+          ]
+        },
+        {
+          "id": "user-centered-design",
+          "name": "User-centered Design",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "ARTICULATE",
+            "STATERA"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "articulate",
+            "gvs-balance-glasses"
+          ]
+        },
+        {
+          "id": "poster-design",
+          "name": "Poster Design",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "STATERA"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "gvs-balance-glasses"
+          ]
+        },
+        {
+          "id": "teaching",
+          "name": "Teaching",
+          "meaning": "Demonstrated across 2 projects with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder & Programs and Education Lead",
+            "2nd Dan Black Belt / Instructor"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "tech-awareness-association",
+            "us-taekwondo-instructor"
+          ]
+        },
+        {
+          "id": "content-idea",
+          "name": "Content Idea",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "FIRST Robotics Competition"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "frc-team-190"
+          ]
+        },
+        {
+          "id": "project-management",
+          "name": "Project Management",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder — Competitive Math Tournament"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "mams-math-tournament"
+          ]
+        },
+        {
+          "id": "corporate-fundraising",
+          "name": "Corporate Fundraising",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder — Competitive Math Tournament"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "mams-math-tournament"
+          ]
+        },
+        {
+          "id": "proposal-writing",
+          "name": "Proposal Writing",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder — Competitive Math Tournament"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "mams-math-tournament"
+          ]
+        },
+        {
+          "id": "procurement-logistics",
+          "name": "Procurement Logistics",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder — Competitive Math Tournament"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "mams-math-tournament"
+          ]
+        },
+        {
+          "id": "event-planning",
+          "name": "Event Planning",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder — Competitive Math Tournament"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "mams-math-tournament"
+          ]
+        },
+        {
+          "id": "microsoft-excel",
+          "name": "Microsoft Excel",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "Co-Founder — Competitive Math Tournament"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "applied",
+          "projectSlugs": [
+            "mams-math-tournament"
+          ]
+        },
+        {
+          "id": "taekwondo",
+          "name": "Taekwondo",
+          "meaning": "Demonstrated across 1 project with concrete methods, deliverables, and outcomes.",
+          "evidence": [
+            "2nd Dan Black Belt / Instructor"
+          ],
+          "growing": "Continue applying and deepening this skill through research, competitions, and engineering work.",
+          "level": "developing",
+          "projectSlugs": [
+            "us-taekwondo-instructor"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "imageWidth": 800,
+  "imageHeight": 312,
+  "imageSrc": "/rocket.png",
+  "hotspots": [
+    {
+      "id": "experience",
+      "label": "Experience",
+      "tooltip": "Explore research, projects, robotics, and leadership work.",
+      "type": "link",
+      "href": "/experience",
+      "x": 11,
+      "y": 24,
+      "width": 12,
+      "height": 24
+    },
+    {
+      "id": "about",
+      "label": "About Me",
+      "tooltip": "Meet Tanay — a student researcher and builder interested in difficult technical problems.",
+      "type": "link",
+      "href": "/about",
+      "x": 11,
+      "y": 38,
+      "width": 13,
+      "height": 36
+    },
+    {
+      "id": "skills",
+      "label": "Skills",
+      "tooltip": "Open the skills cabinet: modeling, computation, design, embedded systems, research, and leadership.",
+      "type": "link",
+      "href": "/skills",
+      "x": 26,
+      "y": 28,
+      "width": 13,
+      "height": 46
+    },
+    {
+      "id": "awards",
+      "label": "Awards",
+      "tooltip": "View honors, competitions, and milestones.",
+      "type": "link",
+      "href": "/awards",
+      "x": 41,
+      "y": 24,
+      "width": 19,
+      "height": 26
+    },
+    {
+      "id": "build-process",
+      "label": "Build Process",
+      "tooltip": "See the loop behind the work: Question → Research → Build → Test → Improve.",
+      "type": "link",
+      "href": "/build-process",
+      "x": 41,
+      "y": 52,
+      "width": 19,
+      "height": 22
+    },
+    {
+      "id": "exploring",
+      "label": "Currently Exploring",
+      "tooltip": "See the topics currently on Tanay's radar.",
+      "type": "link",
+      "href": "/exploring",
+      "x": 61,
+      "y": 34,
+      "width": 12,
+      "height": 40
+    },
+    {
+      "id": "resume",
+      "label": "Résumé",
+      "tooltip": "View the résumé PDF.",
+      "type": "link",
+      "href": "/contact",
+      "x": 73,
+      "y": 30,
+      "width": 9,
+      "height": 34
+    },
+    {
+      "id": "contact",
+      "label": "Contact Me",
+      "tooltip": "Get in touch and view the résumé.",
+      "type": "link",
+      "href": "/contact",
+      "x": 77,
+      "y": 58,
+      "width": 12,
+      "height": 24
+    }
+  ]
+}

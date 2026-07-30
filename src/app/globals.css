@@ -1,26 +1,134 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-deep: #0f1419;
+  --surface-navy: #1a2332;
+  --silver: #c0c5ce;
+  --blue: #4a9fd4;
+  --gold: #d4af37;
+  --yellow: #f4d03f;
+  --text-primary: #f0f2f5;
+  --text-muted: #8b95a5;
+  --rocket-red: #e85a4f;
+  --background: var(--bg-deep);
+  --foreground: var(--text-primary);
 }
 
 @theme inline {
+  --color-bg-deep: var(--bg-deep);
+  --color-surface-navy: var(--surface-navy);
+  --color-silver: var(--silver);
+  --color-blue: var(--blue);
+  --color-gold: var(--gold);
+  --color-yellow: var(--yellow);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-rocket-red: var(--rocket-red);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-body), system-ui, sans-serif;
+  --font-display: var(--font-display-family), system-ui, sans-serif;
+  --font-mono: var(--font-mono-family), ui-monospace, monospace;
+  --font-readout: var(--font-body), system-ui, sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Solar-system orbits are core navigation — keep them moving */
+  .orbit-spin,
+  .orbit-spin-reverse {
+    animation-duration: var(--orbit-duration, 30s) !important;
+    animation-iteration-count: infinite !important;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: transparent;
+  color: var(--text-primary);
+  font-family: var(--font-body), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display), system-ui, sans-serif;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.75rem 1rem;
+  background: var(--blue);
+  color: var(--bg-deep);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  left: 1rem;
+  top: 1rem;
+}
+
+@keyframes orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.orbit-spin {
+  animation: orbit-spin var(--orbit-duration, 30s) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
+}
+
+.orbit-spin-reverse {
+  animation: orbit-spin var(--orbit-duration, 12s) linear infinite reverse;
+  animation-delay: var(--orbit-delay, 0s);
+}
+
+@keyframes gallery-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.gallery-fade-in {
+  animation: gallery-fade-in 0.35s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-fade-in {
+    animation: none;
+  }
 }
