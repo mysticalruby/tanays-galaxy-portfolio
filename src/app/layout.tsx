@@ -38,6 +38,15 @@ export const metadata: Metadata = {
   },
   description:
     "Exploring difficult problems through engineering, research, and creativity. Portfolio of Tanay Mangal — mathematical modeling, engineering design, and applied research.",
+  icons: {
+    icon: [
+      { url: "/favicon.png", type: "image/png" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    apple: "/apple-icon.png",
+    shortcut: "/favicon.png",
+  },
   openGraph: {
     title: "Tanay's Galaxy",
     description:
