@@ -165,7 +165,7 @@ function MoonOrbit({
     >
       <button
         type="button"
-        className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 overflow-visible border-0 bg-transparent p-0 transition hover:scale-110"
+        className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 overflow-visible border-0 bg-transparent p-0 transition hover:scale-110"
         style={{ width: MOON_SIZE, height: MOON_SIZE }}
         aria-label={`${shortTitle(project.title)}: ${project.summary}`}
         onMouseEnter={() => onHover(project)}
@@ -217,7 +217,7 @@ function PlanetFocusView({
         >
           {planetProjects.map((_, i) => {
             const r = moonOrbitRadius(i, planetDisc);
-            const ringSize = r * 2 + MOON_SIZE;
+            const ringSize = r * 2;
             return (
               <div
                 key={`ring-${i}`}
@@ -386,7 +386,7 @@ function SolarSystemView({
                 >
                   <button
                     type="button"
-                    className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 border-0 bg-transparent p-0 transition hover:scale-110"
+                    className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 border-0 bg-transparent p-0 transition hover:scale-110"
                     style={{ width: planet.size, height: planet.size }}
                     aria-label={`${planet.name}: ${planet.description}. Click to zoom in.`}
                     title={planet.name}

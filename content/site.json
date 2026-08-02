@@ -14,7 +14,6 @@
     { "label": "Experience", "href": "/experience" },
     { "label": "Skills", "href": "/skills" },
     { "label": "Awards & Honors", "href": "/awards" },
-    { "label": "Build Process", "href": "/build-process" },
     { "label": "Exploring", "href": "/exploring" },
     { "label": "Contact Me", "href": "/contact" }
   ],
@@ -23,7 +22,6 @@
     { "label": "Experience", "href": "/experience" },
     { "label": "Skills", "href": "/skills" },
     { "label": "Awards & Honors", "href": "/awards" },
-    { "label": "Build Process", "href": "/build-process" },
     { "label": "Currently Exploring", "href": "/exploring" },
     { "label": "Contact Me", "href": "/contact" }
   ]

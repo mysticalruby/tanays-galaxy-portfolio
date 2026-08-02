@@ -1,83 +1,72 @@
 {
   "title": "Currently Exploring",
-  "subtitle": "Future directions on my radar",
+  "subtitle": "Topics drifting through space",
   "supporting": "I am especially interested in problems where mathematics, physical systems, computation, and design have to work together.",
-  "radarHint": "The sweep lights up each interest as it passes.",
+  "viewportHint": "Click an asteroid to see what I am learning.",
   "topics": [
     {
+      "id": "java",
+      "label": "Java"
+    },
+    {
+      "id": "computational-physics",
+      "label": "Computational Physics & Multiphysics Modeling"
+    },
+    {
       "id": "fem",
-      "label": "FEM",
-      "bearing": 18,
-      "distance": 0.65,
-      "evidenceOfGrowth": [
-        "[Placeholder — FEM project or coursework connection]",
-        "[Placeholder — validation or discretization work]",
-        "[Placeholder — skill or result to add]"
-      ],
-      "futurePlan": [
-        "[Placeholder — next FEM topic to study]",
-        "[Placeholder — simulation or project goal]"
-      ]
+      "label": "Finite Element Method (FEM) Simulation"
     },
     {
-      "id": "optimization",
-      "label": "Optimization",
-      "bearing": 78,
-      "distance": 0.52,
-      "evidenceOfGrowth": [
-        "[Placeholder — optimization competition or model]",
-        "[Placeholder — allocation or routing example]",
-        "[Placeholder — result or method used]"
-      ],
-      "futurePlan": [
-        "[Placeholder — problem type to tackle next]",
-        "[Placeholder — tool or technique to learn]"
-      ]
+      "id": "feynman-loop",
+      "label": "Feynman Loop Integrals (Dimensional Continuation)"
     },
     {
-      "id": "comsol",
-      "label": "COMSOL",
-      "bearing": 138,
-      "distance": 0.7,
-      "evidenceOfGrowth": [
-        "[Placeholder — WPI / multiphysics internship work]",
-        "[Placeholder — simulation type built or refined]",
-        "[Placeholder — parameter study or output]"
-      ],
-      "futurePlan": [
-        "[Placeholder — next COMSOL model to build]",
-        "[Placeholder — manufacturing or materials focus]"
-      ]
+      "id": "latex",
+      "label": "LaTeX"
+    },
+    {
+      "id": "cooking",
+      "label": "Cooking"
+    },
+    {
+      "id": "gis",
+      "label": "GIS"
+    },
+    {
+      "id": "openrocket",
+      "label": "OpenRocket / Rocket Trajectory Simulation"
     },
     {
       "id": "cad",
-      "label": "CAD",
-      "bearing": 258,
-      "distance": 0.62,
-      "evidenceOfGrowth": [
-        "[Placeholder — FRC or robotics CAD work]",
-        "[Placeholder — assembly or part designed]",
-        "[Placeholder — fabrication feedback loop]"
-      ],
-      "futurePlan": [
-        "[Placeholder — next design challenge]",
-        "[Placeholder — Onshape or DFM skill to build]"
-      ]
+      "label": "3D Modeling (CAD)"
     },
     {
-      "id": "mathematical-models",
-      "label": "Mathematical Models",
-      "bearing": 318,
-      "distance": 0.56,
-      "evidenceOfGrowth": [
-        "[Placeholder — competition or research model]",
-        "[Placeholder — assumption or validation step]",
-        "[Placeholder — policy or systems application]"
-      ],
-      "futurePlan": [
-        "[Placeholder — model family to explore]",
-        "[Placeholder — competition or research direction]"
-      ]
+      "id": "multiphysics",
+      "label": "Multiphysics Modeling"
+    },
+    {
+      "id": "python",
+      "label": "Python / Computational Scripting"
+    },
+    {
+      "id": "matlab",
+      "label": "MATLAB"
+    },
+    {
+      "id": "circuit-design",
+      "label": "Circuit Design / Basic Electronics"
+    },
+    {
+      "id": "3d-printing",
+      "label": "3D Printing"
+    },
+    {
+      "id": "data-viz",
+      "label": "Data Visualization & Analysis"
+    },
+    {
+      "id": "arduino",
+      "label": "Arduino / Microcontroller Programming"
     }
   ]
 }

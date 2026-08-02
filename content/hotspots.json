@@ -48,20 +48,9 @@
       "height": 26
     },
     {
-      "id": "build-process",
-      "label": "Build Process",
-      "tooltip": "See the loop behind the work: Question → Research → Build → Test → Improve.",
-      "type": "link",
-      "href": "/build-process",
-      "x": 41,
-      "y": 52,
-      "width": 19,
-      "height": 22
-    },
-    {
       "id": "exploring",
       "label": "Currently Exploring",
-      "tooltip": "See the topics currently on Tanay's radar.",
+      "tooltip": "See what Tanay is currently learning.",
       "type": "link",
       "href": "/exploring",
       "x": 61,

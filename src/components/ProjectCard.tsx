@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { type ReactNode } from "react";
+import { BuildProcessTimeline } from "@/components/BuildProcessTimeline";
 import { ButtonLink } from "@/components/ButtonLink";
 import { PdfViewer } from "@/components/PdfViewer";
 import { Placeholder } from "@/components/Placeholder";
-import { getProjectBySlug } from "@/lib/content";
+import { getProjectBySlug, getWalkthroughBySlug } from "@/lib/content";
 import type { Project } from "@/types/content";
 
 function isExperience(project: Project) {
@@ -92,6 +93,7 @@ export function ProjectDetail({ project }: { project: Project }) {
   const hero = images[0];
   const gallery = images.slice(1);
   const papers = resolvePapers(project);
+  const walkthrough = getWalkthroughBySlug(project.slug);
 
   return (
     <article className="space-y-12">
@@ -310,6 +312,8 @@ export function ProjectDetail({ project }: { project: Project }) {
           <p>{project.learned}</p>
         </DetailSection>
       </div>
+
+      {walkthrough && <BuildProcessTimeline walkthrough={walkthrough} />}
 
       {(gallery.length > 0 || project.placeholders.length > 0) && (
         <section className="border-t border-white/10 pt-8">

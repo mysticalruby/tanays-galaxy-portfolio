@@ -13,6 +13,7 @@ import type {
   Hotspot,
   Planet,
   Project,
+  ProjectWalkthrough,
   SkillCategoryGroup,
   SkillItem,
   BuildProcessStep,
@@ -35,12 +36,20 @@ export const awardsIntro = awardsData.intro;
 export const constellations = awardsData.constellations as string[];
 export const featuredAwardIds = awardsData.featuredAwardIds as string[];
 export const buildProcess = buildProcessData;
+export const projectWalkthroughs =
+  buildProcessData.projectWalkthroughs as ProjectWalkthrough[];
 export const exploring = exploringData;
 export const resume = resumeData;
 export const aboutGalleries = aboutData.galleriesSection;
 
 export function getProjectBySlug(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug);
+}
+
+export function getWalkthroughBySlug(
+  slug: string,
+): ProjectWalkthrough | undefined {
+  return projectWalkthroughs.find((w) => w.slug === slug);
 }
 
 export function getProjectsByCluster(clusterSlug: string): Project[] {

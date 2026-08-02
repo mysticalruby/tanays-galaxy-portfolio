@@ -126,10 +126,6 @@ export interface ProjectWalkthrough {
 export interface ExploringTopic {
   id: string;
   label: string;
-  bearing: number;
-  distance: number;
-  evidenceOfGrowth: string[];
-  futurePlan: string[];
 }
 
 export interface NavItem {

@@ -27,13 +27,13 @@ export default function AwardsPage() {
           Top honors
         </h2>
         <p className="mt-2 text-sm text-text-muted">
-          Five highlights — explore the full constellation map above for every
+          Six highlights — explore the full constellation map above for every
           award.
         </p>
-        <ol className="mt-6 space-y-4">
+        <ol className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {featured.map((award, index) => (
-            <li key={award.id}>
-              <Card as="article" id={`award-${award.id}`}>
+            <li key={award.id} className="h-full">
+              <Card as="article" id={`award-${award.id}`} className="h-full">
                 <div className="flex flex-wrap items-start gap-3">
                   <span
                     className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full font-display text-sm font-bold"

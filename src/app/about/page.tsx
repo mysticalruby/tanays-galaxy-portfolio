@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { AboutGalleries } from "@/components/AboutGalleries";
+import { BuildProcessOverview } from "@/components/BuildProcessOverview";
 import { Card } from "@/components/Card";
 import { PageShell } from "@/components/PageShell";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -101,6 +102,15 @@ export default function AboutPage() {
               <p className="mt-2 text-sm text-text-muted">{card.body}</p>
             </Card>
           ))}
+        </div>
+      </section>
+
+      <section id="build-process" className="mt-14 scroll-mt-24">
+        <h2 className="font-display text-2xl font-semibold text-text-primary">
+          Build Process
+        </h2>
+        <div className="mt-6">
+          <BuildProcessOverview />
         </div>
       </section>
 

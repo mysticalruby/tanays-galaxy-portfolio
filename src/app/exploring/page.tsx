@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
+import { ExploringAsteroids } from "@/components/ExploringAsteroids";
 import { PageShell } from "@/components/PageShell";
-import { RadarScreen } from "@/components/RadarScreen";
 import { exploring } from "@/lib/content";
 import type { ExploringTopic } from "@/types/content";
 
 export const metadata: Metadata = {
   title: "Currently Exploring",
   description:
-    "Future directions and active interests — FEM, optimization, COMSOL, CAD, and mathematical modeling.",
+    "What Tanay is learning now — Java, FEM, CAD, Python, Arduino, multiphysics, GIS, and more.",
 };
 
 export default function ExploringPage() {
@@ -18,7 +18,7 @@ export default function ExploringPage() {
       title={exploring.title}
       description={`${exploring.subtitle}. ${exploring.supporting}`}
     >
-      <RadarScreen topics={topics} hint={exploring.radarHint} />
+      <ExploringAsteroids topics={topics} hint={exploring.viewportHint} />
     </PageShell>
   );
 }

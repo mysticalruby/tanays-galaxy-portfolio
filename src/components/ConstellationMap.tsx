@@ -64,7 +64,7 @@ function buildAwardMotions(awards: Award[]): AwardMotion[] {
 
   const positions = awards.map((award) => {
     const rand = mulberry32(idSeed(award.id));
-    const { vx, vy } = randomVelocity(rand, 0.8, 2.2);
+    const { vx, vy } = randomVelocity(rand, 0.32, 0.88);
     return {
       x: PAD_X + rand() * (SKY_W - PAD_X * 2),
       y: PAD_Y + rand() * (SKY_H - PAD_Y * 2),
@@ -107,7 +107,7 @@ function buildDecorativeField(seed: number) {
   const lines: BgLine[] = [];
 
   for (let i = 0; i < 180; i++) {
-    const { vx, vy } = randomVelocity(rand, 0.4, 1.6);
+    const { vx, vy } = randomVelocity(rand, 0.16, 0.64);
     stars.push({
       x: rand() * SKY_W,
       y: rand() * SKY_H,
@@ -150,6 +150,9 @@ function buildDecorativeField(seed: number) {
   return { stars, lines };
 }
 
+/** Stable decorative field — built once at module load so first paint is final (no cull/flash). */
+const DECORATIVE_FIELD = buildDecorativeField(42);
+
 function stepBodies<T extends { x: number; y: number; vx: number; vy: number }>(
   bodies: T[],
   dt: number,
@@ -185,15 +188,14 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
   const [hovered, setHovered] = useState<Award | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
 
-  const decorativeSeed = useMemo(() => buildDecorativeField(42), []);
   const initialAwardMotions = useMemo(
     () => buildAwardMotions(awards),
     [awards]
   );
-  const [bgStars, setBgStars] = useState(decorativeSeed.stars);
+  const [bgStars, setBgStars] = useState(DECORATIVE_FIELD.stars);
   const [awardMotions, setAwardMotions] = useState(initialAwardMotions);
 
-  const bgRef = useRef(decorativeSeed.stars);
+  const bgRef = useRef(DECORATIVE_FIELD.stars);
   const awardRef = useRef(initialAwardMotions);
 
   useEffect(() => {
@@ -297,7 +299,7 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
           role="img"
           aria-label="Constellation map of awards and honors"
         >
-          {decorativeSeed.lines.map((line, i) => {
+          {DECORATIVE_FIELD.lines.map((line, i) => {
             const a = bgStars[line.a];
             const b = bgStars[line.b];
             if (!a || !b) return null;
@@ -323,6 +325,7 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
               cy={s.y}
               r={s.r}
               fill="#FFFFFF"
+              opacity={s.opacity}
               style={
                 {
                   "--star-o": s.opacity,
