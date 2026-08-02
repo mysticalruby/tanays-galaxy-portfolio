@@ -100,10 +100,7 @@ function randomSpeed(rand: () => number) {
 
 /** Lerp trail length scale from TRAIL_SCALE_MIN (slow) → TRAIL_SCALE_MAX (fast). */
 function trailScaleForSpeed(speed: number) {
-  const t =
-    SPEED_MAX === SPEED_MIN
-      ? 0
-      : (speed - SPEED_MIN) / (SPEED_MAX - SPEED_MIN);
+  const t = (speed - SPEED_MIN) / (SPEED_MAX - SPEED_MIN);
   return TRAIL_SCALE_MIN + t * (TRAIL_SCALE_MAX - TRAIL_SCALE_MIN);
 }
 
