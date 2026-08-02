@@ -371,12 +371,13 @@ export function ExploringAsteroids({ topics, hint }: ExploringAsteroidsProps) {
   };
 
   return (
-    <div className="mx-auto w-full max-w-5xl">
+    <>
       <p className="mb-4 text-center text-sm text-text-muted">{hint}</p>
 
+      {/* Full-bleed: break out of PageShell max-width + side padding */}
       <div
         ref={fieldRef}
-        className="relative aspect-[16/9] min-h-[16rem] w-full overflow-hidden bg-transparent sm:aspect-[1.75/1] sm:min-h-[20rem]"
+        className="relative left-1/2 aspect-[16/9] min-h-[16rem] w-screen max-w-[100vw] -translate-x-1/2 overflow-hidden bg-transparent sm:aspect-[1.75/1] sm:min-h-[20rem]"
         onClick={dismiss}
         role="region"
         aria-label="Asteroid field of learning topics"
@@ -463,6 +464,6 @@ export function ExploringAsteroids({ topics, hint }: ExploringAsteroidsProps) {
           </div>
         )}
       </div>
-    </div>
+    </>
   );
 }
