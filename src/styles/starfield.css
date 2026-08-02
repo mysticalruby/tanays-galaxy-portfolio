@@ -1,4 +1,4 @@
-/* Parallax starfield — inspired by classic CSS star animations */
+/* Parallax starfield — CSS box-shadow layers (ported from reference static site) */
 
 .starfield-sky {
   background: radial-gradient(ellipse at bottom, #1b2735 0%, #0f1419 45%, #090a0f 100%);
@@ -13,10 +13,11 @@
   box-shadow: var(--star-shadow);
 }
 
+/* Duplicate field below so translateY(-200vh) loops seamlessly */
 .starfield-layer::after {
   content: "";
   position: absolute;
-  top: 2000px;
+  top: 200vh;
   left: 0;
   width: inherit;
   height: inherit;
@@ -30,12 +31,13 @@
     transform: translateY(0);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translateY(-200vh);
   }
 }
 
 .starfield-drift {
-  animation: starfield-drift var(--star-duration, 50s) linear infinite;
+  animation: starfield-drift var(--star-duration, 60s) linear infinite;
+  will-change: transform;
 }
 
 .starfield-static {
@@ -45,5 +47,6 @@
 @media (prefers-reduced-motion: reduce) {
   .starfield-drift {
     animation: none;
+    will-change: auto;
   }
 }

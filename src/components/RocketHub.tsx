@@ -1,42 +1,27 @@
 "use client";
 
-import Image from "next/image";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { hotspots, rocketImage, site } from "@/lib/content";
+import { site } from "@/lib/content";
+
+const RocketViewer = dynamic(
+  () =>
+    import("@/components/RocketViewer").then((mod) => mod.RocketViewer),
+  {
+    ssr: false,
+    loading: () => (
+      <div className="flex h-[min(49vh,392px)] min-h-[224px] w-full items-center justify-center bg-transparent text-sm text-text-muted">
+        Loading rocket model…
+      </div>
+    ),
+  },
+);
 
 export function RocketHub() {
   return (
     <>
       <div className="relative mx-auto w-full max-w-6xl">
-        <div
-          className="relative mx-auto w-full"
-          style={{ aspectRatio: `${rocketImage.width} / ${rocketImage.height}` }}
-        >
-          <Image
-            src={rocketImage.src}
-            alt="Rocket cross-section navigation hub — click a labeled module to explore"
-            width={rocketImage.width}
-            height={rocketImage.height}
-            className="h-auto w-full select-none"
-            priority
-            draggable={false}
-          />
-          {hotspots.map((hotspot) => (
-            <Link
-              key={hotspot.id}
-              href={hotspot.href}
-              aria-label={`${hotspot.label}: ${hotspot.tooltip}`}
-              title={hotspot.tooltip}
-              className="absolute border-2 border-transparent bg-transparent hover:border-blue/60 hover:bg-blue/10 focus-visible:border-blue focus-visible:bg-blue/10 focus-visible:outline-none"
-              style={{
-                left: `${hotspot.x}%`,
-                top: `${hotspot.y}%`,
-                width: `${hotspot.width}%`,
-                height: `${hotspot.height}%`,
-              }}
-            />
-          ))}
-        </div>
+        <RocketViewer />
         <p className="mt-4 text-center text-sm text-text-muted">
           Click a module on the rocket to explore.
         </p>
