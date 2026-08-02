@@ -24,7 +24,7 @@ export function ButtonLink({
   download,
   className = "",
 }: ButtonLinkProps) {
-  const classes = `inline-flex min-h-[44px] items-center justify-center gap-2 rounded-md border px-5 py-2.5 text-sm font-medium ${variants[variant]} ${className}`;
+  const classes = `inline-flex min-h-[44px] items-center justify-center gap-2 rounded-none border px-5 py-2.5 text-sm font-medium ${variants[variant]} ${className}`;
 
   if (external || download) {
     return (

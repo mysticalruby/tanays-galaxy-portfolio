@@ -51,6 +51,8 @@ export interface Planet {
   name: string;
   description: string;
   color: string;
+  /** Real celestial PNG under /images/celestial/ */
+  imageSrc?: string;
   projectSlugs: string[];
   orbitRadius: number;
   orbitDuration: number;

@@ -80,7 +80,7 @@ export function SlideshowGallery({
         {hiddenTitle}
       </h3>
 
-      <div className="overflow-hidden rounded-xl border border-silver/25 bg-surface-navy">
+      <div className="overflow-hidden border border-white/10 bg-black">
         <div
           key={active.id}
           className={reducedMotion ? "" : "gallery-fade-in"}
@@ -115,7 +115,7 @@ export function SlideshowGallery({
 
           {active.caption && (
             <p
-              className={`border-t border-silver/20 bg-bg-deep/40 px-4 py-3 text-center text-sm leading-relaxed text-text-muted ${captionMinHeight}`}
+              className={`border-t border-white/10 bg-black px-4 py-3 text-center text-sm leading-relaxed text-text-muted ${captionMinHeight}`}
             >
               {active.caption}
             </p>

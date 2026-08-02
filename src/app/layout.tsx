@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Audiowide, Orbitron, Space_Mono } from "next/font/google";
+import Script from "next/script";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { StarfieldBackground } from "@/components/StarfieldBackground";
@@ -56,6 +57,13 @@ export default function RootLayout({
       className={`${audiowide.variable} ${orbitron.variable} ${spaceMono.variable} h-full`}
     >
       <body className="relative flex min-h-full flex-col font-sans antialiased">
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+          })(window, document, "clarity", "script", "xvwtffmxp8");`}
+        </Script>
         <StarfieldBackground />
         <a href="#main-content" className="skip-link">
           Skip to main content

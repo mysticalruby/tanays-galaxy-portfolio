@@ -3,7 +3,7 @@ import { site } from "@/lib/content";
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-silver/20 bg-surface-navy/70 backdrop-blur-md">
+    <footer className="mt-auto bg-[#05070c]">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 sm:px-6 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-sm text-text-muted">
           © {new Date().getFullYear()} Tanay Mangal — {site.name}
@@ -14,7 +14,7 @@ export function Footer() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-sm text-text-muted hover:text-blue"
+                  className="text-sm text-text-muted transition-colors hover:text-blue"
                 >
                   {item.label}
                 </Link>

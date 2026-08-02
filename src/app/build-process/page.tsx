@@ -43,17 +43,17 @@ export default function BuildProcessPage() {
         {buildProcess.sequence}
       </p>
 
-      <div className="overflow-x-auto rounded-xl border border-silver/25">
+      <div className="overflow-x-auto border border-white/10 bg-black">
         <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-silver/25 bg-surface-navy">
+            <tr className="border-b border-white/10 bg-black">
               <th className="w-36 p-4 font-display font-semibold text-text-muted">
                 Step
               </th>
               {buildProcess.steps.map((step) => (
                 <th
                   key={step.title}
-                  className="border-l border-silver/15 p-4 font-display font-semibold text-blue"
+                  className="border-l border-white/10 p-4 font-display font-semibold text-blue"
                 >
                   {step.title}
                 </th>
@@ -61,12 +61,12 @@ export default function BuildProcessPage() {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-bg-deep/40">
+            <tr className="bg-black">
               <td className="p-4 font-medium text-text-primary">What it means</td>
               {buildProcess.steps.map((step) => (
                 <td
                   key={step.title}
-                  className="border-l border-silver/15 p-4 text-text-muted"
+                  className="border-l border-white/10 p-4 text-text-muted"
                 >
                   {step.description}
                 </td>
@@ -95,23 +95,23 @@ export default function BuildProcessPage() {
                 {group.items.map((project) => (
                   <div
                     key={project.slug}
-                    className="overflow-x-auto rounded-xl border border-silver/25"
+                    className="overflow-x-auto border border-white/10 bg-black"
                   >
-                    <div className="border-b border-silver/20 bg-surface-navy px-4 py-3">
+                    <div className="border-b border-white/10 bg-black px-4 py-3">
                       <Link
                         href={project.href}
-                        className="font-display font-semibold text-blue hover:underline"
+                        className="font-display font-semibold text-blue transition-colors hover:text-text-primary"
                       >
                         {project.title} →
                       </Link>
                     </div>
                     <table className="w-full min-w-[40rem] border-collapse text-sm">
                       <thead>
-                        <tr className="border-b border-silver/15 bg-bg-deep/30">
+                        <tr className="border-b border-white/10 bg-black">
                           {stepTitles.map((title) => (
                             <th
                               key={title}
-                              className="border-l border-silver/10 p-3 font-display text-xs font-semibold text-gold first:border-l-0"
+                              className="border-l border-white/10 p-3 font-display text-xs font-semibold text-gold first:border-l-0"
                             >
                               {title}
                             </th>
@@ -119,11 +119,11 @@ export default function BuildProcessPage() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
+                        <tr className="bg-black">
                           {project.cells.map((cell, i) => (
                             <td
                               key={stepTitles[i]}
-                              className="border-l border-silver/10 p-3 align-top text-text-muted first:border-l-0"
+                              className="border-l border-white/10 p-3 align-top text-text-muted first:border-l-0"
                             >
                               {cell}
                             </td>

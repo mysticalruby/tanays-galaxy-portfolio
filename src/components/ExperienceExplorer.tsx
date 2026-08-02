@@ -1,16 +1,27 @@
 "use client";
 
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
 import { ProjectCard } from "@/components/ProjectCard";
 import { planets, projects } from "@/lib/content";
 import type { Planet, Project } from "@/types/content";
 
-const MOON_SIZE = 22;
-const MOON_ORBIT_STEP = 40;
+const MOON_SIZE = 34;
+const MOON_ORBIT_STEP = 44;
 const MOON_ORBIT_GAP = 28;
 const FOCUS_PLANET_SCALE = 3.4;
 const SOLAR_STAGE_SIZE = 650;
+const MOON_IMAGES = [
+  "/images/celestial/Moon1.png",
+  "/images/celestial/Moon2.png",
+  "/images/celestial/Moon3.png",
+  "/images/celestial/Moon4.png",
+  "/images/celestial/Moon5.png",
+  "/images/celestial/Moon6.png",
+  "/images/celestial/Moon7.png",
+];
+const SUN_IMAGE = "/images/celestial/sun.png";
 
 const SOLAR_VIEWPORT_CLASS =
   "h-[min(55vh,780px)] min-h-[240px] md:h-[min(70vh,860px)] md:min-h-[360px] lg:h-[min(75vh,920px)]";
@@ -154,7 +165,7 @@ function MoonOrbit({
     >
       <button
         type="button"
-        className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 rounded-full border-2 border-silver/60 bg-white shadow-[0_0_10px_#ffffff55] hover:border-blue hover:ring-2 hover:ring-blue/40"
+        className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 overflow-visible border-0 bg-transparent p-0 transition hover:scale-110"
         style={{ width: MOON_SIZE, height: MOON_SIZE }}
         aria-label={`${shortTitle(project.title)}: ${project.summary}`}
         onMouseEnter={() => onHover(project)}
@@ -162,7 +173,16 @@ function MoonOrbit({
         onFocus={() => onHover(project)}
         onBlur={() => onLeave()}
         onClick={() => onSelect(project.slug)}
-      />
+      >
+        <Image
+          src={MOON_IMAGES[index % MOON_IMAGES.length]}
+          alt=""
+          width={MOON_SIZE}
+          height={MOON_SIZE}
+          className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_8px_rgba(192,197,206,0.45)]"
+          draggable={false}
+        />
+      </button>
     </div>
   );
 }
@@ -185,7 +205,7 @@ function PlanetFocusView({
       <button
         type="button"
         onClick={onBack}
-        className="absolute left-2 top-2 z-20 rounded-md border border-silver/30 bg-surface-navy px-4 py-2 text-sm text-text-muted hover:border-blue hover:text-blue"
+        className="absolute left-2 top-2 z-20 rounded-none border border-silver/40 bg-surface-navy px-4 py-2 text-sm text-text-muted hover:border-blue hover:text-blue"
       >
         ← Back to solar system
       </button>
@@ -201,7 +221,7 @@ function PlanetFocusView({
             return (
               <div
                 key={`ring-${i}`}
-                className="pointer-events-none absolute left-1/2 top-1/2 rounded-full border border-dashed border-silver/12"
+                className="orbit-ring pointer-events-none absolute left-1/2 top-1/2 border border-dashed border-silver/25"
                 style={{
                   width: ringSize,
                   height: ringSize,
@@ -214,16 +234,33 @@ function PlanetFocusView({
           })}
 
           <div
-            className="absolute left-1/2 top-1/2 z-20 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full border-[3px] text-center shadow-lg"
-            style={{
-              width: planetDisc,
-              height: planetDisc,
-              borderColor: planet.color,
-              backgroundColor: `${planet.color}40`,
-              boxShadow: `0 0 48px ${planet.color}55, inset 0 0 24px ${planet.color}22`,
-            }}
+            className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
+            style={{ width: planetDisc, height: planetDisc }}
           >
-            <span className="max-w-[85%] font-display text-base font-semibold leading-snug text-text-primary sm:text-lg">
+            {planet.imageSrc ? (
+              <Image
+                src={planet.imageSrc}
+                alt={planet.name}
+                width={planetDisc}
+                height={planetDisc}
+                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_28px_rgba(74,159,212,0.35)]"
+                priority
+                draggable={false}
+              />
+            ) : (
+              <div
+                className="celestial-disc flex h-full w-full items-center justify-center border-[3px] text-center"
+                style={{
+                  borderColor: planet.color,
+                  backgroundColor: `${planet.color}40`,
+                }}
+              >
+                <span className="max-w-[85%] font-display text-base font-semibold leading-snug text-text-primary sm:text-lg">
+                  {planet.name}
+                </span>
+              </div>
+            )}
+            <span className="pointer-events-none absolute inset-x-0 -bottom-8 text-center font-display text-sm font-semibold text-text-primary sm:text-base">
               {planet.name}
             </span>
           </div>
@@ -246,7 +283,7 @@ function PlanetFocusView({
 
       {hoveredMoon && (
         <div
-          className="pointer-events-none absolute bottom-28 left-1/2 z-30 max-w-sm -translate-x-1/2 rounded-lg border border-blue/40 bg-surface-navy px-4 py-3 text-center shadow-xl"
+          className="pointer-events-none absolute bottom-28 left-1/2 z-30 max-w-sm -translate-x-1/2 rounded-none border border-blue/50 bg-surface-navy px-4 py-3 text-center shadow-xl"
           role="tooltip"
         >
           <p className="font-display text-sm font-semibold text-blue">
@@ -278,13 +315,14 @@ function SolarSystemView({
   onFocusPlanet: (slug: string) => void;
   onBack: () => void;
 }) {
+  const [hoveredPlanet, setHoveredPlanet] = useState<Planet | null>(null);
   const focusedPlanet = focusedSlug
     ? planets.find((p) => p.slug === focusedSlug)
     : null;
 
   if (focusedPlanet) {
     return (
-      <div className="relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl border border-silver/20 bg-surface-navy/40 backdrop-blur-sm">
+      <div className="relative mx-auto w-full max-w-6xl overflow-hidden">
         <PlanetFocusView
           planet={focusedPlanet}
           planetProjects={projectsForPlanet(focusedPlanet)}
@@ -297,17 +335,20 @@ function SolarSystemView({
   return (
     <div>
       <div
-        className={`relative mx-auto w-full max-w-6xl overflow-hidden rounded-xl border border-silver/20 bg-surface-navy/40 backdrop-blur-sm ${SOLAR_VIEWPORT_CLASS}`}
+        className={`relative mx-auto w-full max-w-6xl overflow-visible ${SOLAR_VIEWPORT_CLASS}`}
       >
         <ScaledStage stageSize={SOLAR_STAGE_SIZE} className="relative h-full w-full">
           <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-            <div
-              className="flex h-16 w-16 items-center justify-center rounded-full bg-yellow/25 ring-2 ring-yellow/60 sm:h-20 sm:w-20"
-              style={{ boxShadow: "0 0 40px #F4D03F55" }}
-            >
-              <span className="font-readout text-[0.6rem] font-bold text-yellow sm:text-xs">
-                SUN
-              </span>
+            <div className="relative h-20 w-20 sm:h-24 sm:w-24">
+              <Image
+                src={SUN_IMAGE}
+                alt="Sun — home / overview"
+                width={96}
+                height={96}
+                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_32px_rgba(244,208,63,0.45)]"
+                priority
+                draggable={false}
+              />
             </div>
           </div>
 
@@ -319,7 +360,7 @@ function SolarSystemView({
             return (
               <div key={planet.slug}>
                 <div
-                  className="pointer-events-none absolute left-1/2 top-1/2 rounded-full border border-silver/10"
+                  className="orbit-ring pointer-events-none absolute left-1/2 top-1/2 border border-silver/25"
                   style={{
                     width: r * 2,
                     height: r * 2,
@@ -345,36 +386,55 @@ function SolarSystemView({
                 >
                   <button
                     type="button"
-                    className="pointer-events-auto absolute left-1/2 top-0 z-10 flex -translate-x-1/2 flex-col items-center justify-center rounded-full border-2 text-center transition hover:scale-110 hover:ring-2 hover:ring-blue/50"
-                    style={{
-                      width: planet.size,
-                      height: planet.size,
-                      borderColor: planet.color,
-                      backgroundColor: `${planet.color}33`,
-                    }}
+                    className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 border-0 bg-transparent p-0 transition hover:scale-110"
+                    style={{ width: planet.size, height: planet.size }}
                     aria-label={`${planet.name}: ${planet.description}. Click to zoom in.`}
+                    title={planet.name}
+                    onMouseEnter={() => setHoveredPlanet(planet)}
+                    onMouseLeave={() => setHoveredPlanet(null)}
+                    onFocus={() => setHoveredPlanet(planet)}
+                    onBlur={() => setHoveredPlanet(null)}
                     onClick={() => onFocusPlanet(planet.slug)}
                   >
-                    <span
-                      className="orbit-spin-reverse inline-block px-1 font-readout text-[0.55rem] font-semibold leading-tight text-text-primary"
-                      style={
-                        {
-                          "--orbit-duration": `${duration}s`,
-                          "--orbit-delay": orbitDelay(startAngle, duration),
-                        } as CSSProperties
-                      }
-                    >
-                      {planet.name.split(" ")[0]}
-                    </span>
+                    {planet.imageSrc ? (
+                      <Image
+                        src={planet.imageSrc}
+                        alt={planet.name}
+                        width={planet.size}
+                        height={planet.size}
+                        className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_14px_rgba(74,159,212,0.4)]"
+                        draggable={false}
+                      />
+                    ) : (
+                      <span
+                        className="celestial-disc block h-full w-full border-2"
+                        style={{
+                          borderColor: planet.color,
+                          backgroundColor: `${planet.color}33`,
+                        }}
+                      />
+                    )}
                   </button>
                 </div>
               </div>
             );
           })}
         </ScaledStage>
+
+        {hoveredPlanet && (
+          <div
+            className="pointer-events-none absolute bottom-4 left-1/2 z-30 max-w-sm -translate-x-1/2 rounded-none border border-blue/50 bg-surface-navy/95 px-4 py-3 text-center shadow-xl"
+            role="tooltip"
+          >
+            <p className="font-display text-sm font-semibold text-blue">
+              {hoveredPlanet.name}
+            </p>
+            <p className="mt-1 text-xs text-text-muted">{hoveredPlanet.description}</p>
+          </div>
+        )}
       </div>
       <p className="mt-3 text-center text-sm text-text-muted">
-        Tap a planet to zoom in · Moons link to full experience pages
+        Hover a planet for its name · Tap to zoom in · Moons link to experiences
       </p>
     </div>
   );
@@ -395,18 +455,24 @@ function CategoryCard({
     <button
       type="button"
       onClick={onSelect}
-      className={`w-full rounded-xl border bg-surface-navy p-5 text-left transition-colors hover:border-blue/50 ${
-        selected ? "border-blue ring-1 ring-blue/30" : "border-silver/25"
+      className={`group w-full border border-white/10 p-[1px] text-left transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${
+        selected ? "border-blue/50" : "hover:border-blue/35"
       }`}
-      style={{ borderLeftColor: planet.color, borderLeftWidth: 4 }}
     >
-      <h3 className="font-display font-semibold" style={{ color: planet.color }}>
-        {planet.name}
-      </h3>
-      <p className="mt-1 text-sm text-text-muted">{planet.description}</p>
-      <p className="mt-3 text-xs text-silver">
-        {count} experience{count === 1 ? "" : "s"}
-      </p>
+      <div className="bg-black p-5 sm:p-6">
+        <h3
+          className="font-display text-lg font-semibold tracking-tight transition-colors"
+          style={{ color: selected ? undefined : planet.color }}
+        >
+          <span className={selected ? "text-blue" : undefined}>{planet.name}</span>
+        </h3>
+        <p className="mt-2 text-sm leading-relaxed text-text-muted">
+          {planet.description}
+        </p>
+        <p className="mt-4 font-mono text-[10px] uppercase tracking-[0.14em] text-silver">
+          {count} experience{count === 1 ? "" : "s"}
+        </p>
+      </div>
     </button>
   );
 }
@@ -446,10 +512,10 @@ function ExperienceIndex({
           role="tab"
           aria-selected={!focusedSlug}
           onClick={() => onFocusPlanet(null)}
-          className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+          className={`rounded-none border px-4 py-2 text-sm font-medium transition-colors ${
             !focusedSlug
-              ? "border-blue bg-blue/15 text-blue"
-              : "border-silver/30 text-text-muted hover:border-silver/50"
+              ? "border-blue bg-black text-blue"
+              : "border-white/15 bg-black text-text-muted hover:text-blue"
           }`}
         >
           All categories
@@ -461,10 +527,10 @@ function ExperienceIndex({
             role="tab"
             aria-selected={focusedSlug === planet.slug}
             onClick={() => onFocusPlanet(planet.slug)}
-            className={`rounded-full border px-4 py-2 text-sm font-medium transition-colors ${
+            className={`rounded-none border px-4 py-2 text-sm font-medium transition-colors ${
               focusedSlug === planet.slug
-                ? "border-blue bg-blue/15 text-text-primary"
-                : "border-silver/30 text-text-muted hover:border-silver/50"
+                ? "border-blue bg-black text-text-primary"
+                : "border-white/15 bg-black text-text-muted hover:text-blue"
             }`}
             style={
               focusedSlug === planet.slug

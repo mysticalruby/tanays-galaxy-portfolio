@@ -7,8 +7,11 @@ import type { ExploringTopic } from "@/types/content";
 const SIZE = 480;
 const CENTER = SIZE / 2;
 const MAX_RADIUS = CENTER - 36;
-const SWEEP_PERIOD_MS = 5000;
-const DETECT_ARC = 22;
+const SWEEP_PERIOD_MS = 4500;
+const DETECT_ARC = 28;
+const ACCENT = "#4ADE80";
+const ACCENT_DIM = "#4A9FD4";
+const BG = "#0F1419";
 
 function normalizeAngle(angle: number) {
   return ((angle % 360) + 360) % 360;
@@ -26,6 +29,13 @@ function blipPosition(bearing: number, distance: number) {
     x: CENTER + Math.sin(rad) * r,
     y: CENTER - Math.cos(rad) * r,
   };
+}
+
+function sweepWedgePath(arcDeg: number) {
+  const rad = (arcDeg * Math.PI) / 180;
+  const x = CENTER + Math.sin(rad) * MAX_RADIUS;
+  const y = CENTER - Math.cos(rad) * MAX_RADIUS;
+  return `M ${CENTER} ${CENTER} L ${CENTER} ${CENTER - MAX_RADIUS} A ${MAX_RADIUS} ${MAX_RADIUS} 0 0 1 ${x} ${y} Z`;
 }
 
 interface RadarScreenProps {
@@ -49,11 +59,11 @@ export function RadarScreen({ topics, hint }: RadarScreenProps) {
       setSweepAngle(angle);
 
       const detected = new Set<string>();
-      topics.forEach((topic) => {
+      for (const topic of topics) {
         if (angleDiff(angle, topic.bearing) <= DETECT_ARC) {
           detected.add(topic.id);
         }
-      });
+      }
       setDetectedIds(detected);
 
       raf = requestAnimationFrame(tick);
@@ -68,7 +78,7 @@ export function RadarScreen({ topics, hint }: RadarScreenProps) {
       <p className="mb-4 text-center text-sm text-text-muted">{hint}</p>
 
       <div
-        className="relative w-full rounded-xl border border-green-500/30 bg-bg-deep p-4 shadow-[0_0_40px_rgba(74,222,128,0.08)]"
+        className="relative w-full rounded-none border border-silver/50 bg-bg-deep p-3 sm:p-4"
         role="img"
         aria-label="Radar visualization of current interests"
       >
@@ -78,64 +88,76 @@ export function RadarScreen({ topics, hint }: RadarScreenProps) {
           viewBox={`0 0 ${SIZE} ${SIZE}`}
           className="mx-auto block aspect-square"
         >
-          {[0.33, 0.66, 1].map((scale) => (
+          <defs>
+            <linearGradient
+              id="radarSweepFade"
+              gradientUnits="userSpaceOnUse"
+              x1={CENTER}
+              y1={CENTER}
+              x2={CENTER + MAX_RADIUS}
+              y2={CENTER}
+            >
+              <stop offset="0%" stopColor={ACCENT} stopOpacity="0.45" />
+              <stop offset="100%" stopColor={ACCENT} stopOpacity="0" />
+            </linearGradient>
+          </defs>
+
+          <circle
+            cx={CENTER}
+            cy={CENTER}
+            r={MAX_RADIUS}
+            fill={BG}
+            stroke={ACCENT_DIM}
+            strokeWidth="1.25"
+          />
+
+          {[0.25, 0.5, 0.75, 1].map((scale) => (
             <circle
               key={scale}
               cx={CENTER}
               cy={CENTER}
               r={MAX_RADIUS * scale}
               fill="none"
-              stroke="#4ADE80"
-              strokeWidth="0.5"
-              opacity="0.25"
+              stroke={ACCENT}
+              strokeWidth="0.75"
+              opacity="0.28"
             />
           ))}
-          <line
-            x1={CENTER}
-            y1={CENTER - MAX_RADIUS}
-            x2={CENTER}
-            y2={CENTER + MAX_RADIUS}
-            stroke="#4ADE80"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
-          <line
-            x1={CENTER - MAX_RADIUS}
-            y1={CENTER}
-            x2={CENTER + MAX_RADIUS}
-            y2={CENTER}
-            stroke="#4ADE80"
-            strokeWidth="0.5"
-            opacity="0.2"
-          />
+
+          {[0, 45, 90, 135].map((deg) => {
+            const rad = (deg * Math.PI) / 180;
+            return (
+              <line
+                key={deg}
+                x1={CENTER - Math.cos(rad) * MAX_RADIUS}
+                y1={CENTER - Math.sin(rad) * MAX_RADIUS}
+                x2={CENTER + Math.cos(rad) * MAX_RADIUS}
+                y2={CENTER + Math.sin(rad) * MAX_RADIUS}
+                stroke={ACCENT_DIM}
+                strokeWidth="0.6"
+                opacity="0.35"
+              />
+            );
+          })}
 
           <g transform={`rotate(${sweepAngle} ${CENTER} ${CENTER})`}>
-            <path
-              d={`M ${CENTER} ${CENTER} L ${CENTER} ${CENTER - MAX_RADIUS} A ${MAX_RADIUS} ${MAX_RADIUS} 0 0 1 ${CENTER + MAX_RADIUS * Math.sin((DETECT_ARC * Math.PI) / 180)} ${CENTER - MAX_RADIUS * Math.cos((DETECT_ARC * Math.PI) / 180)} Z`}
-              fill="url(#sweepGradient)"
-            />
+            <path d={sweepWedgePath(DETECT_ARC)} fill="url(#radarSweepFade)" />
             <line
               x1={CENTER}
               y1={CENTER}
               x2={CENTER}
               y2={CENTER - MAX_RADIUS}
-              stroke="#4ADE80"
-              strokeWidth="1.5"
-              opacity="0.85"
+              stroke={ACCENT}
+              strokeWidth="2"
+              opacity="0.95"
             />
           </g>
-
-          <defs>
-            <radialGradient id="sweepGradient" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#4ADE80" stopOpacity="0.35" />
-              <stop offset="100%" stopColor="#4ADE80" stopOpacity="0" />
-            </radialGradient>
-          </defs>
 
           {topics.map((topic) => {
             const { x, y } = blipPosition(topic.bearing, topic.distance);
             const detected = detectedIds.has(topic.id);
-            const r = detected ? 11 : 8;
+            const r = detected ? 10 : 7;
+            const label = topic.label;
 
             return (
               <g key={topic.id}>
@@ -143,36 +165,37 @@ export function RadarScreen({ topics, hint }: RadarScreenProps) {
                   <circle
                     cx={x}
                     cy={y}
-                    r={20}
+                    r={18}
                     fill="none"
-                    stroke="#4ADE80"
-                    strokeWidth="1.25"
-                    opacity="0.6"
+                    stroke={ACCENT}
+                    strokeWidth="1.5"
+                    opacity="0.7"
                   />
                 )}
                 <circle
                   cx={x}
                   cy={y}
                   r={r}
-                  fill={detected ? "#4ADE80" : "#1A2332"}
-                  stroke="#4ADE80"
-                  strokeWidth={1}
+                  fill={detected ? ACCENT : BG}
+                  stroke={ACCENT}
+                  strokeWidth={1.5}
                 />
                 <text
                   x={x}
-                  y={y - 18}
+                  y={y - 16}
                   textAnchor="middle"
-                  fill={detected ? "#4ADE80" : "#8B95A5"}
-                  fontSize="11"
+                  fill={detected ? ACCENT : "#8B95A5"}
+                  fontSize="12"
+                  fontWeight={detected ? 600 : 500}
                   className="pointer-events-none select-none font-readout"
                 >
-                  {topic.label.split(" ")[0]}
+                  {label.length > 18 ? `${label.slice(0, 16)}…` : label}
                 </text>
               </g>
             );
           })}
 
-          <circle cx={CENTER} cy={CENTER} r={8} fill="#4ADE80" opacity="0.5" />
+          <circle cx={CENTER} cy={CENTER} r={6} fill={ACCENT} opacity="0.85" />
         </svg>
       </div>
     </div>

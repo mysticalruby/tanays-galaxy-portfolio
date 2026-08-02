@@ -49,11 +49,16 @@ html {
     transition-duration: 0.01ms !important;
   }
 
-  /* Solar-system orbits are core navigation — keep them moving */
+  /* Solar-system orbits + star twinkle are core motion — keep them moving */
   .orbit-spin,
-  .orbit-spin-reverse {
+  .orbit-spin-reverse,
+  .star-twinkle {
     animation-duration: var(--orbit-duration, 30s) !important;
     animation-iteration-count: infinite !important;
+  }
+
+  .star-twinkle {
+    animation-duration: var(--twinkle-duration, 8s) !important;
   }
 }
 
@@ -95,6 +100,16 @@ h6 {
   top: 1rem;
 }
 
+/* Sharp UI corners sitewide; keep geometric circles for orbits / discs */
+[class*="rounded-"]:not(.orbit-ring):not(.celestial-disc):not(.starfield-layer) {
+  border-radius: 0 !important;
+}
+
+.orbit-ring,
+.celestial-disc {
+  border-radius: 50% !important;
+}
+
 @keyframes orbit-spin {
   from {
     transform: rotate(0deg);
@@ -114,21 +129,24 @@ h6 {
   animation-delay: var(--orbit-delay, 0s);
 }
 
-@keyframes gallery-fade-in {
-  from {
-    opacity: 0;
+@keyframes star-twinkle {
+  0%,
+  100% {
+    opacity: var(--star-o, 0.3);
   }
-  to {
-    opacity: 1;
+  50% {
+    opacity: calc(var(--star-o, 0.3) * 0.35);
   }
 }
 
-.gallery-fade-in {
-  animation: gallery-fade-in 0.35s ease;
+.star-twinkle {
+  animation: star-twinkle var(--twinkle-duration, 4s) ease-in-out infinite;
+  animation-delay: var(--twinkle-delay, 0s);
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .gallery-fade-in {
-    animation: none;
+  .star-twinkle {
+    animation-duration: 8s !important;
+    animation-iteration-count: infinite !important;
   }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import type { Award } from "@/types/content";
 
 interface ConstellationMapProps {
@@ -12,14 +12,23 @@ interface BgStar {
   y: number;
   r: number;
   opacity: number;
+  vx: number;
+  vy: number;
+  twinkleDuration: number;
+  twinkleDelay: number;
 }
 
 interface BgLine {
-  x1: number;
-  y1: number;
-  x2: number;
-  y2: number;
+  a: number;
+  b: number;
   opacity: number;
+}
+
+interface AwardMotion {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
 }
 
 function mulberry32(seed: number) {
@@ -32,24 +41,35 @@ function mulberry32(seed: number) {
   };
 }
 
-/** Wide sky matches the 2:1 container — avoids letterboxing in the center. */
 const SKY_W = 200;
 const SKY_H = 100;
+const PAD_X = 8;
+const PAD_Y = 6;
 
 function idSeed(id: string) {
   return id.split("").reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
 }
 
-function buildAwardPositions(awards: Award[]) {
-  const padX = 8;
-  const padY = 6;
+function randomVelocity(rand: () => number, speedMin: number, speedMax: number) {
+  const angle = rand() * Math.PI * 2;
+  const speed = speedMin + rand() * (speedMax - speedMin);
+  return {
+    vx: Math.cos(angle) * speed,
+    vy: Math.sin(angle) * speed,
+  };
+}
+
+function buildAwardMotions(awards: Award[]): AwardMotion[] {
   const minDist = 4.2;
 
   const positions = awards.map((award) => {
     const rand = mulberry32(idSeed(award.id));
+    const { vx, vy } = randomVelocity(rand, 0.8, 2.2);
     return {
-      x: padX + rand() * (SKY_W - padX * 2),
-      y: padY + rand() * (SKY_H - padY * 2),
+      x: PAD_X + rand() * (SKY_W - PAD_X * 2),
+      y: PAD_Y + rand() * (SKY_H - PAD_Y * 2),
+      vx,
+      vy,
     };
   });
 
@@ -73,8 +93,8 @@ function buildAwardPositions(awards: Award[]) {
     }
 
     for (let i = 0; i < positions.length; i++) {
-      positions[i].x = Math.min(SKY_W - padX, Math.max(padX, positions[i].x));
-      positions[i].y = Math.min(SKY_H - padY, Math.max(padY, positions[i].y));
+      positions[i].x = Math.min(SKY_W - PAD_X, Math.max(PAD_X, positions[i].x));
+      positions[i].y = Math.min(SKY_H - PAD_Y, Math.max(PAD_Y, positions[i].y));
     }
   }
 
@@ -87,11 +107,16 @@ function buildDecorativeField(seed: number) {
   const lines: BgLine[] = [];
 
   for (let i = 0; i < 180; i++) {
+    const { vx, vy } = randomVelocity(rand, 0.4, 1.6);
     stars.push({
       x: rand() * SKY_W,
       y: rand() * SKY_H,
       r: 0.2 + rand() * 1.1,
       opacity: 0.12 + rand() * 0.35,
+      vx,
+      vy,
+      twinkleDuration: 2.5 + rand() * 4.5,
+      twinkleDelay: rand() * 6,
     });
   }
 
@@ -100,10 +125,8 @@ function buildDecorativeField(seed: number) {
       const dist = Math.hypot(stars[i].x - stars[j].x, stars[i].y - stars[j].y);
       if (dist < 22 && rand() < 0.14) {
         lines.push({
-          x1: stars[i].x,
-          y1: stars[i].y,
-          x2: stars[j].x,
-          y2: stars[j].y,
+          a: i,
+          b: j,
           opacity: 0.08 + rand() * 0.14,
         });
       }
@@ -111,16 +134,14 @@ function buildDecorativeField(seed: number) {
   }
 
   for (let i = 0; i < 20; i++) {
-    const a = stars[Math.floor(rand() * stars.length)];
-    const b = stars[Math.floor(rand() * stars.length)];
+    const a = Math.floor(rand() * stars.length);
+    const b = Math.floor(rand() * stars.length);
     if (a === b) continue;
-    const dist = Math.hypot(a.x - b.x, a.y - b.y);
+    const dist = Math.hypot(stars[a].x - stars[b].x, stars[a].y - stars[b].y);
     if (dist > 12 && dist < 55) {
       lines.push({
-        x1: a.x,
-        y1: a.y,
-        x2: b.x,
-        y2: b.y,
+        a,
+        b,
         opacity: 0.06 + rand() * 0.1,
       });
     }
@@ -129,24 +150,83 @@ function buildDecorativeField(seed: number) {
   return { stars, lines };
 }
 
+function stepBodies<T extends { x: number; y: number; vx: number; vy: number }>(
+  bodies: T[],
+  dt: number,
+  padX: number,
+  padY: number
+): T[] {
+  return bodies.map((body) => {
+    let { x, y, vx, vy } = body;
+    x += vx * dt;
+    y += vy * dt;
+
+    if (x < padX) {
+      x = padX;
+      vx = Math.abs(vx);
+    } else if (x > SKY_W - padX) {
+      x = SKY_W - padX;
+      vx = -Math.abs(vx);
+    }
+
+    if (y < padY) {
+      y = padY;
+      vy = Math.abs(vy);
+    } else if (y > SKY_H - padY) {
+      y = SKY_H - padY;
+      vy = -Math.abs(vy);
+    }
+
+    return { ...body, x, y, vx, vy };
+  });
+}
+
 export function ConstellationMap({ awards }: ConstellationMapProps) {
   const [hovered, setHovered] = useState<Award | null>(null);
   const [selected, setSelected] = useState<string | null>(null);
 
-  const { stars: bgStars, lines: decorativeLines } = useMemo(
-    () => buildDecorativeField(42),
-    []
-  );
-
-  const awardPositions = useMemo(
-    () => buildAwardPositions(awards),
+  const decorativeSeed = useMemo(() => buildDecorativeField(42), []);
+  const initialAwardMotions = useMemo(
+    () => buildAwardMotions(awards),
     [awards]
   );
+  const [bgStars, setBgStars] = useState(decorativeSeed.stars);
+  const [awardMotions, setAwardMotions] = useState(initialAwardMotions);
 
+  const bgRef = useRef(decorativeSeed.stars);
+  const awardRef = useRef(initialAwardMotions);
+
+  useEffect(() => {
+    awardRef.current = initialAwardMotions;
+    setAwardMotions(initialAwardMotions);
+  }, [initialAwardMotions]);
+
+  useEffect(() => {
+    let raf = 0;
+    let last = performance.now();
+
+    const tick = (now: number) => {
+      const dt = Math.min((now - last) / 1000, 0.05);
+      last = now;
+
+      bgRef.current = stepBodies(bgRef.current, dt, 0, 0);
+      awardRef.current = stepBodies(awardRef.current, dt, PAD_X, PAD_Y);
+      setBgStars(bgRef.current);
+      setAwardMotions(awardRef.current);
+
+      raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  // Stable link topology from initial layout — lines track stars as they drift
   const awardConnections = useMemo(() => {
     const rand = mulberry32(7);
     const edges = new Set<string>();
     const pairs: { a: number; b: number; color: string }[] = [];
+    const positions = initialAwardMotions;
 
     const add = (a: number, b: number) => {
       const key = a < b ? `${a}-${b}` : `${b}-${a}`;
@@ -161,12 +241,11 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
     };
 
     const distBetween = (a: number, b: number) => {
-      const pa = awardPositions[a];
-      const pb = awardPositions[b];
+      const pa = positions[a];
+      const pb = positions[b];
       return Math.hypot(pa.x - pb.x, pa.y - pb.y);
     };
 
-    // Each star links to its 2 nearest neighbors
     for (let i = 0; i < awards.length; i++) {
       const neighbors = awards
         .map((_, j) => ({ j, dist: distBetween(i, j) }))
@@ -199,53 +278,65 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
     }
 
     return pairs;
-  }, [awards, awardPositions]);
+  }, [awards, initialAwardMotions]);
 
   const scrollToAward = (id: string) => {
     setSelected(id);
-    document.getElementById(`award-${id}`)?.scrollIntoView({ behavior: "smooth", block: "center" });
+    document
+      .getElementById(`award-${id}`)
+      ?.scrollIntoView({ behavior: "smooth", block: "center" });
   };
 
   return (
     <div className="relative">
-      <div className="relative mx-auto aspect-[2/1] w-full max-w-[80rem] overflow-hidden rounded-xl border border-silver/20 bg-bg-deep">
+      <div className="relative mx-auto aspect-[2/1] w-full max-w-[80rem] overflow-visible">
         <svg
           viewBox={`0 0 ${SKY_W} ${SKY_H}`}
           preserveAspectRatio="xMidYMid meet"
-          className="h-full w-full"
+          className="h-full w-full overflow-visible"
           role="img"
           aria-label="Constellation map of awards and honors"
         >
-          {/* Decorative constellation lines (background only) */}
-          {decorativeLines.map((line, i) => (
-            <line
-              key={`deco-${i}`}
-              x1={line.x1}
-              y1={line.y1}
-              x2={line.x2}
-              y2={line.y2}
-              stroke="#FFFFFF"
-              strokeWidth="0.12"
-              opacity={line.opacity}
-            />
-          ))}
+          {decorativeSeed.lines.map((line, i) => {
+            const a = bgStars[line.a];
+            const b = bgStars[line.b];
+            if (!a || !b) return null;
+            return (
+              <line
+                key={`deco-${i}`}
+                x1={a.x}
+                y1={a.y}
+                x2={b.x}
+                y2={b.y}
+                stroke="#FFFFFF"
+                strokeWidth="0.12"
+                opacity={line.opacity}
+              />
+            );
+          })}
 
-          {/* Decorative background stars — dim white only */}
           {bgStars.map((s, i) => (
             <circle
               key={`bg-${i}`}
+              className="star-twinkle"
               cx={s.x}
               cy={s.y}
               r={s.r}
               fill="#FFFFFF"
-              opacity={s.opacity}
+              style={
+                {
+                  "--star-o": s.opacity,
+                  "--twinkle-duration": `${s.twinkleDuration}s`,
+                  "--twinkle-delay": `${s.twinkleDelay}s`,
+                } as CSSProperties
+              }
             />
           ))}
 
-          {/* Award constellation lines — colored */}
           {awardConnections.map(({ a, b, color }, i) => {
-            const pa = awardPositions[a];
-            const pb = awardPositions[b];
+            const pa = awardMotions[a];
+            const pb = awardMotions[b];
+            if (!pa || !pb) return null;
             return (
               <line
                 key={`award-line-${i}`}
@@ -260,9 +351,10 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
             );
           })}
 
-          {/* Award stars — each with its own color */}
           {awards.map((award, i) => {
-            const { x, y } = awardPositions[i];
+            const motion = awardMotions[i];
+            if (!motion) return null;
+            const { x, y } = motion;
             const isHovered = hovered?.id === award.id;
             const isSelected = selected === award.id;
             const r = award.starSize * 0.35;
@@ -310,7 +402,7 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
 
         {hovered && (
           <div
-            className="pointer-events-none absolute bottom-3 left-1/2 z-10 max-w-xs -translate-x-1/2 rounded-lg border bg-surface-navy/95 px-4 py-3 text-center shadow-lg"
+            className="pointer-events-none absolute bottom-3 left-1/2 z-10 max-w-xs -translate-x-1/2 rounded-none border bg-surface-navy/95 px-4 py-3 text-center shadow-lg"
             style={{ borderColor: `${hovered.starColor}66` }}
             role="tooltip"
           >
@@ -329,7 +421,8 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
         )}
       </div>
       <p className="mt-3 text-center text-sm text-text-muted">
-        Colored stars are awards — silver for math, gold for engineering, blue for leadership, purple for discipline. Click a star to jump to its card.
+        Colored stars are awards — silver for math, gold for engineering, blue
+        for leadership, purple for discipline. Click a star to jump to its card.
       </p>
     </div>
   );

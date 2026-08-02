@@ -3,7 +3,7 @@ import { site } from "@/lib/content";
 
 export function Header() {
   return (
-    <header className="relative z-50 border-b border-silver/20 bg-surface-navy/70 backdrop-blur-md">
+    <header className="relative z-50 bg-[#05070c]">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link
           href="/"
@@ -17,7 +17,7 @@ export function Header() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="rounded-md px-3 py-2 text-sm text-text-muted hover:bg-surface-navy hover:text-blue"
+                  className="px-3 py-2 text-sm text-text-muted transition-colors hover:text-blue"
                 >
                   {item.label}
                 </Link>
@@ -25,15 +25,15 @@ export function Header() {
             ))}
           </ul>
           <details className="md:hidden">
-            <summary className="cursor-pointer list-none rounded-md border border-silver/30 px-3 py-2 text-sm text-text-primary [&::-webkit-details-marker]:hidden">
+            <summary className="cursor-pointer list-none px-3 py-2 text-sm text-text-primary transition-colors hover:text-blue [&::-webkit-details-marker]:hidden">
               Menu
             </summary>
-            <ul className="absolute inset-x-0 top-full z-50 border-t border-silver/20 bg-surface-navy px-4 py-2 shadow-lg sm:px-6">
+            <ul className="absolute inset-x-0 top-full z-50 bg-[#05070c] px-4 py-2 sm:px-6">
               {site.nav.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="block rounded-md px-3 py-3 text-sm text-text-muted hover:bg-bg-deep hover:text-blue"
+                    className="block px-3 py-3 text-sm text-text-muted transition-colors hover:text-blue"
                   >
                     {item.label}
                   </Link>

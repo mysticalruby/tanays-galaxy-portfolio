@@ -5,6 +5,7 @@
       "name": "Research & Internships",
       "description": "Faculty-led research at WPI",
       "color": "#A78BFA",
+      "imageSrc": "/images/celestial/Mercury.png",
       "projectSlugs": [
         "wpi-metal-am-research-intern",
         "wpi-computational-physics-intern"
@@ -12,13 +13,14 @@
       "orbitRadius": 95,
       "orbitDuration": 20,
       "startAngle": 8,
-      "size": 48
+      "size": 52
     },
     {
       "slug": "math-modeling",
       "name": "Math Modeling",
       "description": "Mathematical models, competitions, and simulation",
       "color": "#C0C5CE",
+      "imageSrc": "/images/celestial/Mars.png",
       "projectSlugs": [
         "fem-quantum-harmonic-oscillator",
         "himcm-graph-diffusion",
@@ -32,24 +34,29 @@
       "orbitRadius": 145,
       "orbitDuration": 23,
       "startAngle": 52,
-      "size": 54
+      "size": 58
     },
     {
       "slug": "coding-trading",
       "name": "Coding & Trading",
       "description": "Software, AI systems, and algorithmic markets",
       "color": "#4A9FD4",
-      "projectSlugs": ["articulate", "imc-prosperity-trading"],
+      "imageSrc": "/images/celestial/Venus.png",
+      "projectSlugs": [
+        "articulate",
+        "imc-prosperity-trading"
+      ],
       "orbitRadius": 195,
       "orbitDuration": 29,
       "startAngle": 128,
-      "size": 50
+      "size": 54
     },
     {
       "slug": "engineering",
       "name": "Engineering",
       "description": "Robotics, wearables, and physical prototypes",
       "color": "#D4AF37",
+      "imageSrc": "/images/celestial/Jupiter.png",
       "projectSlugs": [
         "gvs-balance-glasses",
         "flo-wrist",
@@ -59,13 +66,14 @@
       "orbitRadius": 245,
       "orbitDuration": 34,
       "startAngle": 204,
-      "size": 52
+      "size": 60
     },
     {
       "slug": "leadership-community",
       "name": "Leadership & Community",
       "description": "Teams, nonprofits, teaching, and competition leadership",
       "color": "#4ADE80",
+      "imageSrc": "/images/celestial/Neptune.png",
       "projectSlugs": [
         "tech-awareness-association",
         "mams-math-tournament",
@@ -74,7 +82,7 @@
       "orbitRadius": 295,
       "orbitDuration": 41,
       "startAngle": 280,
-      "size": 50
+      "size": 54
     }
   ]
 }

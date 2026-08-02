@@ -211,7 +211,8 @@
         {
           "src": "/flo-wrist-feb-fair-presentation.pdf",
           "title": "February Fair Final Presentation — Flo-Wrist",
-          "label": "Download February Fair presentation"
+          "label": "Download February Fair presentation",
+          "aspectRatio": "4 / 3"
         },
         {
           "src": "/cts-grant.pdf",
@@ -909,11 +910,8 @@
       ],
       "results": "Contributing to research aimed at improving manufacturing reliability and reducing defect formation in metal parts.",
       "learned": "Metal AM research requires tightly coupled physics models and careful interpretation of simulation trends—not just single-variable optimization.",
-      "placeholders": [
-        "Melt-pool simulation visualization",
-        "Temperature field plot",
-        "Parameter-study summary chart"
-      ],
+      "placeholders": [],
+      "images": [],
       "skills": [
         "COMSOL",
         "Numerical Simulation",

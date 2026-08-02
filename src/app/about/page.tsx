@@ -29,12 +29,13 @@ const cards = [
 
 export default function AboutPage() {
   return (
-    <PageShell
-      title="About Me"
-      description="Student at the Massachusetts Academy of Math and Science at WPI, with strong interests in mathematics, science, and engineering."
-    >
+    <PageShell title="About Me">
+      <p className="mb-10 max-w-3xl text-lg text-yellow">
+        Student at the Massachusetts Academy of Math and Science at WPI, with
+        strong interests in mathematics, science, and engineering.
+      </p>
       <div className="grid gap-10 lg:grid-cols-2">
-        <div className="space-y-4 text-text-muted">
+        <div className="space-y-4 border border-white/10 bg-black px-5 py-4 text-text-muted">
           <p>
             I am a student at the Massachusetts Academy of Math and Science at
             Worcester Polytechnic Institute (WPI), with strong interests in
@@ -75,8 +76,8 @@ export default function AboutPage() {
             .
           </p>
         </div>
-        <figure className="overflow-hidden rounded-xl border border-silver/20">
-          <div className="relative aspect-square w-full max-w-md bg-surface-navy lg:max-w-none">
+        <figure className="overflow-hidden border border-white/10 bg-black">
+          <div className="relative aspect-square w-full max-w-md bg-black lg:max-w-none">
             <Image
               src="/images/portrait-main.png"
               alt="Portrait of Tanay Mangal speaking at a microphone"

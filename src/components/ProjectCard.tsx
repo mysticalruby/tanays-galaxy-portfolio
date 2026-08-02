@@ -1,18 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
+import { type ReactNode } from "react";
 import { ButtonLink } from "@/components/ButtonLink";
-import { Card } from "@/components/Card";
 import { PdfViewer } from "@/components/PdfViewer";
 import { Placeholder } from "@/components/Placeholder";
 import { getProjectBySlug } from "@/lib/content";
 import type { Project } from "@/types/content";
-
-const statusLabels: Record<Project["status"], string> = {
-  completed: "Completed",
-  collection: "Collection",
-  planned: "Planned",
-  ongoing: "Ongoing",
-};
 
 function isExperience(project: Project) {
   return project.kind === "experience";
@@ -32,54 +25,67 @@ function resolvePapers(project: Project) {
   return [];
 }
 
-export function ProjectCard({ project }: { project: Project }) {
-  const href = `/experience/${project.slug}`;
-  const cta = isExperience(project) ? "View experience →" : "View project →";
-
+function DetailSection({
+  title,
+  children,
+}: {
+  title: string;
+  children: ReactNode;
+}) {
   return (
-    <Card as="article">
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <span className="rounded-full bg-blue/15 px-2.5 py-0.5 text-xs font-medium text-blue">
-          {project.cluster}
-        </span>
-        <span className="rounded-full border border-silver/30 px-2.5 py-0.5 text-xs text-text-muted">
-          {statusLabels[project.status]}
-        </span>
-        {project.dateRange && (
-          <span className="rounded-full border border-silver/20 px-2.5 py-0.5 text-xs text-silver">
-            {project.dateRange}
-          </span>
-        )}
+    <section className="border-t border-white/10 pt-8">
+      <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-silver">
+        {title}
+      </p>
+      <div className="mt-3 text-[0.975rem] leading-relaxed text-text-muted">
+        {children}
       </div>
-      <h3 className="font-display text-lg font-semibold text-text-primary">
-        <Link href={href} className="hover:text-blue">
-          {project.title}
-        </Link>
-      </h3>
-      {project.organization && (
-        <p className="mt-1 text-sm font-medium text-gold">{project.organization}</p>
-      )}
-      <p className="mt-2 text-sm text-text-muted">{project.summary}</p>
-      <ul className="mt-3 flex flex-wrap gap-1.5">
-        {project.tags.slice(0, 4).map((tag) => (
-          <li
-            key={tag}
-            className="rounded bg-bg-deep px-2 py-0.5 text-xs text-silver"
-          >
-            {tag}
-          </li>
-        ))}
-      </ul>
-      <Link
-        href={href}
-        className="mt-4 inline-flex min-h-[44px] items-center text-sm font-medium text-blue hover:underline"
-      >
-        {cta}
-      </Link>
-    </Card>
+    </section>
   );
 }
 
+/** Listing card — experience index boxes only */
+export function ProjectCard({ project }: { project: Project }) {
+  const href = `/experience/${project.slug}`;
+  const cta = isExperience(project) ? "Open experience" : "Open project";
+
+  return (
+    <article className="group border border-white/10 bg-black p-[1px] transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-blue/40">
+      <div className="bg-black p-6 sm:p-7">
+        <h3 className="font-display text-xl font-semibold tracking-tight text-text-primary transition-colors duration-300 group-hover:text-blue">
+          <Link href={href} className="outline-none">
+            {project.title}
+          </Link>
+        </h3>
+
+        {project.organization && (
+          <p className="mt-2 font-mono text-xs tracking-wide text-gold">
+            {project.organization}
+          </p>
+        )}
+
+        <p className="mt-3 max-w-prose text-sm leading-relaxed text-text-muted">
+          {project.summary}
+        </p>
+
+        <Link
+          href={href}
+          className="mt-6 inline-flex min-h-[44px] items-center gap-2 border border-blue/40 bg-blue/10 px-4 py-2 text-sm font-medium text-blue transition duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] hover:bg-blue/20 active:scale-[0.98]"
+        >
+          <span>{cta}</span>
+          <span
+            aria-hidden
+            className="inline-flex h-6 w-6 items-center justify-center border border-blue/30 bg-bg-deep/40 text-xs transition group-hover:translate-x-0.5"
+          >
+            →
+          </span>
+        </Link>
+      </div>
+    </article>
+  );
+}
+
+/** Individual experience / project page */
 export function ProjectDetail({ project }: { project: Project }) {
   const experience = isExperience(project);
   const images = project.images ?? [];
@@ -88,129 +94,159 @@ export function ProjectDetail({ project }: { project: Project }) {
   const papers = resolvePapers(project);
 
   return (
-    <article className="space-y-10">
-      <header className="max-w-3xl">
-        <div className="mb-3 flex flex-wrap gap-2">
-          <span className="rounded-full bg-blue/15 px-2.5 py-0.5 text-xs font-medium text-blue">
-            {project.cluster}
-          </span>
-          <span className="rounded-full border border-silver/30 px-2.5 py-0.5 text-xs text-text-muted">
-            {statusLabels[project.status]}
-          </span>
-        </div>
-        <h1 className="font-display text-3xl font-bold sm:text-4xl">
-          {project.title}
-        </h1>
-        {project.subtitle && (
-          <p className="mt-2 text-lg text-gold">{project.subtitle}</p>
-        )}
-        {(project.organization || project.dateRange || project.location) && (
-          <dl className="mt-4 space-y-1 text-sm text-text-muted">
-            {project.organization && (
-              <div className="flex flex-wrap gap-x-2">
-                <dt className="font-medium text-silver">Organization</dt>
-                <dd>{project.organization}</dd>
-              </div>
-            )}
-            {project.employmentType && (
-              <div className="flex flex-wrap gap-x-2">
-                <dt className="font-medium text-silver">Role type</dt>
-                <dd>{project.employmentType}</dd>
-              </div>
-            )}
-            {project.dateRange && (
-              <div className="flex flex-wrap gap-x-2">
-                <dt className="font-medium text-silver">Dates</dt>
-                <dd>{project.dateRange}</dd>
-              </div>
-            )}
-            {project.location && (
-              <div className="flex flex-wrap gap-x-2">
-                <dt className="font-medium text-silver">Location</dt>
-                <dd>{project.location}</dd>
-              </div>
-            )}
-          </dl>
-        )}
-        <p className="mt-4 text-lg text-text-muted">{project.opening}</p>
-        {(papers.length > 0 ||
-          project.websiteUrl ||
-          (project.links && project.links.length > 0)) && (
-          <div className="mt-5 space-y-3">
-            <div className="flex flex-wrap gap-3">
-              {project.websiteUrl && (
-                <ButtonLink
-                  href={project.websiteUrl}
-                  variant="primary"
-                  external
-                >
-                  {project.websiteLabel ?? "Visit website"}
-                </ButtonLink>
+    <article className="space-y-12">
+      <header className="max-w-3xl border border-white/10 bg-black p-[1px]">
+        <div className="bg-black px-6 py-8 sm:px-8 sm:py-10">
+          <h1 className="font-display text-3xl font-bold tracking-tight text-text-primary sm:text-4xl sm:leading-[1.15]">
+            {project.title}
+          </h1>
+
+          {project.subtitle && (
+            <p className="mt-3 max-w-2xl text-base leading-relaxed text-gold sm:text-lg">
+              {project.subtitle}
+            </p>
+          )}
+
+          {(project.organization ||
+            project.dateRange ||
+            project.location ||
+            project.employmentType) && (
+            <dl className="mt-6 grid gap-3 border-t border-white/10 pt-5 font-mono text-xs tracking-wide text-text-muted sm:grid-cols-2">
+              {project.organization && (
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.16em] text-silver">
+                    Organization
+                  </dt>
+                  <dd className="mt-1 text-sm text-text-primary">
+                    {project.organization}
+                  </dd>
+                </div>
               )}
-              {project.links?.map((link) => (
-                <ButtonLink
-                  key={link.href}
-                  href={link.href}
-                  variant="secondary"
-                  external
-                >
-                  {link.label}
-                </ButtonLink>
-              ))}
-              {papers.map((paper) => (
-                <ButtonLink
-                  key={paper.src}
-                  href={paper.src}
-                  variant="secondary"
-                  external
-                >
-                  {paper.label ?? "Download PDF"}
-                </ButtonLink>
-              ))}
+              {project.employmentType && (
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.16em] text-silver">
+                    Role type
+                  </dt>
+                  <dd className="mt-1 text-sm text-text-primary">
+                    {project.employmentType}
+                  </dd>
+                </div>
+              )}
+              {project.dateRange && (
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.16em] text-silver">
+                    Dates
+                  </dt>
+                  <dd className="mt-1 text-sm text-text-primary">
+                    {project.dateRange}
+                  </dd>
+                </div>
+              )}
+              {project.location && (
+                <div>
+                  <dt className="text-[10px] uppercase tracking-[0.16em] text-silver">
+                    Location
+                  </dt>
+                  <dd className="mt-1 text-sm text-text-primary">
+                    {project.location}
+                  </dd>
+                </div>
+              )}
+            </dl>
+          )}
+
+          <p className="mt-6 max-w-prose text-base leading-relaxed text-text-muted sm:text-lg">
+            {project.opening}
+          </p>
+
+          {(papers.length > 0 ||
+            project.websiteUrl ||
+            (project.links && project.links.length > 0)) && (
+            <div className="mt-7 space-y-3">
+              <div className="flex flex-wrap gap-3">
+                {project.websiteUrl && (
+                  <ButtonLink
+                    href={project.websiteUrl}
+                    variant="primary"
+                    external
+                  >
+                    {project.websiteLabel ?? "Visit website"}
+                  </ButtonLink>
+                )}
+                {project.links?.map((link) => (
+                  <ButtonLink
+                    key={link.href}
+                    href={link.href}
+                    variant="secondary"
+                    external
+                  >
+                    {link.label}
+                  </ButtonLink>
+                ))}
+                {papers.map((paper) => (
+                  <ButtonLink
+                    key={paper.src}
+                    href={paper.src}
+                    variant="secondary"
+                    external
+                  >
+                    {paper.label ?? "Download PDF"}
+                  </ButtonLink>
+                ))}
+              </div>
+              {project.links
+                ?.filter((link) => link.note)
+                .map((link) => (
+                  <p
+                    key={`${link.href}-note`}
+                    className="text-sm text-text-muted"
+                  >
+                    {link.note}
+                  </p>
+                ))}
             </div>
-            {project.links
-              ?.filter((link) => link.note)
-              .map((link) => (
-                <p key={`${link.href}-note`} className="text-sm text-text-muted">
-                  {link.note}
-                </p>
-              ))}
-          </div>
-        )}
+          )}
+        </div>
       </header>
 
       {hero ? (
-        <figure className="overflow-hidden rounded-xl border border-silver/20">
-          <div className="relative aspect-[16/10] w-full bg-surface-navy">
-            <Image
-              src={hero.src}
-              alt={hero.alt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-              priority
-            />
+        <figure className="border border-white/10 bg-[#05070c] p-[1px]">
+          <div className="border border-white/[0.06] bg-[#070b12]">
+            <div className="relative aspect-[16/10] w-full">
+              <Image
+                src={hero.src}
+                alt={hero.alt}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 100vw, 768px"
+                priority
+              />
+            </div>
+            {(hero.caption || hero.alt) && (
+              <figcaption className="border-t border-white/10 px-4 py-3 font-mono text-xs tracking-wide text-text-muted">
+                {hero.caption ?? hero.alt}
+              </figcaption>
+            )}
           </div>
-          {(hero.caption || hero.alt) && (
-            <figcaption className="border-t border-silver/15 px-4 py-2 text-sm text-text-muted">
-              {hero.caption ?? hero.alt}
-            </figcaption>
-          )}
         </figure>
       ) : papers.length === 0 && project.placeholders.length > 0 ? (
-        <Placeholder label={`Hero visual for ${project.title}`} className="min-h-[14rem]" />
+        <Placeholder
+          label={`Hero visual for ${project.title}`}
+          className="min-h-[14rem]"
+        />
       ) : null}
 
       {papers.length > 0 && (
-        <section className="space-y-8">
-          <div className="flex flex-wrap items-end justify-between gap-3">
-            <h2 className="font-display text-xl font-semibold text-blue">
-              {papers.length === 1 ? "Paper" : "Papers"}
-            </h2>
-          </div>
+        <section className="space-y-8 border-t border-white/10 pt-8">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-silver">
+            {papers.length === 1 ? "Paper" : "Papers"}
+          </p>
           {papers.map((paper) => (
-            <div key={paper.src} className="space-y-3">
-              <div className="flex flex-wrap items-center justify-between gap-3">
+            <div
+              key={paper.src}
+              className="space-y-4 border border-white/10 bg-white/[0.03] p-[1px]"
+            >
+              <div className="flex flex-wrap items-center justify-between gap-3 border border-white/[0.06] bg-surface-navy/60 px-4 py-3">
                 <h3 className="font-display text-base font-semibold text-text-primary">
                   {paper.title}
                 </h3>
@@ -218,84 +254,89 @@ export function ProjectDetail({ project }: { project: Project }) {
                   {paper.label ?? "Download PDF"}
                 </ButtonLink>
               </div>
-              <PdfViewer
-                src={paper.src}
-                title={paper.title}
-                minHeight="36rem"
-                aspectRatio={paper.aspectRatio}
-              />
+              <div className="border border-white/[0.06] bg-bg-deep p-2 sm:p-3">
+                <PdfViewer
+                  src={paper.src}
+                  title={paper.title}
+                  minHeight="36rem"
+                  aspectRatio={paper.aspectRatio}
+                />
+              </div>
             </div>
           ))}
         </section>
       )}
 
       {project.safetyNote && (
-        <Card className="border-yellow/40 bg-yellow/5">
-          <p className="text-sm text-yellow">{project.safetyNote}</p>
-        </Card>
+        <aside className="border border-yellow/35 bg-yellow/[0.06] px-5 py-4">
+          <p className="text-sm leading-relaxed text-yellow">
+            {project.safetyNote}
+          </p>
+        </aside>
       )}
 
-      <section>
-        <h2 className="font-display text-xl font-semibold text-blue">
-          {experience ? "Focus" : "Problem"}
-        </h2>
-        <p className="mt-2 text-text-muted">{project.problem}</p>
-      </section>
+      <div className="max-w-3xl space-y-2">
+        <DetailSection title={experience ? "Focus" : "Problem"}>
+          <p>{project.problem}</p>
+        </DetailSection>
 
-      <section>
-        <h2 className="font-display text-xl font-semibold text-blue">Role</h2>
-        <p className="mt-2 text-text-muted">{project.role}</p>
-      </section>
+        <DetailSection title="Role">
+          <p>{project.role}</p>
+        </DetailSection>
 
-      <section>
-        <h2 className="font-display text-xl font-semibold text-blue">
-          {experience ? "Responsibilities & Work" : "Methods & Technical Build"}
-        </h2>
-        <ul className="mt-2 list-inside list-disc space-y-1 text-text-muted">
-          {project.methods.map((m) => (
-            <li key={m}>{m}</li>
-          ))}
-        </ul>
-      </section>
+        <DetailSection
+          title={
+            experience ? "Responsibilities & Work" : "Methods & Technical Build"
+          }
+        >
+          <ul className="space-y-2">
+            {project.methods.map((m) => (
+              <li key={m} className="flex gap-3">
+                <span
+                  aria-hidden
+                  className="mt-2 h-1 w-1 shrink-0 bg-blue"
+                />
+                <span>{m}</span>
+              </li>
+            ))}
+          </ul>
+        </DetailSection>
 
-      <section>
-        <h2 className="font-display text-xl font-semibold text-blue">
-          {experience ? "Impact" : "Results"}
-        </h2>
-        <p className="mt-2 text-text-muted">{project.results}</p>
-      </section>
+        <DetailSection title={experience ? "Impact" : "Results"}>
+          <p>{project.results}</p>
+        </DetailSection>
 
-      <section>
-        <h2 className="font-display text-xl font-semibold text-blue">
-          What I Learned
-        </h2>
-        <p className="mt-2 text-text-muted">{project.learned}</p>
-      </section>
+        <DetailSection title="What I Learned">
+          <p>{project.learned}</p>
+        </DetailSection>
+      </div>
 
       {(gallery.length > 0 || project.placeholders.length > 0) && (
-        <section>
-          <h2 className="font-display text-xl font-semibold text-blue">
+        <section className="border-t border-white/10 pt-8">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-silver">
             Technical Evidence
-          </h2>
-          <div className="mt-4 grid gap-4 sm:grid-cols-2">
+          </p>
+          <div className="mt-5 grid gap-4 sm:grid-cols-2">
             {gallery.length > 0
               ? gallery.map((img) => (
                   <figure
                     key={img.src}
-                    className="overflow-hidden rounded-xl border border-silver/20"
+                    className="border border-white/10 bg-white/[0.03] p-[1px]"
                   >
-                    <div className="relative aspect-[4/3] w-full bg-surface-navy">
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 640px) 100vw, 50vw"
-                      />
+                    <div className="border border-white/[0.06] bg-bg-deep">
+                      <div className="relative aspect-[4/3] w-full">
+                        <Image
+                          src={img.src}
+                          alt={img.alt}
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 640px) 100vw, 50vw"
+                        />
+                      </div>
+                      <figcaption className="border-t border-white/10 px-3 py-2 font-mono text-[11px] tracking-wide text-text-muted">
+                        {img.caption ?? img.alt}
+                      </figcaption>
                     </div>
-                    <figcaption className="border-t border-silver/15 px-3 py-2 text-xs text-text-muted">
-                      {img.caption ?? img.alt}
-                    </figcaption>
                   </figure>
                 ))
               : project.placeholders.map((p) => (
@@ -306,23 +347,27 @@ export function ProjectDetail({ project }: { project: Project }) {
       )}
 
       {project.needsVerification && project.needsVerification.length > 0 && (
-        <Card className="border-gold/40">
-          <p className="text-sm font-medium text-gold">Needs verification</p>
+        <aside className="border border-gold/40 bg-gold/[0.06] px-5 py-4">
+          <p className="font-mono text-[10px] uppercase tracking-[0.16em] text-gold">
+            Needs verification
+          </p>
           <ul className="mt-2 list-inside list-disc text-sm text-text-muted">
             {project.needsVerification.map((v) => (
               <li key={v}>{v}</li>
             ))}
           </ul>
-        </Card>
+        </aside>
       )}
 
-      <section>
-        <h2 className="font-display text-xl font-semibold text-blue">Skills</h2>
-        <ul className="mt-2 flex flex-wrap gap-2">
+      <section className="border-t border-white/10 pt-8">
+        <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-silver">
+          Skills
+        </p>
+        <ul className="mt-4 flex flex-wrap gap-2">
           {project.skills.map((s) => (
             <li
               key={s}
-              className="rounded-full border border-silver/30 px-3 py-1 text-sm text-text-muted"
+              className="border border-white/10 bg-white/[0.03] px-3 py-1.5 font-mono text-[11px] tracking-wide text-text-muted"
             >
               {s}
             </li>
@@ -331,20 +376,26 @@ export function ProjectDetail({ project }: { project: Project }) {
       </section>
 
       {project.relatedProjects && project.relatedProjects.length > 0 && (
-        <section>
-          <h2 className="font-display text-xl font-semibold text-blue">
+        <section className="border-t border-white/10 pt-8">
+          <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-silver">
             Related work
-          </h2>
-          <ul className="mt-3 space-y-2">
+          </p>
+          <ul className="mt-4 space-y-3">
             {project.relatedProjects.map((slug) => {
               const related = getProjectBySlug(slug);
               return (
                 <li key={slug}>
                   <Link
                     href={`/experience/${slug}`}
-                    className="text-sm font-medium text-blue hover:underline"
+                    className="group inline-flex items-center gap-2 text-sm font-medium text-blue transition hover:text-text-primary"
                   >
-                    {related?.title ?? slug} →
+                    <span>{related?.title ?? slug}</span>
+                    <span
+                      aria-hidden
+                      className="inline-flex h-6 w-6 items-center justify-center border border-blue/30 text-xs transition group-hover:translate-x-0.5"
+                    >
+                      →
+                    </span>
                   </Link>
                 </li>
               );
