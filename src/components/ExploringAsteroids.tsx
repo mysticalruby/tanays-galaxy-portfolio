@@ -12,7 +12,13 @@ interface AsteroidBody {
   y: number;
   vx: number;
   vy: number;
+  /** Speed along path (normalized units / second); used for trail length. */
+  speed: number;
   size: number;
+  /** Path tilt relative to horizontal travel (−10°…+10°), radians. */
+  pathAngle: number;
+  /** Modest visual offset from travel heading (−5°…+5°). */
+  tilt: number;
   rotation: number;
   spin: number;
   sprite: string;
@@ -34,12 +40,16 @@ const MAX_ASTEROIDS = 8;
 /** Past this (normalized) distance from center, the asteroid has left the field. */
 const EXIT_LIMIT = 1.22;
 
-/** Horizontal speed range (normalized units / second). */
-const SPEED_MIN = 0.32;
-const SPEED_MAX = 0.52;
+/** Speed along the path (normalized units / second). */
+const SPEED_MIN = 0.5;
+const SPEED_MAX = 0.95;
 
-/** Tiny vertical drift so paths aren't perfectly flat. */
-const WOBBLE_MAX = 0.035;
+/** Trail length multiplier at SPEED_MIN → SPEED_MAX (along travel axis). */
+const TRAIL_SCALE_MIN = 1.0;
+const TRAIL_SCALE_MAX = 1.85;
+
+/** Max path tilt from horizontal travel direction (radians). */
+const PATH_ANGLE_MAX = (10 * Math.PI) / 180;
 
 function hashId(id: string) {
   return id.split("").reduce((sum, ch) => sum + ch.charCodeAt(0), 0);
@@ -68,16 +78,46 @@ function nextTopic(
   return topic;
 }
 
+/** Random path angle in [−PATH_ANGLE_MAX, +PATH_ANGLE_MAX]. */
+function randomPathAngle(rand: () => number) {
+  return (rand() * 2 - 1) * PATH_ANGLE_MAX;
+}
+
 /**
- * Spawn from left or right edge, traveling mostly horizontally.
- * Optional tiny vertical wobble only — no top/bottom entry or steep headings.
+ * Velocity from speed + path angle relative to horizontal travel.
+ * `dir` is +1 (right) or −1 (left); angle stays relative to that direction.
+ */
+function velocityFromPath(speed: number, pathAngle: number, dir: 1 | -1) {
+  return {
+    vx: dir * speed * Math.cos(pathAngle),
+    vy: dir * speed * Math.sin(pathAngle),
+  };
+}
+
+function randomSpeed(rand: () => number) {
+  return SPEED_MIN + rand() * (SPEED_MAX - SPEED_MIN);
+}
+
+/** Lerp trail length scale from TRAIL_SCALE_MIN (slow) → TRAIL_SCALE_MAX (fast). */
+function trailScaleForSpeed(speed: number) {
+  const t =
+    SPEED_MAX === SPEED_MIN
+      ? 0
+      : (speed - SPEED_MIN) / (SPEED_MAX - SPEED_MIN);
+  return TRAIL_SCALE_MIN + t * (TRAIL_SCALE_MAX - TRAIL_SCALE_MIN);
+}
+
+/**
+ * Spawn from left or right edge, traveling mostly horizontally with a slight
+ * diagonal path tilt (−10°…+10° relative to travel direction).
  */
 function spawnHorizontal(
   base: Pick<AsteroidBody, "id" | "label">,
   rand: () => number,
   preferOppositeOf?: { vx: number }
 ): AsteroidBody {
-  const speed = SPEED_MIN + rand() * (SPEED_MAX - SPEED_MIN);
+  const speed = randomSpeed(rand);
+  const pathAngle = randomPathAngle(rand);
 
   // Recycle: enter from the side opposite the exit direction.
   let fromLeft: boolean;
@@ -88,10 +128,10 @@ function spawnHorizontal(
     fromLeft = rand() < 0.5;
   }
 
+  const dir: 1 | -1 = fromLeft ? 1 : -1;
+  const { vx, vy } = velocityFromPath(speed, pathAngle, dir);
   const x = fromLeft ? -EXIT_LIMIT : EXIT_LIMIT;
   const y = (rand() * 2 - 1) * 0.78;
-  const vx = (fromLeft ? 1 : -1) * speed;
-  const vy = (rand() - 0.5) * 2 * WOBBLE_MAX;
 
   return {
     id: base.id,
@@ -100,9 +140,12 @@ function spawnHorizontal(
     y,
     vx,
     vy,
+    speed,
     size: 42 + rand() * 30,
+    pathAngle,
+    tilt: (rand() - 0.5) * 10,
     rotation: rand() * 360,
-    spin: (rand() - 0.5) * 56,
+    spin: (rand() - 0.5) * 28,
     sprite: pickSprite(rand),
   };
 }
@@ -127,19 +170,24 @@ function buildAsteroids(
     const topic = nextTopic(topics, cursorRef);
     const base = { id: `rock-${i}`, label: topic.label };
 
-    // Seed some mid-field so the first paint isn't empty — still horizontal lanes.
+    // Seed some mid-field so the first paint isn't empty — still near-horizontal paths.
     if (rockRand() < 0.55) {
-      const speed = SPEED_MIN + rockRand() * (SPEED_MAX - SPEED_MIN);
-      const goRight = rockRand() < 0.5;
+      const speed = randomSpeed(rockRand);
+      const pathAngle = randomPathAngle(rockRand);
+      const dir: 1 | -1 = rockRand() < 0.5 ? 1 : -1;
+      const { vx, vy } = velocityFromPath(speed, pathAngle, dir);
       return {
         ...base,
         x: (rockRand() * 2 - 1) * 0.65,
         y: (rockRand() * 2 - 1) * 0.7,
-        vx: (goRight ? 1 : -1) * speed,
-        vy: (rockRand() - 0.5) * 2 * WOBBLE_MAX,
+        vx,
+        vy,
+        speed,
         size: 42 + rockRand() * 30,
+        pathAngle,
+        tilt: (rockRand() - 0.5) * 10,
         rotation: rockRand() * 360,
-        spin: (rockRand() - 0.5) * 56,
+        spin: (rockRand() - 0.5) * 28,
         sprite: pickSprite(rockRand),
       };
     }
@@ -210,6 +258,7 @@ export function ExploringAsteroids({ topics, hint }: ExploringAsteroidsProps) {
     const px = ((body.x + 1) / 2) * w;
     const py = ((body.y + 1) / 2) * h;
     const hit = hitSize(body.size);
+    const headingDeg = (Math.atan2(body.vy, body.vx) * 180) / Math.PI;
 
     // Transform-only motion (no top/left) keeps layers on the compositor.
     btn.style.transform = `translate3d(${px}px, ${py}px, 0) translate(-50%, -50%)`;
@@ -226,15 +275,16 @@ export function ExploringAsteroids({ topics, hint }: ExploringAsteroidsProps) {
         img.height = body.size;
       }
       if (trail) {
-        // Flame sits behind travel: default trails left; flip when going left.
-        const facing = body.vx >= 0 ? 1 : -1;
-        trail.style.width = `${body.size * 1.15}px`;
-        trail.style.height = `${body.size * 0.55}px`;
-        trail.style.transform = `translate(-50%, -50%) scaleX(${facing})`;
+        // Flame defaults along −X; rotate to travel heading so it trails behind.
+        // Faster rocks get a longer trail (width scales with speed vs SPEED_MIN/MAX).
+        const trailScale = trailScaleForSpeed(body.speed);
+        trail.style.width = `${body.size * 1.85 * trailScale}px`;
+        trail.style.height = `${body.size * 0.62}px`;
+        trail.style.transform = `translate(-50%, -50%) rotate(${headingDeg}deg)`;
       }
     }
 
-    visual.style.transform = `translate(-50%, -50%) rotate(${body.rotation}deg)`;
+    visual.style.transform = `translate(-50%, -50%) rotate(${headingDeg + body.tilt + body.rotation}deg)`;
   };
 
   // Measure playfield + paint initial transforms before first browser paint.
