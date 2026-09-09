@@ -33,7 +33,11 @@ export interface Project {
     label?: string;
     /** CSS aspect-ratio for the viewer frame, e.g. "3 / 2" for landscape posters */
     aspectRatio?: string;
+    /** Let a landscape or featured document span both columns in the document grid. */
+    fullWidth?: boolean;
   }[];
+  /** Display project documents in two columns on wider screens. */
+  paperGrid?: boolean;
   /** Shorthand for a single paper — prefer `papers` for multiple PDFs */
   paperUrl?: string;
   paperLabel?: string;
@@ -42,6 +46,8 @@ export interface Project {
   websiteLabel?: string;
   /** Extra outbound links (GitHub, live demo, etc.) */
   links?: { href: string; label: string; note?: string }[];
+  /** People who worked on the project with Tanay. */
+  collaborators?: { name: string; href?: string }[];
   safetyNote?: string;
   needsVerification?: string[];
 }

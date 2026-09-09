@@ -60,11 +60,11 @@
       "category": "Math Modeling",
       "categorySlug": "math-modeling",
       "cells": [
-        "How should firefighters search multi-floor buildings when hazards evolve and team assignments must change in real time?",
-        "Studied fire and smoke growth, graph routing, responder fatigue, and emergency sweep protocols.",
-        "Built progressive models with Dijkstra-style routing, entrance allocation, team-size optimization, and fire-origin estimation.",
-        "Simulated efficient room-search orders and responder placements across multiple building layouts.",
-        "Added verification redundancy and dynamic reassignment rules as hazard conditions changed."
+        "What order should firefighters search rooms in, where should they enter, and how many firefighters are actually useful when the building is changing around them?",
+        "We started with the six-room office from the problem and looked into graph routing, how hazards change travel time, and what information firefighters would realistically have during a sweep.",
+        "We built three versions, first a static weighted graph, then one with changing fire and smoke costs, and finally one that could deal with uncertain information and reassign firefighters while the sweep was happening.",
+        "We tested the models on the original layout, a two-floor building, and a 24-room building spread across three floors, while requiring every room to be checked twice.",
+        "The later models avoided more dangerous routes and helped us find where extra firefighters stopped making much of a difference, but we also wrote about the limits of using simulated hazards instead of data from real fires."
       ]
     },
     {
@@ -172,11 +172,11 @@
       "category": "Engineering",
       "categorySlug": "engineering",
       "cells": [
-        "Can a wearable detect balance instability early enough to trigger vestibular stimulation—reliably, safely, and affordably?",
-        "Studied galvanic vestibular stimulation, IMU sensing, and experimental controls for active vs. sham trials.",
-        "Designed glasses-mounted prototype with ESP32, three MPU-6050 units, custom PCB, electrodes, and 3D-printed housing.",
-        "Ran 50 controlled trials; evaluated balance-event classification and stimulation delivery across conditions.",
-        "Refined packaging, trial workflow, and interpretation—88% classification accuracy, 100% detectable stimulation in active trials."
+        "Most devices only react once a fall has started, could we detect the problem early enough to do something before the person fell?",
+        "We looked into different ways of affecting balance and I found galvanic vestibular stimulation, then we researched how GVS, IMUs, and the vestibular system worked.",
+        "We built the prototype with three IMUs, an ESP32, electrodes, a custom PCB that I designed in EasyEDA, and a 3D-printed glasses frame.",
+        "We ran 50 controlled trials and checked both whether the system recognized a balance event and whether the participant detected the stimulation.",
+        "We kept changing the electronics, PCB, frame, and testing process until the system reached 88% classification accuracy, with detectable stimulation in every active trial."
       ]
     },
     {

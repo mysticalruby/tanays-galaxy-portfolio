@@ -93,6 +93,7 @@ export function ProjectDetail({ project }: { project: Project }) {
   const hero = images[0];
   const gallery = images.slice(1);
   const papers = resolvePapers(project);
+  const collaborators = project.collaborators ?? [];
   const walkthrough = getWalkthroughBySlug(project.slug);
 
   return (
@@ -160,6 +161,30 @@ export function ProjectDetail({ project }: { project: Project }) {
           <p className="mt-6 max-w-prose text-base leading-relaxed text-text-muted sm:text-lg">
             {project.opening}
           </p>
+
+          {collaborators.length > 0 && (
+            <p className="mt-5 max-w-prose text-sm leading-relaxed text-text-muted">
+              <span className="text-text-primary">My group: </span>
+              {collaborators.map((person, index) => (
+                <span key={person.name}>
+                  {index > 0 &&
+                    (index === collaborators.length - 1 ? ", and " : ", ")}
+                  {person.href ? (
+                    <a
+                      href={person.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue underline decoration-blue/40 underline-offset-2 transition hover:decoration-blue"
+                    >
+                      {person.name}
+                    </a>
+                  ) : (
+                    person.name
+                  )}
+                </span>
+              ))}
+            </p>
+          )}
 
           {(papers.length > 0 ||
             project.websiteUrl ||
@@ -243,29 +268,37 @@ export function ProjectDetail({ project }: { project: Project }) {
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-silver">
             {papers.length === 1 ? "Paper" : "Papers"}
           </p>
-          {papers.map((paper) => (
-            <div
-              key={paper.src}
-              className="space-y-4 border border-white/10 bg-white/[0.03] p-[1px]"
-            >
-              <div className="flex flex-wrap items-center justify-between gap-3 border border-white/[0.06] bg-surface-navy/60 px-4 py-3">
-                <h3 className="font-display text-base font-semibold text-text-primary">
-                  {paper.title}
-                </h3>
-                <ButtonLink href={paper.src} variant="gold" external>
-                  {paper.label ?? "Download PDF"}
-                </ButtonLink>
+          <div
+            className={
+              project.paperGrid ? "grid gap-8 md:grid-cols-2" : "space-y-8"
+            }
+          >
+            {papers.map((paper) => (
+              <div
+                key={paper.src}
+                className={`space-y-4 border border-white/10 bg-white/[0.03] p-[1px] ${
+                  paper.fullWidth ? "md:col-span-2" : ""
+                }`}
+              >
+                <div className="flex flex-wrap items-center justify-between gap-3 border border-white/[0.06] bg-surface-navy/60 px-4 py-3">
+                  <h3 className="font-display text-base font-semibold text-text-primary">
+                    {paper.title}
+                  </h3>
+                  <ButtonLink href={paper.src} variant="gold" external>
+                    {paper.label ?? "Download PDF"}
+                  </ButtonLink>
+                </div>
+                <div className="border border-white/[0.06] bg-bg-deep p-2 sm:p-3">
+                  <PdfViewer
+                    src={paper.src}
+                    title={paper.title}
+                    minHeight="36rem"
+                    aspectRatio={paper.aspectRatio}
+                  />
+                </div>
               </div>
-              <div className="border border-white/[0.06] bg-bg-deep p-2 sm:p-3">
-                <PdfViewer
-                  src={paper.src}
-                  title={paper.title}
-                  minHeight="36rem"
-                  aspectRatio={paper.aspectRatio}
-                />
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </section>
       )}
 

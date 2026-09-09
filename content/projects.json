@@ -26,6 +26,16 @@
       ],
       "results": "Delivered an end-to-end accessible communication workflow in the browser, designed for real-time use by people with speech disabilities and the professionals who support them.",
       "learned": "Accessibility is not a feature layer—it shapes model choice, latency, feedback design, and failure handling from the start.",
+      "collaborators": [
+        {
+          "name": "Mohammad Kazem Golji",
+          "href": "https://www.linkedin.com/in/mohammad-kazem-golji-948035309/"
+        },
+        {
+          "name": "Karena Peterson",
+          "href": "https://users.wpi.edu/~krpeterson/"
+        }
+      ],
       "placeholders": [],
       "images": [],
       "papers": [
@@ -35,13 +45,17 @@
           "label": "Download CS poster"
         }
       ],
-      "websiteUrl": "https://github.com/TanayMangal/articulate2.0/commits/main/",
-      "websiteLabel": "View GitHub commits",
+      "websiteUrl": "https://github.com/TanayMangal/Au-text",
+      "websiteLabel": "View the project on GitHub",
       "links": [
         {
           "href": "https://articulate20.vercel.app/",
           "label": "Try live demo",
           "note": "The live demo may not load due to occasional server issues — send me a message and I can fix it."
+        },
+        {
+          "href": "https://github.com/TanayMangal/claravox-backend",
+          "label": "View the backend on GitHub"
         }
       ],
       "skills": [
@@ -62,8 +76,9 @@
     },
     {
       "slug": "gvs-balance-glasses",
-      "title": "STATERA: Adaptive Fall Prevention with Galvanic Vestibular Stimulation",
-      "summary": "Low-cost glasses-mounted wearable that detects balance instability and delivers noninvasive GVS before a fall—88% classification accuracy across 50 trials.",
+      "title": "STATERA: Preventing Falls with Galvanic Vestibular Stimulation",
+      "subtitle": "A STEM II project focused on detecting and correcting balance issues before a fall happens.",
+      "summary": "For STEM II, my group built a glasses-mounted device that detects balance issues and uses galvanic vestibular stimulation to try to correct them before a fall happens.",
       "status": "completed",
       "cluster": "Engineering",
       "clusterSlug": "engineering",
@@ -75,37 +90,66 @@
         "PCB",
         "3D Printing"
       ],
-      "opening": "STATERA is a glasses-mounted assistive wearable that detects early balance instability and delivers noninvasive galvanic vestibular stimulation (GVS) to support corrective balance responses before a fall. The system combines embedded sensing, custom circuitry, and human-centered product design in a low-cost closed-loop prototype.",
-      "problem": "Can a compact wearable detect balance events early enough to trigger vestibular stimulation that supports corrective responses—reliably, safely, and affordably?",
-      "role": "Led embedded systems, sensor-based motion classification, circuit design, prototyping, testing, and human-centered product design across the full device stack.",
+      "opening": "For my STEM II class, each group was tasked with finding an issue in the community and coming up with a way to solve it. My group found that most devices meant to prevent falls only respond once the fall is already happening, there was not really anything that tried to correct someone's balance before they fell. We looked through a lot of possible technologies and I found galvanic vestibular stimulation, or GVS, which uses electrodes to apply a small current through the vestibular system and shift someone's perceived balance. From there we worked on combining GVS with a set of IMUs that could detect position and orientation, with everything connected through an ESP32.",
+      "problem": "Most fall prevention devices react when someone is already falling, so we wanted to see if a device could recognize the signs earlier and help correct the person's balance before the fall happened.",
+      "role": "I found GVS as the technology we ended up using, and a lot of my work was on the electronics behind the prototype. This included placing and connecting the IMUs, working with the ESP32, designing a PCB in EasyEDA, and helping with the testing and later iterations. The PCB especially took a lot of trial and error to get right.",
       "methods": [
-        "ESP32 with three MPU-6050 IMUs",
-        "Custom PCB, rechargeable Li-Po power, mastoid electrodes",
-        "3D-printed glasses housing",
-        "50 controlled trials with balance-event classification",
-        "Closed-loop detect-and-stimulate workflow"
+        "Three strategically placed MPU-6050 IMUs to track position and orientation",
+        "An ESP32 that collected the sensor data and controlled the system",
+        "A custom PCB designed in EasyEDA after a lot of testing and revision",
+        "Electrodes placed near the vestibular system to deliver GVS",
+        "A 3D-printed glasses frame and rechargeable battery so everything could be worn",
+        "50 controlled trials to test the balance detection and stimulation"
       ],
-      "results": "Achieved 88% balance-event classification accuracy across 50 controlled trials, delivered detectable stimulation in 100% of active trials, and remained under the project's low-cost target.",
-      "learned": "Assistive wearables succeed when sensing, stimulation, mechanical design, and experimental validation are engineered as one integrated system.",
+      "results": "By the end, the system classified balance events with 88% accuracy across 50 trials, and the stimulation was detected in every active trial. We were also able to keep the prototype within the cost goal we set at the beginning.",
+      "learned": "This project taught me a lot about how different the first version of an idea can be from the thing that eventually works. PCB design was probably the clearest example of that, because it took multiple attempts and problems that I did not expect, and the testing process ended up being just as important as actually building the device.",
+      "collaborators": [
+        {
+          "name": "Nichelle Thinagar",
+          "href": "https://www.linkedin.com/in/nichelle-thinagar-86a201304/"
+        },
+        {
+          "name": "Chris Xu",
+          "href": "https://www.linkedin.com/in/chris-xu-6abb093b4/"
+        },
+        {
+          "name": "Ishan Kasam",
+          "href": "https://www.linkedin.com/in/ishan-kasam/"
+        },
+        {
+          "name": "Arnav Prabhudesai",
+          "href": "https://www.linkedin.com/in/arnav-prabhudesai-b3799b3b7/"
+        }
+      ],
+      "websiteUrl": "https://users.wpi.edu/~tmangal/Classes/Stem_2.html",
+      "websiteLabel": "See the full STEM II project page",
+      "links": [
+        {
+          "href": "https://en.wikipedia.org/wiki/Galvanic_vestibular_stimulation",
+          "label": "Learn more about GVS"
+        }
+      ],
       "placeholders": [],
       "papers": [
         {
           "src": "/anticx-logbook-final.pdf",
-          "title": "ANTICx Logbook — Final",
-          "label": "Download ANTICx logbook"
-        },
-        {
-          "src": "/anticx-adr-poster.pdf",
-          "title": "STEM2 ANTICx ADR Poster",
-          "label": "Download ADR poster PDF",
-          "aspectRatio": "3 / 2"
+          "title": "STEM II Project Logbook",
+          "label": "Download project logbook"
         },
         {
           "src": "/anticx-final-design-study.pdf",
-          "title": "STEM2 ANTICx Final Design Study",
+          "title": "STEM II Final Design Study",
           "label": "Download final design study"
+        },
+        {
+          "src": "/anticx-adr-poster.pdf",
+          "title": "STEM II ADR Poster",
+          "label": "Download ADR poster PDF",
+          "aspectRatio": "3 / 2",
+          "fullWidth": true
         }
       ],
+      "paperGrid": true,
       "images": [
         {
           "src": "/images/statera/IMG_2907.jpg",
@@ -158,7 +202,7 @@
           "caption": "PCB work — soldering the control module"
         }
       ],
-      "safetyNote": "Research prototype only — not a medical device, treatment, or diagnosis tool.",
+      "safetyNote": "This was a school research prototype, it is not a medical device and should not be used as a treatment or diagnosis tool.",
       "skills": [
         "Structural Analysis",
         "Galvanic Vestibular Stimulation",
@@ -345,6 +389,14 @@
       ],
       "results": "Anti-idling near schools ranked as the strongest equity-focused intervention in the current scenario, closely followed by electric-freight policies. Meritorious recognition in HiMCM (top 13% internationally).",
       "learned": "Policy models must account for network propagation—not only local emissions—when prioritizing interventions in vulnerable communities.",
+      "websiteUrl": "https://github.com/TanayMangal/GraphDiffusionModel",
+      "websiteLabel": "View the model on GitHub",
+      "links": [
+        {
+          "href": "https://github.com/TanayMangal/Graph-Diffusion-Everest",
+          "label": "View the second graph-diffusion repo"
+        }
+      ],
       "papers": [
         {
           "src": "/graph-diffusion-chelsea-everett-pollution.pdf",
@@ -374,8 +426,9 @@
     },
     {
       "slug": "hiemcm-evacuation-sweep",
-      "title": "Hazard-Aware Emergency Evacuation Sweep Optimization",
-      "summary": "Dynamic model optimizing firefighter search-and-sweep operations in multi-floor buildings under fire, smoke, and fatigue constraints.",
+      "title": "HiMCM 2025: Firefighter Building Sweep Model",
+      "subtitle": "A hazard-aware model for deciding where firefighters should search, and when those decisions need to change.",
+      "summary": "For HiMCM 2025, my group and I modeled how firefighters could sweep a building quickly while fire, smoke, blocked paths, and incomplete information were all changing around them.",
       "status": "completed",
       "cluster": "Math Modeling",
       "clusterSlug": "math-modeling",
@@ -385,18 +438,33 @@
         "Optimization",
         "Multi-Agent Systems"
       ],
-      "opening": "Developed a dynamic mathematical model to optimize firefighter search-and-sweep operations in hazardous multi-floor buildings. Models incorporated fire and smoke growth, debris, visibility loss, responder fatigue, room triage, changing travel times, and real-time firefighter reassignment.",
-      "problem": "How should firefighters search multi-floor buildings when hazards evolve and team assignments must change in real time?",
-      "role": "Built progressively advanced models, implemented graph-based routing and team-size optimization, and tested across multiple building layouts.",
+      "opening": "For HiMCM 2025, my group and I worked on the firefighter problem, where we had to figure out the most efficient way to sweep a building while still making sure every room was actually checked. The layout we were given was a one-floor office with six rooms, two exits, and two firefighters, which sounds fairly simple until fire, smoke, blocked paths, and incomplete information all start changing while the sweep is happening. We started with that smaller case and then kept making the model more realistic, eventually testing it on a two-floor building and a much more complicated 24-room, three-floor building.",
+      "problem": "What order should firefighters search the rooms in, where should they enter, and how many firefighters are actually useful once the conditions inside the building can change?",
+      "role": "My group and I built the model in three stages. We started with a static weighted graph, then made the travel costs change as hazards got worse, and finally added uncertain information, communication delays, congestion, and the ability to reassign firefighters while the sweep was still happening. We also had to make sure every room was verified by two different firefighters, since being fast does not really matter if a room can get missed.",
       "methods": [
-        "Graph-based routing with Dijkstra-style path optimization",
-        "Connectivity-based entrance allocation",
-        "Diminishing-returns team-size optimization",
-        "A*-style fire-origin estimation from smoke patterns",
-        "Multi-layout verification redundancy for occupant safety"
+        "Represented rooms, hallways, exits, and stairs as a weighted graph",
+        "Used shortest-path calculations for the baseline model and changed edge costs as fire, smoke, debris, and visibility got worse",
+        "Assigned and reassigned firefighters based on the rooms that still needed to be checked",
+        "Estimated the likely fire origin from smoke and visibility reports when the starting location was unknown",
+        "Tested different crew sizes and entrance placements instead of assuming that adding more firefighters would always help",
+        "Required every room to be checked by two different firefighters"
       ],
-      "results": "Identified efficient room-search orders, responder placements, and evacuation strategies across building scenarios. Earned HiMCM Meritorious (top 13% internationally), advancing to IM²C.",
-      "learned": "Emergency response models must balance speed, safety redundancy, and dynamic reassignment as conditions change.",
+      "results": "The model produced room orders, routes, entrance assignments, and a minimum useful crew size for each layout. On the largest layout the biggest improvements happened when going from one to around five firefighters, after that the benefit kept getting smaller and eventually mostly flattened out. We also found that a hazard weight of 0.7 gave the best balance in our tests between taking a short route and avoiding dangerous parts of the building. Our paper received a Meritorious award in HiMCM, which put it in the top 13% internationally, and we advanced to IM²C.",
+      "learned": "A lot of the work was figuring out what “optimal” was even supposed to mean here, because the shortest route is not necessarily the route you would want a firefighter to take, and adding more people can create congestion instead of fixing the problem. We also had to be honest about where the model stops being realistic, especially because the hazard curves and layouts were simulated and not data from a real fire.",
+      "collaborators": [
+        {
+          "name": "Ryan Prendergast",
+          "href": "https://www.linkedin.com/in/ryanjprendergast/"
+        },
+        {
+          "name": "Ishan Kasam",
+          "href": "https://www.linkedin.com/in/ishan-kasam/"
+        },
+        {
+          "name": "Neil Gupta",
+          "href": "https://www.linkedin.com/in/neil-gupta-6038492b3/"
+        }
+      ],
       "placeholders": [],
       "images": [
         {
@@ -423,6 +491,18 @@
           "src": "/images/himcm/IMG_0654.jpg",
           "alt": "Full whiteboard of the five-phase firefighter sweep model with centrality notes, sigmoid curves, and final scalar importance output",
           "caption": "Full board — centrality, combined sigmoids, and final ranking"
+        }
+      ],
+      "websiteUrl": "https://github.com/TanayMangal/Building-Route-Optimizing-HiMCM",
+      "websiteLabel": "View the model and code on GitHub",
+      "links": [
+        {
+          "href": "https://www.contest.comap.org/highschool/contests/himcm/2025_Problems/2025_HiMCM_Problem_A.pdf",
+          "label": "Read the 2025 HiMCM problem"
+        },
+        {
+          "href": "https://github.com/TanayMangal/Building-Route-Optimizing-HiMCM/blob/main/HiMCM-2025-Building-Sweeps/HiMCM-2025-Building-Sweeps/paper/HiMCM_2025_17289_paper.pdf",
+          "label": "Read our paper"
         }
       ],
       "skills": [
@@ -464,6 +544,24 @@
       ],
       "results": "Projected substantially faster penny phase-out in dense areas than rural communities. Cash-rounding analysis identified a price threshold where rounding up becomes more profitable than rounding down.",
       "learned": "Seemingly simple policy transitions hide spatial heterogeneity that only diffusion-style models make visible.",
+      "collaborators": [
+        {
+          "name": "Chris Xu",
+          "href": "https://www.linkedin.com/in/chris-xu-6abb093b4/"
+        },
+        {
+          "name": "Arnav Prabhudesai",
+          "href": "https://www.linkedin.com/in/arnav-prabhudesai-b3799b3b7/"
+        },
+        {
+          "name": "Atharv Joshi",
+          "href": "https://www.linkedin.com/in/atharv-joshi-114093394/"
+        },
+        {
+          "name": "Abhiruph Seetaraman",
+          "href": "https://users.wpi.edu/~aseetharaman/"
+        }
+      ],
       "papers": [
         {
           "src": "/penny-phase-out-paper.pdf",
@@ -511,6 +609,32 @@
       ],
       "results": "Supply-side production incentives produced the strongest pollution reduction per dollar; large consumer-rebate programs risked VMT rebound effects. Recommended prioritizing infrastructure and incentives in Boston ZIP codes 02126, 02131, and 02127.",
       "learned": "Climate policy models must weigh equity, rebound risk, and cost-effectiveness together—not optimize emissions alone.",
+      "collaborators": [
+        {
+          "name": "Chris Xu",
+          "href": "https://www.linkedin.com/in/chris-xu-6abb093b4/"
+        },
+        {
+          "name": "Arnav Prabhudesai",
+          "href": "https://www.linkedin.com/in/arnav-prabhudesai-b3799b3b7/"
+        },
+        {
+          "name": "Rishi Gandhi",
+          "href": "https://www.linkedin.com/in/rishi-gandhi-2b81862b4/"
+        },
+        {
+          "name": "Rohan Gulati",
+          "href": "https://www.linkedin.com/in/rohan-gulati-384b7a37b/"
+        }
+      ],
+      "websiteUrl": "https://github.com/TanayMangal/AV-Spatial-Modeling",
+      "websiteLabel": "View the spatial model on GitHub",
+      "links": [
+        {
+          "href": "https://github.com/TanayMangal/AV-Non-Spacial-Modeling",
+          "label": "View the non-spatial model"
+        }
+      ],
       "papers": [
         {
           "src": "/mtfc-23914.pdf",
@@ -571,7 +695,23 @@
       ],
       "results": "Produced reproducible risk maps and data-informed recommendations for ranger patrols, drone bases, waterhole cameras, and acoustic sensors under capacity constraints. Submitted as IMMC 2026 Team #17289.",
       "learned": "Conservation optimization must integrate ecology, seasonality, and operational limits—not treat protection as a uniform coverage problem.",
+      "collaborators": [
+        {
+          "name": "Ryan Prendergast",
+          "href": "https://www.linkedin.com/in/ryanjprendergast/"
+        },
+        {
+          "name": "Ishan Kasam",
+          "href": "https://www.linkedin.com/in/ishan-kasam/"
+        },
+        {
+          "name": "Neil Gupta",
+          "href": "https://www.linkedin.com/in/neil-gupta-6038492b3/"
+        }
+      ],
       "relatedProjects": ["etosha-rhino-patrol-routing"],
+      "websiteUrl": "https://github.com/TanayMangal/Etosha-National-Park",
+      "websiteLabel": "View the IMMC model on GitHub",
       "papers": [
         {
           "src": "/immc-final-paper.pdf",
@@ -676,7 +816,23 @@
       ],
       "results": "Five eight-hour patrols traversed cells covering about 26% of mapped risk-reward and 70–80% of the highest-priority cells, beating all four baselines and remaining essentially unchanged under 15% risk-map noise. A marginal-value test found a second patrol adds most at the western Okaukuejo and Dolomite stations. Framed as a modelling prototype that still needs validation against observed ranger movement before deployment.",
       "learned": "Anti-poaching routing works best when the objective is inverted from ordinary navigation—maximize hazard covered, not minimize travel—and when risk surfaces are stress-tested for modest input error.",
+      "collaborators": [
+        {
+          "name": "Ishan Kasam",
+          "href": "https://www.linkedin.com/in/ishan-kasam/"
+        },
+        {
+          "name": "Neil Gupta",
+          "href": "https://www.linkedin.com/in/neil-gupta-6038492b3/"
+        },
+        {
+          "name": "Ronit Sharma",
+          "href": "https://www.linkedin.com/in/rshar27/"
+        }
+      ],
       "relatedProjects": ["etosha-wildlife-optimization"],
+      "websiteUrl": "https://github.com/TanayMangal/Rhino-Anti-Poaching",
+      "websiteLabel": "View the routing model on GitHub",
       "papers": [
         {
           "src": "/etosha-rhino-patrol.pdf",
@@ -727,6 +883,26 @@
       ],
       "results": "Revealed structural losses from house edge and increasing vulnerability over time. Recognized in the top 20% internationally in the MathWorks Math Modeling Challenge (M3C).",
       "learned": "Behavioral economic harm often emerges from compounding structural disadvantage—not isolated bad decisions.",
+      "collaborators": [
+        {
+          "name": "Chris Xu",
+          "href": "https://www.linkedin.com/in/chris-xu-6abb093b4/"
+        },
+        {
+          "name": "Arnav Prabhudesai",
+          "href": "https://www.linkedin.com/in/arnav-prabhudesai-b3799b3b7/"
+        },
+        {
+          "name": "Atharv Joshi",
+          "href": "https://www.linkedin.com/in/atharv-joshi-114093394/"
+        },
+        {
+          "name": "Abhiruph Seetaraman",
+          "href": "https://users.wpi.edu/~aseetharaman/"
+        }
+      ],
+      "websiteUrl": "https://github.com/TanayMangal/Sports-Gambling-Effects",
+      "websiteLabel": "View the M3C model on GitHub",
       "placeholders": [],
       "images": [
         {
@@ -821,6 +997,26 @@
       ],
       "results": "Finished in the top 25% worldwide with approximately 73,000 tokens in simulated profit.",
       "learned": "Competitive trading rewards fast iteration, clear team communication, and disciplined risk management under uncertainty.",
+      "collaborators": [
+        {
+          "name": "Arnav Prabhudesai",
+          "href": "https://www.linkedin.com/in/arnav-prabhudesai-b3799b3b7/"
+        },
+        {
+          "name": "Atharv Joshi",
+          "href": "https://www.linkedin.com/in/atharv-joshi-114093394/"
+        },
+        {
+          "name": "Neil Gupta",
+          "href": "https://www.linkedin.com/in/neil-gupta-6038492b3/"
+        },
+        {
+          "name": "Shiron Bagchi",
+          "href": "https://www.linkedin.com/in/shiron-bagchi-714a622b3/"
+        }
+      ],
+      "websiteUrl": "https://github.com/TanayMangal/IMC-Prosperity-Challenge",
+      "websiteLabel": "View our trading code on GitHub",
       "placeholders": [],
       "images": [],
       "skills": [
@@ -1291,6 +1487,16 @@
       ],
       "results": "Delivered a fully sponsored competitive math tournament with school approval, structured teams, and a seamless participant experience from check-in through awards.",
       "learned": "Large student events succeed when fundraising, written proposals, and day-of logistics are treated as one project—not separate afterthoughts.",
+      "collaborators": [
+        {
+          "name": "Arnav Prabhudesai",
+          "href": "https://www.linkedin.com/in/arnav-prabhudesai-b3799b3b7/"
+        },
+        {
+          "name": "Ananth Krishna Gomattam",
+          "href": "https://www.linkedin.com/in/ananth-krishna-gomattam-683721344/"
+        }
+      ],
       "placeholders": [
         "Tournament day photo",
         "Sponsorship / proposal snapshot",
