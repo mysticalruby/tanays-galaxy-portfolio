@@ -1,43 +1,38 @@
 {
   "galleriesSection": {
-    "title": "Beyond the work",
-    "intro": "Cooking experiments and Desmos graphs — two collections outside the lab write-ups.",
+    "title": "Things I do outside of school",
+    "intro": "I love to cook and I like to just explore functions on desmos.",
     "galleries": [
       {
         "id": "cooking",
         "title": "Food & Cooking",
-        "description": "Cooking is half chemistry lab, half process control — timing, heat transfer, and iteration until something actually tastes right.",
+        "description": "I like to cook, takes my mind of the endless tasks that never seem to stop.",
         "relatedHref": null,
         "relatedLabel": null,
         "items": [
           {
             "id": "cooking-basbousa-tray",
-            "caption": "Syrup-soaked semolina cake (basbousa) with pistachios, almonds, and rose petals.",
+            "caption": "Syrup-soaked gulab jamun cake with pistachios, almonds, and rose petals.",
             "imageSrc": "/images/food/IMG_0406.jpg"
           },
           {
             "id": "cooking-basbousa-pan",
-            "caption": "Basbousa cut into squares — pistachio, almond, and rose petal garnish.",
+            "caption": "Syrup-soaked gulab jamun but cut into squares with a pistachio, almond, and rose petal garnish.",
             "imageSrc": "/images/food/IMG_0408.jpg"
           },
           {
-            "id": "cooking-rose-pistachio-cupcakes",
-            "caption": "Rose and pistachio cupcakes fresh from the tin.",
-            "imageSrc": "/images/food/IMG_0410.jpg"
-          },
-          {
             "id": "cooking-hi-mom-cake",
-            "caption": "Chocolate cake with almonds spelling “HI MOM.”",
+            "caption": "Chocolate cake with almonds spelling HIMCM, meant to motivate my HiMCM team.",
             "imageSrc": "/images/food/IMG_0618.jpg"
           },
           {
             "id": "cooking-nutella-pancake",
-            "caption": "Thick pancake folded with chocolate hazelnut spread.",
+            "caption": "A pancake stuffed with Nutella.",
             "imageSrc": "/images/food/IMG_0865.jpg"
           },
           {
             "id": "cooking-sweet-potato-bake",
-            "caption": "Cheesy sweet potato bake, fresh from the oven.",
+            "caption": "Cheesy sweet potato bake, made too much.",
             "imageSrc": "/images/food/IMG_1049.jpg"
           },
           {
@@ -47,116 +42,105 @@
           },
           {
             "id": "cooking-nut-cookies",
-            "caption": "Thick homemade cookies studded with nuts.",
+            "caption": "Thick homemade cookies studded with nuts, was one of the first things I baked.",
             "imageSrc": "/images/food/IMG_3072.jpg"
           },
           {
             "id": "cooking-creamy-rotini",
-            "caption": "Creamy tomato rotini finished in the skillet.",
+            "caption": "Creamy tomato rotini.",
             "imageSrc": "/images/food/IMG_3094.jpg"
           },
           {
             "id": "cooking-veggie-egg-scramble",
-            "caption": "Vegetable egg scramble with peppers and onion.",
+            "caption": "Vegetable egg scramble with peppers and onion. I actually messed up the steps because I was juggling other things and I salvaged it into this",
             "imageSrc": "/images/food/IMG_3315.jpg"
-          },
-          {
-            "id": "cooking-eggs-and-bun",
-            "caption": "Breakfast plate — scrambled eggs and a toasted bun.",
-            "imageSrc": "/images/food/IMG_3316.jpg"
           }
         ]
       },
       {
         "id": "desmos",
         "title": "Desmos Graphs",
-        "description": "Visual math experiments — parametric curves, optimization sketches, and models built to understand a problem before coding it.",
+        "description": "These are just graphs from when I was messing around, it is just a good way to fill time.",
         "relatedHref": null,
         "relatedLabel": null,
         "items": [
           {
             "id": "desmos-1",
-            "caption": "Graph 1 — add a short description of what this model explores.",
+            "caption": "A butteryfly, I tried to make it into one function but I coudl not figure that out.",
             "embedUrl": "https://www.desmos.com/calculator/6212d8199e?embed",
             "embedTitle": "Desmos graph 1"
           },
           {
             "id": "desmos-2",
-            "caption": "Graph 2 — add a short description of what this model explores.",
+            "caption": "There is a lot like these that are just random cool things, this looked like a spider web kind of.",
             "embedUrl": "https://www.desmos.com/calculator/d9080e2e48?embed",
             "embedTitle": "Desmos graph 2"
           },
           {
             "id": "desmos-3",
-            "caption": "Graph 3 — add a short description of what this model explores.",
+            "caption": "This looks like a 3d landscape at that zoom in level, it breaks when you xoom in or out",
             "embedUrl": "https://www.desmos.com/calculator/bf8ce2e201?embed",
             "embedTitle": "Desmos graph 3"
           },
           {
             "id": "desmos-4",
-            "caption": "Graph 4 — add a short description of what this model explores.",
+            "caption": "This is a period table of elements I tried to replicate, I got decently far",
             "embedUrl": "https://www.desmos.com/calculator/2cb10798d0?embed",
             "embedTitle": "Desmos graph 4"
           },
           {
             "id": "desmos-5",
-            "caption": "Graph 5 — add a short description of what this model explores.",
+            "caption": "Normally, you would have to have multiple functions to do this, this is only one fucntion and this level of curve sticthing was really cool",
             "embedUrl": "https://www.desmos.com/calculator/32fe9514e6?embed",
             "embedTitle": "Desmos graph 5"
           },
           {
             "id": "desmos-6",
-            "caption": "Graph 6 — add a short description of what this model explores.",
+            "caption": "I dubbed this a QR code generator, it does not really work but I found it cool that a function could do this",
             "embedUrl": "https://www.desmos.com/calculator/5904fb5196?embed",
             "embedTitle": "Desmos graph 6"
           },
           {
             "id": "desmos-7",
-            "caption": "Graph 7 — add a short description of what this model explores.",
+            "caption": "A cool random graph",
             "embedUrl": "https://www.desmos.com/calculator/04d24bd12b?embed",
             "embedTitle": "Desmos graph 7"
           },
           {
             "id": "desmos-8",
-            "caption": "Graph 8 — add a short description of what this model explores.",
+            "caption": "This is like a trignometric function took to its extreme all only in one function",
             "embedUrl": "https://www.desmos.com/calculator/7nr2ygxl3j?embed",
             "embedTitle": "Desmos graph 8"
           },
           {
             "id": "desmos-9",
-            "caption": "Graph 9 — add a short description of what this model explores.",
+            "caption": "It is like you take the sin of sin itself but better, you have to see",
             "embedUrl": "https://www.desmos.com/calculator/zx7ejutjft?embed",
             "embedTitle": "Desmos graph 9"
           },
           {
             "id": "desmos-10",
-            "caption": "Graph 10 — add a short description of what this model explores.",
+            "caption": "This is like the minecraft enchanment table lanaguge but in sin and cosine",
             "embedUrl": "https://www.desmos.com/calculator/djjydjv8my?embed",
             "embedTitle": "Desmos graph 10"
           },
           {
             "id": "desmos-11",
-            "caption": "Graph 11 — add a short description of what this model explores.",
+            "caption": "Something cool and random",
             "embedUrl": "https://www.desmos.com/calculator/o6kihswewg?embed",
             "embedTitle": "Desmos graph 11"
           },
           {
             "id": "desmos-12",
-            "caption": "Graph 12 — add a short description of what this model explores.",
+            "caption": "Like a wave but cooler",
             "embedUrl": "https://www.desmos.com/calculator/hwy8yekqdy?embed",
             "embedTitle": "Desmos graph 12"
           },
           {
             "id": "desmos-13",
-            "caption": "Graph 13 — add a short description of what this model explores.",
+            "caption": "Something random and cool",
             "embedUrl": "https://www.desmos.com/calculator/nlhllz2ihl?embed",
             "embedTitle": "Desmos graph 13"
-          },
-          {
-            "id": "desmos-14",
-            "caption": "Graph 14 — add a short description of what this model explores.",
-            "embedUrl": "https://www.desmos.com/calculator/yjodqvwdoi?embed",
-            "embedTitle": "Desmos graph 14"
           }
         ]
       }
