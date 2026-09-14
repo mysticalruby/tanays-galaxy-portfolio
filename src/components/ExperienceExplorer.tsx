@@ -179,7 +179,7 @@ function MoonOrbit({
           alt=""
           width={MOON_SIZE}
           height={MOON_SIZE}
-          className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_8px_rgba(192,197,206,0.45)]"
+          className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_8px_rgba(163,175,189,0.45)]"
           draggable={false}
         />
       </button>
@@ -243,7 +243,7 @@ function PlanetFocusView({
                 alt={planet.name}
                 width={planetDisc}
                 height={planetDisc}
-                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_28px_rgba(74,159,212,0.35)]"
+                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_28px_rgba(141,188,212,0.35)]"
                 priority
                 draggable={false}
               />
@@ -345,7 +345,7 @@ function SolarSystemView({
                 alt="Sun — home / overview"
                 width={96}
                 height={96}
-                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_32px_rgba(244,208,63,0.45)]"
+                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_32px_rgba(216,170,106,0.45)]"
                 priority
                 draggable={false}
               />
@@ -402,7 +402,7 @@ function SolarSystemView({
                         alt={planet.name}
                         width={planet.size}
                         height={planet.size}
-                        className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_14px_rgba(74,159,212,0.4)]"
+                        className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_14px_rgba(141,188,212,0.4)]"
                         draggable={false}
                       />
                     ) : (

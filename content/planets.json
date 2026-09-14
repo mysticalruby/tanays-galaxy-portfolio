@@ -4,7 +4,7 @@
       "slug": "research-internships",
       "name": "Research & Internships",
       "description": "Faculty-led research at WPI",
-      "color": "#A78BFA",
+      "color": "#8DBCD4",
       "imageSrc": "/images/celestial/Mercury.png",
       "projectSlugs": [
         "wpi-metal-am-research-intern",
@@ -19,7 +19,7 @@
       "slug": "math-modeling",
       "name": "Math Modeling",
       "description": "Mathematical models, competitions, and simulation",
-      "color": "#C0C5CE",
+      "color": "#A3AFBD",
       "imageSrc": "/images/celestial/Mars.png",
       "projectSlugs": [
         "fem-quantum-harmonic-oscillator",
@@ -40,7 +40,7 @@
       "slug": "coding-trading",
       "name": "Coding & Trading",
       "description": "Software, AI systems, and algorithmic markets",
-      "color": "#4A9FD4",
+      "color": "#8DBCD4",
       "imageSrc": "/images/celestial/Venus.png",
       "projectSlugs": [
         "articulate",
@@ -55,7 +55,7 @@
       "slug": "engineering",
       "name": "Engineering",
       "description": "Robotics, wearables, and physical prototypes",
-      "color": "#D4AF37",
+      "color": "#D8AA6A",
       "imageSrc": "/images/celestial/Jupiter.png",
       "projectSlugs": [
         "gvs-balance-glasses",
@@ -72,7 +72,7 @@
       "slug": "leadership-community",
       "name": "Leadership & Community",
       "description": "Teams, nonprofits, teaching, and competition leadership",
-      "color": "#4ADE80",
+      "color": "#E8EDF2",
       "imageSrc": "/images/celestial/Neptune.png",
       "projectSlugs": [
         "tech-awareness-association",

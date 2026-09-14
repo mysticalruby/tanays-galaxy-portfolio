@@ -1,72 +1,92 @@
 {
   "title": "Currently Exploring",
-  "subtitle": "Topics drifting through space",
-  "supporting": "I am especially interested in problems where mathematics, physical systems, computation, and design have to work together.",
-  "viewportHint": "Click an asteroid to see what I am learning.",
+  "subtitle": "Things I am learning",
+  "supporting": "I have done the first few tutorials for these and I want to keep working through them, this is where I am keeping track of what I am exploring and what I want to try next.",
+  "viewportHint": "Drag a topic into the schematic, then open a cell to read more.",
   "topics": [
     {
-      "id": "java",
-      "label": "Java"
-    },
-    {
       "id": "computational-physics",
-      "label": "Computational Physics & Multiphysics Modeling"
+      "label": "Computational Physics & Multiphysics Modeling",
+      "overview": "Computational physics is something I want to spend more time on because it connects the math to an actual physical problem, you can take an equation and turn it into something you can run and then see how the system changes. I am especially interested in using this for aerospace and space-related problems, although I am still working through the basics.",
+      "learning": "I have done the first few tutorials, so this is still an early exploration. What I want to understand better is how you go from the physical assumptions to the equations and then to a numerical solution, including what happens when the time step is too large or the approximation is not good enough. Getting a graph out is one part of it, being able to explain why that graph makes sense is what I want to get better at.",
+      "nextSteps": "Next I want to take a small problem where I can also work out the answer separately, something like a simple motion problem, and compare it to the simulation. From there I would like to change the assumptions and see where the results start to differ, then work toward problems with more than one physical effect involved."
     },
     {
       "id": "fem",
-      "label": "Finite Element Method (FEM) Simulation"
-    },
-    {
-      "id": "feynman-loop",
-      "label": "Feynman Loop Integrals (Dimensional Continuation)"
+      "label": "Finite Element Method (FEM) Simulation",
+      "overview": "I am exploring the finite element method because there are a lot of engineering problems where the shape and the material matter and a simple equation is not going to cover the whole thing. Breaking a model into smaller elements gives you a way to approximate what is happening across it, which is useful, but I also want to understand what that approximation is actually doing.",
+      "learning": "I have worked through the first few tutorials and I am still getting familiar with the process. The things I want to pay attention to are the geometry, material properties, loads, boundary conditions and the mesh, because each of those is part of the problem you are asking the software to solve. I do not want to treat the colored result plot as the answer without checking how I got there.",
+      "nextSteps": "I want to start with a simple structural example and compare it against a calculation, then refine the mesh and see how the result changes. I would also like to try changing how the part is supported, because that seems like a good way to understand how much the setup matters before moving on to a more complicated design."
     },
     {
       "id": "latex",
-      "label": "LaTeX"
+      "label": "LaTeX",
+      "overview": "LaTeX is something I want to get more comfortable with because a lot of the work I do involves equations, figures and longer explanations, and putting all of that together should not take as much effort as the actual work. I am interested in having a document I can keep adding to without constantly having to fix the formatting.",
+      "learning": "I have done the first few tutorials and I am working on the basics rather than saying I know the whole thing. The parts I want to get comfortable with are writing equations, organizing sections, adding figures and tables, and referencing them properly. For a math modeling paper especially, it would be useful to have the calculations and the explanation together in a format that is easy to follow.",
+      "nextSteps": "I want to put together a small write-up with a few equations and a figure, then build that into a template I can reuse for future work. After that I would like to spend more time on references and longer documents, especially making sure that changing one part does not leave the rest of the paper with incorrect numbering."
     },
     {
       "id": "cooking",
-      "label": "Cooking"
+      "label": "Cooking",
+      "overview": "I already like to cook and bake, some of the things I have made are in the About Me gallery. This is here because there is still a lot I want to try, not because cooking is a new thing for me. It is also a good way to take my mind off the other tasks I have going on, even if I sometimes end up juggling those while I am cooking.",
+      "learning": "I have done the first few tutorials I started with here, and I want to keep learning more about the techniques behind a recipe. With baking especially, I want to understand how the ingredients, timing and temperature affect the result, because knowing the steps and knowing why those steps work are different things. I would like to get better at making changes without having to guess quite as much.",
+      "nextSteps": "Next I want to try more recipes and revisit some of the things I have already made, changing one part and seeing whether it actually improves them. I also want to keep adding to the gallery, including the things that do not go exactly to plan, because sometimes figuring out how to salvage something is a large part of the process."
     },
     {
       "id": "gis",
-      "label": "GIS"
+      "label": "GIS",
+      "overview": "GIS is something I am exploring because location can be a large part of a problem, and a table of numbers does not always make that obvious. Having the data on a map can help show how places relate to each other, which could be useful for the community and network-type problems I am interested in modeling.",
+      "learning": "I have done the first few tutorials and I am still learning how to work with spatial data. I want to get more comfortable with layers, the information attached to each location, and coordinate systems, especially making sure that different datasets actually line up before trying to draw a conclusion from them. A map can look convincing even when the data behind it needs more checking.",
+      "nextSteps": "Next I would like to use a small public dataset and ask a specific question about it, such as how locations are distributed or how far they are from something useful. I want to practice combining layers and explaining what the map does and does not tell me, then see how that could fit into a larger modeling project."
     },
     {
       "id": "openrocket",
-      "label": "OpenRocket / Rocket Trajectory Simulation"
+      "label": "OpenRocket / Rocket Trajectory Simulation",
+      "overview": "OpenRocket is something I wanted to try because I am interested in aerospace and I want to understand more of what goes into a rocket design before it ever flies. There are a lot of things you can change, the dimensions, fins, mass and motor, and I want to understand how those changes affect the flight instead of only looking at the predicted altitude.",
+      "learning": "I have done the first few tutorials and I am still getting used to the design and simulation process. What I want to learn more about is the relationship between the center of gravity and center of pressure, the stability of the rocket, and how to read the flight plots. I am also interested in how launch conditions and recovery choices affect the simulation, because the rocket itself is only part of the setup.",
+      "nextSteps": "Next I want to take a simple design and change one thing at a time, then compare the altitude, velocity and stability results rather than changing several things and not knowing which one mattered. Eventually I would like to connect that with a physical build and compare the prediction to an actual flight, but that is something I want to work toward, not something I have completed yet."
     },
     {
       "id": "cad",
-      "label": "3D Modeling (CAD)"
+      "label": "3D Modeling (CAD)",
+      "overview": "I am exploring CAD because I want to be able to take a design idea and actually define its shape and dimensions, especially for the kinds of engineering prototypes I like working on. A drawing can show what I mean, but a model lets me be much more specific about how the parts fit together and what might need to change.",
+      "learning": "I have done the first few tutorials and I am working on getting comfortable with the basics. Sketches, dimensions, constraints and turning a sketch into a three-dimensional part are things I want to understand well, especially how the model behaves when I change a dimension later. I would like to get better at building something that is easy to revise instead of having to redo a lot of it.",
+      "nextSteps": "Next I want to model a small part with a clear purpose, something like a bracket or an enclosure for electronics, and think through the space it needs and how it would be assembled. From there I want to try multiple parts together and see how the CAD model could feed into a simulation without treating the model and the analysis as unrelated tasks."
     },
     {
       "id": "multiphysics",
-      "label": "Multiphysics Modeling"
-    },
-    {
-      "id": "python",
-      "label": "Python / Computational Scripting"
+      "label": "Multiphysics Modeling",
+      "overview": "Multiphysics modeling is interesting to me because a real system usually has several things happening at once. Heat can affect a material, a material can deform, and that deformation can change the rest of the system, so I want to learn how those effects can be modeled together instead of treating each one as completely separate.",
+      "learning": "I have done the first few tutorials, but I am still at the stage of learning how these models are set up. I want to understand what information passes from one part of the model to another and when the effects need to feed back into each other. There is also the question of whether adding more physics actually helps explain the problem, or just gives me more things to set up incorrectly.",
+      "nextSteps": "Next I would like to try a small coupled example, such as a part heating up and expanding, and compare it with a simpler model where those effects are kept separate. I want to be able to explain what changed and why before trying to put several different effects into one large simulation."
     },
     {
       "id": "matlab",
-      "label": "MATLAB"
+      "label": "MATLAB",
+      "overview": "MATLAB is something I am exploring as another way to work with mathematical models and numerical calculations. I want to get more comfortable with a workflow where I can set up a calculation, change the parameters and compare the results, especially when there are arrays of data or several cases to work through.",
+      "learning": "I have done the first few tutorials, so I am still learning how things are organized and how to work with the language. The areas I want to spend more time on are matrices, scripts, functions and plotting, then using those together for a small numerical problem. I also want to understand what the operations are doing rather than getting code to run and assuming that means the calculation is correct.",
+      "nextSteps": "Next I would like to take a calculation I can check by hand and turn it into a script, then run it for several inputs and plot the results. After that I want to try solving a simple differential equation numerically and compare the output with what I expect from the math, including checking how the numerical choices affect it."
     },
     {
       "id": "circuit-design",
-      "label": "Circuit Design / Basic Electronics"
-    },
-    {
-      "id": "3d-printing",
-      "label": "3D Printing"
+      "label": "Circuit Design / Basic Electronics",
+      "overview": "Circuit design is something I want to keep learning about, especially after working on the PCB for our STEM II project. Making that PCB in EasyEDA involved a lot of trial and error, and it made me want to understand more of the electrical side of a design, not only how to connect everything on the board.",
+      "learning": "I have done the first few tutorials I started with for this, and I want to build up the fundamentals alongside the practical work I have already done. I am interested in getting more comfortable reading schematics, understanding what the components are doing, and thinking through power and signal connections before laying out a PCB. I also want to get better at checking a design before the testing stage.",
+      "nextSteps": "Next I want to work through a small circuit and explain how it should behave, then compare that with measurements or a circuit simulation. I would like to bring that back into PCB design, especially component placement, routing and making the board easier to test, because testing was a large part of the STEM II project and I want to keep improving that process."
     },
     {
       "id": "data-viz",
-      "label": "Data Visualization & Analysis"
+      "label": "Data Visualization & Analysis",
+      "overview": "Data visualization is something I want to get better at because a large part of modeling is explaining what the results mean to someone else. There can be a lot happening in the data, and I want to be able to show the important parts without making a graph that takes just as much work to understand as the original numbers.",
+      "learning": "I have done the first few tutorials and I want to spend more time on choosing the right plot for the question. Axes, units, scales and how different cases are compared all matter, and I am especially interested in showing uncertainty and differences between a model and the data it is supposed to explain. I want the visualization to help someone check the reasoning, not just make the result look finished.",
+      "nextSteps": "Next I would like to take a dataset or some outputs from a model and explain them in a few different ways, then see which one makes the comparison easiest to follow. I also want to practice showing how changing an assumption changes the result, since that would be useful for the modeling papers and presentations I work on."
     },
     {
       "id": "arduino",
-      "label": "Arduino / Microcontroller Programming"
+      "label": "Arduino / Microcontroller Programming",
+      "overview": "I am exploring Arduino and microcontroller programming because I like projects where the code has to interact with something physical. Our STEM II prototype used an ESP32 and IMUs, so I have already had some exposure to that kind of work, and I want to keep learning more about how the hardware and the program work together.",
+      "learning": "I have done the first few tutorials here and I want to get more comfortable with the smaller building blocks, reading inputs, controlling outputs and checking what the program is doing while it runs. I am also interested in sensor data and timing, because a program that works with stored data is different from one that needs to keep up with measurements coming from a device.",
+      "nextSteps": "Next I would like to work with a simple sensor and make the readings easy to inspect, then add a small output that responds to those readings. From there I want to spend more time on noisy measurements, calibration and testing, and work toward a device that keeps behaving as expected outside of the initial setup."
     }
   ]
 }

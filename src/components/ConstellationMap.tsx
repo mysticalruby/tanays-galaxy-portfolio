@@ -424,8 +424,8 @@ export function ConstellationMap({ awards }: ConstellationMapProps) {
         )}
       </div>
       <p className="mt-3 text-center text-sm text-text-muted">
-        Colored stars are awards — silver for math, gold for engineering, blue
-        for leadership, purple for discipline. Click a star to jump to its card.
+        Colored stars are awards — starlight for math, amber for engineering, ice
+        blue for leadership, slate for discipline. Click a star to jump to its card.
       </p>
     </div>
   );

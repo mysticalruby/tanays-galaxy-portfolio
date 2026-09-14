@@ -1,15 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --bg-deep: #0f1419;
-  --surface-navy: #1a2332;
-  --silver: #c0c5ce;
-  --blue: #4a9fd4;
-  --gold: #d4af37;
-  --yellow: #f4d03f;
-  --text-primary: #f0f2f5;
-  --text-muted: #8b95a5;
-  --rocket-red: #e85a4f;
+  color-scheme: dark;
+  --bg-deep: #050608;
+  --surface-navy: #11151b;
+  --surface-raised: #1b222c;
+  --border-muted: #303a47;
+  --silver: #a3afbd;
+  --blue: #8dbcd4;
+  --gold: #d8aa6a;
+  --yellow: var(--gold);
+  --text-primary: #e8edf2;
+  --text-muted: #a3afbd;
+  --rocket-red: #bc7f73;
   --background: var(--bg-deep);
   --foreground: var(--text-primary);
 }
@@ -17,6 +20,8 @@
 @theme inline {
   --color-bg-deep: var(--bg-deep);
   --color-surface-navy: var(--surface-navy);
+  --color-surface-raised: var(--surface-raised);
+  --color-border-muted: var(--border-muted);
   --color-silver: var(--silver);
   --color-blue: var(--blue);
   --color-gold: var(--gold);
@@ -170,11 +175,11 @@ h6 {
   border-radius: 55% 12% 12% 55% / 50% 35% 35% 50%;
   background: linear-gradient(
     90deg,
-    rgba(255, 120, 40, 0) 0%,
-    rgba(232, 90, 79, 0.45) 18%,
-    rgba(255, 170, 50, 0.85) 52%,
-    rgba(255, 236, 160, 0.95) 86%,
-    rgba(255, 255, 255, 0.7) 100%
+    rgb(216 170 106 / 0) 0%,
+    rgb(188 127 115 / 0.35) 18%,
+    rgb(216 170 106 / 0.7) 52%,
+    rgb(232 237 242 / 0.85) 86%,
+    rgb(232 237 242 / 0.6) 100%
   );
   filter: blur(0.6px);
   opacity: 0.88;
@@ -193,9 +198,9 @@ h6 {
   border-radius: inherit;
   background: linear-gradient(
     90deg,
-    rgba(255, 80, 20, 0) 0%,
-    rgba(255, 100, 30, 0.4) 32%,
-    rgba(255, 210, 90, 0.7) 100%
+    rgb(216 170 106 / 0) 0%,
+    rgb(216 170 106 / 0.3) 32%,
+    rgb(216 170 106 / 0.55) 100%
   );
   filter: blur(2px);
   opacity: 0.75;

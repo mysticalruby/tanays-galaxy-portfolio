@@ -36,7 +36,7 @@ export default function AboutPage() {
         strong interests in mathematics, science, and engineering.
       </p>
       <div className="grid gap-10 lg:grid-cols-2">
-        <div className="space-y-4 border border-white/10 bg-black px-5 py-4 text-text-muted">
+        <div className="space-y-4 border border-border-muted bg-surface-navy px-5 py-4 text-text-muted">
           <p>
             I am a student at the Massachusetts Academy of Math and Science at
             Worcester Polytechnic Institute (WPI), with strong interests in

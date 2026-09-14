@@ -3,7 +3,7 @@ import { site } from "@/lib/content";
 
 export function Header() {
   return (
-    <header className="relative z-50 bg-[#05070c]">
+    <header className="relative z-50 bg-bg-deep">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <Link
           href="/"
@@ -28,7 +28,7 @@ export function Header() {
             <summary className="cursor-pointer list-none px-3 py-2 text-sm text-text-primary transition-colors hover:text-blue [&::-webkit-details-marker]:hidden">
               Menu
             </summary>
-            <ul className="absolute inset-x-0 top-full z-50 bg-[#05070c] px-4 py-2 sm:px-6">
+            <ul className="absolute inset-x-0 top-full z-50 bg-bg-deep px-4 py-2 sm:px-6">
               {site.nav.map((item) => (
                 <li key={item.href}>
                   <Link

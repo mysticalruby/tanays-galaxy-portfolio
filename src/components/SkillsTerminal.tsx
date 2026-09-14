@@ -309,20 +309,20 @@ export function SkillsTerminal() {
 
   return (
     <div className="relative mx-auto w-full max-w-4xl">
-      <div className="rounded-t-2xl border border-silver/20 bg-gradient-to-b from-[#3d4654] to-[#2a3140] px-4 pb-3 pt-4 shadow-2xl">
+      <div className="rounded-t-2xl border border-silver/20 bg-gradient-to-b from-surface-raised to-surface-navy px-4 pb-3 pt-4 shadow-2xl">
         <div className="mb-3 flex items-center gap-2 px-1">
-          <span className="h-2.5 w-2.5 rounded-full bg-red-500/80" />
+          <span className="h-2.5 w-2.5 rounded-full bg-rocket-red/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-yellow/80" />
-          <span className="h-2.5 w-2.5 rounded-full bg-green-500/80" />
+          <span className="h-2.5 w-2.5 rounded-full bg-blue/80" />
           <span className="ml-2 font-mono text-xs tracking-wide text-silver/70">
             skills-terminal — galaxy.local
           </span>
         </div>
 
-        <div className="overflow-hidden rounded-lg border-2 border-[#1a1f28] bg-[#0a0e12] shadow-inner">
+        <div className="overflow-hidden rounded-lg border-2 border-border-muted bg-bg-deep shadow-inner">
           <div
             ref={scrollRef}
-            className="h-[min(52vh,28rem)] overflow-y-auto p-4 font-mono text-sm leading-relaxed text-green-400/95"
+            className="h-[min(52vh,28rem)] overflow-y-auto p-4 font-mono text-sm leading-relaxed text-text-primary"
             aria-live="polite"
           >
             {history.map((line) => {
@@ -337,7 +337,7 @@ export function SkillsTerminal() {
                     key={line.id}
                     type="button"
                     onClick={() => openCategory(categoryIdx)}
-                    className="block w-full text-left hover:bg-green-400/10 hover:text-yellow"
+                    className="block w-full text-left hover:bg-blue/10 hover:text-yellow"
                   >
                     {line.text}
                   </button>
@@ -351,7 +351,7 @@ export function SkillsTerminal() {
                     line.kind === "input"
                       ? "text-blue/90"
                       : line.kind === "system"
-                        ? "text-green-400/70"
+                        ? "text-text-muted"
                         : ""
                   }
                 >
@@ -363,9 +363,9 @@ export function SkillsTerminal() {
 
           <form
             onSubmit={handleSubmit}
-            className="flex items-center gap-2 border-t border-green-400/20 bg-[#060a0d] px-4 py-3"
+            className="flex items-center gap-2 border-t border-border-muted bg-surface-navy px-4 py-3"
           >
-            <span className="shrink-0 font-mono text-sm text-green-400/80">
+            <span className="shrink-0 font-mono text-sm text-blue/80">
               tanay@galaxy:~$
             </span>
             <div className="relative min-w-0 flex-1">
@@ -379,7 +379,7 @@ export function SkillsTerminal() {
                 autoComplete="off"
                 spellCheck={false}
                 aria-label="Terminal command input"
-                className="w-full bg-transparent font-mono text-sm text-green-400 outline-none placeholder:text-green-400/30 disabled:opacity-50"
+                className="w-full bg-transparent font-mono text-sm text-text-primary outline-none placeholder:text-text-muted/50 disabled:opacity-50"
                 placeholder={panelOpen ? "close panel to type…" : "help"}
               />
               {autocomplete && !panelOpen && (
@@ -388,7 +388,7 @@ export function SkillsTerminal() {
                   aria-hidden
                 >
                   <span className="invisible">{input}</span>
-                  <span className="text-green-400/30">{autocomplete}</span>
+                  <span className="text-text-muted/50">{autocomplete}</span>
                 </span>
               )}
             </div>
@@ -398,12 +398,12 @@ export function SkillsTerminal() {
         <div className="mx-auto mt-2 h-1.5 w-3 rounded-full bg-silver/30" />
       </div>
 
-      <div className="mx-auto h-6 w-24 bg-gradient-to-b from-[#2a3140] to-[#1a1f28]" />
-      <div className="mx-auto h-2 w-40 rounded-full bg-[#1a1f28] shadow-lg" />
+      <div className="mx-auto h-6 w-24 bg-gradient-to-b from-surface-navy to-bg-deep" />
+      <div className="mx-auto h-2 w-40 rounded-full bg-surface-navy shadow-lg" />
 
       <p className="mt-6 text-center text-sm text-text-muted">
         {skillsIntro} Type{" "}
-        <kbd className="rounded border border-silver/30 px-1.5 py-0.5 font-mono text-xs text-green-400/90">
+        <kbd className="rounded border border-silver/30 px-1.5 py-0.5 font-mono text-xs text-blue/90">
           skills
         </kbd>{" "}
         to browse nine categories, then pick a specific skill in the panel.
@@ -428,7 +428,7 @@ export function SkillsTerminal() {
           <>
             <div className="flex items-start justify-between gap-3 border-b border-silver/20 p-5">
               <div className="min-w-0">
-                <p className="font-mono text-xs uppercase tracking-wider text-green-400/80">
+                <p className="font-mono text-xs uppercase tracking-wider text-blue/80">
                   {selectedSkill ? "skill.load()" : "category.load()"}
                 </p>
                 {selectedSkill ? (
@@ -495,7 +495,7 @@ export function SkillsTerminal() {
                               : "border-silver/20 text-text-muted hover:border-silver/40"
                           }`}
                         >
-                          <span className="font-mono text-xs text-green-400/80">
+                          <span className="font-mono text-xs text-blue/80">
                             [{i + 1}]
                           </span>
                           <span className="mt-1 block font-display font-medium">
@@ -552,7 +552,7 @@ export function SkillsTerminal() {
                               : "border-silver/20 text-text-muted hover:border-silver/40"
                           }`}
                         >
-                          <span className="font-mono text-xs text-green-400/80">
+                          <span className="font-mono text-xs text-blue/80">
                             [{i + 1}]
                           </span>
                           <span className="mt-1 block font-display font-medium">

@@ -237,8 +237,8 @@ export function ProjectDetail({ project }: { project: Project }) {
       </header>
 
       {hero ? (
-        <figure className="border border-white/10 bg-[#05070c] p-[1px]">
-          <div className="border border-white/[0.06] bg-[#070b12]">
+        <figure className="border border-border-muted bg-bg-deep p-[1px]">
+          <div className="border border-border-muted bg-surface-navy">
             <div className="relative aspect-[16/10] w-full">
               <Image
                 src={hero.src}

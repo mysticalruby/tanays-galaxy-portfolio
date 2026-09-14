@@ -1,7 +1,7 @@
 /* Parallax starfield — CSS box-shadow layers (ported from reference static site) */
 
 .starfield-sky {
-  background: radial-gradient(ellipse at bottom, #1b2735 0%, #0f1419 45%, #090a0f 100%);
+  background: radial-gradient(ellipse at bottom, var(--surface-navy) 0%, var(--bg-deep) 60%, var(--bg-deep) 100%);
 }
 
 .starfield-layer {

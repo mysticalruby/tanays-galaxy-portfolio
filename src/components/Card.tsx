@@ -11,7 +11,7 @@ export function Card({ children, className = "", as: Tag = "div", id }: CardProp
   return (
     <Tag
       id={id}
-      className={`rounded-none border border-white/10 bg-black p-5 sm:p-6 ${className}`}
+      className={`rounded-none border border-border-muted bg-surface-navy p-5 sm:p-6 ${className}`}
     >
       {children}
     </Tag>

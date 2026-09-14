@@ -7,10 +7,10 @@
     "Discipline & Personal Achievement"
   ],
   "constellationColors": {
-    "Mathematical Modeling & Academic Challenge": "#C0C5CE",
-    "Engineering & Robotics": "#D4AF37",
-    "Leadership & Community": "#4A9FD4",
-    "Discipline & Personal Achievement": "#A855F7"
+    "Mathematical Modeling & Academic Challenge": "#E8EDF2",
+    "Engineering & Robotics": "#D8AA6A",
+    "Leadership & Community": "#8DBCD4",
+    "Discipline & Personal Achievement": "#A3AFBD"
   },
   "featuredAwardIds": [
     "hanmadang-team-silver",
@@ -31,7 +31,7 @@
       "verified": true,
       "rarity": 0.52,
       "technical": 0.74,
-      "starColor": "#F0F2F5",
+      "starColor": "#E8EDF2",
       "starSize": 5.5
     },
     {
@@ -44,7 +44,7 @@
       "verified": true,
       "rarity": 0.76,
       "technical": 0.9,
-      "starColor": "#E8EAED",
+      "starColor": "#E8EDF2",
       "starSize": 6
     },
     {
@@ -57,7 +57,7 @@
       "verified": true,
       "rarity": 0.84,
       "technical": 0.92,
-      "starColor": "#FFFFFF",
+      "starColor": "#E8EDF2",
       "starSize": 6.5
     },
     {
@@ -70,7 +70,7 @@
       "verified": true,
       "rarity": 0.7,
       "technical": 0.95,
-      "starColor": "#C0C5CE",
+      "starColor": "#A3AFBD",
       "starSize": 5.5
     },
     {
@@ -83,7 +83,7 @@
       "verified": true,
       "rarity": 0.8,
       "technical": 0.88,
-      "starColor": "#D4AF37",
+      "starColor": "#D8AA6A",
       "starSize": 5.5
     },
     {
@@ -96,7 +96,7 @@
       "verified": true,
       "rarity": 0.88,
       "technical": 0.62,
-      "starColor": "#F4D03F",
+      "starColor": "#D8AA6A",
       "starSize": 6.5
     },
     {
@@ -109,7 +109,7 @@
       "verified": true,
       "rarity": 0.65,
       "technical": 0.4,
-      "starColor": "#5EB3E8",
+      "starColor": "#8DBCD4",
       "starSize": 5
     },
     {
@@ -122,7 +122,7 @@
       "verified": true,
       "rarity": 0.74,
       "technical": 0.86,
-      "starColor": "#E8EAED",
+      "starColor": "#E8EDF2",
       "starSize": 6
     },
     {
@@ -135,7 +135,7 @@
       "verified": true,
       "rarity": 0.68,
       "technical": 0.84,
-      "starColor": "#B8BFC9",
+      "starColor": "#A3AFBD",
       "starSize": 5
     },
     {
@@ -148,7 +148,7 @@
       "verified": true,
       "rarity": 0.72,
       "technical": 0.82,
-      "starColor": "#D4D8DE",
+      "starColor": "#E8EDF2",
       "starSize": 5
     },
     {
@@ -161,7 +161,7 @@
       "verified": true,
       "rarity": 0.86,
       "technical": 0.3,
-      "starColor": "#E8EAED",
+      "starColor": "#E8EDF2",
       "starSize": 6.5
     },
     {
@@ -174,7 +174,7 @@
       "verified": true,
       "rarity": 0.78,
       "technical": 0.28,
-      "starColor": "#CD7F32",
+      "starColor": "#D8AA6A",
       "starSize": 5.5
     },
     {
@@ -187,7 +187,7 @@
       "verified": true,
       "rarity": 0.64,
       "technical": 0.78,
-      "starColor": "#C0C5CE",
+      "starColor": "#A3AFBD",
       "starSize": 5
     },
     {
@@ -200,7 +200,7 @@
       "verified": true,
       "rarity": 0.58,
       "technical": 0.7,
-      "starColor": "#A8B0BC",
+      "starColor": "#A3AFBD",
       "starSize": 4.5
     },
     {
@@ -213,7 +213,7 @@
       "verified": true,
       "rarity": 0.55,
       "technical": 0.38,
-      "starColor": "#C4B5FD",
+      "starColor": "#A3AFBD",
       "starSize": 4.5
     },
     {
@@ -226,7 +226,7 @@
       "verified": true,
       "rarity": 0.48,
       "technical": 0.65,
-      "starColor": "#9CA3AF",
+      "starColor": "#A3AFBD",
       "starSize": 4
     },
     {
@@ -239,7 +239,7 @@
       "verified": true,
       "rarity": 0.62,
       "technical": 0.55,
-      "starColor": "#A855F7",
+      "starColor": "#A3AFBD",
       "starSize": 5
     },
     {
@@ -252,7 +252,7 @@
       "verified": true,
       "rarity": 0.6,
       "technical": 0.42,
-      "starColor": "#DDD6FE",
+      "starColor": "#A3AFBD",
       "starSize": 4.5
     },
     {
@@ -265,7 +265,7 @@
       "verified": true,
       "rarity": 0.56,
       "technical": 0.4,
-      "starColor": "#B8BFC9",
+      "starColor": "#A3AFBD",
       "starSize": 4
     },
     {
@@ -278,7 +278,7 @@
       "verified": true,
       "rarity": 0.45,
       "technical": 0.25,
-      "starColor": "#4A9FD4",
+      "starColor": "#8DBCD4",
       "starSize": 5
     },
     {
@@ -291,7 +291,7 @@
       "verified": true,
       "rarity": 0.7,
       "technical": 0.32,
-      "starColor": "#A855F7",
+      "starColor": "#A3AFBD",
       "starSize": 5.5
     },
     {
@@ -304,7 +304,7 @@
       "verified": true,
       "rarity": 0.66,
       "technical": 0.72,
-      "starColor": "#D4D8DE",
+      "starColor": "#E8EDF2",
       "starSize": 4.5
     },
     {
@@ -317,7 +317,7 @@
       "verified": true,
       "rarity": 0.5,
       "technical": 0.76,
-      "starColor": "#B8BFC9",
+      "starColor": "#A3AFBD",
       "starSize": 4
     },
     {
@@ -330,7 +330,7 @@
       "verified": true,
       "rarity": 0.54,
       "technical": 0.22,
-      "starColor": "#9333EA",
+      "starColor": "#A3AFBD",
       "starSize": 4.5
     },
     {
@@ -343,7 +343,7 @@
       "verified": true,
       "rarity": 0.38,
       "technical": 0.48,
-      "starColor": "#4A9FD4",
+      "starColor": "#8DBCD4",
       "starSize": 4
     },
     {
@@ -356,7 +356,7 @@
       "verified": true,
       "rarity": 0.42,
       "technical": 0.44,
-      "starColor": "#5EB3E8",
+      "starColor": "#8DBCD4",
       "starSize": 3.5
     }
   ]

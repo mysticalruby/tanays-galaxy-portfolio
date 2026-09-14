@@ -3,8 +3,8 @@
 import { useMemo, type CSSProperties } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
-/** Portfolio star tones — silver / white / soft blue (not the reference gold). */
-const STAR_COLORS = ["#f0f2f5", "#c0c5ce", "#8eb8d9", "#4a9fd4"] as const;
+/** Star tones share the site palette so they stay in sync with theme changes. */
+const STAR_COLORS = ["var(--text-primary)", "var(--silver)", "var(--blue)", "var(--gold)"] as const;
 
 function mulberry32(seed: number) {
   return () => {

@@ -313,7 +313,7 @@ export function RocketViewer() {
 
       <div
         ref={tooltipRef}
-        className="pointer-events-none fixed z-50 hidden max-w-[240px] border border-white/20 bg-[#0f1419]/95 px-2.5 py-1.5 text-xs text-text-primary shadow-lg"
+        className="pointer-events-none fixed z-50 hidden max-w-[240px] border border-border-muted bg-bg-deep/95 px-2.5 py-1.5 text-xs text-text-primary shadow-lg"
         aria-hidden
       />
     </div>
