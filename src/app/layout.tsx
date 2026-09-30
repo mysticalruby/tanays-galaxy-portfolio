@@ -1,33 +1,37 @@
 import type { Metadata } from "next";
-import { Audiowide, Orbitron, Space_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import Script from "next/script";
-import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { StarfieldBackground } from "@/components/StarfieldBackground";
 import "./globals.css";
 import "../styles/starfield.css";
 
 /** Wide futuristic display — logos, posters, page headers */
-const audiowide = Audiowide({
+const audiowide = localFont({
+  src: "../../public/fonts/audiowide-400.ttf",
   variable: "--font-display-family",
-  subsets: ["latin"],
-  weight: "400",
   display: "swap",
 });
 
 /** Geometric sci-fi sans — body copy and HUD-style UI readouts */
-const orbitron = Orbitron({
+const orbitron = localFont({
+  src: [
+    { path: "../../public/fonts/orbitron-400.ttf", weight: "400" },
+    { path: "../../public/fonts/orbitron-500.ttf", weight: "500" },
+    { path: "../../public/fonts/orbitron-600.ttf", weight: "600" },
+    { path: "../../public/fonts/orbitron-700.ttf", weight: "700" },
+  ],
   variable: "--font-body",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 /** Fixed-width technical face — terminals and starship-style interfaces */
-const spaceMono = Space_Mono({
+const spaceMono = localFont({
+  src: [
+    { path: "../../public/fonts/space-mono-400.ttf", weight: "400" },
+    { path: "../../public/fonts/space-mono-700.ttf", weight: "700" },
+  ],
   variable: "--font-mono-family",
-  subsets: ["latin"],
-  weight: ["400", "700"],
   display: "swap",
 });
 
@@ -78,10 +82,10 @@ export default function RootLayout({
           Skip to main content
         </a>
         <Header />
+        <div className="h-16 shrink-0" aria-hidden="true" />
         <main id="main-content" className="flex-1">
           {children}
         </main>
-        <Footer />
       </body>
     </html>
   );

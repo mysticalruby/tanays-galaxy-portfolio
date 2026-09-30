@@ -53,7 +53,7 @@ function GalleryPanel({ gallery }: { gallery: AboutGallery }) {
   }));
 
   return (
-    <article className="flex h-full flex-col border border-white/10 bg-black p-5 sm:p-6">
+    <article className="flex h-full flex-col border border-white/10 bg-surface-navy p-5 sm:p-6">
       <h3 className="font-display text-lg font-semibold text-gold">{gallery.title}</h3>
       <p className="mt-1.5 text-sm text-text-muted">{gallery.description}</p>
 

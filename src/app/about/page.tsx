@@ -77,11 +77,11 @@ export default function AboutPage() {
             .
           </p>
         </div>
-        <figure className="overflow-hidden border border-white/10 bg-black">
-          <div className="relative aspect-square w-full max-w-md bg-black lg:max-w-none">
+        <figure className="overflow-hidden border border-white/10 bg-surface-navy">
+          <div className="relative aspect-square w-full max-w-md bg-surface-navy lg:max-w-none">
             <Image
-              src="/images/portrait-main.png"
-              alt="Portrait of Tanay Mangal speaking at a microphone"
+              src="/images/tanay-portrait-formal.jpg"
+              alt="Portrait of Tanay Mangal wearing a suit"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"

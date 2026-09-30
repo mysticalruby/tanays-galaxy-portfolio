@@ -2,17 +2,17 @@
 
 :root {
   color-scheme: dark;
-  --bg-deep: #050608;
-  --surface-navy: #11151b;
-  --surface-raised: #1b222c;
-  --border-muted: #303a47;
-  --silver: #a3afbd;
-  --blue: #8dbcd4;
-  --gold: #d8aa6a;
+  --bg-deep: #0a1a3f;
+  --surface-navy: #12275a;
+  --surface-raised: #173b85;
+  --border-muted: #4968a2;
+  --silver: #a9b4cf;
+  --blue: #ffb63b;
+  --gold: #ffb63b;
   --yellow: var(--gold);
-  --text-primary: #e8edf2;
-  --text-muted: #a3afbd;
-  --rocket-red: #bc7f73;
+  --text-primary: #f4f6fb;
+  --text-muted: #a9b4cf;
+  --rocket-red: #ff4a2b;
   --background: var(--bg-deep);
   --foreground: var(--text-primary);
 }
@@ -72,6 +72,11 @@ body {
   color: var(--text-primary);
   font-family: var(--font-body), system-ui, sans-serif;
   line-height: 1.6;
+}
+
+/* Muted copy needs the white ink when it sits on insignia blue. */
+.bg-surface-navy .text-text-muted {
+  color: var(--text-primary);
 }
 
 /* Keep native text, resizing and drag cursors; use the rocket only for links and actions. */
@@ -182,11 +187,11 @@ h6 {
   border-radius: 55% 12% 12% 55% / 50% 35% 35% 50%;
   background: linear-gradient(
     90deg,
-    rgb(216 170 106 / 0) 0%,
-    rgb(188 127 115 / 0.35) 18%,
-    rgb(216 170 106 / 0.7) 52%,
-    rgb(232 237 242 / 0.85) 86%,
-    rgb(232 237 242 / 0.6) 100%
+    rgb(255 74 43 / 0) 0%,
+    rgb(255 74 43 / 0.35) 18%,
+    rgb(255 182 59 / 0.7) 52%,
+    rgb(244 246 251 / 0.9) 86%,
+    rgb(244 246 251 / 0.65) 100%
   );
   filter: blur(0.6px);
   opacity: 0.88;
@@ -205,9 +210,9 @@ h6 {
   border-radius: inherit;
   background: linear-gradient(
     90deg,
-    rgb(216 170 106 / 0) 0%,
-    rgb(216 170 106 / 0.3) 32%,
-    rgb(216 170 106 / 0.55) 100%
+    rgb(255 74 43 / 0) 0%,
+    rgb(255 74 43 / 0.3) 32%,
+    rgb(255 182 59 / 0.55) 100%
   );
   filter: blur(2px);
   opacity: 0.75;

@@ -51,8 +51,8 @@ export function ProjectCard({ project }: { project: Project }) {
   const cta = isExperience(project) ? "Open experience" : "Open project";
 
   return (
-    <article className="group border border-white/10 bg-black p-[1px] transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-blue/40">
-      <div className="bg-black p-6 sm:p-7">
+    <article className="group border border-white/10 bg-surface-navy p-[1px] transition duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] hover:border-blue/40">
+      <div className="bg-surface-navy p-6 sm:p-7">
         <h3 className="font-display text-xl font-semibold tracking-tight text-text-primary transition-colors duration-300 group-hover:text-blue">
           <Link href={href} className="outline-none">
             {project.title}
@@ -98,8 +98,8 @@ export function ProjectDetail({ project }: { project: Project }) {
 
   return (
     <article className="space-y-12">
-      <header className="max-w-3xl border border-white/10 bg-black p-[1px]">
-        <div className="bg-black px-6 py-8 sm:px-8 sm:py-10">
+      <header className="max-w-3xl border border-white/10 bg-surface-navy p-[1px]">
+        <div className="bg-surface-navy px-6 py-8 sm:px-8 sm:py-10">
           <h1 className="font-display text-3xl font-bold tracking-tight text-text-primary sm:text-4xl sm:leading-[1.15]">
             {project.title}
           </h1>

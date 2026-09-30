@@ -1,4 +1,5 @@
-.workbench { margin:24px auto 40px; width:calc(100% - 40px); max-width:1540px; border:1px solid var(--border-muted); background:var(--bg-deep); color:var(--text-primary); font-size:12px; }
+.workbench { --surface-raised:#12275A; margin:24px auto 40px; width:calc(100% - 40px); max-width:1540px; border:1px solid var(--border-muted); background:var(--bg-deep); color:var(--text-primary); font-size:12px; }
+.mobileHint,.mobileHelp,.mobileToolbox,.mobileCellDetails { display:none; }
 .workbench button,.workbench summary,.workbench a { cursor:pointer; }
 .workbench button { font:inherit; text-align:left; }
 .workbench button:hover,.workbench summary:hover { color:var(--blue); }
@@ -114,3 +115,41 @@
 @media(max-width:1150px) { .layout { grid-template-columns:170px minmax(0,1fr) !important; } .properties { grid-column:1 / -1; border-top:1px solid var(--border-muted); border-left:0; } .properties table { float:left; width:45%; } .details { margin-left:45%; } .toolbar>span { width:100%; margin-left:0; } }
 @media(max-width:640px) { .workbench { width:calc(100% - 20px); margin:12px auto 24px; } .titlebar { padding:10px; } .titlebar h1 { font-size:12px; } .titlebar>span { display:none; } .layout { display:flex !important; flex-direction:column; } .toolbox { border-right:0; } .toolbox>p { display:none; } .toolbox details { display:inline-block; vertical-align:top; width:50%; } .toolbox .paneTitle { width:100%; } .toolItem>button:first-child,.toolbox a { min-height:44px; } .cell { min-height:36px; } .properties table { float:none; width:100%; } .details { margin-left:0; } .editor { padding:20px 14px; min-height:480px; } .statusbar>span:last-child { width:100%; margin-left:0; } }
 @media(min-width:641px) and (max-width:1150px) { .layout[data-toolbox="false"] { grid-template-columns:minmax(0,1fr) !important; } }
+@media(max-width:640px) {
+  .workbench { width:calc(100% - 16px); overflow:hidden; }
+  .desktopHint,.desktopHelp { display:none !important; }
+  .mobileHint,.mobileHelp { display:block; }
+  .titlebar h1 { line-height:1.35; }
+  .menubar { overflow-x:auto; white-space:nowrap; }
+  .toolbar { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; padding:10px; }
+  .toolbar button { justify-content:center; min-height:44px; padding:8px; font-size:12px; }
+  .toolbar>span { grid-column:1 / -1; font-size:11px; line-height:1.5; }
+  .intro { font-size:12px; }
+  .intro span { font-size:11px; }
+  .mobileToolbox { display:grid; gap:10px; padding:12px; }
+  .mobileToolbox label { font-size:12px; font-weight:600; }
+  .mobileToolbox select { width:100%; min-height:48px; border:1px solid var(--border-muted); border-radius:0; background:var(--bg-deep); color:var(--text-primary); padding:0 12px; font:inherit; font-size:14px; }
+  .mobileResources { display:flex; flex-wrap:wrap; gap:12px; font-size:11px; }
+  .mobileResources a { color:var(--gold); text-decoration:underline; text-underline-offset:2px; }
+  .toolbox details { display:none; }
+  .tabs { flex-wrap:nowrap; overflow-x:auto; }
+  .tabs>button,.tabs>div { flex-shrink:0; min-height:38px; font-size:12px; white-space:nowrap; }
+  .paneTitle { font-size:12px; padding:9px 12px; }
+  .canvasScroll { max-height:none; overflow:visible; }
+  .canvas { display:flex; flex-direction:column; gap:18px; width:100%; min-height:0 !important; padding:16px 12px; }
+  .connections,.systemLetter,.systemCaption { display:none; }
+  .canvas .system { position:relative; left:auto !important; top:auto !important; width:100%; }
+  .systemHeader { min-height:44px; height:auto; font-size:12px; }
+  .systemHeader>button { min-width:40px; min-height:40px; display:flex; align-items:center; justify-content:center; }
+  .cell { min-height:48px !important; height:auto; font-size:12px !important; }
+  .number { width:34px; font-size:12px; }
+  .mobileCellDetails { display:block; border-top:1px solid var(--border-muted); padding:14px; background:var(--bg-deep); }
+  .mobileCellDetails strong { color:var(--gold); font-size:12px; }
+  .mobileCellDetails p { margin:8px 0 12px; color:var(--text-primary); font-size:12px; line-height:1.65; }
+  .mobileCellDetails button { display:flex; align-items:center; gap:8px; min-height:44px; width:100%; border:1px solid var(--border-muted); padding:8px 12px; background:var(--surface-navy); font-size:12px; }
+  .emptySchematic { position:static; width:100%; max-width:none; padding:20px; font-size:12px; }
+  .parameterBar { position:static; flex-wrap:wrap; gap:8px 14px; margin-top:4px; padding:12px; font-size:11px; }
+  .properties { display:none; }
+  .editor { min-height:0; }
+  .statusbar { font-size:11px; line-height:1.5; }
+}

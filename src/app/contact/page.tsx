@@ -41,6 +41,13 @@ export default function ContactPage() {
               >
                 {contact.linkedinLabel}
               </ButtonLink>
+              <ButtonLink
+                href={contact.github}
+                variant="secondary"
+                external
+              >
+                {contact.githubLabel}
+              </ButtonLink>
             </div>
           </Card>
         </div>

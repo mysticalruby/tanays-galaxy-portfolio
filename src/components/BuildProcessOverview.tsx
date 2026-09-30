@@ -8,10 +8,10 @@ export function BuildProcessOverview() {
       <p className="mb-6 font-display text-sm font-medium text-gold">
         {buildProcess.sequence}
       </p>
-      <div className="overflow-x-auto border border-white/10 bg-black">
+      <div className="overflow-x-auto border border-white/10 bg-surface-navy">
         <table className="w-full min-w-[40rem] border-collapse text-left text-sm">
           <thead>
-            <tr className="border-b border-white/10 bg-black">
+            <tr className="border-b border-white/10 bg-surface-navy">
               <th className="w-36 p-4 font-display font-semibold text-text-muted">
                 Step
               </th>
@@ -26,7 +26,7 @@ export function BuildProcessOverview() {
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-black">
+            <tr className="bg-surface-navy">
               <td className="p-4 font-medium text-text-primary">What it means</td>
               {buildProcess.steps.map((step) => (
                 <td

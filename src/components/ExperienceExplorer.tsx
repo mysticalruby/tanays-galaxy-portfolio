@@ -1,30 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { useLayoutEffect, useRef, useState, type CSSProperties, type ReactNode } from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ReactNode } from "react";
+import { CelestialSphere } from "@/components/CelestialSphere";
 import { ProjectCard } from "@/components/ProjectCard";
 import { planets, projects } from "@/lib/content";
 import type { Planet, Project } from "@/types/content";
 
 const MOON_SIZE = 34;
-const MOON_ORBIT_STEP = 44;
-const MOON_ORBIT_GAP = 28;
-const FOCUS_PLANET_SCALE = 3.4;
-const SOLAR_STAGE_SIZE = 650;
-const MOON_IMAGES = [
-  "/images/celestial/Moon1.png",
-  "/images/celestial/Moon2.png",
-  "/images/celestial/Moon3.png",
-  "/images/celestial/Moon4.png",
-  "/images/celestial/Moon5.png",
-  "/images/celestial/Moon6.png",
-  "/images/celestial/Moon7.png",
-];
-const SUN_IMAGE = "/images/celestial/sun.png";
-
+const MOON_ORBIT_STEP = 80;
+const MOON_ORBIT_GAP = 35;
+const FOCUS_PLANET_SCALE = 4.8;
+const SOLAR_STAGE_SIZE = 730;
+const SOLAR_ORBIT_TILT = 0.48;
+const MOON_ORBIT_TILT = 0.72;
 const SOLAR_VIEWPORT_CLASS =
-  "h-[min(55vh,780px)] min-h-[240px] md:h-[min(70vh,860px)] md:min-h-[360px] lg:h-[min(75vh,920px)]";
+  "h-[min(78vh,780px)] min-h-[400px] md:h-[min(75vh,860px)] md:min-h-[500px] lg:h-[min(80vh,920px)]";
 
 function computeStageScale(width: number, height: number, stageSize: number) {
   if (width === 0 || height === 0) return 0.55;
@@ -86,8 +77,8 @@ function focusStageSize(planet: Planet, projectCount: number) {
 }
 
 function moonOrbitRadius(index: number, planetDisc: number) {
-  const minOrbit = planetDisc / 2 + MOON_SIZE / 2 + MOON_ORBIT_GAP;
-  return minOrbit + index * MOON_ORBIT_STEP;
+  const minOrbit = (planetDisc / 2 + MOON_SIZE / 2 + MOON_ORBIT_GAP) / MOON_ORBIT_TILT;
+  return minOrbit + Math.floor(index / 3) * MOON_ORBIT_STEP;
 }
 
 function focusPlanetSize(planet: Planet) {
@@ -98,14 +89,87 @@ function shortTitle(title: string) {
   return title.split(":")[0];
 }
 
-function orbitDelay(angleDeg: number, durationSec: number) {
-  return `${-((angleDeg / 360) * durationSec)}s`;
+function planetKind(planet: Planet) {
+  const imageName = planet.imageSrc?.split("/").pop()?.split(".")[0]?.toLowerCase();
+  if (imageName === "mercury" || imageName === "venus" || imageName === "mars" || imageName === "jupiter" || imageName === "neptune") {
+    return imageName;
+  }
+  return "earth";
+}
+
+function OrbitingBody({
+  radius,
+  tilt,
+  duration,
+  startAngle,
+  size,
+  frontLayer,
+  backLayer,
+  children,
+}: {
+  radius: number;
+  tilt: number;
+  duration: number;
+  startAngle: number;
+  size: number;
+  frontLayer: number;
+  backLayer: number;
+  children: ReactNode;
+}) {
+  const bodyRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const body = bodyRef.current;
+    if (!body) return;
+    let frame = 0;
+    const started = performance.now();
+    const animate = (now: number) => {
+      // Viewed from above the orbital plane, every category travels prograde.
+      const angle = ((startAngle - ((now - started) / 1000) * (360 / duration)) * Math.PI) / 180;
+      const x = Math.sin(angle) * radius;
+      const y = -Math.cos(angle) * radius * tilt;
+      const depth = (1 + Math.cos(angle)) / 2;
+      body.style.transform = `translate3d(${x}px, ${y}px, 0) scale(${0.76 + depth * 0.4})`;
+      body.style.zIndex = String(y > 0 ? frontLayer : backLayer);
+      frame = requestAnimationFrame(animate);
+    };
+
+    frame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(frame);
+  }, [radius, tilt, duration, startAngle, frontLayer, backLayer]);
+
+  return (
+    <div
+      ref={bodyRef}
+      className="pointer-events-none absolute left-1/2 top-1/2 will-change-transform"
+      style={{ width: size, height: size, marginLeft: -size / 2, marginTop: -size / 2 }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function OrbitRing({ radius, tilt, opacity = 0.72 }: { radius: number; tilt: number; opacity?: number }) {
+  return (
+    <div
+      className="orbit-ring pointer-events-none absolute left-1/2 top-1/2 border border-white"
+      style={{
+        width: radius * 2,
+        height: radius * 2 * tilt,
+        marginLeft: -radius,
+        marginTop: -radius * tilt,
+        opacity,
+        boxShadow: "0 0 7px rgba(244, 246, 251, 0.13)",
+      }}
+      aria-hidden
+    />
+  );
 }
 
 function moonConfig(planetSlug: string, index: number, total: number) {
   const anglePresets: Record<string, number[]> = {
     "research-internships": [72, 252],
-    "math-modeling": [20, 55, 90, 125, 160, 200, 240, 285],
+    "math-modeling": [20, 140, 260, 75, 195, 315, 120, 300],
     "coding-trading": [64, 238],
     engineering: [48, 168, 288],
     "leadership-community": [40, 160, 280],
@@ -113,11 +177,11 @@ function moonConfig(planetSlug: string, index: number, total: number) {
   const angles =
     anglePresets[planetSlug] ??
     Array.from({ length: total }, (_, i) => 40 + (i / total) * 280);
-  const durations = [13, 18, 23, 28];
+  const ringIndex = Math.floor(index / 3);
+  const durations = [17, 24, 31];
   return {
     startAngle: angles[index] ?? (index / Math.max(total, 1)) * 300 + 30,
-    duration: durations[index % durations.length],
-    reverse: index % 2 === 1,
+    duration: durations[ringIndex % durations.length],
   };
 }
 
@@ -146,26 +210,20 @@ function MoonOrbit({
   onLeave: () => void;
   onSelect: (slug: string) => void;
 }) {
-  const { startAngle, duration, reverse } = moonConfig(planetSlug, index, total);
-  const spinClass = reverse ? "orbit-spin-reverse" : "orbit-spin";
-
+  const { startAngle, duration } = moonConfig(planetSlug, index, total);
   return (
-    <div
-      className={`${spinClass} pointer-events-none absolute left-1/2 top-1/2`}
-      style={
-        {
-          width: orbitRadius * 2,
-          height: orbitRadius * 2,
-          marginLeft: -orbitRadius,
-          marginTop: -orbitRadius,
-          "--orbit-duration": `${duration}s`,
-          "--orbit-delay": orbitDelay(startAngle, duration),
-        } as CSSProperties
-      }
+    <OrbitingBody
+      radius={orbitRadius}
+      tilt={MOON_ORBIT_TILT}
+      duration={duration}
+      startAngle={startAngle}
+      size={MOON_SIZE}
+      frontLayer={30}
+      backLayer={10}
     >
       <button
         type="button"
-        className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 overflow-visible border-0 bg-transparent p-0 transition hover:scale-110"
+        className="pointer-events-auto block h-full w-full overflow-visible border-0 bg-transparent p-0 transition hover:scale-110"
         style={{ width: MOON_SIZE, height: MOON_SIZE }}
         aria-label={`${shortTitle(project.title)}: ${project.summary}`}
         onMouseEnter={() => onHover(project)}
@@ -174,16 +232,9 @@ function MoonOrbit({
         onBlur={() => onLeave()}
         onClick={() => onSelect(project.slug)}
       >
-        <Image
-          src={MOON_IMAGES[index % MOON_IMAGES.length]}
-          alt=""
-          width={MOON_SIZE}
-          height={MOON_SIZE}
-          className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_8px_rgba(163,175,189,0.45)]"
-          draggable={false}
-        />
+        <CelestialSphere kind="moon" className="drop-shadow-[0_0_8px_rgba(199,205,230,0.45)]" />
       </button>
-    </div>
+    </OrbitingBody>
   );
 }
 
@@ -201,7 +252,7 @@ function PlanetFocusView({
   const planetDisc = focusPlanetSize(planet);
 
   return (
-    <div className={`relative w-full ${SOLAR_VIEWPORT_CLASS}`}>
+    <div className="relative h-[min(85vh,800px)] min-h-[560px] w-full md:h-[min(80vh,920px)] md:min-h-[620px]">
       <button
         type="button"
         onClick={onBack}
@@ -215,51 +266,15 @@ function PlanetFocusView({
           stageSize={focusStageSize(planet, planetProjects.length)}
           className="relative h-full w-full"
         >
-          {planetProjects.map((_, i) => {
-            const r = moonOrbitRadius(i, planetDisc);
-            const ringSize = r * 2;
-            return (
-              <div
-                key={`ring-${i}`}
-                className="orbit-ring pointer-events-none absolute left-1/2 top-1/2 border border-dashed border-silver/25"
-                style={{
-                  width: ringSize,
-                  height: ringSize,
-                  marginLeft: -ringSize / 2,
-                  marginTop: -ringSize / 2,
-                }}
-                aria-hidden
-              />
-            );
-          })}
+          {[...new Set(planetProjects.map((_, i) => moonOrbitRadius(i, planetDisc)))].map((r) => (
+            <OrbitRing key={`ring-${r}`} radius={r} tilt={MOON_ORBIT_TILT} opacity={0.87} />
+          ))}
 
           <div
             className="absolute left-1/2 top-1/2 z-20 -translate-x-1/2 -translate-y-1/2"
             style={{ width: planetDisc, height: planetDisc }}
           >
-            {planet.imageSrc ? (
-              <Image
-                src={planet.imageSrc}
-                alt={planet.name}
-                width={planetDisc}
-                height={planetDisc}
-                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_28px_rgba(141,188,212,0.35)]"
-                priority
-                draggable={false}
-              />
-            ) : (
-              <div
-                className="celestial-disc flex h-full w-full items-center justify-center border-[3px] text-center"
-                style={{
-                  borderColor: planet.color,
-                  backgroundColor: `${planet.color}40`,
-                }}
-              >
-                <span className="max-w-[85%] font-display text-base font-semibold leading-snug text-text-primary sm:text-lg">
-                  {planet.name}
-                </span>
-              </div>
-            )}
+            <CelestialSphere kind={planetKind(planet)} interactive className="drop-shadow-[0_0_28px_rgba(18,39,90,0.45)]" />
             <span className="pointer-events-none absolute inset-x-0 -bottom-8 text-center font-display text-sm font-semibold text-text-primary sm:text-base">
               {planet.name}
             </span>
@@ -299,7 +314,7 @@ function PlanetFocusView({
           {planet.description}
         </p>
         <p className="mt-2 text-xs text-silver/80">
-          Tap a moon for summary · Open full experience page
+          Drag the planet to turn it · Tap a moon to open a project
         </p>
       </footer>
     </div>
@@ -339,55 +354,34 @@ function SolarSystemView({
       >
         <ScaledStage stageSize={SOLAR_STAGE_SIZE} className="relative h-full w-full">
           <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
-            <div className="relative h-20 w-20 sm:h-24 sm:w-24">
-              <Image
-                src={SUN_IMAGE}
-                alt="Sun — home / overview"
-                width={96}
-                height={96}
-                className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_32px_rgba(216,170,106,0.45)]"
-                priority
-                draggable={false}
-              />
+            <div className="relative h-28 w-28">
+              <div className="pointer-events-none absolute -inset-8 rounded-full bg-gold/15 blur-2xl" />
+              <CelestialSphere kind="sun" className="relative drop-shadow-[0_0_28px_rgba(255,182,59,0.85)]" />
             </div>
           </div>
 
-          {planets.map((planet, i) => {
+          {planets.map((planet) => {
             const r = planet.orbitRadius;
             const startAngle = planet.startAngle;
             const duration = planet.orbitDuration;
 
             return (
               <div key={planet.slug}>
-                <div
-                  className="orbit-ring pointer-events-none absolute left-1/2 top-1/2 border border-silver/25"
-                  style={{
-                    width: r * 2,
-                    height: r * 2,
-                    marginLeft: -r,
-                    marginTop: -r,
-                  }}
-                  aria-hidden
-                />
+                <OrbitRing radius={r} tilt={SOLAR_ORBIT_TILT} opacity={0.72} />
 
-                <div
-                  className="orbit-spin pointer-events-none absolute left-1/2 top-1/2"
-                  style={
-                    {
-                      width: r * 2,
-                      height: r * 2,
-                      marginLeft: -r,
-                      marginTop: -r,
-                      zIndex: 20 - i,
-                      "--orbit-duration": `${duration}s`,
-                      "--orbit-delay": orbitDelay(startAngle, duration),
-                    } as CSSProperties
-                  }
+                <OrbitingBody
+                  radius={r}
+                  tilt={SOLAR_ORBIT_TILT}
+                  duration={duration}
+                  startAngle={startAngle}
+                  size={planet.size * 1.1}
+                  frontLayer={30}
+                  backLayer={5}
                 >
                   <button
                     type="button"
-                    className="pointer-events-auto absolute left-1/2 top-0 z-10 -translate-x-1/2 -translate-y-1/2 border-0 bg-transparent p-0 transition hover:scale-110"
-                    style={{ width: planet.size, height: planet.size }}
+                    className="pointer-events-auto block h-full w-full border-0 bg-transparent p-0 transition hover:scale-110"
+                    style={{ width: planet.size * 1.1, height: planet.size * 1.1 }}
                     aria-label={`${planet.name}: ${planet.description}. Click to zoom in.`}
                     title={planet.name}
                     onMouseEnter={() => setHoveredPlanet(planet)}
@@ -396,26 +390,9 @@ function SolarSystemView({
                     onBlur={() => setHoveredPlanet(null)}
                     onClick={() => onFocusPlanet(planet.slug)}
                   >
-                    {planet.imageSrc ? (
-                      <Image
-                        src={planet.imageSrc}
-                        alt={planet.name}
-                        width={planet.size}
-                        height={planet.size}
-                        className="celestial-disc h-full w-full object-contain drop-shadow-[0_0_14px_rgba(141,188,212,0.4)]"
-                        draggable={false}
-                      />
-                    ) : (
-                      <span
-                        className="celestial-disc block h-full w-full border-2"
-                        style={{
-                          borderColor: planet.color,
-                          backgroundColor: `${planet.color}33`,
-                        }}
-                      />
-                    )}
+                    <CelestialSphere kind={planetKind(planet)} className="drop-shadow-[0_0_14px_rgba(18,39,90,0.4)]" />
                   </button>
-                </div>
+                </OrbitingBody>
               </div>
             );
           })}
@@ -434,7 +411,7 @@ function SolarSystemView({
         )}
       </div>
       <p className="mt-3 text-center text-sm text-text-muted">
-        Hover a planet for its name · Tap to zoom in · Moons link to experiences
+        Planets orbit the sun · Tap one to see its projects
       </p>
     </div>
   );
@@ -459,7 +436,7 @@ function CategoryCard({
         selected ? "border-blue/50" : "hover:border-blue/35"
       }`}
     >
-      <div className="bg-black p-5 sm:p-6">
+      <div className="bg-surface-navy p-5 sm:p-6">
         <h3
           className="font-display text-lg font-semibold tracking-tight transition-colors"
           style={{ color: selected ? undefined : planet.color }}
@@ -514,8 +491,8 @@ function ExperienceIndex({
           onClick={() => onFocusPlanet(null)}
           className={`rounded-none border px-4 py-2 text-sm font-medium transition-colors ${
             !focusedSlug
-              ? "border-blue bg-black text-blue"
-              : "border-white/15 bg-black text-text-muted hover:text-blue"
+              ? "border-blue bg-surface-navy text-blue"
+              : "border-white/15 bg-surface-navy text-text-muted hover:text-blue"
           }`}
         >
           All categories
@@ -529,8 +506,8 @@ function ExperienceIndex({
             onClick={() => onFocusPlanet(planet.slug)}
             className={`rounded-none border px-4 py-2 text-sm font-medium transition-colors ${
               focusedSlug === planet.slug
-                ? "border-blue bg-black text-text-primary"
-                : "border-white/15 bg-black text-text-muted hover:text-blue"
+                ? "border-blue bg-surface-navy text-text-primary"
+                : "border-white/15 bg-surface-navy text-text-muted hover:text-blue"
             }`}
             style={
               focusedSlug === planet.slug
@@ -581,6 +558,9 @@ export function ExperienceExplorer() {
         focusedSlug={focusedSlug}
         onFocusPlanet={setFocusedSlug}
       />
+      <p className="mt-12 text-center font-mono text-[10px] text-text-muted">
+        Planet maps by <a className="underline hover:text-gold" href="https://edu.solarsystemscope.com/textures/" target="_blank" rel="noopener noreferrer">Solar System Scope</a> · <a className="underline hover:text-gold" href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>
+      </p>
     </>
   );
 }

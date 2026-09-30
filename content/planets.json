@@ -4,13 +4,13 @@
       "slug": "research-internships",
       "name": "Research & Internships",
       "description": "Faculty-led research at WPI",
-      "color": "#8DBCD4",
+      "color": "#A9B4CF",
       "imageSrc": "/images/celestial/Mercury.png",
       "projectSlugs": [
         "wpi-metal-am-research-intern",
         "wpi-computational-physics-intern"
       ],
-      "orbitRadius": 95,
+      "orbitRadius": 90,
       "orbitDuration": 20,
       "startAngle": 8,
       "size": 52
@@ -19,7 +19,7 @@
       "slug": "math-modeling",
       "name": "Math Modeling",
       "description": "Mathematical models, competitions, and simulation",
-      "color": "#A3AFBD",
+      "color": "#A9B4CF",
       "imageSrc": "/images/celestial/Mars.png",
       "projectSlugs": [
         "fem-quantum-harmonic-oscillator",
@@ -31,7 +31,7 @@
         "etosha-rhino-patrol-routing",
         "m3c-sports-gambling"
       ],
-      "orbitRadius": 145,
+      "orbitRadius": 150,
       "orbitDuration": 23,
       "startAngle": 52,
       "size": 58
@@ -40,13 +40,13 @@
       "slug": "coding-trading",
       "name": "Coding & Trading",
       "description": "Software, AI systems, and algorithmic markets",
-      "color": "#8DBCD4",
+      "color": "#A9B4CF",
       "imageSrc": "/images/celestial/Venus.png",
       "projectSlugs": [
         "articulate",
         "imc-prosperity-trading"
       ],
-      "orbitRadius": 195,
+      "orbitRadius": 210,
       "orbitDuration": 29,
       "startAngle": 128,
       "size": 54
@@ -55,7 +55,7 @@
       "slug": "engineering",
       "name": "Engineering",
       "description": "Robotics, wearables, and physical prototypes",
-      "color": "#D8AA6A",
+      "color": "#FFB63B",
       "imageSrc": "/images/celestial/Jupiter.png",
       "projectSlugs": [
         "gvs-balance-glasses",
@@ -63,7 +63,7 @@
         "frc-team-190",
         "robotics-design-manufacturing"
       ],
-      "orbitRadius": 245,
+      "orbitRadius": 270,
       "orbitDuration": 34,
       "startAngle": 204,
       "size": 60
@@ -72,14 +72,14 @@
       "slug": "leadership-community",
       "name": "Leadership & Community",
       "description": "Teams, nonprofits, teaching, and competition leadership",
-      "color": "#E8EDF2",
+      "color": "#F4F6FB",
       "imageSrc": "/images/celestial/Neptune.png",
       "projectSlugs": [
         "tech-awareness-association",
         "mams-math-tournament",
         "us-taekwondo-instructor"
       ],
-      "orbitRadius": 295,
+      "orbitRadius": 330,
       "orbitDuration": 41,
       "startAngle": 280,
       "size": 54

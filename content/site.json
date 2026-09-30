@@ -6,7 +6,9 @@
     "email": "tmangal@wpi.edu",
     "emailLabel": "tmangal@wpi.edu",
     "linkedin": "https://www.linkedin.com/in/tmangal/",
-    "linkedinLabel": "LinkedIn"
+    "linkedinLabel": "LinkedIn",
+    "github": "https://github.com/TanayMangal",
+    "githubLabel": "GitHub"
   },
   "nav": [
     { "label": "Home", "href": "/" },

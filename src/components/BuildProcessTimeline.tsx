@@ -17,10 +17,10 @@ export function BuildProcessTimeline({
       <p className="mt-2 font-display text-sm font-medium text-gold">
         {buildProcess.sequence}
       </p>
-      <div className="mt-4 overflow-x-auto border border-white/10 bg-black">
+      <div className="mt-4 overflow-x-auto border border-white/10 bg-surface-navy">
         <table className="w-full min-w-[40rem] border-collapse text-sm">
           <thead>
-            <tr className="border-b border-white/10 bg-black">
+            <tr className="border-b border-white/10 bg-surface-navy">
               {stepTitles.map((title) => (
                 <th
                   key={title}
@@ -32,7 +32,7 @@ export function BuildProcessTimeline({
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-black">
+            <tr className="bg-surface-navy">
               {walkthrough.cells.map((cell, i) => (
                 <td
                   key={stepTitles[i]}

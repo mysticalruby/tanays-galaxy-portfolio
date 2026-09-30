@@ -30,14 +30,14 @@ function Patch({award:a}:{award:Award}) {
   const shield=field==="Engineering"||field==="Community";
   return <svg viewBox="0 0 220 220" aria-hidden="true" className={styles.patch}>
     <defs><path id={uid+"arc"} d="M29 111A81 81 0 0 1 191 111"/><pattern id={uid+"weave"} width="5" height="5" patternUnits="userSpaceOnUse"><path d="M0 0L5 5M5 0L0 5" stroke="currentColor" strokeWidth=".4" opacity=".18"/></pattern></defs>
-    {shield?<path d="M110 9L199 42V123Q197 173 110 211Q23 173 21 123V42Z" fill="#111820" stroke="currentColor" strokeWidth="5"/>:<circle cx="110" cy="110" r="101" fill="#111820" stroke="currentColor" strokeWidth="5"/>}
+          {shield?<path d="M110 9L199 42V123Q197 173 110 211Q23 173 21 123V42Z" fill="#12275A" stroke="currentColor" strokeWidth="5"/>:<circle cx="110" cy="110" r="101" fill="#12275A" stroke="currentColor" strokeWidth="5"/>}
     {shield?<path d="M110 17L191 48V122Q190 168 110 201Q30 168 29 122V48Z" fill={"url(#"+uid+"weave)"} stroke="currentColor" strokeDasharray="2 4"/>:<circle cx="110" cy="110" r="94" fill={"url(#"+uid+"weave)"} stroke="currentColor" strokeDasharray="2 4"/>}
-    <circle cx="110" cy="111" r="64" fill="#080c11" stroke="currentColor" strokeWidth="1.5"/>
+    <circle cx="110" cy="111" r="64" fill="#0A1A3F" stroke="currentColor" strokeWidth="1.5"/>
     <text fontSize="11" letterSpacing="1" fill="currentColor" className={styles.arcText}><textPath href={"#"+uid+"arc"} startOffset="50%" textAnchor="middle">{label(a)}</textPath></text>
     <g fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
     {field==="Mathematics"?<><ellipse cx="110" cy="110" rx="45" ry="18" transform="rotate(-35 110 110)"/><ellipse cx="110" cy="110" rx="45" ry="18" transform="rotate(35 110 110)"/><path d="M110 66V154M66 110H154" opacity=".35"/><circle cx="110" cy="110" r="7" fill="currentColor"/></>:field==="Engineering"?<><path d="M98 128V90L110 70L122 90V128ZM98 112L86 136L98 130M122 112L134 136L122 130M103 137L110 153L117 137"/><circle cx="110" cy="97" r="5"/><path d="M64 143Q110 165 155 80" opacity=".45"/></>:field==="Community"?<><circle cx="110" cy="87" r="10"/><circle cx="82" cy="103" r="8"/><circle cx="138" cy="103" r="8"/><path d="M91 133V120Q110 102 129 120V133M65 138V125Q80 111 91 123M155 138V125Q140 111 129 123M72 150H148"/></>:a.id.includes("chess")?<><path d="M88 144H137L131 134H94ZM98 132V115L91 109L99 84L117 73L113 86L130 96L136 112L118 107L111 117V132"/><circle cx="119" cy="96" r="1.5" fill="currentColor"/></>:<><path d="M110 71L121 96L148 99L128 117L134 145L110 131L86 145L92 117L72 99L99 96Z"/><path d="M80 72L70 88M140 72L150 88"/></>}
     </g>
-    <rect x="52" y="155" width="116" height="20" rx="4" fill="#080c11"/>
+    <rect x="52" y="155" width="116" height="20" rx="4" fill="#0A1A3F"/>
     <text x="110" y="166" dominantBaseline="middle" style={{textAnchor:"middle",fontFamily:"var(--font-mono-family), monospace"}} fill="currentColor" fontSize="11" letterSpacing=".5">{a.year??"Undated"}</text>
   </svg>;
 }
@@ -51,13 +51,12 @@ export function AwardMissionWall({awards}:{awards:Award[]}) {
   const sorted=[...awards].sort((a,b)=>b.rarity-a.rarity || lastYear(b)-lastYear(a));
   return <section className={styles.console} aria-label="Awards mission patch wall">
     <header className={styles.header}><h2>Mission patches</h2><button className={styles.toggle} aria-pressed={tracking} onClick={()=>setTracking(!tracking)}>Tracking {tracking?"on":"paused"} <span aria-hidden="true">●</span></button></header>
-    <div className={styles.wallHeading}><p>Rarer awards first · Amber / ice blue / slate</p></div>
     <ul className={styles.grid+" "+(!tracking?styles.paused:"")}>
     {sorted.map((a,index)=>{
       const active=selected===a.id;
       // This is a decorative recency indicator, not a ranking of award prestige.
       const strength=Math.round(46+48*(lastYear(a)-earliest)/Math.max(1,latest-earliest));
-      return <li key={a.id} className={styles.item} style={{"--patch-color":a.rarity>=.8?"#D8AA6A":a.rarity>=.65?"#8DBCD4":"#A3AFBD","--delay":index*.19+"s"} as CSSProperties}>
+      return <li key={a.id} className={styles.item} style={{"--patch-color":a.rarity>=.8?"#FFB63B":a.rarity>=.65?"#F4F6FB":"#A9B4CF","--delay":index*.19+"s"} as CSSProperties}>
       <button id={"patch-"+a.id} className={styles.patchButton+" "+(active?styles.active:"")} aria-expanded={active} aria-controls={"log-"+a.id} onClick={()=>setSelected(active?null:a.id)}>
       <span className={styles.missionCode}>{category(a)}</span><Patch award={a}/><span className={styles.awardName}>{a.name}</span><span className={styles.organization}>{a.organization} · {a.year}</span>
       <span className={styles.signal} aria-hidden="true"><span className={styles.linkLine} aria-hidden="true"/><span className={styles.bars} aria-hidden="true">{[1,2,3,4,5].map(n=><i key={n} style={{height:n*3+"px",opacity:n<=Math.ceil(strength/20)?1:.2}}/>)}</span> <span aria-hidden="true">{active?"−":"+"}</span></span>

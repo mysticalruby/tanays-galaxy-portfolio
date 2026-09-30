@@ -36,7 +36,7 @@ export function RocketHub() {
             <li key={mod.label}>
               <Link
                 href={mod.href}
-                className="flex min-h-[44px] items-center justify-center border border-white/10 bg-black px-3 py-2 text-center text-sm text-text-muted transition-colors hover:border-blue hover:text-blue"
+                className="flex min-h-[44px] items-center justify-center border border-white/10 bg-surface-navy px-3 py-2 text-center text-sm text-text-muted transition-colors hover:border-blue hover:text-blue"
               >
                 {mod.label}
               </Link>
