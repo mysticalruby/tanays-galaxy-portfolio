@@ -314,9 +314,6 @@ export function SkillsTerminal() {
           <span className="h-2.5 w-2.5 rounded-full bg-rocket-red/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-yellow/80" />
           <span className="h-2.5 w-2.5 rounded-full bg-blue/80" />
-          <span className="ml-2 font-mono text-xs tracking-wide text-silver/70">
-            skills-terminal — galaxy.local
-          </span>
         </div>
 
         <div className="overflow-hidden rounded-lg border-2 border-border-muted bg-bg-deep shadow-inner">

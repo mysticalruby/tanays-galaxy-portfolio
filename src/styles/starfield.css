@@ -44,8 +44,28 @@
   opacity: 0.85;
 }
 
+.starfield-enabled {
+  animation: starfield-drift var(--star-duration, 38s) linear infinite !important;
+  animation-duration: var(--star-duration, 38s) !important;
+  animation-iteration-count: infinite !important;
+}
+
+.starfield-toggle {
+  position:fixed;
+  right:12px;
+  bottom:12px;
+  z-index:40;
+  border:1px solid var(--border-muted);
+  background:var(--bg-deep);
+  color:var(--text-muted);
+  padding:6px 10px;
+  font-family:var(--font-mono-family),monospace;
+  font-size:10px;
+  cursor:pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .starfield-drift {
+  .starfield-drift:not(.starfield-enabled) {
     animation: none;
     will-change: auto;
   }

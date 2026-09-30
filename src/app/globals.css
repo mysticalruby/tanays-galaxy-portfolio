@@ -74,6 +74,13 @@ body {
   line-height: 1.6;
 }
 
+/* Keep native text, resizing and drag cursors; use the rocket only for links and actions. */
+@media (hover: hover) and (pointer: fine) {
+  main a[href], main button:not(:disabled):not([draggable="true"]):not([aria-haspopup="menu"]), nav a[href] {
+    cursor: url("/rocket-cursor.svg") 24 5, pointer;
+  }
+}
+
 h1,
 h2,
 h3,

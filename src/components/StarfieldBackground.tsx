@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, type CSSProperties } from "react";
+import { useMemo, useState, type CSSProperties } from "react";
 import { useReducedMotion } from "@/hooks/useReducedMotion";
 
 /** Star tones share the site palette so they stay in sync with theme changes. */
@@ -32,13 +32,15 @@ function buildStarShadow(seed: number, count: number) {
  * small/fast → large/slow, with ::after clones for seamless vertical drift.
  */
 const LAYERS = [
-  { id: "stars-1", seed: 11, count: 70, size: 3, opacity: 0.85, duration: 60 },
-  { id: "stars-2", seed: 29, count: 24, size: 6, opacity: 0.6, duration: 100 },
-  { id: "stars-3", seed: 47, count: 12, size: 9, opacity: 0.45, duration: 140 },
+  { id: "stars-1", seed: 11, count: 70, size: 3, opacity: 0.85, duration: 38 },
+  { id: "stars-2", seed: 29, count: 24, size: 6, opacity: 0.6, duration: 65 },
+  { id: "stars-3", seed: 47, count: 12, size: 9, opacity: 0.45, duration: 95 },
 ] as const;
 
 export function StarfieldBackground() {
   const reducedMotion = useReducedMotion();
+  const [motionOverride, setMotionOverride] = useState<boolean | null>(null);
+  const moving = motionOverride ?? !reducedMotion;
 
   const shadows = useMemo(
     () => LAYERS.map((l) => buildStarShadow(l.seed, l.count)),
@@ -46,6 +48,7 @@ export function StarfieldBackground() {
   );
 
   return (
+    <>
     <div
       className="starfield-sky pointer-events-none fixed inset-0 -z-10 overflow-hidden"
       aria-hidden
@@ -53,7 +56,7 @@ export function StarfieldBackground() {
       {LAYERS.map((layer, i) => (
         <div
           key={layer.id}
-          className={`starfield-layer ${reducedMotion ? "starfield-static" : "starfield-drift"}`}
+          className={`starfield-layer ${moving ? "starfield-drift" : "starfield-static"} ${motionOverride === true ? "starfield-enabled" : ""}`}
           style={
             {
               width: layer.size,
@@ -66,5 +69,9 @@ export function StarfieldBackground() {
         />
       ))}
     </div>
+    <button className="starfield-toggle" aria-pressed={moving} onClick={() => setMotionOverride(!moving)}>
+      {moving ? "Pause stars" : "Move stars"}
+    </button>
+    </>
   );
 }
