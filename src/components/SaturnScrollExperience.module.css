@@ -1,4 +1,4 @@
-.journey{position:relative;height:620vh;margin-top:-4rem}
+.journey{--bg-deep:#070a12;--text-primary:#eceef3;--text-muted:#9ca5b6;--gold:#e9b25a;--blue:#e9b25a;color:var(--text-primary);position:relative;height:620vh;margin-top:-4rem}
 .sticky{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--bg-deep)}
 .scene,.webgl,.shade{position:absolute;inset:0;width:100%;height:100%}
 .webgl{display:block}
