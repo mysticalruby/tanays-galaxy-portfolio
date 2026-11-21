@@ -17,7 +17,7 @@ const MIN_SCALE = 0.6;
 const MAX_SCALE = 2.5;
 const SCALE_STEP = 0.15;
 
-export function PdfViewer({
+function PdfViewerInner({
   src,
   title,
   className = "",
@@ -282,6 +282,46 @@ export function PdfViewer({
           </div>
         )}
       </div>
+    </div>
+  );
+}
+
+/**
+ * Lazy wrapper: the PDF is only downloaded and rendered once the viewer is
+ * close to scrolling into view, so pages with PDFs further down load faster.
+ */
+export function PdfViewer(props: PdfViewerProps) {
+  const holder = useRef<HTMLDivElement>(null);
+  const [near, setNear] = useState(false);
+
+  useEffect(() => {
+    const el = holder.current;
+    if (!el || near) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setNear(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setNear(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "600px 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, [near]);
+
+  if (near) return <PdfViewerInner {...props} />;
+  return (
+    <div
+      ref={holder}
+      className={`flex items-center justify-center text-sm text-text-muted ${props.className ?? ""}`}
+      style={props.aspectRatio ? { aspectRatio: props.aspectRatio } : { minHeight: props.minHeight ?? "28rem" }}
+    >
+      PDF loads when you scroll here…
     </div>
   );
 }
