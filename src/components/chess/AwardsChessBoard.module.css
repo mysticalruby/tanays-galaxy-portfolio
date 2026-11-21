@@ -143,6 +143,7 @@
 .card h2 { font-size: 1.35rem; line-height: 1.3; margin: 0.75rem 0 0.4rem; }
 .card p { margin: 0.75rem 0 0; color: var(--text-muted); line-height: 1.7; }
 .card .kicker { line-height: 1.6; }
+.repeat { font-family: var(--font-mono-family), monospace; font-size: 12px; }
 .org { font-size: 14px; color: var(--gold) !important; margin-top: 0.25rem !important; }
 
 .kicker {

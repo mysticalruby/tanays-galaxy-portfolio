@@ -14,14 +14,19 @@ const FILES = ["a", "b", "c", "d", "e", "f", "g", "h"];
 const RANKS = [8, 7, 6, 5, 4, 3, 2, 1];
 const SIDE_LABEL = { w: boardData.white.label, b: boardData.black.label };
 
-type Placement = Record<string, string>; // square -> award id
+type Placement = Record<string, string>; // square -> starting square of the piece standing there
+
+/** Award carried by the piece that started on each square. Some awards won more than once sit on several pieces. */
+const AWARD_AT_START: Record<string, string> = {};
+for (const side of [boardData.white, boardData.black] as Record<string, string>[]) {
+  for (const [sq, id] of Object.entries(side)) if (sq !== "label") AWARD_AT_START[sq] = id;
+}
+
+const PIECES_PER_AWARD: Record<string, number> = {};
+for (const id of Object.values(AWARD_AT_START)) PIECES_PER_AWARD[id] = (PIECES_PER_AWARD[id] ?? 0) + 1;
 
 function startPlacement(): Placement {
-  const out: Placement = {};
-  for (const side of [boardData.white, boardData.black] as Record<string, string>[]) {
-    for (const [sq, id] of Object.entries(side)) if (sq !== "label") out[sq] = id;
-  }
-  return out;
+  return Object.fromEntries(Object.keys(AWARD_AT_START).map((sq) => [sq, sq]));
 }
 
 /** Standard start position with the pawns that have no award yet removed. */
@@ -68,9 +73,9 @@ export function AwardsChessBoard() {
       let capSq: string | null = null;
       if (m.captured) capSq = m.flags.includes("e") ? m.to[0] + m.from[1] : m.to;
       if (capSq) {
-        const id = next[capSq];
-        if (id) {
-          const c: Captured = { awardId: id, type: m.captured as PieceType, color: m.color === "w" ? "b" : "w" };
+        const key = next[capSq];
+        if (key) {
+          const c: Captured = { awardId: AWARD_AT_START[key], type: m.captured as PieceType, color: m.color === "w" ? "b" : "w" };
           setCaptured((list) => [...list, c]);
           setToast(c);
         }
@@ -151,7 +156,7 @@ export function AwardsChessBoard() {
   };
 
   const focusPiece = focus ? new Chess(fen).get(focus) : null;
-  const focusAward = focus && placement[focus] ? awardById.get(placement[focus]) : undefined;
+  const focusAward = focus && placement[focus] ? awardById.get(AWARD_AT_START[placement[focus]]) : undefined;
 
   const status = (() => {
     if (mode !== "play") return "Click any piece to see the award it carries.";
@@ -166,6 +171,9 @@ export function AwardsChessBoard() {
       .filter(([k]) => k !== "label")
       .map(([sq, id]) => ({ sq, award: awardById.get(id), type: new Chess(initialFen).get(sq as Square)?.type as PieceType }))
       .filter((x) => x.award && x.type)
+      // an award on several pieces is listed once, under its most valuable piece
+      .sort((a, b) => "kqrbnp".indexOf(a.type) - "kqrbnp".indexOf(b.type))
+      .filter((x, i, all) => all.findIndex((y) => y.award === x.award) === i)
       .sort((a, b) => "kqrbnp".indexOf(a.type) - "kqrbnp".indexOf(b.type));
 
   return (
@@ -182,7 +190,7 @@ export function AwardsChessBoard() {
               const isFocus = focus === sq;
               const isTarget = legalTargets.has(sq);
               const isLast = lastMove && (lastMove.from === sq || lastMove.to === sq);
-              const award = hasAward ? awardById.get(placement[sq]) : undefined;
+              const award = hasAward ? awardById.get(AWARD_AT_START[placement[sq]]) : undefined;
               return (
                 <button
                   key={sq}
@@ -241,6 +249,9 @@ export function AwardsChessBoard() {
                   <h2>{focusAward.name}</h2>
                   <p className={styles.org}>{[focusAward.organization, focusAward.year].filter(Boolean).join(" · ")}</p>
                   <p>{focusAward.description}</p>
+                  {PIECES_PER_AWARD[focusAward.id] > 1 && (
+                    <p className={styles.repeat}>Won more than once, so it sits on {PIECES_PER_AWARD[focusAward.id]} pieces.</p>
+                  )}
                 </>
               ) : (
                 <p>No award on this piece.</p>
