@@ -69,6 +69,10 @@ html {
   }
 }
 
+html {
+  background: var(--bg-deep);
+}
+
 body {
   background: transparent;
   color: var(--text-primary);

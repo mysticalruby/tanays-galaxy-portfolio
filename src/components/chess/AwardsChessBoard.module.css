@@ -1,7 +1,7 @@
 .wrap {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  gap: 2rem;
+  gap: 3rem 3.5rem;
   align-items: start;
 }
 
@@ -98,7 +98,7 @@
   color: var(--text-muted);
 }
 
-.side { display: grid; gap: 1rem; }
+.side { display: grid; gap: 1.5rem; align-content: start; position: sticky; top: 6rem; }
 
 .modes {
   display: inline-flex;
@@ -117,7 +117,7 @@
 }
 .modes button[aria-pressed="true"] { background: var(--gold); color: #0b1020; }
 
-.controls { display: flex; align-items: center; gap: 1rem; font-size: 14px; color: var(--text-muted); }
+.controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; font-size: 14px; color: var(--text-muted); }
 .controls select {
   background: var(--surface-navy);
   color: var(--text-primary);
@@ -137,12 +137,13 @@
 .card {
   border: 1px solid var(--border-muted);
   background: var(--surface-navy);
-  padding: 1.25rem 1.4rem;
-  min-height: 190px;
+  padding: 1.75rem 2rem;
+  min-height: 240px;
 }
-.card h2 { font-size: 1.25rem; margin: 0.4rem 0 0.25rem; }
-.card p { margin: 0.4rem 0 0; color: var(--text-muted); }
-.org { font-size: 14px; color: var(--gold) !important; }
+.card h2 { font-size: 1.35rem; line-height: 1.3; margin: 0.75rem 0 0.4rem; }
+.card p { margin: 0.75rem 0 0; color: var(--text-muted); line-height: 1.7; }
+.card .kicker { line-height: 1.6; }
+.org { font-size: 14px; color: var(--gold) !important; margin-top: 0.25rem !important; }
 
 .kicker {
   font-family: var(--font-mono-family), monospace;
@@ -151,7 +152,7 @@
   margin: 0;
 }
 
-.captured ul { list-style: none; margin: 0.5rem 0 0; padding: 0; display: grid; gap: 6px; }
+.captured ul { list-style: none; margin: 0.75rem 0 0; padding: 0; display: grid; gap: 10px; }
 .captured li { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--text-muted); }
 .capIcon { width: 26px; height: 26px; flex: none; }
 
@@ -175,23 +176,25 @@
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: 2.5rem 3.5rem;
   border-top: 1px solid var(--border-muted);
-  padding-top: 1.5rem;
+  padding-top: 2.25rem;
+  margin-top: 1rem;
 }
-.lists h2 { font-size: 1.05rem; margin: 0 0 0.75rem; }
+.lists h2 { font-size: 1.1rem; margin: 0 0 1rem; }
 .lists ul { list-style: none; margin: 0; padding: 0; }
 .lists button {
   display: grid;
   grid-template-columns: 30px 1fr;
-  column-gap: 10px;
+  column-gap: 14px;
+  row-gap: 2px;
   align-items: center;
   width: 100%;
   text-align: left;
   border: 0;
   border-bottom: 1px solid var(--border-muted);
   background: none;
-  padding: 8px 0;
+  padding: 12px 0;
   color: var(--text-primary);
   cursor: pointer;
   font: inherit;
@@ -204,5 +207,7 @@
 @media (max-width: 900px) {
   .wrap { grid-template-columns: 1fr; }
   .lists { grid-template-columns: 1fr; }
+  .side { position: static; }
+  .card { padding: 1.4rem; min-height: 0; }
   .toast { left: 16px; right: 16px; max-width: none; }
 }
