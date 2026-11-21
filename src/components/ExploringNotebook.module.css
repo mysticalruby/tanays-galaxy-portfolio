@@ -1,0 +1,167 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: 3.5rem;
+  align-items: start;
+}
+
+/* ---------- contents ---------- */
+.toc {
+  position: sticky;
+  top: 6rem;
+  max-height: calc(100vh - 8rem);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+.tocTitle,
+.tocSection {
+  font-family: var(--font-mono-family), monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+.tocTitle { color: var(--text-muted); margin-bottom: 1.25rem; }
+.tocSection { color: var(--gold); }
+.tocGroup + .tocGroup { margin-top: 1.5rem; }
+.toc ol { list-style: none; margin: 0.6rem 0 0; padding: 0; display: grid; gap: 0.2rem; }
+.toc a {
+  display: grid;
+  grid-template-columns: 1.8rem 1fr;
+  padding: 0.35rem 0 0.35rem 0.6rem;
+  border-left: 2px solid transparent;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  transition: color 0.2s, border-color 0.2s;
+}
+.toc a:hover { color: var(--text-primary); }
+.toc a[aria-current="true"] { color: var(--text-primary); border-left-color: var(--gold); }
+.tocNum { font-family: var(--font-mono-family), monospace; font-size: 11px; padding-top: 2px; opacity: 0.7; }
+
+/* ---------- notebook page ---------- */
+.notebook {
+  position: relative;
+  border: 1px solid var(--border-muted);
+  background-color: var(--surface-navy);
+  /* faint graph paper */
+  background-image:
+    linear-gradient(to right, color-mix(in srgb, var(--silver) 9%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--silver) 9%, transparent) 1px, transparent 1px);
+  background-size: 28px 28px;
+  padding: 3rem 3rem 3rem 4.5rem;
+}
+/* margin line */
+.notebook::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 2.75rem;
+  width: 1px;
+  background: color-mix(in srgb, var(--gold) 55%, transparent);
+}
+
+.group + .group { margin-top: 4rem; }
+.groupTitle {
+  font-family: var(--font-display-family), sans-serif;
+  font-size: 1.1rem;
+  color: var(--gold);
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.04em;
+}
+
+.entry {
+  scroll-margin-top: 6rem;
+  padding: 2.25rem 0 2.75rem;
+  border-top: 1px dashed var(--border-muted);
+}
+
+.entryHead {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-family: var(--font-mono-family), monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+.entryNum { color: var(--gold); }
+
+.entryTitle {
+  position: relative;
+  display: inline-block;
+  font-family: var(--font-display-family), sans-serif;
+  font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+  line-height: 1.25;
+  margin: 0.9rem 0 1.75rem;
+  padding-bottom: 0.4rem;
+  color: var(--text-primary);
+}
+.underline {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  background: var(--gold);
+  transform-origin: left;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 2.75rem;
+}
+.entry h4 {
+  font-family: var(--font-mono-family), monospace;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  margin: 0 0 0.6rem;
+}
+.entry p {
+  margin: 0;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+.nextLabel {
+  display: block;
+  font-family: var(--font-mono-family), monospace;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--gold);
+  margin-bottom: 0.35rem;
+}
+
+.checklist {
+  list-style: none;
+  margin: 2rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--border-muted);
+  display: grid;
+  gap: 1rem;
+  font-size: 1rem;
+  line-height: 1.75;
+  color: var(--text-primary);
+}
+.checklist li { display: grid; grid-template-columns: 1.6rem 1fr; align-items: start; }
+.box {
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-top: 0.35rem;
+  border: 1px solid var(--silver);
+  display: grid;
+  place-items: center;
+  font-size: 0.75rem;
+  line-height: 1;
+}
+.done { color: var(--text-muted); }
+.done .box { background: var(--gold); border-color: var(--gold); color: #0b1020; }
+
+@media (max-width: 1000px) {
+  .wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .toc { display: none; }
+  .notebook { padding: 2rem 1.25rem 2rem 2.5rem; }
+  .notebook::before { left: 1.4rem; }
+  .cols { grid-template-columns: 1fr; gap: 1.5rem; }
+}

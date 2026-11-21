@@ -1,23 +1,6 @@
-import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
-import { AboutGalleries } from "@/components/AboutGalleries";
-import { BlurFade } from "@/components/BlurFade";
-import { BuildProcessOverview } from "@/components/BuildProcessOverview";
-import { ButtonLink } from "@/components/ButtonLink";
-import { Reveal } from "@/components/Reveal";
-import { aboutGalleries } from "@/lib/content";
-
-export const metadata: Metadata = {
-  title: "About Me",
-  description:
-    "About Tanay Mangal: research at WPI, math modeling, FRC Team 190, the Tech Awareness Association, chess, taekwondo and cooking.",
-};
-
-const ACADEMICS_URL = "https://users.wpi.edu/~tmangal/";
-
-type Photo = { src: string; alt: string; w: number; h: number };
-type Topic = {
+/** The "about me" chapters shown on the home page. */
+export type Photo = { src: string; alt: string; w: number; h: number };
+export type Topic = {
   id: string;
   title: string;
   body: React.ReactNode;
@@ -25,7 +8,7 @@ type Topic = {
   links?: { href: string; label: string }[];
 };
 
-const topics: Topic[] = [
+export const topics: Topic[] = [
   {
     id: "research",
     title: "Research",
@@ -166,116 +149,3 @@ const topics: Topic[] = [
   },
 ];
 
-export default function AboutPage() {
-  return (
-    <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
-      <BlurFade>
-        <section className="grid items-end gap-10 border-b border-white/10 pb-12 lg:grid-cols-[1.35fr_1fr]">
-          <div>
-            <h1 className="font-display text-3xl text-text-primary sm:text-4xl">About Me</h1>
-            <p className="mt-3 font-ui text-xs text-gold">
-              Mass Academy at WPI · Shrewsbury, MA
-            </p>
-            <div className="mt-6 space-y-4 text-text-primary">
-              <p>
-                Hi, I&apos;m Tanay, a senior at the Massachusetts Academy of Math
-                and Science at WPI. Most of what I work on ends up somewhere
-                between math, engineering and aerospace, because the problems I
-                like best are the ones where the math has to turn into something
-                that actually works, whether that is a model, a simulation or a
-                thing I can hold.
-              </p>
-              <p className="text-text-muted">
-                This page is the longer version. My school assignments and
-                coursework are on my academic site.
-              </p>
-            </div>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <ButtonLink href={ACADEMICS_URL} variant="primary" external>
-                Academics site ↗
-              </ButtonLink>
-              <ButtonLink href="/resume" variant="secondary">
-                Résumé
-              </ButtonLink>
-            </div>
-            <nav aria-label="On this page" className="mt-8 flex flex-wrap gap-x-4 gap-y-2 font-ui text-[11px] text-text-muted">
-              {topics.map((t) => (
-                <a key={t.id} href={`#${t.id}`} className="hover:text-gold">
-                  {t.title}
-                </a>
-              ))}
-              <a href="#outside-school" className="hover:text-gold">Cooking and Desmos</a>
-            </nav>
-          </div>
-          <Image
-            src="/images/about/hero_tree.jpg"
-            alt="Tanay standing under a tree in the fall"
-            width={933}
-            height={1400}
-            priority
-            className="h-auto w-full max-w-sm justify-self-center border border-white/10 lg:justify-self-end"
-            sizes="(max-width: 1024px) 80vw, 380px"
-          />
-        </section>
-      </BlurFade>
-
-      {topics.map((t) => (
-        <Reveal key={t.id}>
-          <section
-            id={t.id}
-            className="grid scroll-mt-24 gap-6 border-b border-white/10 py-10 md:grid-cols-[170px_1fr_minmax(0,300px)] md:gap-8"
-          >
-            <h2 className="font-display text-xl text-text-primary">{t.title}</h2>
-            <div className="space-y-4 text-text-primary">
-              {t.body}
-              {t.links && (
-                <p className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
-                  {t.links.map((l) => (
-                    <Link key={l.href} href={l.href} className="text-gold underline decoration-gold/40 underline-offset-4 hover:decoration-gold">
-                      {l.label} →
-                    </Link>
-                  ))}
-                </p>
-              )}
-            </div>
-            <div className="grid gap-3">
-              {t.photos.map((p) => (
-                <Image
-                  key={p.src}
-                  src={p.src}
-                  alt={p.alt}
-                  width={p.w}
-                  height={p.h}
-                  className="h-auto w-full border border-white/10"
-                  sizes="(max-width: 768px) 90vw, 300px"
-                />
-              ))}
-            </div>
-          </section>
-        </Reveal>
-      ))}
-
-      <div id="outside-school" className="scroll-mt-24">
-        <AboutGalleries section={aboutGalleries} />
-      </div>
-
-      <Reveal>
-        <section id="build-process" className="mt-14 scroll-mt-24">
-          <h2 className="font-display text-2xl text-text-primary">How I build things</h2>
-          <div className="mt-6">
-            <BuildProcessOverview />
-          </div>
-        </section>
-      </Reveal>
-
-      <div className="mt-10 flex flex-wrap gap-3">
-        <ButtonLink href="/experience" variant="secondary">
-          See all experience
-        </ButtonLink>
-        <ButtonLink href={ACADEMICS_URL} variant="secondary" external>
-          Academics site ↗
-        </ButtonLink>
-      </div>
-    </div>
-  );
-}
