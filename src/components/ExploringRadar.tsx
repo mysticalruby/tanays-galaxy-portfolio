@@ -17,7 +17,7 @@ const SECTORS: { name: string; ids: string[] }[] = [
 
 const SIZE = 560;
 const C = SIZE / 2;
-const R = 240;
+const R = 252;
 const RINGS = [0.33, 0.66, 1];
 const SWEEP_SECONDS = 7;
 

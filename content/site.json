@@ -10,6 +10,7 @@
     "github": "https://github.com/TanayMangal",
     "githubLabel": "GitHub"
   },
+  "academicsUrl": "https://users.wpi.edu/~tmangal/",
   "nav": [
     { "label": "Home", "href": "/" },
     { "label": "About", "href": "/about" },

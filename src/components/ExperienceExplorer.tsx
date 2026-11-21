@@ -17,17 +17,20 @@ const MOON_ORBIT_TILT = 0.72;
 const SOLAR_VIEWPORT_CLASS =
   "h-[min(78vh,780px)] min-h-[400px] md:h-[min(75vh,860px)] md:min-h-[500px] lg:h-[min(80vh,920px)]";
 
-function computeStageScale(width: number, height: number, stageSize: number) {
+/** heightFactor: how much of the square stage is actually used vertically (tilted orbits are wide and short). */
+function computeStageScale(width: number, height: number, stageSize: number, heightFactor = 1) {
   if (width === 0 || height === 0) return 0.55;
-  return Math.min(width / stageSize, height / stageSize);
+  return Math.min((width * 0.96) / stageSize, height / (stageSize * heightFactor));
 }
 
 function ScaledStage({
   stageSize,
+  heightFactor = 1,
   className = "",
   children,
 }: {
   stageSize: number;
+  heightFactor?: number;
   className?: string;
   children: ReactNode;
 }) {
@@ -41,14 +44,14 @@ function ScaledStage({
 
     const update = () => {
       const { width, height } = el.getBoundingClientRect();
-      setScale(computeStageScale(width, height, stageSize));
+      setScale(computeStageScale(width, height, stageSize, heightFactor));
     };
 
     update();
     const ro = new ResizeObserver(update);
     ro.observe(el);
     return () => ro.disconnect();
-  }, [stageSize]);
+  }, [stageSize, heightFactor]);
 
   return (
     <div ref={containerRef} className={className}>
@@ -159,6 +162,7 @@ function OrbitRing({ radius, tilt, opacity = 0.72 }: { radius: number; tilt: num
         marginLeft: -radius,
         marginTop: -radius * tilt,
         opacity,
+        borderWidth: 1.5,
         boxShadow: "0 0 7px rgba(244, 246, 251, 0.13)",
       }}
       aria-hidden
@@ -352,7 +356,7 @@ function SolarSystemView({
       <div
         className={`relative mx-auto w-full max-w-6xl overflow-visible ${SOLAR_VIEWPORT_CLASS}`}
       >
-        <ScaledStage stageSize={SOLAR_STAGE_SIZE} className="relative h-full w-full">
+        <ScaledStage stageSize={SOLAR_STAGE_SIZE} heightFactor={SOLAR_ORBIT_TILT + 0.2} className="relative h-full w-full">
           <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2">
             <div className="relative h-28 w-28">
               <div className="pointer-events-none absolute -inset-8 rounded-full bg-gold/15 blur-2xl" />

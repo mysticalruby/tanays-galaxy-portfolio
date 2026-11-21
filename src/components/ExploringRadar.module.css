@@ -1,6 +1,6 @@
 .wrap {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
   gap: 2rem;
   align-items: start;
 }
@@ -15,14 +15,15 @@
 .ring,
 .spoke {
   fill: none;
-  stroke: var(--border-muted);
-  stroke-width: 1;
+  stroke: var(--silver);
+  stroke-opacity: 0.45;
+  stroke-width: 1.4;
 }
 
 .sectorLabel {
   fill: var(--text-muted);
   font-family: var(--font-mono-family), ui-monospace, monospace;
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.04em;
 }
 
@@ -60,7 +61,7 @@
 
 .blipLabel {
   fill: var(--text-primary);
-  font-size: 12.5px;
+  font-size: 14px;
   pointer-events: none;
 }
 

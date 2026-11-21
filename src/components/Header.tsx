@@ -57,6 +57,17 @@ export function Header() {
                 </li>
               );
             })}
+            <li className="relative">
+              <a
+                href={site.academicsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                onMouseEnter={() => setHovered(null)}
+                className="relative z-10 block px-3 py-2 font-ui text-[12px] text-text-muted transition-colors hover:text-gold"
+              >
+                Academics ↗
+              </a>
+            </li>
           </ul>
           <button
             type="button"
@@ -91,6 +102,11 @@ export function Header() {
                     </Link>
                   </li>
                 ))}
+                <li>
+                  <a href={site.academicsUrl} target="_blank" rel="noopener noreferrer" className="block px-3 py-3 font-ui text-xs text-text-muted transition-colors hover:text-gold">
+                    Academics ↗
+                  </a>
+                </li>
               </ul>
             )}
           </div>

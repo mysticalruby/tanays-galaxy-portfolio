@@ -16,6 +16,7 @@ export function CommandPalette() {
   const groups = useMemo(() => {
     const pages: Item[] = site.nav.map((n) => ({ id: "page-" + n.href, label: n.label, hint: "Page", href: n.href, keywords: "" }));
     pages.push({ id: "page-resume", label: "Résumé", hint: "Page", href: "/resume", keywords: "resume cv pdf" });
+    pages.push({ id: "page-academics", label: "Academics site (school coursework)", hint: "users.wpi.edu", href: site.academicsUrl, keywords: "school mams classes assignments coursework" });
     const work: Item[] = projects.map((p) => ({
       id: "exp-" + p.slug,
       label: p.title,
@@ -68,7 +69,8 @@ export function CommandPalette() {
   const go = useCallback(
     (href: string) => {
       setOpen(false);
-      router.push(href);
+      if (href.startsWith("http")) window.open(href, "_blank", "noopener,noreferrer");
+      else router.push(href);
     },
     [router]
   );
