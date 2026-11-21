@@ -17,7 +17,7 @@
     {
       "id": "about",
       "label": "About Me",
-      "tooltip": "Meet Tanay — a student researcher and builder interested in difficult technical problems.",
+      "tooltip": "Meet Tanay, a student researcher and builder interested in difficult technical problems.",
       "type": "link",
       "href": "/about",
       "x": 11,

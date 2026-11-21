@@ -6,30 +6,22 @@ import { StarfieldBackground } from "@/components/StarfieldBackground";
 import "./globals.css";
 import "../styles/starfield.css";
 
-/** Wide futuristic display — logos, posters, page headers */
-const audiowide = localFont({
-  src: "../../public/fonts/audiowide-400.ttf",
-  variable: "--font-display-family",
-  display: "swap",
-});
-
-/** Geometric sci-fi sans — body copy and HUD-style UI readouts */
-const orbitron = localFont({
+/** One family for everything: IBM Plex Sans for reading, IBM Plex Mono for small technical labels. */
+const plexSans = localFont({
   src: [
-    { path: "../../public/fonts/orbitron-400.ttf", weight: "400" },
-    { path: "../../public/fonts/orbitron-500.ttf", weight: "500" },
-    { path: "../../public/fonts/orbitron-600.ttf", weight: "600" },
-    { path: "../../public/fonts/orbitron-700.ttf", weight: "700" },
+    { path: "../../public/fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/ibm-plex-sans-latin-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../../public/fonts/ibm-plex-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/ibm-plex-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
   ],
   variable: "--font-body",
   display: "swap",
 });
 
-/** Fixed-width technical face — terminals and starship-style interfaces */
-const spaceMono = localFont({
+const plexMono = localFont({
   src: [
-    { path: "../../public/fonts/space-mono-400.ttf", weight: "400" },
-    { path: "../../public/fonts/space-mono-700.ttf", weight: "700" },
+    { path: "../../public/fonts/ibm-plex-mono-latin-400-normal.woff2", weight: "400" },
+    { path: "../../public/fonts/ibm-plex-mono-latin-500-normal.woff2", weight: "500" },
   ],
   variable: "--font-mono-family",
   display: "swap",
@@ -37,11 +29,11 @@ const spaceMono = localFont({
 
 export const metadata: Metadata = {
   title: {
-    default: "Tanay's Galaxy",
-    template: "%s | Tanay's Galaxy",
+    default: "Tanay Mangal",
+    template: "%s | Tanay Mangal",
   },
   description:
-    "Exploring difficult problems through engineering, research, and creativity. Portfolio of Tanay Mangal — mathematical modeling, engineering design, and applied research.",
+    "Tanay Mangal, a senior at the Massachusetts Academy of Math and Science at WPI. Computational physics research, math modeling competitions, FRC Team 190, and the projects in between.",
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },
@@ -52,9 +44,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
   },
   openGraph: {
-    title: "Tanay's Galaxy",
+    title: "Tanay Mangal",
     description:
-      "Student researcher and builder portfolio — projects in modeling, wearables, and engineering.",
+      "Research, math modeling, robotics and engineering projects by Tanay Mangal.",
     type: "website",
   },
 };
@@ -67,7 +59,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${audiowide.variable} ${orbitron.variable} ${spaceMono.variable} h-full`}
+      className={`${plexSans.variable} ${plexMono.variable} h-full`}
     >
       <body className="relative flex min-h-full flex-col font-sans antialiased">
         <Script id="microsoft-clarity" strategy="afterInteractive">

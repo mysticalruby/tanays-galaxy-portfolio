@@ -2,17 +2,19 @@
 
 :root {
   color-scheme: dark;
-  --bg-deep: #0a1a3f;
-  --surface-navy: #12275a;
-  --surface-raised: #173b85;
-  --border-muted: #4968a2;
-  --silver: #a9b4cf;
-  --blue: #ffb63b;
-  --gold: #ffb63b;
-  --yellow: var(--gold);
-  --text-primary: #f4f6fb;
-  --text-muted: #a9b4cf;
-  --rocket-red: #ff4a2b;
+  /* Quiet space: near-black navy, low-contrast surfaces, one warm accent used sparingly. */
+  --bg-deep: #070a12;
+  --surface-navy: #0e1320;
+  --surface-raised: #151c2e;
+  --border-muted: #262f45;
+  --silver: #aeb6c6;
+  --blue: #e9b25a; /* historical name: this is the accent */
+  --gold: #e9b25a;
+  --yellow: var(--text-primary);
+  --text-primary: #eceef3;
+  --text-muted: #9ca5b6;
+  --rocket-red: #e0553c;
+  --font-display-family: var(--font-body);
   --background: var(--bg-deep);
   --foreground: var(--text-primary);
 }
@@ -32,7 +34,7 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-body), system-ui, sans-serif;
-  --font-display: var(--font-display-family), system-ui, sans-serif;
+  --font-display: var(--font-body), system-ui, sans-serif;
   --font-mono: var(--font-mono-family), ui-monospace, monospace;
   --font-readout: var(--font-body), system-ui, sans-serif;
 }
@@ -71,7 +73,8 @@ body {
   background: transparent;
   color: var(--text-primary);
   font-family: var(--font-body), system-ui, sans-serif;
-  line-height: 1.6;
+  line-height: 1.65;
+  font-size: 16.5px;
 }
 
 /* Muted copy needs the white ink when it sits on insignia blue. */
@@ -79,12 +82,6 @@ body {
   color: var(--text-primary);
 }
 
-/* Keep native text, resizing and drag cursors; use the rocket only for links and actions. */
-@media (hover: hover) and (pointer: fine) {
-  main a[href], main button:not(:disabled):not([draggable="true"]):not([aria-haspopup="menu"]), nav a[href] {
-    cursor: url("/rocket-cursor.svg") 24 5, pointer;
-  }
-}
 
 h1,
 h2,
@@ -92,9 +89,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-display), system-ui, sans-serif;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
 }
 
 :focus-visible {

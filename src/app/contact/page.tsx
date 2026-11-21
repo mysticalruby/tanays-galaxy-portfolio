@@ -17,14 +17,15 @@ export default function ContactPage() {
   return (
     <PageShell
       title="Contact Me"
-      description="I am always interested in connecting with students, educators, researchers, and professionals who enjoy learning, solving difficult problems, and doing meaningful technical work."
+      description="Email is the fastest way to reach me. I usually answer within a day or two."
     >
       <div className="grid gap-8 lg:grid-cols-2 lg:items-start">
         <div>
           <Card>
             <p className="text-text-muted">
-              Open to conversations about mathematics, engineering, scientific
-              modeling, aerospace systems, research, and technical projects.
+              If you are working on something in modeling, simulation,
+              robotics or aerospace and want another person on it, or you just
+              have a question about one of my projects, send me a message.
             </p>
             <div className="mt-8 flex flex-col gap-3">
               <ButtonLink

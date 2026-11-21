@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { AboutGalleries } from "@/components/AboutGalleries";
 import { BuildProcessOverview } from "@/components/BuildProcessOverview";
-import { Card } from "@/components/Card";
 import { PageShell } from "@/components/PageShell";
 import { ButtonLink } from "@/components/ButtonLink";
 import { aboutGalleries } from "@/lib/content";
@@ -13,59 +12,39 @@ export const metadata: Metadata = {
     "About Tanay Mangal — student researcher, plus cooking and Desmos graphs outside the lab.",
 };
 
-const cards = [
-  {
-    title: "Curiosity",
-    body: "I am motivated by questions that are difficult enough to require persistence and creativity.",
-  },
-  {
-    title: "Technical Depth",
-    body: "I enjoy understanding the mathematics and science behind a system—not only using tools, but learning why they work.",
-  },
-  {
-    title: "Real-World Impact",
-    body: "I am most excited when models, prototypes, and research can help explain or improve real systems.",
-  },
-];
-
 export default function AboutPage() {
   return (
     <PageShell title="About Me">
-      <p className="mb-10 max-w-3xl text-lg text-yellow">
-        Student at the Massachusetts Academy of Math and Science at WPI, with
-        strong interests in mathematics, science, and engineering.
+      <p className="mb-10 max-w-3xl text-lg text-text-muted">
+        Senior at the Massachusetts Academy of Math and Science at WPI, from
+        Shrewsbury, MA.
       </p>
       <div className="grid gap-10 lg:grid-cols-2">
-        <div className="space-y-4 border border-border-muted bg-surface-navy px-5 py-4 text-text-muted">
+        <div className="space-y-4 text-text-primary">
           <p>
-            I am a student at the Massachusetts Academy of Math and Science at
-            Worcester Polytechnic Institute (WPI), with strong interests in
-            mathematics, science, and engineering. I am especially drawn to
-            aerospace and space-related applications, where difficult theoretical
-            ideas have to become reliable real-world systems.
+            Most of what I work on ends up somewhere between math, engineering
+            and aerospace, because the problems I like best are the ones where
+            the math has to turn into something that actually works, whether
+            that is a model, a simulation or a thing I can hold.
           </p>
           <p>
-            I enjoy problems that require more than a routine answer. Whether I
-            am building a wearable prototype, studying a numerical method in
-            physics, or modeling a networked system, I like working through the
-            full cycle: understanding the question, learning the background,
-            creating a model or prototype, testing it carefully, and improving
-            it based on evidence.
+            Right now that is computational physics research at WPI, where I
+            have been using finite elements on the quantum harmonic oscillator,
+            and math modeling competitions like HiMCM, MTFC and IMMC with my
+            teams. On the building side, I made a wrist brace that tracks wrist
+            angle with two IMUs and warns you before you hold a position that
+            leads to carpal tunnel, and I am on the mechanical and fabrication
+            subteams for FRC Team 190.
           </p>
           <p>
-            My academic interests include mathematical modeling, scientific
-            computing, engineering design, optimization, control systems,
-            embedded sensing, and large-scale simulation.
+            Outside of that, I co-founded the Tech Awareness Association, a
+            student nonprofit that teaches digital literacy and repairs devices
+            around Shrewsbury, I co-founded the Mass Academy Math Tournament,
+            and I am a second-degree black belt and taekwondo instructor. I
+            also cook a lot, which is most of what the photos below are.
           </p>
-          <p>
-            Outside of individual projects, I value collaboration, leadership,
-            and helping others learn. My long-term goal is to pursue meaningful
-            work at the intersection of mathematics, engineering, and
-            science—especially in aerospace, technology, or applied research.
-          </p>
-          <p>
-            If you want to see my school assignments and profile, feel free to
-            visit{" "}
+          <p className="text-text-muted">
+            My junior year coursework from Mass Academy is on my school site,{" "}
             <a
               href="https://users.wpi.edu/~tmangal/"
               target="_blank"
@@ -90,20 +69,6 @@ export default function AboutPage() {
           </div>
         </figure>
       </div>
-
-      <section className="mt-14">
-        <h2 className="font-display text-2xl font-semibold text-text-primary">
-          What drives me
-        </h2>
-        <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          {cards.map((card) => (
-            <Card key={card.title}>
-              <h3 className="font-display font-semibold text-blue">{card.title}</h3>
-              <p className="mt-2 text-sm text-text-muted">{card.body}</p>
-            </Card>
-          ))}
-        </div>
-      </section>
 
       <section id="build-process" className="mt-14 scroll-mt-24">
         <h2 className="font-display text-2xl font-semibold text-text-primary">

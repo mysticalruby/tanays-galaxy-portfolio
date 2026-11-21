@@ -1,7 +1,7 @@
 {
-  "name": "Tanay's Galaxy",
-  "tagline": "Exploring difficult problems through engineering, research, and creativity.",
-  "heroLine": "Student at the Massachusetts Academy of Math and Science at WPI, interested in mathematical modeling, engineering design, aerospace systems, and applied research.",
+  "name": "Tanay Mangal",
+  "tagline": "Research, math modeling and robotics, mostly pointed at aerospace.",
+  "heroLine": "I'm a senior at the Massachusetts Academy of Math and Science at WPI. Right now that means computational physics research at WPI, modeling competitions like HiMCM and MTFC, and building robots with FRC Team 190.",
   "contact": {
     "email": "tmangal@wpi.edu",
     "emailLabel": "tmangal@wpi.edu",
@@ -12,12 +12,12 @@
   },
   "nav": [
     { "label": "Home", "href": "/" },
-    { "label": "About Me", "href": "/about" },
+    { "label": "About", "href": "/about" },
     { "label": "Experience", "href": "/experience" },
     { "label": "Skills", "href": "/skills" },
-    { "label": "Awards & Honors", "href": "/awards" },
+    { "label": "Awards", "href": "/awards" },
     { "label": "Exploring", "href": "/exploring" },
-    { "label": "Contact Me", "href": "/contact" }
+    { "label": "Contact", "href": "/contact" }
   ],
   "rocketModules": [
     { "label": "About Me", "href": "/about" },

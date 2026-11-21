@@ -21,7 +21,7 @@
     },
     {
       "title": "Improve",
-      "description": "Use the results to revise the model, design, or experiment—and document what changed."
+      "description": "Use the results to revise the model, design, or experiment, and document what changed."
     }
   ],
   "projectWalkthroughs": [
@@ -74,7 +74,7 @@
       "category": "Math Modeling",
       "categorySlug": "math-modeling",
       "cells": [
-        "How will penny acceptance diffuse across urban, suburban, and rural regions—and what are the economic tradeoffs of cash rounding?",
+        "How will penny acceptance diffuse across urban, suburban, and rural regions, and what are the economic tradeoffs of cash rounding?",
         "Reviewed diffusion processes, regional population density, and business cash-handling behavior.",
         "Formulated density-dependent nonlinear differential equations with regional adoption rates and rounding analysis.",
         "Projected adoption curves by region and identified the price threshold where rounding up beats rounding down.",
@@ -134,7 +134,7 @@
         "Analyzed ~3M demographic records, betting theory, stochastic processes, and network contagion literature.",
         "Built regression and TabNet income models, Monte Carlo wealth simulation, and a network contagion layer.",
         "Projected 5-, 15-, and 30-year harm horizons and quantified structural losses from house edge.",
-        "Framed prevention-focused policy recommendations from compounding disadvantage—not isolated decisions."
+        "Framed prevention-focused policy recommendations from compounding disadvantage, not isolated decisions."
       ]
     },
     {
@@ -144,11 +144,11 @@
       "category": "Coding & Trading",
       "categorySlug": "coding-trading",
       "cells": [
-        "How can speech technology support clearer communication for people with atypical speech—without changing what they mean to say?",
+        "How can speech technology support clearer communication for people with atypical speech, without changing what they mean to say?",
         "Studied Whisper, Flan-T5, accessibility requirements, and UX needs for users, caregivers, and speech-language pathologists.",
         "Built a browser app with speech recognition, grammar repair, TTS playback, waveform feedback, and API fallbacks.",
         "Evaluated transcription quality, latency, and meaning preservation in real-time communication workflows.",
-        "Refined model loading, failure handling, and interface design with accessibility as a core constraint—not an add-on."
+        "Refined model loading, failure handling, and interface design with accessibility as a core constraint, not an add-on."
       ]
     },
     {
@@ -162,7 +162,7 @@
         "Studied market microstructure, backtesting methods, and team strategy coordination under competition constraints.",
         "Developed Python algorithms for pattern detection, price-inefficiency identification, and risk-managed decision rules.",
         "Iteratively backtested strategies in simulation and compared performance across changing market conditions.",
-        "Refined team communication and strategy rules from results—top 25% worldwide with ~73,000 simulated tokens."
+        "Refined team communication and strategy rules from results, top 25% worldwide with ~73,000 simulated tokens."
       ]
     },
     {
@@ -218,7 +218,7 @@
         "Reviewed mechanism requirements, Onshape workflows, and knee mill, CNC, and lathe capabilities.",
         "Designed and documented CAD assemblies; prototyped and machined competition components.",
         "Assembled, tested mechanisms, and gathered feedback from iteration cycles.",
-        "Revised designs based on fabrication limits, testing results, and team input—FIRST Leadership Award recipient."
+        "Revised designs based on fabrication limits, testing results, and team input, FIRST Leadership Award recipient."
       ]
     }
   ]
