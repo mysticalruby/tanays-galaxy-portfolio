@@ -5,6 +5,21 @@
   padding: 0 1.25rem;
   overflow-x: clip;
 }
+.page > :not(.rocketLayer):not(.rail) { position: relative; z-index: 1; }
+
+/* full-screen 3D layer behind the content */
+.rocketLayer {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+.rocketLayer canvas { display: block; width: 100%; height: 100%; }
+
+/* empty stretch between chapters where the rocket flies across */
+.flight { height: 62vh; }
+.launch { height: 90vh; }
+.tiltWrap { perspective: 900px; }
 
 .kicker {
   font-family: var(--font-mono-family), ui-monospace, monospace;
@@ -122,8 +137,7 @@
   grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   align-items: center;
   gap: 4rem;
-  padding: 8rem 0;
-  border-top: 1px solid var(--border-muted);
+  padding: 4rem 0 6rem;
 }
 .flip .chapterText { order: 2; }
 .flip .chapterPhotos { order: 1; }
@@ -182,6 +196,9 @@
   width: min(100%, 440px);
 }
 .photoFrame {
+  transform-style: preserve-3d;
+  will-change: transform;
+  box-shadow: 0 30px 60px -30px rgb(0 0 0 / 0.6);
   border: 1px solid var(--border-muted);
   background: var(--surface-navy);
   overflow: hidden;
@@ -293,8 +310,10 @@
   .chapter {
     grid-template-columns: 1fr;
     gap: 2.5rem;
-    padding: 5rem 0;
+    padding: 3rem 0 4rem;
   }
+  .flight { height: 45vh; }
+  .launch { height: 70vh; }
   .flip .chapterText { order: 0; }
   .flip .chapterPhotos { order: 0; }
   .bigNumber { top: 1.5rem; font-size: 6rem; }

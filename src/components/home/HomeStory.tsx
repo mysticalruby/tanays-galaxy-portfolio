@@ -11,6 +11,7 @@ import { Reveal } from "@/components/Reveal";
 import { aboutGalleries, site } from "@/lib/content";
 import { topics, type Topic } from "@/lib/aboutTopics";
 import styles from "./HomeStory.module.css";
+import { RocketFlight } from "./RocketFlight";
 
 const NAME = site.name;
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -32,7 +33,7 @@ function Hero() {
   const fade = useTransform(scrollYProgress, [0, 0.8], [1, reduce ? 1 : 0]);
 
   return (
-    <section ref={ref} className={styles.hero}>
+    <section ref={ref} className={styles.hero} data-rocket-hero>
       <motion.div className={styles.heroText} style={{ y: textY, opacity: fade }}>
         <motion.p
           className={styles.kicker}
@@ -149,19 +150,43 @@ function Chapter({ topic, index }: { topic: Topic; index: number }) {
 
       <motion.div className={styles.chapterPhotos} style={{ y: photoY }}>
         {topic.photos.map((p, i) => (
-          <motion.div
-            key={p.src}
-            className={styles.photoFrame}
-            initial={reduce ? false : { clipPath: "inset(12% 12% 12% 12%)", opacity: 0 }}
-            whileInView={{ clipPath: "inset(0% 0% 0% 0%)", opacity: 1 }}
-            viewport={{ once: true, margin: "0px 0px -15% 0px" }}
-            transition={{ duration: 0.9, delay: i * 0.12, ease: EASE }}
-          >
+          <TiltFrame key={p.src} delay={i * 0.12}>
             <Image src={p.src} alt={p.alt} width={p.w} height={p.h} sizes="(max-width: 900px) 90vw, 440px" className={styles.photo} />
-          </motion.div>
+          </TiltFrame>
         ))}
       </motion.div>
     </section>
+  );
+}
+
+/** Photo frame that reveals with a clip and tilts in 3D toward the pointer. */
+function TiltFrame({ children, delay }: { children: React.ReactNode; delay: number }) {
+  const reduce = useReducedMotion();
+  const rx = useSpring(0, { stiffness: 200, damping: 18 });
+  const ry = useSpring(0, { stiffness: 200, damping: 18 });
+  return (
+    <div className={styles.tiltWrap}>
+      <motion.div
+        className={styles.photoFrame}
+        style={{ rotateX: rx, rotateY: ry }}
+        onPointerMove={(e) => {
+          if (reduce || e.pointerType !== "mouse") return;
+          const r = e.currentTarget.getBoundingClientRect();
+          ry.set(((e.clientX - r.left) / r.width - 0.5) * 14);
+          rx.set(-((e.clientY - r.top) / r.height - 0.5) * 14);
+        }}
+        onPointerLeave={() => {
+          rx.set(0);
+          ry.set(0);
+        }}
+        initial={reduce ? false : { clipPath: "inset(12% 12% 12% 12%)", opacity: 0 }}
+        whileInView={{ clipPath: "inset(0% 0% 0% 0%)", opacity: 1 }}
+        viewport={{ once: true, margin: "0px 0px -15% 0px" }}
+        transition={{ duration: 0.9, delay, ease: EASE }}
+      >
+        {children}
+      </motion.div>
+    </div>
   );
 }
 
@@ -205,13 +230,18 @@ function TrajectoryRail() {
 export function HomeStory() {
   return (
     <div className={styles.page}>
+      <RocketFlight />
       <Hero />
       <TrajectoryRail />
 
       <div id="chapters" className={styles.chapters}>
         {topics.map((t, i) => (
-          <Chapter key={t.id} topic={t} index={i} />
+          <div key={t.id}>
+            <div className={styles.flight} data-flight aria-hidden />
+            <Chapter topic={t} index={i} />
+          </div>
         ))}
+        <div className={`${styles.flight} ${styles.launch}`} data-flight="launch" aria-hidden />
       </div>
 
       <div id="outside-school" className={styles.section}>
