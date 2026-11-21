@@ -17,8 +17,32 @@
 .rocketLayer canvas { display: block; width: 100%; height: 100%; }
 
 /* empty stretch between chapters where the rocket flies across */
-.flight { height: 62vh; }
-.launch { height: 90vh; }
+.flight { position: relative; height: 170vh; }
+.launch { height: 200vh; }
+/* pinned while the rocket flies; the chapter only arrives after the band ends */
+.flightStage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  height: 100svh;
+  display: grid;
+  place-items: center;
+  padding-top: 22vh;
+  pointer-events: none;
+}
+.flightCard { text-align: center; }
+.flightTitle {
+  font-family: var(--font-display-family), sans-serif;
+  font-size: clamp(2.5rem, 9vw, 7.5rem);
+  line-height: 1;
+  margin: 0.75rem 0 0;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+/* --flight goes 0 -> 1 as the rocket passes over the text */
+.revealRight { clip-path: inset(-20% calc((1 - var(--flight, 0)) * 100%) -20% -5%); }
+.revealLeft { clip-path: inset(-20% -5% -20% calc((1 - var(--flight, 0)) * 100%)); }
+.revealUp { clip-path: inset(calc((1 - var(--flight, 0)) * 100%) -5% -20% -5%); }
 .tiltWrap { perspective: 900px; }
 
 .kicker {
@@ -102,6 +126,7 @@
   position: absolute;
   left: 0;
   bottom: 1.5rem;
+  white-space: nowrap;
   display: inline-flex;
   align-items: center;
   gap: 0.75rem;
@@ -306,14 +331,15 @@
     min-height: 0;
   }
   .heroPhoto { width: min(78%, 320px); }
-  .scrollCue { display: none; }
+  .scrollCue { position: static; margin-top: -1.5rem; }
   .chapter {
     grid-template-columns: 1fr;
     gap: 2.5rem;
     padding: 3rem 0 4rem;
   }
-  .flight { height: 45vh; }
-  .launch { height: 70vh; }
+  .flight { height: 150vh; }
+  .launch { height: 170vh; }
+  .flightTitle { white-space: normal; font-size: clamp(2.25rem, 11vw, 3.5rem); }
   .flip .chapterText { order: 0; }
   .flip .chapterPhotos { order: 0; }
   .bigNumber { top: 1.5rem; font-size: 6rem; }

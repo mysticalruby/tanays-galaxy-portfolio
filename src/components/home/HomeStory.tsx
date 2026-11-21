@@ -109,7 +109,7 @@ function Hero() {
       </motion.div>
 
       <motion.a href="#chapters" className={styles.scrollCue} style={{ opacity: fade }} aria-label="Scroll to the next section">
-        <span>Scroll</span>
+        <span>Scroll slowly for the best effect</span>
         <span className={styles.cueLine} aria-hidden />
       </motion.a>
     </section>
@@ -191,6 +191,28 @@ function TiltFrame({ children, delay }: { children: React.ReactNode; delay: numb
   );
 }
 
+/**
+ * The gap before each chapter. It pins to the screen while the rocket flies
+ * across, and the next chapter's title is uncovered right behind the rocket
+ * (RocketFlight sets --flight on this element). The chapter itself only
+ * scrolls up once the flight has finished.
+ */
+function FlightBand({ index, title }: { index: number; title: string }) {
+  const towardRight = index % 2 === 0;
+  return (
+    <div className={styles.flight} data-flight={towardRight ? "right" : "left"}>
+      <div className={styles.flightStage}>
+        <div className={`${styles.flightCard} ${towardRight ? styles.revealRight : styles.revealLeft}`}>
+          <p className={styles.kicker}>
+            {String(index + 1).padStart(2, "0")} / {String(topics.length).padStart(2, "0")}
+          </p>
+          <p className={styles.flightTitle}>{title}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 /** Vertical "trajectory" on the left edge: fills as you scroll and marks which chapter you are on. */
 function TrajectoryRail() {
   const { scrollYProgress } = useScroll();
@@ -238,11 +260,15 @@ export function HomeStory() {
       <div id="chapters" className={styles.chapters}>
         {topics.map((t, i) => (
           <div key={t.id}>
-            <div className={styles.flight} data-flight aria-hidden />
+            <FlightBand index={i} title={t.title} />
             <Chapter topic={t} index={i} />
           </div>
         ))}
-        <div className={`${styles.flight} ${styles.launch}`} data-flight="launch" aria-hidden />
+        <div className={`${styles.flight} ${styles.launch}`} data-flight="launch">
+          <div className={styles.flightStage}>
+            <p className={`${styles.flightTitle} ${styles.revealUp}`}>That&apos;s the tour.</p>
+          </div>
+        </div>
       </div>
 
       <div id="outside-school" className={styles.section}>
