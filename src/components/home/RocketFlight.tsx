@@ -203,30 +203,43 @@ export function RocketFlight() {
           keys.push({ at: sy + r.top + r.height * 0.35 - vh / 2, ...hero });
           side = hero.x;
         }
+        bandRanges.length = 0;
         const flights = Array.from(document.querySelectorAll<HTMLElement>("[data-flight]"));
         flights.forEach((el, i) => {
           const r = el.getBoundingClientRect();
-          const top = sy + r.top - vh * 0.45;
-          const bottom = sy + r.bottom - vh * 0.55;
-          const mid = (top + bottom) / 2;
+          // the band's stage is pinned from when its top reaches the top of the screen
+          // until (height - one screen) later; the flight happens during that pin
+          const pinStart = sy + r.top;
+          const pinEnd = pinStart + Math.max(vh * 0.4, r.height - vh);
+          const top = pinStart - vh * 0.35;
+          const bottom = pinEnd - vh * 0.08;
+          const mid = lerp(top, bottom, 0.5);
           const fromX = side;
           if (el.dataset.flight === "launch") {
             keys.push({ at: top, x: fromX, y: 0, angle: 0, roll, scale: parkScale, flame: 0.3 });
-            keys.push({ at: lerp(top, bottom, 0.45), x: 0, y: -0.25, angle: 0, roll: roll + Math.PI, scale: narrow ? 2.3 : 3.4, flame: 1 });
+            keys.push({ at: lerp(top, bottom, 0.4), x: 0, y: -0.75, angle: 0, roll: roll + Math.PI, scale: narrow ? 2.3 : 3.2, flame: 1 });
             keys.push({ at: bottom, x: 0, y: 1.9, angle: 0, roll: roll + Math.PI * 2.5, scale: narrow ? 2.4 : 3.6, flame: 1.4 });
             side = 0;
+            bandRanges.push({ el, top, bottom, kind: "up" });
             return;
           }
           const toX = (i % 2 === 0 ? 1 : -1) * 0.9;
           const dir = Math.sign(toX - fromX) || 1;
           keys.push({ at: top, x: fromX, y: 0, angle: 0, roll, scale: i === 0 && heroEl ? (narrow ? 0 : 3.3) : parkScale, flame: 0.3 });
-          keys.push({ at: mid, x: 0, y: 0.12, angle: -dir * (Math.PI / 2 - 0.25), roll: roll + Math.PI, scale: narrow ? 2.4 : 3.2, flame: 1 });
+          // enter from the side, cross just above the title, leave toward the other side
+          keys.push({ at: lerp(top, bottom, 0.18), x: fromX + (toX - fromX) * 0.05 - dir * 0.25, y: 0.14, angle: -dir * (Math.PI / 2 - 0.2), roll: roll + Math.PI * 0.3, scale: narrow ? 2.2 : 3, flame: 1 });
+          keys.push({ at: mid, x: 0, y: 0.16, angle: -dir * (Math.PI / 2 - 0.12), roll: roll + Math.PI, scale: narrow ? 2.4 : 3.3, flame: 1.1 });
+          keys.push({ at: lerp(top, bottom, 0.82), x: dir * 0.95, y: 0.12, angle: -dir * (Math.PI / 2 - 0.2), roll: roll + Math.PI * 1.7, scale: narrow ? 2.2 : 3, flame: 1 });
           roll += Math.PI * 2;
           keys.push({ at: bottom, x: toX, y: 0, angle: -dir * 0.18, roll, scale: parkScale, flame: 0.3 });
           side = toX;
+          bandRanges.push({ el, top, bottom, kind: dir > 0 ? "right" : "left" });
         });
         return keys;
       };
+
+      // for each band: where its flight happens, so the title can be uncovered behind the rocket
+      const bandRanges: { el: HTMLElement; top: number; bottom: number; kind: "right" | "left" | "up" }[] = [];
 
       const poseAt = (keys: Key[], at: number): Pose => {
         if (!keys.length) return { x: 0, y: 3, angle: 0, roll: 0, scale: 0, flame: 0 };
@@ -270,6 +283,25 @@ export function RocketFlight() {
         const target = poseAt(buildKeys(), window.scrollY);
         const k = 1 - Math.pow(0.0015, dt); // frame-rate independent easing
         (Object.keys(cur) as (keyof Pose)[]).forEach((p) => (cur[p] = lerp(cur[p], target[p], k)));
+
+        // uncover each band's title right behind the rocket
+        const rocketPx = ((cur.x + 1) / 2) * window.innerWidth;
+        const rocketPy = ((1 - cur.y) / 2) * window.innerHeight;
+        for (const b of bandRanges) {
+          let f: number;
+          const sy = window.scrollY;
+          if (sy <= b.top) f = 0;
+          else if (sy >= b.bottom) f = 1;
+          else {
+            const card = b.el.firstElementChild?.firstElementChild as HTMLElement | null;
+            const cr = card?.getBoundingClientRect();
+            if (!cr || !cr.width) f = (sy - b.top) / (b.bottom - b.top);
+            else if (b.kind === "right") f = (rocketPx - cr.left) / cr.width;
+            else if (b.kind === "left") f = (cr.right - rocketPx) / cr.width;
+            else f = (cr.bottom - rocketPy) / cr.height;
+          }
+          b.el.style.setProperty("--flight", Math.min(1, Math.max(0, f)).toFixed(3));
+        }
 
         const bob = Math.sin(time * 1.3) * 0.04 * m;
         rocket.position.set(cur.x * halfW, cur.y * halfH + bob, 0);
