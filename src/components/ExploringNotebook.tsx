@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { useSafeReducedMotion } from "@/hooks/useSafeReducedMotion";
 import { exploring } from "@/lib/content";
 import styles from "./ExploringNotebook.module.css";
 
@@ -16,7 +17,7 @@ const SECTIONS: { name: string; ids: string[] }[] = [
 ];
 
 export function ExploringNotebook() {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   const byId = new Map((exploring.topics as Topic[]).map((t) => [t.id, t]));
   const groups = SECTIONS.map((s) => ({ name: s.name, topics: s.ids.map((id) => byId.get(id)).filter((t): t is Topic => Boolean(t)) }));
   const leftover = (exploring.topics as Topic[]).filter((t) => !SECTIONS.some((s) => s.ids.includes(t.id)));

@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { motion, useReducedMotion, useScroll, useSpring, useTransform } from "motion/react";
+import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import { useSafeReducedMotion } from "@/hooks/useSafeReducedMotion";
 import { AboutGalleries } from "@/components/AboutGalleries";
 import { BuildProcessOverview } from "@/components/BuildProcessOverview";
 import { ButtonLink } from "@/components/ButtonLink";
@@ -25,7 +26,7 @@ const NEXT_STOPS = [
 ];
 
 function Hero() {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const photoY = useTransform(scrollYProgress, [0, 1], [0, reduce ? 0 : 120]);
@@ -116,7 +117,7 @@ function Hero() {
 }
 
 function Chapter({ topic, index }: { topic: Topic; index: number }) {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
   const photoY = useTransform(scrollYProgress, [0, 1], reduce ? [0, 0] : [70, -70]);
@@ -161,7 +162,7 @@ function Chapter({ topic, index }: { topic: Topic; index: number }) {
 
 /** Photo frame that reveals with a clip and tilts in 3D toward the pointer. */
 function TiltFrame({ children, delay }: { children: React.ReactNode; delay: number }) {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   const rx = useSpring(0, { stiffness: 200, damping: 18 });
   const ry = useSpring(0, { stiffness: 200, damping: 18 });
   return (

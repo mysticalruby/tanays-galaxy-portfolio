@@ -1,11 +1,12 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { useSafeReducedMotion } from "@/hooks/useSafeReducedMotion";
 import type { ReactNode } from "react";
 
 /** Fades and lifts content in once as it scrolls into view. Clears transform/filter after so nothing inside is affected. */
 export function Reveal({ children, className, delay = 0 }: { children: ReactNode; className?: string; delay?: number }) {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   if (reduce) return <div className={className}>{children}</div>;
   return (
     <motion.div

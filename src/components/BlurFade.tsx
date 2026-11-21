@@ -1,12 +1,13 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { useSafeReducedMotion } from "@/hooks/useSafeReducedMotion";
 import type { ReactNode } from "react";
 
 /** Soft fade-up. Filter and transform are cleared at the end so fixed-position modals inside still work.
  *  Soft fade-up with a little blur, in the style of Cult UI / Magic UI "blur fade". */
 export function BlurFade({ children, delay = 0, className }: { children: ReactNode; delay?: number; className?: string }) {
-  const reduce = useReducedMotion();
+  const reduce = useSafeReducedMotion();
   if (reduce) return <div className={className}>{children}</div>;
   return (
     <motion.div
