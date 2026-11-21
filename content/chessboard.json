@@ -1,0 +1,41 @@
+{
+  "note": "Which award sits on which square. Better awards go on more valuable pieces. Empty squares are open spots for future awards.",
+  "white": {
+    "label": "Math, research and STEM",
+    "a1": "aime-qualifier",
+    "b1": "acsl-finals-bronze",
+    "c1": "mtfc-cra-finalist",
+    "d1": "himcm-meritorious",
+    "e1": "mtfc-finalist",
+    "f1": "nsri-best-environmental",
+    "g1": "first-leadership",
+    "h1": "m3c-top-20",
+    "a2": "imc-prosperity-top-25",
+    "b2": "maml-finalist",
+    "c2": "mtfc-semifinalist",
+    "d2": "mathcon-national",
+    "e2": "purple-comet-1st",
+    "f2": "wocomal-top5-varsity",
+    "g2": "science-olympiad-fermi",
+    "h2": "jhu-cty-grand"
+  },
+  "black": {
+    "label": "Chess, taekwondo and community",
+    "a8": "usmo-podium-7x",
+    "b8": "chess-uscf-td",
+    "c8": "chess-ne-scholastic-1st",
+    "d8": "hanmadang-individual-bronze",
+    "e8": "hanmadang-team-silver",
+    "f8": "taekwondo-2nd-dan",
+    "g8": "chess-mass-state-2nd",
+    "h8": "nyt-ai-top-20",
+    "a7": "usmo-podium-7x",
+    "b7": "pvsa-gold-3x",
+    "c7": "wocomal-4th-freshman",
+    "d7": "chess-nathanael-green-1st",
+    "e7": "mams-tournament",
+    "f7": "pvsa-gold-3x",
+    "g7": "chess-mass-state-2nd",
+    "h7": "pvsa-gold-3x"
+  }
+}
