@@ -26,8 +26,8 @@ export function RocketFlight() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // With "reduce motion" on, the rocket still shows next to the name but stands still:
-    // no flight, spin, trail, parallax or pointer tilt.
+    // With "reduce motion" on, the rocket still flies with the scroll (it only moves when the
+    // visitor scrolls), but without the barrel rolls, idle spin, bobbing or pointer tilt.
     const calm = Boolean(reduce);
     const m = calm ? 0 : 1;
     const mount = mountRef.current;
@@ -179,7 +179,7 @@ export function RocketFlight() {
         for (const d of drifters) {
           const depth = (camera.position.z - d.obj.position.z) / camera.position.z;
           d.obj.position.x = d.ndcX * halfW * depth;
-          d.obj.visible = !narrow && !calm; // on phones the planets would sit under the text
+          d.obj.visible = !narrow; // on phones the planets would sit under the text
         }
       };
       const ro = new ResizeObserver(resize);
@@ -202,13 +202,6 @@ export function RocketFlight() {
             : { x: 0.12, y: 0.06, angle: 0, roll: 0, scale: 3.3, flame: 0.2 };
           keys.push({ at: sy + r.top + r.height * 0.35 - vh / 2, ...hero });
           side = hero.x;
-          if (calm) {
-            // stay put with the hero, then simply disappear once it has scrolled away
-            const gone = sy + r.bottom - vh * 0.35;
-            keys.push({ at: gone, ...hero });
-            keys.push({ at: gone + 1, ...hero, scale: 0 });
-            return keys;
-          }
         }
         const flights = Array.from(document.querySelectorAll<HTMLElement>("[data-flight]"));
         flights.forEach((el, i) => {
@@ -275,7 +268,7 @@ export function RocketFlight() {
         const time = clock.elapsedTime;
 
         const target = poseAt(buildKeys(), window.scrollY);
-        const k = calm ? 1 : 1 - Math.pow(0.0015, dt); // frame-rate independent easing
+        const k = 1 - Math.pow(0.0015, dt); // frame-rate independent easing
         (Object.keys(cur) as (keyof Pose)[]).forEach((p) => (cur[p] = lerp(cur[p], target[p], k)));
 
         const bob = Math.sin(time * 1.3) * 0.04 * m;
@@ -294,7 +287,7 @@ export function RocketFlight() {
         rocket.updateMatrixWorld();
         nozzle.set(0, -0.55, 0).applyMatrix4(rocket.matrixWorld);
         back.set(0, -1, 0).applyQuaternion(rocket.quaternion).normalize();
-        const emit = rocket.visible && !calm ? Math.floor(f * 4) : 0;
+        const emit = rocket.visible ? Math.floor(f * 4) : 0;
         for (let e = 0; e < emit; e++) {
           const i = nextParticle++ % N;
           pPos[i * 3] = nozzle.x + (Math.random() - 0.5) * 0.06;
@@ -328,8 +321,8 @@ export function RocketFlight() {
         const sy = window.scrollY;
         for (const d of drifters) {
           d.obj.position.y = d.baseY + sy * d.speed;
-          d.obj.rotation.y += d.spin * dt;
-          d.obj.rotation.x += d.spin * 0.3 * dt;
+          d.obj.rotation.y += d.spin * dt * m;
+          d.obj.rotation.x += d.spin * 0.3 * dt * m;
         }
 
         camera.position.x = pointer.x * 0.4 * m;
