@@ -1,0 +1,151 @@
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.scope svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.ring,
+.spoke {
+  fill: none;
+  stroke: var(--silver);
+  stroke-opacity: 0.45;
+  stroke-width: 1.4;
+}
+
+.sectorLabel {
+  fill: var(--text-muted);
+  font-family: var(--font-mono-family), ui-monospace, monospace;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+}
+
+.sweepLine {
+  stroke: var(--gold);
+  stroke-opacity: 0.55;
+  stroke-width: 1.5;
+}
+
+.blip {
+  cursor: pointer;
+  outline: none;
+}
+
+.hit {
+  fill: transparent;
+}
+
+.dot {
+  fill: var(--gold);
+  transition: r 0.2s;
+}
+
+.selRing {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.2;
+}
+
+.blip:focus-visible .selRing,
+.blip:focus-visible .dot {
+  stroke: var(--text-primary);
+  stroke-width: 2;
+}
+
+.blipLabel {
+  fill: var(--text-primary);
+  font-size: 14px;
+  pointer-events: none;
+}
+
+.center {
+  fill: var(--gold);
+}
+
+.note {
+  margin-top: 0.5rem;
+  font-family: var(--font-mono-family), ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.panel {
+  border: 1px solid var(--border-muted);
+  background: var(--surface-navy);
+  padding: 1.5rem;
+}
+
+.panel h2 {
+  font-size: 1.35rem;
+  margin: 0.25rem 0 1rem;
+}
+
+.panel h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 1.1rem 0 0.35rem;
+  color: var(--text-primary);
+}
+
+.panel p {
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.kicker {
+  font-family: var(--font-mono-family), ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+.list {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.5rem;
+  border-top: 1px solid var(--border-muted);
+  padding-top: 1.5rem;
+}
+
+.list ul {
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.list button {
+  background: none;
+  border: 0;
+  padding: 0.2rem 0;
+  color: var(--text-muted);
+  text-align: left;
+  font: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.list button:hover,
+.list button[aria-pressed="true"] {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--gold);
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .wrap {
+    grid-template-columns: 1fr;
+  }
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
+}

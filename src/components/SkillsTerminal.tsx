@@ -2,16 +2,15 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { getProjectBySlug, skillCategories, skillsIntro } from "@/lib/content";
+import { getProjectBySlug, skillCategories } from "@/lib/content";
 import type { SkillCategoryGroup, SkillItem } from "@/types/content";
 
 const COMMANDS = ["help", "list", "ls", "skills", "clear", "close", "back", "open"] as const;
 
-const WELCOME = [
-  "tanay@galaxy:~$ skills-terminal v1.0",
-  "Type a command and press Enter. Try: help",
-  "",
+const WELCOME_HEAD = [
+  "tanay@mams:~$ skills",
 ];
+
 
 type HistoryLine = {
   id: number;
@@ -35,6 +34,8 @@ function categoryListLines(): string[] {
     `Enter a number (1–${n}) to open a category.`,
   ];
 }
+
+const INITIAL_LINES = [...WELCOME_HEAD, ...categoryListLines(), "", "Click a category, or type help to see commands."];
 
 function helpLines(): string[] {
   const n = skillCategories.length;
@@ -63,17 +64,17 @@ export function SkillsTerminal() {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const lineId = useRef(0);
+  const lineId = useRef(INITIAL_LINES.length);
 
   const [history, setHistory] = useState<HistoryLine[]>(() =>
-    WELCOME.map((text) => ({
-      id: lineId.current++,
-      kind: "system",
+    INITIAL_LINES.map((text, i) => ({
+      id: i,
+      kind: "system" as const,
       text,
     }))
   );
   const [input, setInput] = useState("");
-  const [categoryListActive, setCategoryListActive] = useState(false);
+  const [categoryListActive, setCategoryListActive] = useState(true);
   const [selectedCategory, setSelectedCategory] =
     useState<SkillCategoryGroup | null>(null);
   const [selectedSkill, setSelectedSkill] = useState<SkillItem | null>(null);
@@ -309,14 +310,13 @@ export function SkillsTerminal() {
 
   return (
     <div className="relative mx-auto w-full max-w-4xl">
-      <div className="rounded-t-2xl border border-silver/20 bg-gradient-to-b from-surface-raised to-surface-navy px-4 pb-3 pt-4 shadow-2xl">
-        <div className="mb-3 flex items-center gap-2 px-1">
-          <span className="h-2.5 w-2.5 rounded-full bg-rocket-red/80" />
-          <span className="h-2.5 w-2.5 rounded-full bg-yellow/80" />
-          <span className="h-2.5 w-2.5 rounded-full bg-blue/80" />
+      <div className="border border-border-muted bg-surface-navy">
+        <div className="flex items-center justify-between border-b border-border-muted px-4 py-2 font-mono text-xs text-text-muted">
+          <span>skills</span>
+          <span>{skillCategories.length} categories</span>
         </div>
 
-        <div className="overflow-hidden rounded-lg border-2 border-border-muted bg-bg-deep shadow-inner">
+        <div className="overflow-hidden bg-bg-deep">
           <div
             ref={scrollRef}
             className="h-[min(52vh,28rem)] overflow-y-auto p-4 font-mono text-sm leading-relaxed text-text-primary"
@@ -334,7 +334,7 @@ export function SkillsTerminal() {
                     key={line.id}
                     type="button"
                     onClick={() => openCategory(categoryIdx)}
-                    className="block w-full text-left hover:bg-blue/10 hover:text-yellow"
+                    className="block w-full text-left text-text-primary underline decoration-blue/40 underline-offset-4 hover:bg-blue/10 hover:decoration-blue"
                   >
                     {line.text}
                   </button>
@@ -363,7 +363,7 @@ export function SkillsTerminal() {
             className="flex items-center gap-2 border-t border-border-muted bg-surface-navy px-4 py-3"
           >
             <span className="shrink-0 font-mono text-sm text-blue/80">
-              tanay@galaxy:~$
+              tanay@mams:~$
             </span>
             <div className="relative min-w-0 flex-1">
               <input
@@ -392,19 +392,9 @@ export function SkillsTerminal() {
           </form>
         </div>
 
-        <div className="mx-auto mt-2 h-1.5 w-3 rounded-full bg-silver/30" />
       </div>
 
-      <div className="mx-auto h-6 w-24 bg-gradient-to-b from-surface-navy to-bg-deep" />
-      <div className="mx-auto h-2 w-40 rounded-full bg-surface-navy shadow-lg" />
 
-      <p className="mt-6 text-center text-sm text-text-muted">
-        {skillsIntro} Type{" "}
-        <kbd className="rounded border border-silver/30 px-1.5 py-0.5 font-mono text-xs text-blue/90">
-          skills
-        </kbd>{" "}
-        to browse nine categories, then pick a specific skill in the panel.
-      </p>
 
       <div
         className={`fixed inset-y-0 right-0 z-50 flex w-full max-w-md transform flex-col border-l border-silver/25 bg-surface-navy shadow-2xl transition-transform duration-300 ease-out ${

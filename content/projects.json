@@ -2,7 +2,7 @@
   "projects": [
     {
       "slug": "articulate",
-      "title": "ARTICULATE — AI-Powered Speech Accessibility Platform",
+      "title": "ARTICULATE: AI-Powered Speech Accessibility Platform",
       "summary": "Browser-based communication tool that transcribes atypical speech, repairs grammar while preserving meaning, and supports text-to-speech playback.",
       "status": "completed",
       "cluster": "Coding & Trading",
@@ -15,7 +15,7 @@
         "Web App"
       ],
       "opening": "ARTICULATE helps people with atypical or unclear speech express themselves more confidently in real time. The platform records speech, transcribes it with a fine-tuned Whisper-based model, applies a Flan-T5 language model to repair grammar while preserving intended meaning, and provides clear text plus optional text-to-speech playback.",
-      "problem": "How can speech technology support clearer communication for people with dysarthria, Down syndrome, and other speech-related disabilities—without changing what they mean to say?",
+      "problem": "How can speech technology support clearer communication for people with dysarthria, Down syndrome, and other speech-related disabilities, without changing what they mean to say?",
       "role": "Developed the accessible browser application, integrated speech recognition and language-repair pipelines, and designed human-centered UX for users, caregivers, teachers, and speech-language pathologists.",
       "methods": [
         "Fine-tuned Whisper-based speech recognition",
@@ -25,7 +25,7 @@
         "Lazy model loading and fallback API handling"
       ],
       "results": "Delivered an end-to-end accessible communication workflow in the browser, designed for real-time use by people with speech disabilities and the professionals who support them.",
-      "learned": "Accessibility is not a feature layer—it shapes model choice, latency, feedback design, and failure handling from the start.",
+      "learned": "Accessibility shaped model choice, latency, feedback design and failure handling from the start, so it could not be added on at the end.",
       "collaborators": [
         {
           "name": "Mohammad Kazem Golji",
@@ -41,7 +41,7 @@
       "papers": [
         {
           "src": "/articulate-cs-poster.pdf",
-          "title": "ARTICULATE — CS Poster",
+          "title": "ARTICULATE: CS Poster",
           "label": "Download CS poster"
         }
       ],
@@ -51,7 +51,7 @@
         {
           "href": "https://articulate20.vercel.app/",
           "label": "Try live demo",
-          "note": "The live demo may not load due to occasional server issues — send me a message and I can fix it."
+          "note": "The live demo may not load due to occasional server issues. Send me a message and I can fix it."
         },
         {
           "href": "https://github.com/TanayMangal/claravox-backend",
@@ -154,7 +154,7 @@
         {
           "src": "/images/statera/IMG_2907.jpg",
           "alt": "Wearing the glasses-mounted STATERA prototype with rear electronics pack",
-          "caption": "On-head demo — glasses sensors and rear stimulation pack"
+          "caption": "On-head demo: glasses sensors and rear stimulation pack"
         },
         {
           "src": "/images/statera/IMG_2906.jpg",
@@ -164,12 +164,12 @@
         {
           "src": "/images/statera/esp32-s3-wiring.jpg",
           "alt": "Hands holding an ESP32-S3 board densely wired with jumper cables",
-          "caption": "ESP32-S3 hub — sensor and stimulation wiring"
+          "caption": "ESP32-S3 hub: sensor and stimulation wiring"
         },
         {
           "src": "/images/statera/IMG_2852.jpg",
           "alt": "Hands assembling red PCB, IMU breakouts, and LiPo on the lab bench",
-          "caption": "Bench assembly — PCB, IMUs, and battery"
+          "caption": "Bench assembly: PCB, IMUs, and battery"
         },
         {
           "src": "/images/statera/IMG_2859.jpg",
@@ -184,22 +184,22 @@
         {
           "src": "/images/statera/IMG_2283.jpg",
           "alt": "Two teammates building electronics at a lab table with multimeter and parts bins",
-          "caption": "Team build session — bench tools and components"
+          "caption": "Team build session: bench tools and components"
         },
         {
           "src": "/images/IMG_2904.png",
           "alt": "Wearing the GVS balance glasses prototype with electrode wiring",
-          "caption": "Prototype on-head — glasses-mounted sensing and stimulation"
+          "caption": "Prototype on-head: glasses-mounted sensing and stimulation"
         },
         {
           "src": "/images/IMG_2857.png",
           "alt": "Workbench with microcontroller, wiring, and LiPo battery for the GVS prototype",
-          "caption": "Electronics bench — ESP32 hub, sensors, and power"
+          "caption": "Electronics bench: ESP32 hub, sensors, and power"
         },
         {
           "src": "/images/photo-77515662664.png",
           "alt": "Soldering a small PCB module for the wearable",
-          "caption": "PCB work — soldering the control module"
+          "caption": "PCB work: soldering the control module"
         }
       ],
       "safetyNote": "This was a school research prototype, it is not a medical device and should not be used as a treatment or diagnosis tool.",
@@ -226,7 +226,7 @@
     {
       "slug": "flo-wrist",
       "title": "Smart Ergonomic Wrist Brace for Carpal Tunnel Syndrome Prevention",
-      "subtitle": "Flo-Wrist — preventive wearable sensing for wrist health.",
+      "subtitle": "Flo-Wrist, preventive wearable sensing for wrist health.",
       "summary": "Affordable smart wrist brace that monitors 3D wrist orientation, warns against harmful postures, and prompts evidence-based exercises.",
       "status": "completed",
       "cluster": "Engineering",
@@ -238,7 +238,7 @@
         "CTS Prevention",
         "Sensor Fusion"
       ],
-      "opening": "This wrist brace targets people at risk of carpal tunnel syndrome (CTS)—especially workers exposed to excessive wrist flexion, extension, or deviation. It combines IMUs, signal processing, and ergonomic design to measure wrist orientation, identify risky patterns, and deliver tactile and visual feedback plus therapeutic exercise prompts.",
+      "opening": "This wrist brace targets people at risk of carpal tunnel syndrome (CTS), especially workers exposed to excessive wrist flexion, extension, or deviation. It combines IMUs, signal processing, and ergonomic design to measure wrist orientation, identify risky patterns, and deliver tactile and visual feedback plus therapeutic exercise prompts.",
       "problem": "How can a low-cost wearable help users adopt healthier wrist posture during everyday tasks before cumulative strain becomes injury?",
       "role": "Developed hardware prototyping, firmware, calibration, validation against physical measurements, and ergonomic evaluation of the feedback system.",
       "methods": [
@@ -248,19 +248,19 @@
         "Evidence-based wrist exercise prompts",
         "Statistical accuracy and ergonomic validation studies"
       ],
-      "results": "Built a preventive wearable that goes beyond passive splinting by combining continuous surveillance, user awareness, and practice—validated against physical test data and ergonomic criteria.",
+      "results": "Built a preventive wearable that goes beyond passive splinting by combining continuous surveillance, user awareness, and practice, validated against physical test data and ergonomic criteria.",
       "learned": "Preventive ergonomics requires translating biomechanical risk into feedback people can actually use during real work.",
       "placeholders": [],
       "papers": [
         {
           "src": "/flo-wrist-feb-fair-presentation.pdf",
-          "title": "February Fair Final Presentation — Flo-Wrist",
+          "title": "February Fair Final Presentation: Flo-Wrist",
           "label": "Download February Fair presentation",
           "aspectRatio": "4 / 3"
         },
         {
           "src": "/cts-grant.pdf",
-          "title": "CTS Grant Proposal — Smart Ergonomic Wrist Brace",
+          "title": "CTS Grant Proposal: Smart Ergonomic Wrist Brace",
           "label": "Download CTS grant PDF"
         }
       ],
@@ -268,7 +268,7 @@
         {
           "src": "/images/flo-wrist/IMG_0838.jpg",
           "alt": "Flo-Wrist research poster with jumper-wire sensor harness in the foreground",
-          "caption": "Flo-Wrist poster — materials, procedure, and sensor data"
+          "caption": "Flo-Wrist poster: materials, procedure, and sensor data"
         },
         {
           "src": "/images/flo-wrist/IMG_0839.jpg",
@@ -288,17 +288,17 @@
         {
           "src": "/images/flo-wrist/IMG_1324.png",
           "alt": "Presenting the Ventrile-Wrist fair poster and hand prototype to a judge",
-          "caption": "Fair presentation — Ventrile-Wrist poster and prototype demo"
+          "caption": "Fair presentation: Ventrile-Wrist poster and prototype demo"
         },
         {
           "src": "/images/IMG_3202.png",
           "alt": "Tanay presenting Ventrilo-Wrist STEM fair poster with prototype on the table",
-          "caption": "STEM fair — Ventrilo-Wrist poster and wearable prototype"
+          "caption": "STEM fair: Ventrilo-Wrist poster and wearable prototype"
         },
         {
           "src": "/images/IMG_3207.png",
           "alt": "Tanay with Flo-Wrist science fair board and Arduino wrist brace prototype",
-          "caption": "Earlier Flo-Wrist build — Arduino brace and data board"
+          "caption": "Earlier Flo-Wrist build: Arduino brace and data board"
         }
       ],
       "skills": [
@@ -321,7 +321,7 @@
       "slug": "fem-quantum-harmonic-oscillator",
       "title": "Finite Element Methods for the One-Dimensional Quantum Harmonic Oscillator",
       "subtitle": "Turning a quantum equation into a computable model.",
-      "summary": "Numerical physics research comparing linear and Hermite finite elements for the quantum harmonic oscillator—part of the WPI Quantum research group internship.",
+      "summary": "Numerical physics research comparing linear and Hermite finite elements for the quantum harmonic oscillator, part of the WPI Quantum research group internship.",
       "status": "completed",
       "cluster": "Math Modeling",
       "clusterSlug": "math-modeling",
@@ -333,9 +333,9 @@
         "Scientific Computing",
         "WPI"
       ],
-      "opening": "As part of the research group internship at WPI for Quantum, I used the finite element method to approximate the energy eigenvalues and wavefunctions of the one-dimensional quantum harmonic oscillator. The work compared lower-order linear elements with higher-order Hermite elements—including quintic Hermite bases—and evaluated how numerical choices affect accuracy.",
+      "opening": "As part of the research group internship at WPI for Quantum, I used the finite element method to approximate the energy eigenvalues and wavefunctions of the one-dimensional quantum harmonic oscillator. The work compared lower-order linear elements with higher-order Hermite elements, including quintic Hermite bases, and evaluated how numerical choices affect accuracy.",
       "problem": "How accurately can finite element methods reproduce a quantum system with known analytical energy levels?",
-      "role": "Research intern in the WPI Quantum group—developed and compared FEM implementations, validated results against analytical solutions, and documented numerical tradeoffs in a research paper.",
+      "role": "Research intern in the WPI Quantum group, developed and compared FEM implementations, validated results against analytical solutions, and documented numerical tradeoffs in a research paper.",
       "methods": [
         "Spatial discretization of the quantum harmonic oscillator domain",
         "Generalized eigenvalue formulation",
@@ -345,7 +345,9 @@
       ],
       "results": "Both approaches reproduced the expected energy spectrum; cubic Hermite elements achieved extremely high accuracy with far fewer degrees of freedom. Linear FEM first six energies: 0.500089, 1.500444, 2.501155, 3.502221, 4.503642, 5.505417. Cubic Hermite: 0.500000, 1.500000, 2.500001, 3.500004, 4.500010, 5.500021.",
       "learned": "A physical equation becomes a numerical model through domain choice, basis construction, matrix assembly, eigenvalue solution, and rigorous validation against theory.",
-      "relatedProjects": ["wpi-computational-physics-intern"],
+      "relatedProjects": [
+        "wpi-computational-physics-intern"
+      ],
       "papers": [
         {
           "src": "/quantum-harmonic-oscillator-quintic-hermite.pdf",
@@ -388,7 +390,7 @@
         "Sensitivity analysis across diffusion and distance parameters"
       ],
       "results": "Anti-idling near schools ranked as the strongest equity-focused intervention in the current scenario, closely followed by electric-freight policies. Meritorious recognition in HiMCM (top 13% internationally).",
-      "learned": "Policy models must account for network propagation—not only local emissions—when prioritizing interventions in vulnerable communities.",
+      "learned": "Policy models must account for network propagation, not only local emissions, when prioritizing interventions in vulnerable communities.",
       "websiteUrl": "https://github.com/TanayMangal/GraphDiffusionModel",
       "websiteLabel": "View the model on GitHub",
       "links": [
@@ -400,7 +402,7 @@
       "papers": [
         {
           "src": "/graph-diffusion-chelsea-everett-pollution.pdf",
-          "title": "Graph Diffusion Model for Environmental Justice Pollution Exposure — Chelsea & Everett, MA",
+          "title": "Graph Diffusion Model for Environmental Justice Pollution Exposure: Chelsea & Everett, MA",
           "label": "Download paper PDF"
         }
       ],
@@ -470,17 +472,17 @@
         {
           "src": "/images/himcm/IMG_0649.jpg",
           "alt": "Large whiteboard covered in travel-time equations, room variables, triage functions, and building layout graphs, with a smaller board of f(t) and s(t) curves leaning against it",
-          "caption": "Modeling session — travel times, triage functions, and layout graphs"
+          "caption": "Modeling session: travel times, triage functions, and layout graphs"
         },
         {
           "src": "/images/himcm/IMG_0644.jpg",
           "alt": "Small whiteboard titled Ishaan's Design with room-weightage criteria and a hand-drawn node-link graph for emergency search",
-          "caption": "Early design — room weights, nodes, and search priorities"
+          "caption": "Early design: room weights, nodes, and search priorities"
         },
         {
           "src": "/images/himcm/IMG_0652.jpg",
           "alt": "Whiteboard outlining Phases 0–4 of the evacuation model with risk scores, sigmoid sketches, and a hand pointing at the board",
-          "caption": "Phased model plan — nodes, triage scores, and sigmoid risk"
+          "caption": "Phased model plan: nodes, triage scores, and sigmoid risk"
         },
         {
           "src": "/images/himcm/IMG_0653.jpg",
@@ -490,7 +492,7 @@
         {
           "src": "/images/himcm/IMG_0654.jpg",
           "alt": "Full whiteboard of the five-phase firefighter sweep model with centrality notes, sigmoid curves, and final scalar importance output",
-          "caption": "Full board — centrality, combined sigmoids, and final ranking"
+          "caption": "Full board: centrality, combined sigmoids, and final ranking"
         }
       ],
       "websiteUrl": "https://github.com/TanayMangal/Building-Route-Optimizing-HiMCM",
@@ -534,7 +536,7 @@
         "Economic Modeling"
       ],
       "opening": "Developed a mathematical model forecasting how businesses may stop accepting pennies after U.S. penny production ends. Penny acceptance was modeled as a density-dependent diffusion process, capturing how urban, suburban, and rural businesses transition at different rates.",
-      "problem": "How will penny acceptance diffuse across regions with different population densities—and what are the economic tradeoffs of cash-rounding strategies?",
+      "problem": "How will penny acceptance diffuse across regions with different population densities, and what are the economic tradeoffs of cash-rounding strategies?",
       "role": "Formulated nonlinear differential equations, integrated population-density distributions, and extended the model to evaluate rounding strategies.",
       "methods": [
         "Density-dependent diffusion process",
@@ -608,7 +610,7 @@
         "11 scenarios: rebates, infrastructure, supply-side incentives, targeted deployment"
       ],
       "results": "Supply-side production incentives produced the strongest pollution reduction per dollar; large consumer-rebate programs risked VMT rebound effects. Recommended prioritizing infrastructure and incentives in Boston ZIP codes 02126, 02131, and 02127.",
-      "learned": "Climate policy models must weigh equity, rebound risk, and cost-effectiveness together—not optimize emissions alone.",
+      "learned": "Climate policy models must weigh equity, rebound risk, and cost-effectiveness together, not optimize emissions alone.",
       "collaborators": [
         {
           "name": "Chris Xu",
@@ -638,7 +640,7 @@
       "papers": [
         {
           "src": "/mtfc-23914.pdf",
-          "title": "A Risk Analysis of the Effects of Coral Reef Degradation in Tropical Climates — MTFC Team #23914",
+          "title": "A Risk Analysis of the Effects of Coral Reef Degradation in Tropical Climates: MTFC Team #23914",
           "label": "Download MTFC symposium paper"
         }
       ],
@@ -646,12 +648,12 @@
         {
           "src": "/images/mtfc/IMG_1903.jpg",
           "alt": "Five teammates holding blue Modeling the Future Challenge bags in front of a Massachusetts Academy of Math & Science banner",
-          "caption": "MTFC Team #23914 — Modeling the Future Challenge at Mass Academy"
+          "caption": "MTFC Team #23914: Modeling the Future Challenge at Mass Academy"
         },
         {
           "src": "/images/mtfc/policy-heatmaps.png",
           "alt": "2×2 grid of spatial heatmaps comparing Aggressive, Front-Loaded, Moderate Rebate, and No Policy AV scenarios",
-          "caption": "Policy scenario heatmaps — Aggressive, Front-Loaded, Moderate Rebate, and No Policy"
+          "caption": "Policy scenario heatmaps: Aggressive, Front-Loaded, Moderate Rebate, and No Policy"
         }
       ],
       "placeholders": [],
@@ -673,7 +675,7 @@
     {
       "slug": "etosha-wildlife-optimization",
       "title": "Etosha Wildlife Protection Optimization Model",
-      "summary": "Conservation optimization across 940 grid cells in Etosha National Park—prioritizing patrols, drones, cameras, and acoustic sensors.",
+      "summary": "Conservation optimization across 940 grid cells in Etosha National Park, prioritizing patrols, drones, cameras, and acoustic sensors.",
       "status": "completed",
       "cluster": "Math Modeling",
       "clusterSlug": "math-modeling",
@@ -694,7 +696,7 @@
         "Scenario-based forecasts and sensitivity analysis"
       ],
       "results": "Produced reproducible risk maps and data-informed recommendations for ranger patrols, drone bases, waterhole cameras, and acoustic sensors under capacity constraints. Submitted as IMMC 2026 Team #17289.",
-      "learned": "Conservation optimization must integrate ecology, seasonality, and operational limits—not treat protection as a uniform coverage problem.",
+      "learned": "Conservation optimization must integrate ecology, seasonality, and operational limits, not treat protection as a uniform coverage problem.",
       "collaborators": [
         {
           "name": "Ryan Prendergast",
@@ -709,13 +711,15 @@
           "href": "https://www.linkedin.com/in/neil-gupta-6038492b3/"
         }
       ],
-      "relatedProjects": ["etosha-rhino-patrol-routing"],
+      "relatedProjects": [
+        "etosha-rhino-patrol-routing"
+      ],
       "websiteUrl": "https://github.com/TanayMangal/Etosha-National-Park",
       "websiteLabel": "View the IMMC model on GitHub",
       "papers": [
         {
           "src": "/immc-final-paper.pdf",
-          "title": "IMMC 2026 — Wildlife Conservation in Etosha National Park (Team #17289)",
+          "title": "IMMC 2026: Wildlife Conservation in Etosha National Park (Team #17289)",
           "label": "Download IMMC final paper"
         }
       ],
@@ -723,12 +727,12 @@
         {
           "src": "/images/immc/IMG_1357.jpg",
           "alt": "Four IMMC teammates smiling together in a close group photo on a projected display",
-          "caption": "IMMC Team #17289 — the modeling squad"
+          "caption": "IMMC Team #17289: the modeling squad"
         },
         {
           "src": "/images/immc/IMG_1354.jpg",
           "alt": "Empty collaborative classroom with multiple projector screens showing the same team group photo",
-          "caption": "War-room setup — team photo looping across the projectors"
+          "caption": "War-room setup: team photo looping across the projectors"
         },
         {
           "src": "/images/immc/IMG_1769.jpg",
@@ -738,7 +742,7 @@
         {
           "src": "/images/immc/IMG_1766.jpg",
           "alt": "Teammate focused at a laptop with stickers, phone screen showing an IMMC group chat in the foreground",
-          "caption": "Deep work block — models open, IMMC chat nearby"
+          "caption": "Deep work block: models open, IMMC chat nearby"
         },
         {
           "src": "/images/immc/IMG_1767.jpg",
@@ -748,12 +752,12 @@
         {
           "src": "/images/immc/IMG_1755.jpg",
           "alt": "Two teammates at a whiteboard labeled Outputs, one drawing while the other smiles",
-          "caption": "Whiteboard break — sketching outputs between model runs"
+          "caption": "Whiteboard break: sketching outputs between model runs"
         },
         {
           "src": "/images/immc/IMG_1751.jpg",
           "alt": "Three teammates at a dining-hall table with an open laptop showing Google Drive files beside plates of food",
-          "caption": "Working lunch — reviewing shared data folders between bites"
+          "caption": "Working lunch: reviewing shared data folders between bites"
         },
         {
           "src": "/images/immc/IMG_1753.jpg",
@@ -768,7 +772,7 @@
         {
           "src": "/images/immc/IMG_1777.jpg",
           "alt": "Messy overnight room with teammates asleep among laptops, energy drinks, snacks, and an open suitcase",
-          "caption": "Overnight stretch — catching sleep between paper revisions"
+          "caption": "Overnight stretch: catching sleep between paper revisions"
         }
       ],
       "placeholders": [],
@@ -793,7 +797,7 @@
       "slug": "etosha-rhino-patrol-routing",
       "title": "Coverage-Oriented Patrol Routing for Rhino Anti-Poaching in Etosha",
       "subtitle": "Team-orienteering routes on Etosha’s real road network",
-      "summary": "Research paper on routing limited ranger patrols to cover rhino poaching risk in Etosha National Park—multi-depot team orienteering on OpenStreetMap roads.",
+      "summary": "Research paper on routing limited ranger patrols to cover rhino poaching risk in Etosha National Park, multi-depot team orienteering on OpenStreetMap roads.",
       "status": "completed",
       "cluster": "Math Modeling",
       "clusterSlug": "math-modeling",
@@ -815,7 +819,7 @@
         "Sensitivity tests on candidate set, budget, and up to 15% risk-map noise"
       ],
       "results": "Five eight-hour patrols traversed cells covering about 26% of mapped risk-reward and 70–80% of the highest-priority cells, beating all four baselines and remaining essentially unchanged under 15% risk-map noise. A marginal-value test found a second patrol adds most at the western Okaukuejo and Dolomite stations. Framed as a modelling prototype that still needs validation against observed ranger movement before deployment.",
-      "learned": "Anti-poaching routing works best when the objective is inverted from ordinary navigation—maximize hazard covered, not minimize travel—and when risk surfaces are stress-tested for modest input error.",
+      "learned": "Anti-poaching routing works best when the objective is inverted from ordinary navigation, maximize hazard covered, not minimize travel, and when risk surfaces are stress-tested for modest input error.",
       "collaborators": [
         {
           "name": "Ishan Kasam",
@@ -830,7 +834,9 @@
           "href": "https://www.linkedin.com/in/rshar27/"
         }
       ],
-      "relatedProjects": ["etosha-wildlife-optimization"],
+      "relatedProjects": [
+        "etosha-wildlife-optimization"
+      ],
       "websiteUrl": "https://github.com/TanayMangal/Rhino-Anti-Poaching",
       "websiteLabel": "View the routing model on GitHub",
       "papers": [
@@ -862,7 +868,7 @@
     {
       "slug": "m3c-sports-gambling",
       "title": "M3C: Economic and Behavioral Impacts of Sports Gambling",
-      "summary": "Multi-stage model of gambling's economic and social spread—top 20% internationally in MathWorks Math Modeling Challenge.",
+      "summary": "Multi-stage model of gambling's economic and social spread, top 20% internationally in MathWorks Math Modeling Challenge.",
       "status": "completed",
       "cluster": "Math Modeling",
       "clusterSlug": "math-modeling",
@@ -872,7 +878,7 @@
         "Monte Carlo",
         "Network Contagion"
       ],
-      "opening": "Led a mathematical modeling project examining how sports gambling affects individuals and communities over time. The framework estimated disposable income from demographic data, simulated one-year outcomes with probabilistic wealth models, and projected long-term effects over 5-, 15-, and 30-year horizons. Paper will be out soon — cannot post at the moment due to competition rules.",
+      "opening": "Led a mathematical modeling project examining how sports gambling affects individuals and communities over time. The framework estimated disposable income from demographic data, simulated one-year outcomes with probabilistic wealth models, and projected long-term effects over 5-, 15-, and 30-year horizons. Paper will be out soon, cannot post at the moment due to competition rules.",
       "problem": "How do structural expected losses, financial vulnerability, and social contagion interact to spread harmful gambling behavior over time?",
       "role": "Led model design, implemented regression and ML pipelines on ~3M data points, and produced prevention-focused policy recommendations.",
       "methods": [
@@ -882,7 +888,7 @@
         "Network-based contagion model for social spread of gambling behavior"
       ],
       "results": "Revealed structural losses from house edge and increasing vulnerability over time. Recognized in the top 20% internationally in the MathWorks Math Modeling Challenge (M3C).",
-      "learned": "Behavioral economic harm often emerges from compounding structural disadvantage—not isolated bad decisions.",
+      "learned": "Behavioral economic harm often emerges from compounding structural disadvantage, not isolated bad decisions.",
       "collaborators": [
         {
           "name": "Chris Xu",
@@ -908,7 +914,7 @@
         {
           "src": "/images/m3c/IMG_1424.png",
           "alt": "Three teammates huddled around a laptop with an M3C schedule projected behind them",
-          "caption": "Collaboration session — organizing the M3C timeline on the projector"
+          "caption": "Collaboration session: organizing the M3C timeline on the projector"
         },
         {
           "src": "/images/m3c/IMG_1430.jpg",
@@ -923,7 +929,7 @@
         {
           "src": "/images/m3c/IMG_1447.jpg",
           "alt": "Team at library study desks with a whiteboard of equations nearby",
-          "caption": "Library work block — equations on the whiteboard, models on the desk"
+          "caption": "Library work block: equations on the whiteboard, models on the desk"
         },
         {
           "src": "/images/m3c/IMG_1450.jpg",
@@ -938,7 +944,7 @@
         {
           "src": "/images/m3c/IMG_1439.jpg",
           "alt": "Three teammates at Boomers Pizzeria with pizza, curly fries, and an open laptop",
-          "caption": "Fuel stop at Boomers — laptop still open between slices"
+          "caption": "Fuel stop at Boomers: laptop still open between slices"
         },
         {
           "src": "/images/m3c/IMG_1441.jpg",
@@ -975,7 +981,7 @@
     },
     {
       "slug": "imc-prosperity-trading",
-      "title": "Algorithmic Trading System — IMC Prosperity Competition",
+      "title": "Algorithmic Trading System: IMC Prosperity Competition",
       "summary": "Led a five-person team to top 25% worldwide with Python trading algorithms earning ~73,000 simulated tokens.",
       "status": "completed",
       "cluster": "Coding & Trading",
@@ -1042,7 +1048,7 @@
         "Manufacturing",
         "Mechanical Design"
       ],
-      "opening": "Hands-on engineering through FRC Team 467 at Shrewsbury High School (Sep 2024 – Jun 2025) — CAD in Onshape, prototyping, and manufacturing with knee mill, CNC, and lathe. Recognized with the FIRST Leadership Award (1 of 2 from 54 students).",
+      "opening": "Hands-on engineering through FRC Team 467 at Shrewsbury High School (Sep 2024 – Jun 2025), CAD in Onshape, prototyping, and manufacturing with knee mill, CNC, and lathe. Recognized with the FIRST Leadership Award (1 of 2 from 54 students).",
       "problem": "How do design constraints, fabrication methods, and team feedback shape reliable mechanical systems?",
       "role": "Member of FRC Team 467: prototyping and CAD for subsystems, manufacturing and machining parts, and team collaboration across competition season.",
       "methods": [
@@ -1077,7 +1083,7 @@
     },
     {
       "slug": "wpi-metal-am-research-intern",
-      "title": "Research Intern — Multiphysics Modeling for Metal Additive Manufacturing",
+      "title": "Research Intern: Multiphysics Modeling for Metal Additive Manufacturing",
       "subtitle": "Worcester Polytechnic Institute",
       "summary": "Refining a multiphysics simulation framework for metal additive manufacturing under faculty mentorship.",
       "status": "ongoing",
@@ -1105,7 +1111,7 @@
         "Visualizing simulation outputs to support manufacturing-reliability research"
       ],
       "results": "Contributing to research aimed at improving manufacturing reliability and reducing defect formation in metal parts.",
-      "learned": "Metal AM research requires tightly coupled physics models and careful interpretation of simulation trends—not just single-variable optimization.",
+      "learned": "Metal AM research requires tightly coupled physics models and careful interpretation of simulation trends, not just single-variable optimization.",
       "placeholders": [],
       "images": [],
       "skills": [
@@ -1117,7 +1123,7 @@
     },
     {
       "slug": "wpi-computational-physics-intern",
-      "title": "Research Intern — Computational Physics & Advanced Modeling",
+      "title": "Research Intern: Computational Physics & Advanced Modeling",
       "subtitle": "Worcester Polytechnic Institute",
       "summary": "Computational-physics research applying mathematical modeling and scientific computing to complex physical systems.",
       "status": "ongoing",
@@ -1134,7 +1140,7 @@
         "WPI",
         "Research"
       ],
-      "opening": "Conducting computational-physics research under faculty mentorship at Worcester Polytechnic Institute—building foundations in quantum mechanics, advanced materials modeling, and numerical simulation.",
+      "opening": "Conducting computational-physics research under faculty mentorship at Worcester Polytechnic Institute, building foundations in quantum mechanics, advanced materials modeling, and numerical simulation.",
       "problem": "How can computational tools and mathematical models advance understanding of complex physical systems in early-stage research?",
       "role": "Research intern developing computational methods, reviewing literature, and contributing to theoretical and numerical analysis with faculty and lab collaborators.",
       "methods": [
@@ -1146,33 +1152,35 @@
       ],
       "results": "Advancing early-stage computational-physics work across modeling, simulation, and literature-informed method development.",
       "learned": "Research progress depends as much on careful method refinement and literature grounding as on raw computation.",
-      "relatedProjects": ["fem-quantum-harmonic-oscillator"],
+      "relatedProjects": [
+        "fem-quantum-harmonic-oscillator"
+      ],
       "placeholders": [],
       "images": [
         {
           "src": "/images/quantum-research/research-poster-fem-qed-nanostructures.png",
           "alt": "Research poster: Finite Element Approach to Quantum Field Theory and Feynman Loops in Nanostructures by Tanay Mangal and L. Ramdas Ram-Mohan at WPI",
-          "caption": "Research poster — FEM + QED loop corrections for electron g-factors in nanostructures (Ram-Mohan group, WPI)"
+          "caption": "Research poster: FEM + QED loop corrections for electron g-factors in nanostructures (Ram-Mohan group, WPI)"
         },
         {
           "src": "/images/quantum-research/g-factor-zeeman-splitting-slide.png",
           "alt": "Diagram of Zeeman energy splitting into spin-up and spin-down levels as applied magnetic field increases, with ΔE = g μ_B B₀",
-          "caption": "g-factor / Zeeman splitting — degenerate level splits into m_s = ±1/2 under applied B"
+          "caption": "g-factor / Zeeman splitting: degenerate level splits into m_s = ±1/2 under applied B"
         },
         {
           "src": "/images/quantum-research/qho-energy-spectrum-fem-vs-exact.png",
           "alt": "Bar chart comparing QHO dimensionless energy levels for exact, linear FEM (N=300), and Hermite FEM (N=60) across quantum numbers n=0 to 9",
-          "caption": "QHO energy spectrum — Exact vs Linear FEM vs Hermite FEM"
+          "caption": "QHO energy spectrum: Exact vs Linear FEM vs Hermite FEM"
         },
         {
           "src": "/images/quantum-research/cubic-hermite-wavefunction-n2.png",
           "alt": "Wavefunction ψ_n(x) vs dimensionless position for n=2, with exact (solid) and Hermite FEM (dashed) curves overlapping",
-          "caption": "n=2 wavefunction — Cubic Hermite FEM matches exact solution (E=2.5)"
+          "caption": "n=2 wavefunction: Cubic Hermite FEM matches exact solution (E=2.5)"
         },
         {
           "src": "/images/quantum-research/eigenvalue-convergence-cubic-hermite.png",
           "alt": "Log-log plot of relative energy error vs element size h for Cubic Hermite modes n=0–3, tracking O(h⁴) reference slope",
-          "caption": "Cubic Hermite convergence — relative energy error follows O(h⁴)"
+          "caption": "Cubic Hermite convergence: relative energy error follows O(h⁴)"
         },
         {
           "src": "/images/quantum-research/quintic-c2-hermite-basis-functions.png",
@@ -1182,27 +1190,27 @@
         {
           "src": "/images/quantum-research/relative-energy-error-vs-dof.png",
           "alt": "Log-log energy convergence for n=4 comparing relative energy error vs free DOF for Linear P1, Cubic C1, and Quintic C2",
-          "caption": "Energy convergence (n=4) — higher-order Hermite bases need far fewer DOF"
+          "caption": "Energy convergence (n=4): higher-order Hermite bases need far fewer DOF"
         },
         {
           "src": "/images/quantum-research/ordinary-ring-vs-mobius-ring.png",
           "alt": "3D color-mapped Möbius-ring visualization of a standing-wave / eigenfunction pattern on a twisted ring topology",
-          "caption": "Ring topology visualization — wave pattern on a Möbius-type ring"
+          "caption": "Ring topology visualization: wave pattern on a Möbius-type ring"
         },
         {
           "src": "/images/computational-physics/comsol-temperature-vs-time.png",
           "alt": "COMSOL point graph of Temperature (K) vs Time (ms) with multi-point heating curves peaking near 3 ms then cooling sharply",
-          "caption": "COMSOL temperature probes — heating to ~1400 K, then rapid cool after ~3 ms"
+          "caption": "COMSOL temperature probes: heating to ~1400 K, then rapid cool after ~3 ms"
         },
         {
           "src": "/images/computational-physics/comsol-probe-vs-time.png",
           "alt": "COMSOL line plot vs Time (ms) rising to a peak near 3 ms then dropping to zero (×10⁻⁴ scale)",
-          "caption": "COMSOL time-history probe — rises through 3 ms, then drops to zero"
+          "caption": "COMSOL time-history probe: rises through 3 ms, then drops to zero"
         },
         {
           "src": "/images/computational-physics/comsol-heat-flux-vs-arc-length.png",
           "alt": "COMSOL heat flux (W/m²) vs Arc length (mm) comparing convective and radiative cooling components",
-          "caption": "Heat flux vs arc length — convective and radiative surface cooling components"
+          "caption": "Heat flux vs arc length: convective and radiative surface cooling components"
         }
       ],
       "skills": [
@@ -1218,9 +1226,9 @@
     },
     {
       "slug": "frc-team-190",
-      "title": "FIRST Robotics Competition — Team 190",
+      "title": "FIRST Robotics Competition: Team 190",
       "subtitle": "Mass Academy / WPI · Team Member",
-      "summary": "FRC Team 190 member — CAD, prototyping, FLL volunteering, and Impact Award / social media team work.",
+      "summary": "FRC Team 190 member, CAD, prototyping, FLL volunteering, and Impact Award / social media team work.",
       "status": "ongoing",
       "kind": "experience",
       "organization": "FIRST Robotics Competition · Team 190",
@@ -1236,14 +1244,14 @@
         "Prototyping",
         "FIRST"
       ],
-      "opening": "Member of FRC Team 190 at Mass Academy/WPI, contributing CAD and prototyping for robot subsystems—including climber planning for the 2026 game—while supporting outreach through FLL kit builds and competition-season team operations.",
+      "opening": "Member of FRC Team 190 at Mass Academy/WPI, contributing CAD and prototyping for robot subsystems, including climber planning for the 2026 game, while supporting outreach through FLL kit builds and competition-season team operations.",
       "problem": "How can a competition team iterate quickly on subsystem designs while supporting broader FIRST community outreach?",
       "role": "CAD and prototyping contributor; FLL volunteer; member of Impact Award and Social Media teams.",
       "methods": [
         "Prototyping and CAD for subsystems in Onshape",
-        "Whiteboard design reviews for the 2026 climber subsystem — claw, T-joint, and load requirements",
+        "Whiteboard design reviews for the 2026 climber subsystem, claw, T-joint, and load requirements",
         "Collaborative design iteration with teammates",
-        "Volunteering for FLL teams — building kits and practice mats",
+        "Volunteering for FLL teams, building kits and practice mats",
         "Brainstorming and content work on Impact Award and social media teams"
       ],
       "results": "Hands-on contribution to competition-season engineering and community-facing FIRST outreach.",
@@ -1257,17 +1265,17 @@
         {
           "src": "/images/frc-190/IMG_1123.jpg",
           "alt": "Whiteboard sketches for FRC 2026 climber receiver, T-joint, and claw requirements",
-          "caption": "Climber planning — receiver, T-joint, and claw constraints for the 2026 game"
+          "caption": "Climber planning: receiver, T-joint, and claw constraints for the 2026 game"
         },
         {
           "src": "/images/frc-190/IMG_1127.jpg",
           "alt": "Design review at the whiteboard covering climber claw loads and force diagrams",
-          "caption": "Climber design review — axial thrust, torsion, and free-body diagrams"
+          "caption": "Climber design review: axial thrust, torsion, and free-body diagrams"
         },
         {
           "src": "/images/frc-190/IMG_1141.jpg",
           "alt": "Whiteboard with climber sprocket, claw, and gear-ratio calculations for Team 190",
-          "caption": "Climber analysis — sprocket layout, stress math, and gear/sprocket ratios"
+          "caption": "Climber analysis: sprocket layout, stress math, and gear/sprocket ratios"
         },
         {
           "src": "/images/IMG_3199.png",
@@ -1287,7 +1295,7 @@
         {
           "src": "/images/IMG_3338.png",
           "alt": "Whiteboard sketches for robot intake mechanism and rack stack-up",
-          "caption": "Intake design whiteboard — rack and plate stack-up"
+          "caption": "Intake design whiteboard: rack and plate stack-up"
         },
         {
           "src": "/images/png-image-1.png",
@@ -1296,7 +1304,7 @@
         },
         {
           "src": "/images/IMG_3200.png",
-          "alt": "FLL volunteering — building kits and practice mats",
+          "alt": "FLL volunteering, building kits and practice mats",
           "caption": "FLL outreach volunteering"
         },
         {
@@ -1324,7 +1332,7 @@
       "slug": "tech-awareness-association",
       "title": "Co-Founder & Programs and Education Lead",
       "subtitle": "Tech Awareness Association",
-      "summary": "Student-led nonprofit teaching device repair, e-waste reduction, and digital literacy — 120+ devices repaired across five towns.",
+      "summary": "Student-led nonprofit teaching device repair, e-waste reduction, and digital literacy, 120+ devices repaired across five towns.",
       "status": "ongoing",
       "kind": "experience",
       "organization": "Tech Awareness Association",
@@ -1341,7 +1349,7 @@
       ],
       "opening": "Co-founded a student-led nonprofit teaching device repair, e-waste reduction, and digital literacy to community members and seniors. Lead a team of five running library and senior-center workshops with a recurring repair bench.",
       "problem": "How can students build durable community programs that reduce e-waste and expand digital access?",
-      "role": "Co-founder and Programs & Education Lead — team leadership, workshop design, repair operations, and partnership development.",
+      "role": "Co-founder and Programs & Education Lead, team leadership, workshop design, repair operations, and partnership development.",
       "methods": [
         "Leading a team of five across workshops and repair operations",
         "Running library and senior-center repair and literacy programs",
@@ -1362,12 +1370,12 @@
         {
           "src": "/images/tech-awareness/IMG_3276.jpg",
           "alt": "Tech Awareness repair workshop with iFixit kits and disassembled phones on the table",
-          "caption": "Community repair workshop — phones open on anti-static mats with iFixit kits"
+          "caption": "Community repair workshop: phones open on anti-static mats with iFixit kits"
         },
         {
           "src": "/images/tech-awareness/IMG_3283.jpg",
           "alt": "Close-up of hands using a precision screwdriver kit during device repair",
-          "caption": "Hands-on repair — precision bits and pry tools at the bench"
+          "caption": "Hands-on repair: precision bits and pry tools at the bench"
         },
         {
           "src": "/images/tech-awareness/IMG_3299.jpg",
@@ -1377,7 +1385,7 @@
         {
           "src": "/images/tech-awareness/IMG_3372.jpg",
           "alt": "Tech Awareness team with laptops, tablets, and a disassembled laptop on the worktable",
-          "caption": "Team night — devices, parts, and repair materials on the bench"
+          "caption": "Team night: devices, parts, and repair materials on the bench"
         }
       ],
       "skills": [
@@ -1391,9 +1399,9 @@
     },
     {
       "slug": "us-taekwondo-instructor",
-      "title": "2nd Dan Black Belt / Instructor",
+      "title": "2nd Dan Black Belt / Former Instructor",
       "subtitle": "US Taekwondo Center",
-      "summary": "Part-time instructor teaching Taekwondo to ages 5+ and competing on the demonstration team.",
+      "summary": "Taught taekwondo part time to students ages 5 and up and competed on the demonstration team.",
       "status": "completed",
       "kind": "experience",
       "organization": "US Taekwondo Center",
@@ -1407,9 +1415,9 @@
         "Teaching",
         "Martial Arts"
       ],
-      "opening": "2nd Dan Black Belt instructor at US Taekwondo Center — assisting and leading classes for students ages 5 and older while competing on the demonstration team.",
+      "opening": "2nd Dan black belt who taught at the U.S. Taekwondo Center, assisting and leading classes for students ages 5 and older, and competed on the demonstration team.",
       "problem": "How do you teach physical discipline and confidence across a wide range of ages and skill levels?",
-      "role": "Instructor assisting 10–20 student classes and teaching the Taekwondo curriculum.",
+      "role": "Instructor who assisted 10–20 student classes and taught the taekwondo curriculum.",
       "methods": [
         "Assisted and led classes of 10–20 students",
         "Taught curriculum to students ages 5 and older",
@@ -1458,7 +1466,7 @@
     },
     {
       "slug": "mams-math-tournament",
-      "title": "Co-Founder — Mass Academy Math Tournament (MAMSMT)",
+      "title": "Co-Founder: Mass Academy Math Tournament (MAMSMT)",
       "subtitle": "Middle & high school invitational · corporate-sponsored",
       "summary": "Co-founded and ran a competitive math tournament for middle and high school students, raising $1,000+ from AoPS, Jane Street, RSM, and The Actuarial Foundation.",
       "status": "completed",
@@ -1477,7 +1485,7 @@
       ],
       "opening": "Co-founded and executed the Mass Academy Math Tournament (MAMSMT) for middle and high school students. Raised over $1,000 in corporate sponsorship from Art of Problem Solving (AoPS), Jane Street, the Russian School of Mathematics (RSM), and The Actuarial Foundation, then ran end-to-end logistics so the day ran smoothly for every team.",
       "problem": "How do you design, fund, and operate a student math tournament that schools will approve and sponsors will trust?",
-      "role": "Co-founder and organizer — sponsorship, administrative approval, competition integrity, and full event operations.",
+      "role": "Co-founder and organizer, sponsorship, administrative approval, competition integrity, and full event operations.",
       "methods": [
         "Authored a comprehensive 20-page operational proposal and secured official administrative and principal approval",
         "Raised corporate sponsorship from AoPS, Jane Street, RSM, and The Actuarial Foundation ($1,000+)",
@@ -1486,7 +1494,7 @@
         "Managed procurement, tracking, and budgeting for food, prizes, and supplies in Microsoft Excel"
       ],
       "results": "Delivered a fully sponsored competitive math tournament with school approval, structured teams, and a seamless participant experience from check-in through awards.",
-      "learned": "Large student events succeed when fundraising, written proposals, and day-of logistics are treated as one project—not separate afterthoughts.",
+      "learned": "Large student events succeed when fundraising, written proposals, and day-of logistics are treated as one project, not separate afterthoughts.",
       "collaborators": [
         {
           "name": "Arnav Prabhudesai",
@@ -1506,7 +1514,7 @@
         {
           "src": "/images/math-tournament/trophy-1st.png",
           "alt": "First-place trophy presentation at the Mass Academy Math Tournament",
-          "caption": "Awards — presenting a 1st-place trophy at MAMSMT"
+          "caption": "Awards: presenting a 1st-place trophy at MAMSMT"
         },
         {
           "src": "/images/math-tournament/trophy-presentation.png",
@@ -1516,7 +1524,7 @@
         {
           "src": "/images/math-tournament/organizers-group.png",
           "alt": "Organizing team group photo in front of the Mass Academy banner",
-          "caption": "Organizing crew — Mass Academy Math Tournament"
+          "caption": "Organizing crew: Mass Academy Math Tournament"
         }
       ],
       "skills": [

@@ -1,4 +1,4 @@
-.console { background:#0A1A3F; border:1px solid #FFB63B42; box-shadow:0 20px 80px #0008; }
+.console { --bg-deep:#070a12; --surface-navy:#0e1320; --text-primary:#eceef3; --text-muted:#9ca5b6; --gold:#e9b25a; --blue:#e9b25a; color:var(--text-primary); background:#0A1A3F; border:1px solid #FFB63B42; box-shadow:0 20px 80px #0008; }
 .header { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:25px 28px; border-bottom:1px solid #FFB63B42; background:#12275A; }
 .label { font-family:var(--font-mono-family),monospace; font-size:10px; letter-spacing:2px; color:var(--blue); }
 .header h2 { font-family:var(--font-display-family),sans-serif; font-size:26px; margin:0; }

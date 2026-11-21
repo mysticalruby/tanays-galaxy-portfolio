@@ -3,7 +3,7 @@
 import { useMemo, type CSSProperties } from "react";
 
 /** Star tones share the site palette so they stay in sync with theme changes. */
-const STAR_COLORS = ["var(--text-primary)", "var(--text-primary)", "var(--silver)", "var(--gold)"] as const;
+const STAR_COLORS = ["var(--text-primary)", "var(--silver)"] as const;
 
 function mulberry32(seed: number) {
   return () => {
@@ -31,9 +31,9 @@ function buildStarShadow(seed: number, count: number) {
  * small/fast → large/slow, with ::after clones for seamless vertical drift.
  */
 const LAYERS = [
-  { id: "stars-1", seed: 11, count: 60, size: 2, opacity: 0.36, duration: 38 },
-  { id: "stars-2", seed: 29, count: 20, size: 4, opacity: 0.28, duration: 65 },
-  { id: "stars-3", seed: 47, count: 8, size: 6, opacity: 0.2, duration: 95 },
+  { id: "stars-1", seed: 11, count: 70, size: 1, opacity: 0.45, duration: 120 },
+  { id: "stars-2", seed: 29, count: 24, size: 1.5, opacity: 0.3, duration: 180 },
+  { id: "stars-3", seed: 47, count: 8, size: 2, opacity: 0.22, duration: 260 },
 ] as const;
 
 export function StarfieldBackground() {

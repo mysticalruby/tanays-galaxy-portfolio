@@ -3,29 +3,30 @@ import localFont from "next/font/local";
 import Script from "next/script";
 import { Header } from "@/components/Header";
 import { StarfieldBackground } from "@/components/StarfieldBackground";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { CommandPalette } from "@/components/CommandPalette";
 import "./globals.css";
 import "../styles/starfield.css";
 
-/** Wide futuristic display — logos, posters, page headers */
+/** Audiowide: the name and page headings. */
 const audiowide = localFont({
   src: "../../public/fonts/audiowide-400.ttf",
   variable: "--font-display-family",
   display: "swap",
 });
 
-/** Geometric sci-fi sans — body copy and HUD-style UI readouts */
+/** Orbitron: navigation and small labels only (too wide for long paragraphs). */
 const orbitron = localFont({
   src: [
     { path: "../../public/fonts/orbitron-400.ttf", weight: "400" },
     { path: "../../public/fonts/orbitron-500.ttf", weight: "500" },
     { path: "../../public/fonts/orbitron-600.ttf", weight: "600" },
-    { path: "../../public/fonts/orbitron-700.ttf", weight: "700" },
   ],
-  variable: "--font-body",
+  variable: "--font-ui-family",
   display: "swap",
 });
 
-/** Fixed-width technical face — terminals and starship-style interfaces */
+/** Space Mono: the terminal and other technical readouts. */
 const spaceMono = localFont({
   src: [
     { path: "../../public/fonts/space-mono-400.ttf", weight: "400" },
@@ -35,13 +36,28 @@ const spaceMono = localFont({
   display: "swap",
 });
 
+/** IBM Plex Sans: body copy, so paragraphs stay easy to read. */
+const plexSans = localFont({
+  src: [
+    { path: "../../public/fonts/ibm-plex-sans-latin-400-normal.woff2", weight: "400", style: "normal" },
+    { path: "../../public/fonts/ibm-plex-sans-latin-400-italic.woff2", weight: "400", style: "italic" },
+    { path: "../../public/fonts/ibm-plex-sans-latin-500-normal.woff2", weight: "500", style: "normal" },
+    { path: "../../public/fonts/ibm-plex-sans-latin-600-normal.woff2", weight: "600", style: "normal" },
+  ],
+  variable: "--font-body",
+  display: "swap",
+});
+
+/** Runs before paint so the saved theme never flashes the wrong colors. */
+const themeScript = `(function(){try{var t=localStorage.getItem("theme");if(t!=="light"&&t!=="dark")t="dark";document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme="dark";}})();`;
+
 export const metadata: Metadata = {
   title: {
-    default: "Tanay's Galaxy",
-    template: "%s | Tanay's Galaxy",
+    default: "Tanay Mangal",
+    template: "%s | Tanay Mangal",
   },
   description:
-    "Exploring difficult problems through engineering, research, and creativity. Portfolio of Tanay Mangal — mathematical modeling, engineering design, and applied research.",
+    "Tanay Mangal, a senior at the Massachusetts Academy of Math and Science at WPI. Computational physics research, math modeling competitions, FRC Team 190, and the projects in between.",
   icons: {
     icon: [
       { url: "/favicon.png", type: "image/png" },
@@ -52,9 +68,9 @@ export const metadata: Metadata = {
     shortcut: "/favicon.png",
   },
   openGraph: {
-    title: "Tanay's Galaxy",
+    title: "Tanay Mangal",
     description:
-      "Student researcher and builder portfolio — projects in modeling, wearables, and engineering.",
+      "Research, math modeling, robotics and engineering projects by Tanay Mangal.",
     type: "website",
   },
 };
@@ -67,9 +83,15 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${audiowide.variable} ${orbitron.variable} ${spaceMono.variable} h-full`}
+      className={`${audiowide.variable} ${orbitron.variable} ${spaceMono.variable} ${plexSans.variable} h-full`}
+      data-theme="dark"
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+      </head>
       <body className="relative flex min-h-full flex-col font-sans antialiased">
+        <SmoothScroll />
         <Script id="microsoft-clarity" strategy="afterInteractive">
           {`(function(c,l,a,r,i,t,y){
             c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
@@ -86,6 +108,7 @@ export default function RootLayout({
         <main id="main-content" className="flex-1">
           {children}
         </main>
+        <CommandPalette />
       </body>
     </html>
   );
