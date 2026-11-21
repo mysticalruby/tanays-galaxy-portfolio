@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ExploringRadar } from "@/components/ExploringRadar";
+import { ExploringNotebook } from "@/components/ExploringNotebook";
 import { PageShell } from "@/components/PageShell";
 import { exploring } from "@/lib/content";
 
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ExploringPage() {
   return (
     <PageShell title="Currently Exploring" description={exploring.supporting}>
-      <ExploringRadar />
+      <ExploringNotebook />
     </PageShell>
   );
 }

@@ -12,20 +12,55 @@
   },
   "academicsUrl": "https://users.wpi.edu/~tmangal/",
   "nav": [
-    { "label": "Home", "href": "/" },
-    { "label": "About", "href": "/about" },
-    { "label": "Experience", "href": "/experience" },
-    { "label": "Skills", "href": "/skills" },
-    { "label": "Awards", "href": "/awards" },
-    { "label": "Exploring", "href": "/exploring" },
-    { "label": "Contact", "href": "/contact" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Experience",
+      "href": "/experience"
+    },
+    {
+      "label": "Skills",
+      "href": "/skills"
+    },
+    {
+      "label": "Awards",
+      "href": "/awards"
+    },
+    {
+      "label": "Exploring",
+      "href": "/exploring"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact"
+    }
   ],
   "rocketModules": [
-    { "label": "About Me", "href": "/about" },
-    { "label": "Experience", "href": "/experience" },
-    { "label": "Skills", "href": "/skills" },
-    { "label": "Awards & Honors", "href": "/awards" },
-    { "label": "Currently Exploring", "href": "/exploring" },
-    { "label": "Contact Me", "href": "/contact" }
+    {
+      "label": "About Me",
+      "href": "/about"
+    },
+    {
+      "label": "Experience",
+      "href": "/experience"
+    },
+    {
+      "label": "Skills",
+      "href": "/skills"
+    },
+    {
+      "label": "Awards & Honors",
+      "href": "/awards"
+    },
+    {
+      "label": "Currently Exploring",
+      "href": "/exploring"
+    },
+    {
+      "label": "Contact Me",
+      "href": "/contact"
+    }
   ]
 }

@@ -101,35 +101,43 @@
 .side { display: grid; gap: 1.5rem; align-content: start; position: sticky; top: 6rem; }
 
 .modes {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
   border: 1px solid var(--border-muted);
-  padding: 3px;
-  width: fit-content;
+  background: var(--surface-navy);
+  padding: 6px;
+  width: 100%;
 }
 .modes button {
-  border: 0;
+  border: 1px solid transparent;
   background: none;
-  color: var(--text-muted);
-  padding: 6px 14px;
+  color: var(--text-primary);
+  padding: 16px 18px;
   font-family: var(--font-ui-family), sans-serif;
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
   cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
+.modes button:hover { border-color: var(--gold); }
 .modes button[aria-pressed="true"] { background: var(--gold); color: #0b1020; }
+.modes button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
 
 .controls { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.5rem; font-size: 14px; color: var(--text-muted); }
 .controls select {
   background: var(--surface-navy);
   color: var(--text-primary);
   border: 1px solid var(--border-muted);
-  padding: 4px 6px;
+  padding: 8px 10px;
   font: inherit;
 }
 .reset {
   border: 1px solid var(--border-muted);
   background: none;
   color: var(--text-primary);
-  padding: 5px 12px;
+  padding: 9px 16px;
   cursor: pointer;
   font: inherit;
 }
