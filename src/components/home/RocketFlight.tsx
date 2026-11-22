@@ -286,69 +286,6 @@ export function RocketFlight() {
       const nozzle = new THREE.Vector3();
       const back = new THREE.Vector3();
 
-      // ---------- autopilot: each flight plays at its own speed ----------
-      // When the scroll enters a flight, the page scrolls itself through it over a fixed
-      // time and ignores the wheel, touch and keys until it is done, so fast scrolling
-      // cannot rush the animation.
-      type LenisLike = { scrollTo: (t: number, o: Record<string, unknown>) => void };
-      let auto = false;
-      let lastY = window.scrollY;
-      let autoTimer = 0;
-      let tweenRaf = 0;
-      const block = (e: Event) => {
-        if (e instanceof KeyboardEvent && !["ArrowDown", "ArrowUp", "PageDown", "PageUp", " ", "Home", "End", "Spacebar"].includes(e.key)) return;
-        e.preventDefault();
-      };
-      const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
-      const finishAuto = () => {
-        if (!auto) return;
-        auto = false;
-        window.clearTimeout(autoTimer);
-        cancelAnimationFrame(tweenRaf);
-        window.removeEventListener("wheel", block);
-        window.removeEventListener("touchmove", block);
-        window.removeEventListener("keydown", block);
-        lastY = window.scrollY;
-      };
-      const startAuto = (target: number, seconds: number) => {
-        auto = true;
-        window.addEventListener("wheel", block, { passive: false });
-        window.addEventListener("touchmove", block, { passive: false });
-        window.addEventListener("keydown", block);
-        autoTimer = window.setTimeout(finishAuto, seconds * 1000 + 1200);
-        const lenis = (window as unknown as { __lenis?: LenisLike }).__lenis;
-        if (lenis) {
-          lenis.scrollTo(target, { duration: seconds, easing: easeInOut, lock: true, force: true, onComplete: finishAuto });
-          return;
-        }
-        const from = window.scrollY;
-        const t0 = performance.now();
-        const step = (t: number) => {
-          const p = Math.min(1, (t - t0) / (seconds * 1000));
-          window.scrollTo(0, from + (target - from) * easeInOut(p));
-          if (p < 1) tweenRaf = requestAnimationFrame(step);
-          else finishAuto();
-        };
-        tweenRaf = requestAnimationFrame(step);
-      };
-      const checkAutopilot = () => {
-        const y = window.scrollY;
-        if (!auto) {
-          for (const b of bandRanges) {
-            const seconds = b.kind === "up" ? 2.6 : 2.1;
-            if (lastY < b.top && y >= b.top && y < b.bottom) {
-              startAuto(b.bottom + 2, seconds);
-              break;
-            }
-            if (lastY > b.bottom && y <= b.bottom && y > b.top) {
-              startAuto(b.top - 2, seconds * 0.8);
-              break;
-            }
-          }
-        }
-        lastY = y;
-      };
-
       const animate = () => {
         if (disposed) return;
         raf = requestAnimationFrame(animate);
@@ -356,7 +293,6 @@ export function RocketFlight() {
         const time = clock.elapsedTime;
 
         const target = poseAt(buildKeys(), window.scrollY);
-        checkAutopilot();
         const k = 1 - Math.pow(0.0015, dt); // frame-rate independent easing
         (Object.keys(cur) as (keyof Pose)[]).forEach((p) => (cur[p] = lerp(cur[p], target[p], k)));
 
@@ -442,7 +378,6 @@ export function RocketFlight() {
       mountEl.dataset.ready = "true";
 
       cleanup = () => {
-        finishAuto();
         window.removeEventListener("pointermove", onPointer);
         ro.disconnect();
         renderer.dispose();
