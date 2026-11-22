@@ -13,6 +13,7 @@ import { aboutGalleries, site } from "@/lib/content";
 import { topics, type Topic } from "@/lib/aboutTopics";
 import styles from "./HomeStory.module.css";
 import { RocketFlight } from "./RocketFlight";
+import { FeaturedWork } from "./FeaturedWork";
 
 const NAME = site.name;
 const EASE = [0.21, 0.47, 0.32, 0.98] as const;
@@ -255,6 +256,7 @@ export function HomeStory() {
     <div className={styles.page}>
       <RocketFlight />
       <Hero />
+      <FeaturedWork />
       <TrajectoryRail />
 
       <div id="chapters" className={styles.chapters}>

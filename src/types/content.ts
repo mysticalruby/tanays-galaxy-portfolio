@@ -23,7 +23,11 @@ export interface Project {
   learned: string;
   placeholders: string[];
   /** Optional real photos shown as hero + technical evidence */
-  images?: { src: string; alt: string; caption?: string }[];
+  images?: { src: string; alt: string; caption?: string; tag?: string }[];
+  /** Big impact numbers shown as a ledger under the header (used for community work) */
+  impact?: { value: string; label: string; note?: string }[];
+  /** Show every photo as a labeled photo wall instead of hero + "Technical Evidence" */
+  photoWall?: boolean;
   skills: string[];
   relatedProjects?: string[];
   /** Optional research PDFs shown with an in-page pdf.js viewer */

@@ -200,6 +200,11 @@
           "src": "/images/photo-77515662664.png",
           "alt": "Soldering a small PCB module for the wearable",
           "caption": "PCB work: soldering the control module"
+        },
+        {
+          "src": "/images/statera/statera-team.webp",
+          "alt": "Four teammates in maroon shirts carrying a fifth teammate horizontally in a brick courtyard.",
+          "caption": "Team ANTICx, the people behind STATERA, our STEM II assistive technology project."
         }
       ],
       "safetyNote": "This was a school research prototype, it is not a medical device and should not be used as a treatment or diagnosis tool.",
@@ -493,6 +498,16 @@
           "src": "/images/himcm/IMG_0654.jpg",
           "alt": "Full whiteboard of the five-phase firefighter sweep model with centrality notes, sigmoid curves, and final scalar importance output",
           "caption": "Full board: centrality, combined sigmoids, and final ranking"
+        },
+        {
+          "src": "/images/himcm/responder-variables-whiteboard.webp",
+          "alt": "Whiteboard listing variables for a building search-and-rescue model, including number of responders, layout, travel time, room search time, and responder speed.",
+          "caption": "Our list of everything that could change how long it takes responders to clear a building, from the number of responders and the floor layout to how cluttered or smoky a room is."
+        },
+        {
+          "src": "/images/himcm/responder-graph-whiteboard.webp",
+          "alt": "Multicolored whiteboard with notes on emergency types, responder types, and a graph sketch of rooms connected by hallways.",
+          "caption": "Figuring out how to turn a building into a graph, with rooms as nodes and hallways as weighted edges, which is the sketch in the bottom corner."
         }
       ],
       "websiteUrl": "https://github.com/TanayMangal/Building-Route-Optimizing-HiMCM",
@@ -654,6 +669,11 @@
           "src": "/images/mtfc/policy-heatmaps.png",
           "alt": "2×2 grid of spatial heatmaps comparing Aggressive, Front-Loaded, Moderate Rebate, and No Policy AV scenarios",
           "caption": "Policy scenario heatmaps: Aggressive, Front-Loaded, Moderate Rebate, and No Policy"
+        },
+        {
+          "src": "/images/mtfc/mtfc-team.webp",
+          "alt": "Four teammates jokingly carrying a fifth teammate sideways in a brick courtyard.",
+          "caption": "Our MTFC team."
         }
       ],
       "placeholders": [],
@@ -773,6 +793,16 @@
           "src": "/images/immc/IMG_1777.jpg",
           "alt": "Messy overnight room with teammates asleep among laptops, energy drinks, snacks, and an open suitcase",
           "caption": "Overnight stretch: catching sleep between paper revisions"
+        },
+        {
+          "src": "/images/immc/immc-work-session.webp",
+          "alt": "IMMC team working at a dining hall table with food and a laptop.",
+          "caption": "A working session for IMMC 2026, fueled mostly by dining hall waffles and Froot Loops."
+        },
+        {
+          "src": "/images/immc/immc-team.webp",
+          "alt": "Four teammates standing arm in arm in a brick courtyard.",
+          "caption": "Our IMMC team."
         }
       ],
       "placeholders": [],
@@ -960,6 +990,16 @@
           "src": "/images/m3c/IMG_1457.jpg",
           "alt": "Teammate in a maroon jacket taking a quick drink break in the study lounge",
           "caption": "Quick recharge between modeling blocks"
+        },
+        {
+          "src": "/images/m3c/m3c-team-pizza.webp",
+          "alt": "M3 Challenge team eating pizza around a table with a laptop open.",
+          "caption": "Pizza and curly fries during M3C, which gives you 14 hours to model the problem, so food breaks happen at the table."
+        },
+        {
+          "src": "/images/m3c/m3c-team-penny.webp",
+          "alt": "Five teammates in matching maroon shirts pointing at a penny one of them is holding up.",
+          "caption": "Our M3C team."
         }
       ],
       "skills": [
@@ -1257,15 +1297,29 @@
       "results": "Hands-on contribution to competition-season engineering and community-facing FIRST outreach.",
       "learned": "Strong robotics teams combine fast mechanical iteration with clear communication and outreach ownership.",
       "placeholders": [
-        "Onshape assembly screenshot",
         "Prototype photo",
         "Outreach event photo"
       ],
       "images": [
         {
+          "src": "/images/frc-190/IMG_1101.jpg",
+          "alt": "Blue and red whiteboard sketches of the climber hook sequence labeled Auto, Teleop, and Endgame",
+          "caption": "Early climber concept: how the hooks move through auto, teleop, and endgame"
+        },
+        {
           "src": "/images/frc-190/IMG_1123.jpg",
           "alt": "Whiteboard sketches for FRC 2026 climber receiver, T-joint, and claw requirements",
           "caption": "Climber planning: receiver, T-joint, and claw constraints for the 2026 game"
+        },
+        {
+          "src": "/images/frc-190/IMG_1125.jpg",
+          "alt": "Whiteboard with a second round of receiver, T-joint, and claw sketches under the Team 190 banners",
+          "caption": "Second pass on the receiver, T-joint, and claw"
+        },
+        {
+          "src": "/images/frc-190/IMG_1126.jpg",
+          "alt": "Side-profile whiteboard sketch of the robot with bumpers, wheels, and a trussed tower",
+          "caption": "Side-profile sketch for fitting the climber around the rest of the robot"
         },
         {
           "src": "/images/frc-190/IMG_1127.jpg",
@@ -1273,9 +1327,29 @@
           "caption": "Climber design review: axial thrust, torsion, and free-body diagrams"
         },
         {
+          "src": "/images/frc-190/IMG_1132.jpg",
+          "alt": "Red whiteboard sketch of the climber receiver redrawn over earlier notes",
+          "caption": "Receiver redesign sketched over the old system-integration notes"
+        },
+        {
           "src": "/images/frc-190/IMG_1141.jpg",
           "alt": "Whiteboard with climber sprocket, claw, and gear-ratio calculations for Team 190",
           "caption": "Climber analysis: sprocket layout, stress math, and gear/sprocket ratios"
+        },
+        {
+          "src": "/images/frc-190/IMG_1120.jpg",
+          "alt": "Onshape sketch of an 18-inch climber hook bar with hooks on both ends and dimensioned holes",
+          "caption": "Turning the hook into a dimensioned Onshape sketch"
+        },
+        {
+          "src": "/images/frc-190/designing-climber-cad.jpg",
+          "alt": "Tanay working on the climber in Onshape on a laptop in the robotics lab",
+          "caption": "Designing the climber in CAD"
+        },
+        {
+          "src": "/images/frc-190/IMG_1384.jpg",
+          "alt": "CAD layout of flat climber plates, hooks, links, and brackets with mounting holes",
+          "caption": "Climber plates laid out for cutting"
         },
         {
           "src": "/images/IMG_3199.png",
@@ -1296,11 +1370,6 @@
           "src": "/images/IMG_3338.png",
           "alt": "Whiteboard sketches for robot intake mechanism and rack stack-up",
           "caption": "Intake design whiteboard: rack and plate stack-up"
-        },
-        {
-          "src": "/images/png-image-1.png",
-          "alt": "Screenshot of Drive.java robot code",
-          "caption": "Drive subsystem code"
         },
         {
           "src": "/images/IMG_3200.png",
@@ -1360,8 +1429,6 @@
       "results": "Scaled community impact across five towns and secured iFixit partnership support for repair programming worth over $4,000 in supplies.",
       "learned": "Sustained community impact comes from repeatable workshops, strong partnerships, and training others to run local programs.",
       "placeholders": [
-        "Repair bench photo",
-        "Workshop session photo",
         "Community outreach graphic"
       ],
       "websiteUrl": "https://www.techawarenessma.com/",
@@ -1370,22 +1437,56 @@
         {
           "src": "/images/tech-awareness/IMG_3276.jpg",
           "alt": "Tech Awareness repair workshop with iFixit kits and disassembled phones on the table",
-          "caption": "Community repair workshop: phones open on anti-static mats with iFixit kits"
+          "caption": "Community repair workshop: phones open on anti-static mats with iFixit kits",
+          "tag": "Workshop"
         },
         {
           "src": "/images/tech-awareness/IMG_3283.jpg",
           "alt": "Close-up of hands using a precision screwdriver kit during device repair",
-          "caption": "Hands-on repair: precision bits and pry tools at the bench"
+          "caption": "Hands-on repair: precision bits and pry tools at the bench",
+          "tag": "Repair bench"
         },
         {
           "src": "/images/tech-awareness/IMG_3299.jpg",
           "alt": "Two students collaborating on a device repair at a library table",
-          "caption": "Pair repair session at a library / community repair bench"
+          "caption": "Pair repair session at a library / community repair bench",
+          "tag": "Library"
         },
         {
           "src": "/images/tech-awareness/IMG_3372.jpg",
           "alt": "Tech Awareness team with laptops, tablets, and a disassembled laptop on the worktable",
-          "caption": "Team night: devices, parts, and repair materials on the bench"
+          "caption": "Team night: devices, parts, and repair materials on the bench",
+          "tag": "Team night"
+        },
+        {
+          "src": "/images/tech-awareness/outreach-booth.jpg",
+          "alt": "Tech Awareness Association booth at an outdoor community event with repair tools and device parts on the table",
+          "caption": "Outreach booth at an outdoor community event",
+          "tag": "Outreach"
+        },
+        {
+          "src": "/images/tech-awareness/outreach-booth-laptops.jpg",
+          "alt": "Volunteers working on laptops next to desktop computers at an outdoor booth",
+          "caption": "Laptops and desktops set up at the outreach booth",
+          "tag": "Outreach"
+        },
+        {
+          "src": "/images/tech-awareness/workshop-kid-repair.jpg",
+          "alt": "Younger student working on a device repair with a volunteer using a magnetic mat and precision tool kit",
+          "caption": "Walking a younger student through a repair at a workshop",
+          "tag": "Workshop"
+        },
+        {
+          "src": "/images/tech-awareness/own-laptop-repair-1.jpg",
+          "alt": "Close-up of Tanay leaning over an opened laptop with a precision tool",
+          "caption": "Repairing my own laptop",
+          "tag": "My laptop"
+        },
+        {
+          "src": "/images/tech-awareness/own-laptop-repair-2.jpg",
+          "alt": "Opened laptop with the motherboard, fan, and SSD exposed while being repaired, bottom cover set aside",
+          "caption": "Repairing my own laptop: bottom cover off, board exposed",
+          "tag": "My laptop"
         }
       ],
       "skills": [
@@ -1395,7 +1496,30 @@
         "Teaching",
         "Tech Repair",
         "LaTeX"
-      ]
+      ],
+      "impact": [
+        {
+          "value": "120+",
+          "label": "Devices repaired",
+          "note": "through our recurring community repair bench"
+        },
+        {
+          "value": "5",
+          "label": "Towns",
+          "note": "each helped to launch its own local program"
+        },
+        {
+          "value": "$4K+",
+          "label": "In iFixit supplies",
+          "note": "over $4,000 in repair supplies from our partnership with iFixit"
+        },
+        {
+          "value": "5",
+          "label": "People on my team",
+          "note": "running workshops and repairs"
+        }
+      ],
+      "photoWall": true
     },
     {
       "slug": "us-taekwondo-instructor",
