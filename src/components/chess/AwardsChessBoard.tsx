@@ -105,7 +105,7 @@ export function AwardsChessBoard() {
     if (mode !== "play" || game.turn() !== "b" || game.isGameOver()) return;
     setThinking(true);
     const t = window.setTimeout(() => {
-      const m = pickMove(game.fen(), depth);
+      const m = pickMove(game.fen(), depth, game.history({ verbose: true }));
       if (m) {
         const made = game.move({ from: m.from, to: m.to, promotion: m.promotion ?? "q" });
         applyMove(made);
