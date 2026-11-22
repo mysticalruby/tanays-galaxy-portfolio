@@ -143,6 +143,44 @@
             "embedTitle": "Desmos graph 13"
           }
         ]
+      },
+      {
+        "id": "math-whiteboards",
+        "title": "Math for fun",
+        "description": "Number theory I end up working through on whiteboards and scratch paper.",
+        "relatedHref": null,
+        "relatedLabel": null,
+        "items": [
+          {
+            "id": "math-totient",
+            "caption": "Working out φ(105) by multiplying 105 by (1 − 1/p) for each prime factor, which knocks out every number that shares a factor with 105 and leaves 48.",
+            "imageSrc": "/images/about/totient-105-whiteboard.webp"
+          },
+          {
+            "id": "math-factorial-square",
+            "caption": "Scratch work on when n! + 1 is a perfect square, so n! = m² − 1 = (m+1)(m−1). The only known answers are n = 4, 5 and 7.",
+            "imageSrc": "/images/about/factorial-square-scratch-work.webp"
+          }
+        ]
+      },
+      {
+        "id": "builds-for-fun",
+        "title": "Builds for fun",
+        "description": "Small things I make when I want to see if they will work.",
+        "relatedHref": null,
+        "relatedLabel": null,
+        "items": [
+          {
+            "id": "fun-bridge",
+            "caption": "A popsicle-stick bridge I built for fun, which held up better than the pile of leftover sticks next to it would suggest.",
+            "imageSrc": "/images/about/popsicle-stick-bridge.webp"
+          },
+          {
+            "id": "fun-arduino",
+            "caption": "An Arduino Mega wired to a breadboard with LEDs and push buttons.",
+            "imageSrc": "/images/about/arduino-breadboard.webp"
+          }
+        ]
       }
     ]
   }

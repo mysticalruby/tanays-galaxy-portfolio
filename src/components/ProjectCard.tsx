@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { ImpactLedger } from "@/components/community/ImpactLedger";
+import { PhotoWall } from "@/components/community/PhotoWall";
 import Link from "next/link";
 import { type ReactNode } from "react";
 import { BuildProcessTimeline } from "@/components/BuildProcessTimeline";
@@ -90,8 +92,9 @@ export function ProjectCard({ project }: { project: Project }) {
 export function ProjectDetail({ project }: { project: Project }) {
   const experience = isExperience(project);
   const images = project.images ?? [];
-  const hero = images[0];
-  const gallery = images.slice(1);
+  const wall = Boolean(project.photoWall);
+  const hero = wall ? undefined : images[0];
+  const gallery = wall ? [] : images.slice(1);
   const papers = resolvePapers(project);
   const collaborators = project.collaborators ?? [];
   const walkthrough = getWalkthroughBySlug(project.slug);
@@ -236,6 +239,8 @@ export function ProjectDetail({ project }: { project: Project }) {
         </div>
       </header>
 
+      {project.impact && project.impact.length > 0 && <ImpactLedger stats={project.impact} />}
+
       {hero ? (
         <figure className="border border-border-muted bg-bg-deep p-[1px]">
           <div className="border border-border-muted bg-surface-navy">
@@ -256,7 +261,7 @@ export function ProjectDetail({ project }: { project: Project }) {
             )}
           </div>
         </figure>
-      ) : papers.length === 0 && project.placeholders.length > 0 ? (
+      ) : !wall && papers.length === 0 && project.placeholders.length > 0 ? (
         <Placeholder
           label={`Hero visual for ${project.title}`}
           className="min-h-[14rem]"
@@ -348,7 +353,9 @@ export function ProjectDetail({ project }: { project: Project }) {
 
       {walkthrough && <BuildProcessTimeline walkthrough={walkthrough} />}
 
-      {(gallery.length > 0 || project.placeholders.length > 0) && (
+      {wall && images.length > 0 && <PhotoWall photos={images} />}
+
+      {!wall && (gallery.length > 0 || project.placeholders.length > 0) && (
         <section className="border-t border-white/10 pt-8">
           <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-silver">
             Technical Evidence
