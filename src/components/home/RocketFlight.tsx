@@ -203,6 +203,18 @@ export function RocketFlight() {
           keys.push({ at: sy + r.top + r.height * 0.35 - vh / 2, ...hero });
           side = hero.x;
         }
+        // a section right after the hero (the featured list): the rocket eases off to the edge for it
+        const parkEl = document.querySelector<HTMLElement>("[data-rocket-park]");
+        let heroStillUp = Boolean(heroEl);
+        if (heroEl && parkEl) {
+          const pr = parkEl.getBoundingClientRect();
+          const hero = keys[0];
+          keys.push({ ...hero, at: sy + pr.top - vh * 0.75 });
+          keys.push({ at: sy + pr.top - vh * 0.15, x: 0.92, y: 0.05, angle: -0.12, roll: Math.PI, scale: parkScale, flame: 0.3 });
+          side = 0.92;
+          roll = Math.PI;
+          heroStillUp = false;
+        }
         bandRanges.length = 0;
         const flights = Array.from(document.querySelectorAll<HTMLElement>("[data-flight]"));
         flights.forEach((el, i) => {
@@ -225,7 +237,7 @@ export function RocketFlight() {
           }
           const toX = (i % 2 === 0 ? 1 : -1) * 0.9;
           const dir = Math.sign(toX - fromX) || 1;
-          keys.push({ at: top, x: fromX, y: 0, angle: 0, roll, scale: i === 0 && heroEl ? (narrow ? 0 : 3.3) : parkScale, flame: 0.3 });
+          keys.push({ at: top, x: fromX, y: 0, angle: 0, roll, scale: i === 0 && heroStillUp ? (narrow ? 0 : 3.3) : parkScale, flame: 0.3 });
           // enter from the side, cross just above the title, leave toward the other side
           keys.push({ at: lerp(top, bottom, 0.18), x: fromX + (toX - fromX) * 0.05 - dir * 0.25, y: 0.14, angle: -dir * (Math.PI / 2 - 0.2), roll: roll + Math.PI * 0.3, scale: narrow ? 2.2 : 3, flame: 1 });
           keys.push({ at: mid, x: 0, y: 0.16, angle: -dir * (Math.PI / 2 - 0.12), roll: roll + Math.PI, scale: narrow ? 2.4 : 3.3, flame: 1.1 });
