@@ -55,26 +55,7 @@
 .arrow { font-size: 1.4rem; color: var(--gold); transition: transform 0.25s; }
 .row:hover .arrow { transform: translateX(6px) rotate(-45deg); }
 
-/* preview that follows the pointer (desktop) */
-.preview {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 300px;
-  height: 220px;
-  margin: -110px 0 0 30px;
-  pointer-events: none;
-  z-index: 5;
-  overflow: hidden;
-  border: 1px solid var(--border-muted);
-  box-shadow: 0 30px 70px -20px rgb(0 0 0 / 0.6);
-  background: var(--surface-navy);
-}
-.previewInner { position: absolute; inset: 0; }
-.previewImg { object-fit: cover; }
-
 @media (hover: none), (max-width: 800px) {
-  .preview { display: none; }
   .row { grid-template-columns: 4.5rem minmax(0, 1fr) 1.5rem; gap: 1rem; padding: 1.25rem 0; }
   .row:hover { padding-left: 0; }
   .num, .kind { display: none; }

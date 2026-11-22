@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { AnimatePresence, motion, useMotionValue, useSpring } from "motion/react";
 import { Reveal } from "@/components/Reveal";
 import styles from "./FeaturedWork.module.css";
 
@@ -61,26 +60,17 @@ const FEATURES: Feature[] = [
 ];
 
 /**
- * A short list of the work worth seeing first. On desktop a preview photo
- * follows the pointer while you hover a row; on phones each row shows a thumbnail.
+ * A short list of the work worth seeing first. Hovering a row highlights it;
+ * on phones each row shows a small thumbnail.
  */
 export function FeaturedWork() {
   const [hover, setHover] = useState<number | null>(null);
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const sx = useSpring(x, { stiffness: 260, damping: 28, mass: 0.5 });
-  const sy = useSpring(y, { stiffness: 260, damping: 28, mass: 0.5 });
 
   return (
     <section
       className={styles.section}
       aria-labelledby="featured-title"
       data-rocket-park
-      onPointerMove={(e) => {
-        const r = e.currentTarget.getBoundingClientRect();
-        x.set(e.clientX - r.left);
-        y.set(e.clientY - r.top);
-      }}
       onPointerLeave={() => setHover(null)}
     >
       <Reveal>
@@ -114,32 +104,6 @@ export function FeaturedWork() {
         ))}
       </ol>
 
-      <AnimatePresence>
-        {hover !== null && (
-          <motion.div
-            className={styles.preview}
-            style={{ x: sx, y: sy }}
-            initial={{ opacity: 0, scale: 0.85, rotate: -4 }}
-            animate={{ opacity: 1, scale: 1, rotate: 0 }}
-            exit={{ opacity: 0, scale: 0.85 }}
-            transition={{ duration: 0.25 }}
-            aria-hidden
-          >
-            <AnimatePresence mode="popLayout" initial={false}>
-              <motion.div
-                key={hover}
-                className={styles.previewInner}
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -30 }}
-                transition={{ duration: 0.3 }}
-              >
-                <Image src={FEATURES[hover].img} alt={FEATURES[hover].alt} fill sizes="320px" className={styles.previewImg} />
-              </motion.div>
-            </AnimatePresence>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }
